@@ -25,9 +25,11 @@ knitr::opts_chunk$set(echo = TRUE)
 ``` 
 --- 
 
-# Mais informações sobre mim
+# Mais informações sobre nós: 
 
 Acesse: [Igor Pereira Vital](https://igorpereiravital.github.io/relatorios/){target="_blank"}
+
+Acesse: [Lucas William Endringer](https://github.com/lucaswilliam1337-boop){target="_blank"}
 
 # Página dos alunos da disciplina
 
