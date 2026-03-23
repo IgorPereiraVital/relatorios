@@ -27,7 +27,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # Mais informações sobre mim
 
-Acesse: [Igor Pereira Vital](info/index.html){target="_blank"}
+Acesse: [Igor Pereira Vital](https://igorpereiravital.github.io/relatorios/){target="_blank"}
 
 # Página dos alunos da disciplina
 
