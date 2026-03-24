@@ -5,11 +5,11 @@ links:
   - label: GitHub
     url: "https://github.com/IgorPereiraVital"
   - label: Email
-    url: "ii2000207@gmail.com"
+    url: "mailto:ii2000207@gmail.com"
   - label: Relatórios
     url: "./relatorio/index.html"
 output:
   postcards::jolla
 ---
- 
-Estuda Engenharia Mecatrônica 
+
+Estuda Engenharia Mecatrônica  
