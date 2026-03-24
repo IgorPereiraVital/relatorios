@@ -1,7 +1,7 @@
 ---
 # Só mude aqui!!!!
 author: "Igor e Lucas"
-"Aula Prática 01"
+title: "Aula Prática 01"
 bibliography: referencias.bib
 # A partir daqui nao faca alteracoes!!!!!
 link-citations: true
