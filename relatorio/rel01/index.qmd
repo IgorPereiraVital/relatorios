@@ -41,46 +41,31 @@ de interpretar os dados obtidos
 
 Durante o experimento foi utilizado apenas uma configuração na catapulta: 
 
-- O-  nível 2
-- A+  nível 3
-- B+  90 °
-- A-  nível 4	
+- O- -> nível 2
+- A+ -> nível 3
+- B+ -> 90°
+- A- -> nível 4
+
+- Tensão do Elástico (Posição A): Controla a força e a velocidade inicial do projétil.
+- Ângulo de Disparo (Posição B): Define o tempo de voo e o alcance horizontal do projétil.
+- Apoio Estrutural (Posição O): Garante a estabilidade e a geometria do movimento da catapulta.
+
+### Coleta de Dados
+
+Foram realizados 22 lançamentos sob as mesmas configurações, onde se foi obtido diferentes distâncias.
+
+Embora com a mesma configuração, não foram obtidos valores idênticos, o que permitiu identificar a variabilidade do experimento, possivelmente relacionado a fatores como meio ambiente (fator não controlável), variação da elasticidade do elástico utilizado e pequenas mudanças na forma de lançamento.
+
+## 📚   Aprendizado
+
+Conseguimos aprender que mesmo mantendo as configurações idênticas, não se é possível obter os mesmos resultados, por causa: 
+
+- pequenas modificações na execução;
+- influência do meio ambiente;
+- limitação dos instrumentos utilizados.
 
 
-### Objetivos específicos
-
-- Coletar dados experimentais  
-- Aplicar estatística descritiva  
-- Construir gráficos  
-- Interpretar resultados  
-
----
-
-## 📚  Fundamentação Teórica
-
-Apresente os conceitos principais:
-
-- Média
-- Variância
-- Desvio padrão
-- Amostragem
-
-$$
-\bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i
-$$
-
----
-
-## ⚙️ Metodologia
-
-::: {.callout-note}
-Descreva como o experimento foi realizado.
-:::
-
-- Materiais utilizados  
-- Procedimento  
-- Número de repetições  
-
+## ⚙️ 
 ---
 
 ## 🔍 Resultados e Discussão
