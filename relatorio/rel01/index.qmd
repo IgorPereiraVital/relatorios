@@ -1,7 +1,7 @@
 ---
 # Só mude aqui!!!!
 author: "Igor e Lucas"
-title: "Aula Prática 01"
+title: "Relatório de Experimento da Catapulta"
 bibliography: referencias.bib
 # A partir daqui nao faca alteracoes!!!!!
 link-citations: true
@@ -28,17 +28,24 @@ execute:
 
 ## 📌 Introdução
 
-Descreva o contexto da prática e sua importância.
+O experimento da catapulta realizado em sala teve como objetivo analisar, por métodos estatísticos as variações de um lançamento através de uma configuração fixa, com o propósito 
+de interpretar os dados obtidos
+
 
 > Exemplo: análise da variabilidade em experimentos físicos utilizando uma catapulta.
 
 
-
 ## 🎯 Objetivos
 
-### Objetivo geral
+### Configuração Utilizada
 
-Descrever o objetivo principal da prática.
+Durante o experimento foi utilizado apenas uma configuração na catapulta: 
+
+- O-  nível 2
+- A+  nível 3
+- B+  90 °
+- A-  nível 4	
+
 
 ### Objetivos específicos
 
