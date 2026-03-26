@@ -14,12 +14,14 @@ lang: pt-BR
 format:
   html:
     toc: true
+    toc-depth: 3
+    toc-location: right
+    toc-expand: true
+    smooth-scroll: true
     number-sections: true
-    theme: bootstrap
-    #css: styles.css
-    code-fold: true
-    code-tools: true
-execute:
+    theme: cosmo
+
+execute: 
   echo: true
   warning: false
   message: false
@@ -27,7 +29,7 @@ execute:
 ---
 
 
-# Relatório de Experimento: Estatística e Probabilidade com Catapulta
+## Relatório de Experimento: Estatística e Probabilidade com Catapulta
 
 ## Introdução
 
@@ -46,6 +48,8 @@ Durante o experimento, os seguintes fatores foram controlados para garantir a co
 *   **Apoio Estrutural (Posição O)**: Garante a estabilidade e a geometria do movimento da catapulta.
 
 ## Configuração Utilizada
+
+![Catapulta utilizada em sala](catapulta.png){width=40%}
 
 Para a realização dos lançamentos, uma configuração específica foi mantida constante na catapulta:
 
@@ -235,3 +239,4 @@ Acesse [Quarto](https://quarto.org/).
 * [2] Bendeivide. **Modelo de Relatório**. Disponível em: <http://bendeivide.github.io/courses/epaec/modrel/>.
 * [3] Bendeivide. **Relatórios da Disciplina Estatística Experimental (UFSJ)**. Disponível em: <https://bendeivide.github.io/relatorio-estprob/relatorio/index.html#vis%C3%A3o-geral-sobre-os-relat%C3%B3rios>.
 * [4] Bendeivide. **Pacote `leem` (Laboratório de Ensino de Estatística e Matemática)**. Disponível em: <https://bendeivide.github.io/leem/>.
+* [5] Bendeivide. **Experimentos para as aulas práticas**. Dísponivel em: <https://bendeivide.github.io/courses/epaec/normal2026.1/#experimentos>.
