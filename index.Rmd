@@ -1,6 +1,6 @@
 ---
-title: "Igor Pereira Vital"
-image: "foto.png"
+title: "Igor Pereira e Lucas William"
+image: "igor_lucas.png"
 links:
   - label: GitHub
     url: "https://github.com/IgorPereiraVital"
@@ -12,4 +12,4 @@ output:
   postcards::jolla
 ---
 
-Estuda Engenharia Mecatrônica  
+Alunos de Engenharia Mecatrônica  
