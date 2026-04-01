@@ -59,11 +59,29 @@ A linguagem [R](https://www.r-project.org/) foi criada em 1993, por Ross Ihaka e
 
 4.2 Já o RStudio é o ambiente de trabalho conhecido como IDE, que oferece uma interface mais organizada e separada.
 
-![Imagem do RStudio](Imagem para a Introdução do R.png) 
+![Figura 1 - Imagem do RStudio](Imagem para a Introdução do R.png) 
+
+4.3 Na figura 1, é possível observar as divisões por quadrantes no RStudio, no qual: 
+
+1) Corresponde a área de criação dos scripts;
+2) Representa o painel Environment, onde são exibidas as variáveis carregadas na sessão;
+3) Indica o console, a onde pode ser executado comandos de maneira direta;
+4) Corresponde ao painel de Viewer,Packages,Help,Files,utilizados para a instalação de pacotes, gerenciamento de arquivos e visualização dos dados.
 
 
+## Como executar códigos
 
+5.1 Os códigos na linguagem R podem ser executados tanto por scripts quanto pelo console no RStudio.
 
+5.2 A seguir, será representado um código simples:
+
+```{r}
+x <- c(1, 2, 3, 4, 5)
+mean(x)
+
+```
+
+5.3 O código acima cria um vetor numérico de tamanho 5 e calcula a sua média, demonstrando uma das funções básicas da linguagem R.
 ## Aprenda Quarto
 
 Acesse [Quarto](https://quarto.org/).
