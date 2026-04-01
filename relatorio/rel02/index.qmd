@@ -1,7 +1,7 @@
 ---
 # Só mude aqui!!!!
-author: "Nome do Aluno"
-title: "Relatório de Aula Prática 02"
+author: "Igor e Lucas"
+title: "Relatório sobre a linguagem R"
 bibliography: referencias.bib
 # A partir daqui nao faca alteracoes!!!!!
 link-citations: true
@@ -28,96 +28,41 @@ execute:
 
 ## 📌 Introdução
 
-Descreva o contexto da prática e sua importância.
+A linguagem [R](https://www.r-project.org/) foi criada em 1993, por Ross Ihaka e Robert Gentleman na [University of Auckland](https://www.auckland.ac.nz/en.html).
 
-> Exemplo: análise da variabilidade em experimentos físicos utilizando uma catapulta.
+## ❓ POR QUAL MOTIVO A LINGUAGEM R FOI CRIADA?
+
+2 O principal objetivo era criar uma linguagem para:
+
+- A área de estatística e análise de dados;
+- De fácil uso tanto para pesquisadores quanto para estudantes;
+- E ser uma linguagem gratuita e de código aberto;
+
+2.1 Antes de sua criação, muitos softwares estatísticos eram caros e fechados, como a linguagem [S](https://en.wikipedia.org/wiki/S_(programming_language)) 	(que inspirou o desenvolvimento da linguagem R). 
+
+2.2 Logo o R surgiu como uma alternativa mais flexível e bastante importante que acompanhou as demandas científicas modernas.
+
+## POR QUE O R FICOU TÃO IMPORTANTE?
+
+3.1 Hoje em dia com o grande avanço da tecnologia e da inteligência artificial, a linguagem R está sendo muito usada para: 
+
+- Machine Learning;
+- Ciência de dados e estatística;
+- Pesquisas e práticas acadêmicas;
+
+3.2 A linguagem R conseguiu se adaptar de maneira rápida ao cenário atual graças às suas milhares de bibliotecas, bem como às suas capacidades de geração gráfica e análise.
+
+
+## Ambiente de trabalho
+
+4.1 A linguagem R é o sistema responsável por fazer os cálculos, manipular os dados e apresenta as bibliotecas.
+
+4.2 Já o RStudio é o ambiente de trabalho conhecido como IDE, que oferece uma interface mais organizada e separada.
+
+![Imagem do RStudio](Imagem para a Introdução do R.png) 
 
 
 
-## 🎯 Objetivos
-
-### Objetivo geral
-
-Descrever o objetivo principal da prática.
-
-### Objetivos específicos
-
-- Coletar dados experimentais  
-- Aplicar estatística descritiva  
-- Construir gráficos  
-- Interpretar resultados  
-
----
-
-## 📚  Fundamentação Teórica
-
-Apresente os conceitos principais:
-
-- Média
-- Variância
-- Desvio padrão
-- Amostragem
-
-$$
-\bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i
-$$
-
----
-
-## ⚙️ Metodologia
-
-::: {.callout-note}
-Descreva como o experimento foi realizado.
-:::
-
-- Materiais utilizados  
-- Procedimento  
-- Número de repetições  
-
----
-
-## 🔍 Resultados e Discussão
-
-Apresente e interprete os resultados obtidos a partir dos dados coletados.
-
-- Descreva os principais resultados numéricos (média, variabilidade, etc.).
-- Comente o comportamento dos dados observados nos gráficos.
-- Indique se há presença de valores discrepantes (outliers).
-- Avalie se os dados apresentam simetria ou tendência.
-
-Em seguida, discuta os resultados à luz dos conceitos teóricos:
-
-- Os resultados estão de acordo com o esperado?
-- Há grande variabilidade? O que isso significa no contexto do experimento?
-- Quais fatores podem ter influenciado os resultados?
-- Existem possíveis fontes de erro experimental?
-
-Procure não apenas descrever, mas **interpretar os dados**.
-
-### 💬 Exemplo de como citar uma referência bibliográfica
-
-Depois de inserido as informaçõe no arquivo **referencias.bib**, use:
-
-- Segundo @Rbasico2022
-- Tudo é um objeto em R [@Rbasico2022]
-
-### 📊  Análise de Dados
-
-```{r}
-distancia <- c(10.2, 9.8, 10.5, 10.1, 9.9, 10.3)
-distancia
-```
-
-## 🧠 Considerações finais
-
-Apresente uma síntese dos principais pontos observados no experimento.
-
-- Retome o objetivo da prática e indique se ele foi alcançado.
-- Destaque os principais aprendizados obtidos.
-- Comente brevemente sobre a qualidade dos dados coletados.
-- Sugira possíveis melhorias no procedimento experimental.
-
-Evite repetir apenas os resultados; foque nas **conclusões e reflexões** sobre a prática realizada.
 
 ## Aprenda Quarto
 
