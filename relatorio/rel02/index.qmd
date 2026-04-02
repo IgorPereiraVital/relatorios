@@ -69,19 +69,25 @@ A linguagem [R](https://www.r-project.org/) foi criada em 1993, por Ross Ihaka e
 4) Corresponde ao painel de Viewer,Packages,Help,Files,utilizados para a instalação de pacotes, gerenciamento de arquivos e visualização dos dados.
 
 
-## Como executar códigos
+## 💻 Como executar códigos
 
 5.1 Os códigos na linguagem R podem ser executados tanto por scripts quanto pelo console no RStudio.
 
 5.2 A seguir, será representado um código simples:
 
 ```{r}
+
+library(leem)
+
 x <- c(1, 2, 3, 4, 5)
 mean(x)
 
 ```
 
 5.3 O código acima cria um vetor numérico de tamanho 5 e calcula a sua média, demonstrando uma das funções básicas da linguagem R.
+
+
+
 ## Aprenda Quarto
 
 Acesse [Quarto](https://quarto.org/).
