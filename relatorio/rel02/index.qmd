@@ -123,7 +123,7 @@ hist(valores, main = "Distribuição dos valores", col = "lightblue")
 
 7.0 - Onde usar o R? 
   
-  O R ocupa um espaço relevante no mercado de trabalho, especialmente em áreas como ciência de dados, estatística, finanças, saúde e marketing. Empresas e instituições utilizam a linguagem para extrair valor de dados e apoiar decisões estratégicas. Organizações como o Google, o Facebook (atual Meta), e o IBM já utilizaram ou utilizam R em diferentes contextos analíticos. Além disso, instituições financeiras e órgãos de pesquisa — como o Banco Central do Brasil e o IBGE — empregam R para modelagem estatística, previsões econômicas e análise de grandes volumes de dados.
+  O R ocupa um espaço relevante no mercado de trabalho, especialmente em áreas como ciência de dados, estatística, finanças, saúde e marketing. Empresas e instituições utilizam a linguagem para extrair valor de dados e apoiar decisões estratégicas. Organizações como o Google, o Facebook (atual Meta), e o IBM já utilizaram ou utilizam R em diferentes contextos analíticos. Além disso, instituições financeiras e órgãos de pesquisa — como o Banco Central do Brasil e o IBGE empregam R para modelagem estatística, previsões econômicas e análise de grandes volumes de dados.
 
 7.1 - Porque o R? 
   
@@ -131,11 +131,11 @@ hist(valores, main = "Distribuição dos valores", col = "lightblue")
 
 7.2 - O futuro da linguagem R. 
   
-  Com o avanço da ciência de dados e da inteligência artificial, cresce a necessidade de ferramentas que não apenas construam modelos, mas também permitam interpretá-los com precisão — e é justamente aí que o R se destaca, graças à sua forte base estatística. Além disso, a integração com outras linguagens, como Python (por meio de pacotes como o reticulate)
+  Com o avanço da ciência de dados e da inteligência artificial, cresce a necessidade de ferramentas que não apenas construam modelos, mas também permitam interpretá-los com precisão e é justamente aí que o R se destaca, graças à sua forte base estatística. Além disso, a integração com outras linguagens, como Python (por meio de pacotes como o reticulate)
 
 7.3 - R em meu curriculo. 
   
-  Em termos de empregabilidade, dominar R pode abrir portas para cargos como cientista de dados, analista de dados, estatístico e pesquisador. Empresas valorizam profissionais que sabem transformar dados em decisões — e o R é uma das ferramentas mais eficientes para isso. Mais do que uma linguagem de programação, ele se consolidou como uma competência estratégica no mercado atual. 
+  Em termos de empregabilidade, dominar R pode abrir portas para cargos como cientista de dados, analista de dados, estatístico e pesquisador. Empresas valorizam profissionais que sabem transformar dados em decisões e o R é uma das ferramentas mais eficientes para isso. Mais do que uma linguagem de programação, ele se consolidou como uma competência estratégica no mercado atual. 
 
 
 ## Aprenda Quarto
