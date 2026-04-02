@@ -86,6 +86,38 @@ mean(x)
 
 5.3 O código acima cria um vetor numérico de tamanho 5 e calcula a sua média, demonstrando uma das funções básicas da linguagem R.
 
+## 🛠️ ESTRUTURAS E TIPOS DE DADOS
+
+6.1 Para programar em R, é fundamental entender como a linguagem organiza as
+informações. Os principais tipos de dados “atômicos” são:
+
+- Numeric: Números decimais (ex: 10.5);
+- Integer: Números inteiros (ex: 10L);
+- Logical: Valores booleanos (TRUE ou FALSE);
+- Character: Textos ou strings (ex: “Olá Mundo”);
+
+6.2 Além dos tipos simples, o R utiliza estruturas complexas para armazenar conjuntos
+de dados:
+
+- Vector: Sequência de elementos do mesmo tipo;
+- Matrix: Tabela bidimensional com elementos do mesmo tipo;
+- Data Frame: Tabela onde cada coluna pode ter um tipo diferente (mais usada em Ciência de
+Dados);
+- List: Coleção de objetos que podem ter diferentes tipos e tamanhos.
+
+```{r}
+
+library(leem)
+
+valores <- c(10,20,30,40,50)
+
+valores |>
+  new_leem(variable = 2) |>
+  tabfreq()
+
+hist(valores, main = "Distribuição dos valores", col = "lightblue")
+
+```
 
 
 ## Aprenda Quarto
@@ -93,3 +125,7 @@ mean(x)
 Acesse [Quarto](https://quarto.org/).
 
 ## 📖 Referências
+
+
+* [1] *The R Project for Statistical Computing*. Disponível em: <https://www.r-project.org/>.
+* [2] *RStudio Official site*. Disponível em: <https://posit.co/download/rstudio-desktop/>.
