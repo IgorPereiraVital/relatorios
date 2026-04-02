@@ -30,7 +30,7 @@ execute:
 
 A linguagem [R](https://www.r-project.org/) foi criada em 1993, por Ross Ihaka e Robert Gentleman na [University of Auckland](https://www.auckland.ac.nz/en.html).
 
-## ❓ POR QUAL MOTIVO A LINGUAGEM R FOI CRIADA?
+## ❓ POR QUAL MOTIVO A LINGUAGEM R FOI CRIADA?  
 
 2 O principal objetivo era criar uma linguagem para:
 
@@ -42,7 +42,7 @@ A linguagem [R](https://www.r-project.org/) foi criada em 1993, por Ross Ihaka e
 
 2.2 Logo o R surgiu como uma alternativa mais flexível e bastante importante que acompanhou as demandas científicas modernas.
 
-## POR QUE O R FICOU TÃO IMPORTANTE?
+## 🌐 POR QUE O R FICOU TÃO IMPORTANTE?
 
 3.1 Hoje em dia com o grande avanço da tecnologia e da inteligência artificial, a linguagem R está sendo muito usada para: 
 
@@ -53,7 +53,7 @@ A linguagem [R](https://www.r-project.org/) foi criada em 1993, por Ross Ihaka e
 3.2 A linguagem R conseguiu se adaptar de maneira rápida ao cenário atual graças às suas milhares de bibliotecas, bem como às suas capacidades de geração gráfica e análise.
 
 
-## Ambiente de trabalho
+## ☕️ Ambiente de trabalho
 
 4.1 A linguagem R é o sistema responsável por fazer os cálculos, manipular os dados e apresenta as bibliotecas.
 
@@ -86,7 +86,7 @@ mean(x)
 
 5.3 O código acima cria um vetor numérico de tamanho 5 e calcula a sua média, demonstrando uma das funções básicas da linguagem R.
 
-## 🛠️ ESTRUTURAS E TIPOS DE DADOS
+## 💼️ ESTRUTURAS E TIPOS DE DADOS
 
 6.1 Para programar em R, é fundamental entender como a linguagem organiza as
 informações. Os principais tipos de dados “atômicos” são:
@@ -118,6 +118,24 @@ valores |>
 hist(valores, main = "Distribuição dos valores", col = "lightblue")
 
 ```
+
+## 🏁 Conclusão
+
+7.0 - Onde usar o R? 
+  
+  O R ocupa um espaço relevante no mercado de trabalho, especialmente em áreas como ciência de dados, estatística, finanças, saúde e marketing. Empresas e instituições utilizam a linguagem para extrair valor de dados e apoiar decisões estratégicas. Organizações como o Google, o Facebook (atual Meta), e o IBM já utilizaram ou utilizam R em diferentes contextos analíticos. Além disso, instituições financeiras e órgãos de pesquisa — como o Banco Central do Brasil e o IBGE — empregam R para modelagem estatística, previsões econômicas e análise de grandes volumes de dados.
+
+7.1 - Porque o R? 
+  
+  Um dos grandes diferenciais do R está na sua capacidade de manipulação e visualização de dados. Pacotes como o tidyverse transformaram a forma como profissionais lidam com dados, tornando o processo mais intuitivo e produtivo. Isso é extremamente valorizado no mercado, onde a agilidade na análise e a clareza na comunicação de resultados são essenciais. Ferramentas como Shiny e R Markdown também permitem a criação de dashboards e relatórios interativos, habilidades cada vez mais exigidas por empresas que precisam comunicar insights de forma clara para diferentes públicos.
+
+7.2 - O futuro da linguagem R. 
+  
+  Com o avanço da ciência de dados e da inteligência artificial, cresce a necessidade de ferramentas que não apenas construam modelos, mas também permitam interpretá-los com precisão — e é justamente aí que o R se destaca, graças à sua forte base estatística. Além disso, a integração com outras linguagens, como Python (por meio de pacotes como o reticulate)
+
+7.3 - R em meu curriculo. 
+  
+  Em termos de empregabilidade, dominar R pode abrir portas para cargos como cientista de dados, analista de dados, estatístico e pesquisador. Empresas valorizam profissionais que sabem transformar dados em decisões — e o R é uma das ferramentas mais eficientes para isso. Mais do que uma linguagem de programação, ele se consolidou como uma competência estratégica no mercado atual. 
 
 
 ## Aprenda Quarto
