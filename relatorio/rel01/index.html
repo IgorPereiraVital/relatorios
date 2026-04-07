@@ -107,19 +107,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#análise-de-dados" id="toc-análise-de-dados" class="nav-link" data-scroll-target="#análise-de-dados"><span class="header-section-number">10.4</span> Análise de Dados</a></li>
   </ul></li>
   <li><a href="#considerações-finais" id="toc-considerações-finais" class="nav-link" data-scroll-target="#considerações-finais"><span class="header-section-number">11</span> 🧠 Considerações finais</a></li>
-  <li><a href="#aprenda-quarto" id="toc-aprenda-quarto" class="nav-link" data-scroll-target="#aprenda-quarto"><span class="header-section-number">12</span> Aprenda Quarto</a></li>
-  <li><a href="#referências" id="toc-referências" class="nav-link" data-scroll-target="#referências"><span class="header-section-number">13</span> 📖 Referências</a></li>
+  <li><a href="#referências" id="toc-referências" class="nav-link" data-scroll-target="#referências"><span class="header-section-number">12</span> 📖 Referências</a></li>
   </ul>
 </nav>
 </div>
 <main class="content" id="quarto-document-content">
 <div class="logos" style="display: flex; justify-content: center; align-items: center; height: 200px; gap: 20px;">
+
   <a href="https://ufsj.edu.br">
+
     <img src="imagens/ufsj.png" width="220px">
+
   </a>
+
   <a href="https://ufsj.edu.br/defim">
+
     <img src="imagens/defim.png" width="220px">
+
   </a>
+
 </div>
 
 <header id="title-block-header" class="quarto-title-block default">
@@ -142,7 +148,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Data de Publicação</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">01/04/2026, 22:33</p>
+      <p class="date">07/04/2026, 20:09</p>
     </div>
   </div>
   
@@ -240,9 +246,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Variabilidade Inerente</strong>: Mesmo sob condições controladas, a variabilidade nos resultados de lançamento é uma característica intrínseca do experimento, reforçando a necessidade de métodos estatísticos para sua compreensão.</li>
 <li><strong>Distribuição dos Dados</strong>: A análise da distribuição dos alcances (por exemplo, através de histogramas e boxplots) pode revelar se os dados seguem uma distribuição normal ou outra forma, o que é crucial para a escolha de testes estatísticos apropriados.</li>
 <li><strong>Impacto dos Fatores Controlados</strong>: Através de análises de variância (ANOVA) ou testes t, é possível determinar se as diferentes configurações dos fatores controlados (tensão, ângulo, apoio) têm um impacto estatisticamente significativo no alcance médio dos lançamentos.</li>
-<li><strong>Correlação e Regressão</strong>: Se variáveis adicionais forem coletadas, análises de correlação e regressão podem identificar relações entre essas variáveis e o alcance, permitindo a construção de modelos preditivos para o desempenho da catapulta.</li>
 <li><strong>Controle de Qualidade</strong>: O experimento serve como um excelente exemplo para ilustrar conceitos de controle estatístico de processo (CEP), onde gráficos de controle podem ser utilizados para monitorar a estabilidade do processo de lançamento ao longo do tempo.</li>
-<li><strong>Robustez do Experimento</strong>: A presença de valores atípicos, embora desafiadora, oferece uma oportunidade para discutir a robustez das medidas estatísticas e a importância da identificação e tratamento de <em>outliers</em>.</li>
 </ul>
 <p>Em suma, o experimento da catapulta não apenas demonstra os princípios fundamentais da estatística descritiva e inferencial, mas também serve como uma plataforma prática para explorar a complexidade da variabilidade em sistemas reais e a aplicação de ferramentas estatísticas para extrair conhecimento significativo dos dados.</p>
 </section>
@@ -255,10 +259,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol type="1">
 <li><strong>Importação e Organização dos Dados</strong>: Os dados de alcance dos lançamentos seriam importados para o ambiente R. O <code>leem</code> pode auxiliar na criação de objetos de dados estruturados para facilitar a análise.</li>
 <li><strong>Cálculo de Medidas Descritivas</strong>: Utilizar funções do <code>leem</code> para calcular rapidamente a média, mediana, desvio padrão, variância, quartis e outras medidas descritivas dos alcances. Isso forneceria um resumo quantitativo da performance da catapulta.</li>
-<li><strong>Visualização de Dados</strong>: O pacote <code>leem</code> permite a criação de gráficos estatísticos essenciais, como histogramas, boxplots e gráficos de dispersão. Essas visualizações são cruciais para entender a distribuição dos dados, identificar valores atípicos e observar padrões.
+<li><strong>Visualização de Dados</strong>: O pacote <code>leem</code> permite a criação de gráficos estatísticos essenciais, como histogramas, e gráficos de dispersão. Essas visualizações são cruciais para entender a distribuição dos dados, identificar valores atípicos e observar padrões.
 <ul>
 <li><strong>Histograma</strong>: Para visualizar a frequência dos diferentes alcances e a forma da distribuição.</li>
-<li><strong>Boxplot</strong>: Para identificar a mediana, quartis e a presença de <em>outliers</em> de forma clara.</li>
 </ul></li>
 <li><strong>Análise de Variabilidade</strong>: Explorar a variabilidade dos lançamentos, possivelmente comparando diferentes configurações (se houvesse mais de uma) ou analisando a consistência ao longo do tempo. O <code>leem</code> pode oferecer funções para testes de hipóteses simples ou análises de variância, se aplicável.</li>
 <li><strong>Simulações e Modelagem</strong>: Para um estudo mais avançado, o <code>leem</code> pode ser empregado em simulações para entender o comportamento probabilístico dos lançamentos ou para construir modelos simples que relacionem os fatores controlados com o alcance.</li>
@@ -336,7 +339,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>Variações na Execução</strong>: Pequenas diferenças na forma como o operador armava ou liberava a catapulta em cada lançamento podem introduzir variabilidade. A precisão humana é limitada e pode levar a pequenas inconsistências [4].</li>
 <li><strong>Fatores Ambientais</strong>: Correntes de ar, mesmo que sutis, podem afetar a trajetória do projétil. Embora o experimento tenha sido realizado em sala, microclimas ou movimentos de ar podem ter tido impacto [5].</li>
 <li><strong>Limitações dos Instrumentos</strong>: A elasticidade do elástico pode ter variado ligeiramente ao longo dos 22 lançamentos devido à fadiga do material. Além disso, a precisão da medição do alcance pode ter pequenas margens de erro [7].</li>
-<li><strong>Outlier</strong>: O valor de 326.0 cm é um outlier significativo. Sua ocorrência pode ser atribuída a um erro de medição, uma anomalia na liberação da catapulta, ou uma interação inesperada com o ambiente. A decisão de incluir ou excluir outliers da análise depende do contexto e do impacto que eles têm nas conclusões. Neste caso, ele destaca a imprevisibilidade pontual do sistema.</li>
 </ul>
 <p>A distribuição dos dados, embora com uma leve assimetria, não apresenta uma tendência clara de desvio para um lado específico, exceto pelo outlier. A interpretação desses dados reforça a necessidade de múltiplas repetições em experimentos para obter uma estimativa robusta da média e da variabilidade, e para identificar a presença de eventos incomuns.</p>
 </section>
@@ -391,12 +393,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Os principais aprendizados incluem a constatação de que, mesmo em condições aparentemente controladas, a variabilidade é uma característica intrínseca de processos físicos. A análise de medidas descritivas como média, mediana e desvio padrão, juntamente com a visualização gráfica por meio de histogramas e boxplots, permitiu uma interpretação aprofundada do comportamento dos dados. A identificação de um valor atípico ressaltou a importância de investigar eventos incomuns e suas possíveis causas, como erros de execução ou influências ambientais pontuais.</p>
 <p>A qualidade dos dados coletados foi satisfatória para os propósitos da análise, embora a presença do outlier indique a necessidade de rigor ainda maior na execução ou na padronização do equipamento. Para futuras melhorias no procedimento experimental, sugere-se a utilização de um mecanismo de lançamento mais automatizado para reduzir a variabilidade humana, a implementação de sensores mais precisos para medição do alcance e a realização do experimento em um ambiente mais controlado para minimizar a influência de fatores externos como o vento. Além disso, a coleta de um número maior de lançamentos poderia proporcionar uma base de dados mais robusta para análises mais avançadas, como testes de hipóteses sobre a normalidade da distribuição ou a comparação entre diferentes configurações da catapulta.</p>
 </section>
-<section id="aprenda-quarto" class="level2" data-number="12">
-<h2 data-number="12" class="anchored" data-anchor-id="aprenda-quarto"><span class="header-section-number">12</span> Aprenda Quarto</h2>
-<p>Acesse <a href="https://quarto.org/">Quarto</a>.</p>
-</section>
-<section id="referências" class="level2" data-number="13">
-<h2 data-number="13" class="anchored" data-anchor-id="referências"><span class="header-section-number">13</span> 📖 Referências</h2>
+<section id="referências" class="level2" data-number="12">
+<h2 data-number="12" class="anchored" data-anchor-id="referências"><span class="header-section-number">12</span> 📖 Referências</h2>
 <ul>
 <li>[1] Bendeivide. <strong>Estatística e Probabilidade (UFSJ)</strong>. Disponível em: <a href="http://bendeivide.github.io/courses/epaec/" class="uri">http://bendeivide.github.io/courses/epaec/</a>.</li>
 <li>[2] Bendeivide. <strong>Modelo de Relatório</strong>. Disponível em: <a href="http://bendeivide.github.io/courses/epaec/modrel/" class="uri">http://bendeivide.github.io/courses/epaec/modrel/</a>.</li>

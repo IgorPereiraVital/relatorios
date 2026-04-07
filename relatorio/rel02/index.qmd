@@ -138,10 +138,6 @@ hist(valores, main = "Distribuição dos valores", col = "lightblue")
   Em termos de empregabilidade, dominar R pode abrir portas para cargos como cientista de dados, analista de dados, estatístico e pesquisador. Empresas valorizam profissionais que sabem transformar dados em decisões e o R é uma das ferramentas mais eficientes para isso. Mais do que uma linguagem de programação, ele se consolidou como uma competência estratégica no mercado atual. 
 
 
-## Aprenda Quarto
-
-Acesse [Quarto](https://quarto.org/).
-
 ## 📖 Referências
 
 

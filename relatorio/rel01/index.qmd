@@ -113,9 +113,8 @@ Com base nos dados coletados e nas análises estatísticas, diversas conclusões
 *   **Variabilidade Inerente**: Mesmo sob condições controladas, a variabilidade nos resultados de lançamento é uma característica intrínseca do experimento, reforçando a necessidade de métodos estatísticos para sua compreensão.
 *   **Distribuição dos Dados**: A análise da distribuição dos alcances (por exemplo, através de histogramas e boxplots) pode revelar se os dados seguem uma distribuição normal ou outra forma, o que é crucial para a escolha de testes estatísticos apropriados.
 *   **Impacto dos Fatores Controlados**: Através de análises de variância (ANOVA) ou testes t, é possível determinar se as diferentes configurações dos fatores controlados (tensão, ângulo, apoio) têm um impacto estatisticamente significativo no alcance médio dos lançamentos.
-*   **Correlação e Regressão**: Se variáveis adicionais forem coletadas, análises de correlação e regressão podem identificar relações entre essas variáveis e o alcance, permitindo a construção de modelos preditivos para o desempenho da catapulta.
 *   **Controle de Qualidade**: O experimento serve como um excelente exemplo para ilustrar conceitos de controle estatístico de processo (CEP), onde gráficos de controle podem ser utilizados para monitorar a estabilidade do processo de lançamento ao longo do tempo.
-*   **Robustez do Experimento**: A presença de valores atípicos, embora desafiadora, oferece uma oportunidade para discutir a robustez das medidas estatísticas e a importância da identificação e tratamento de *outliers*.
+
 
 Em suma, o experimento da catapulta não apenas demonstra os princípios fundamentais da estatística descritiva e inferencial, mas também serve como uma plataforma prática para explorar a complexidade da variabilidade em sistemas reais e a aplicação de ferramentas estatísticas para extrair conhecimento significativo dos dados.
 
@@ -129,9 +128,8 @@ Com os dados brutos do experimento agora disponíveis, a aplicação do `leem` p
 
 1.  **Importação e Organização dos Dados**: Os dados de alcance dos lançamentos seriam importados para o ambiente R. O `leem` pode auxiliar na criação de objetos de dados estruturados para facilitar a análise.
 2.  **Cálculo de Medidas Descritivas**: Utilizar funções do `leem` para calcular rapidamente a média, mediana, desvio padrão, variância, quartis e outras medidas descritivas dos alcances. Isso forneceria um resumo quantitativo da performance da catapulta.
-3.  **Visualização de Dados**: O pacote `leem` permite a criação de gráficos estatísticos essenciais, como histogramas, boxplots e gráficos de dispersão. Essas visualizações são cruciais para entender a distribuição dos dados, identificar valores atípicos e observar padrões.
+3.  **Visualização de Dados**: O pacote `leem` permite a criação de gráficos estatísticos essenciais, como histogramas, e gráficos de dispersão. Essas visualizações são cruciais para entender a distribuição dos dados, identificar valores atípicos e observar padrões.
     *   **Histograma**: Para visualizar a frequência dos diferentes alcances e a forma da distribuição.
-    *   **Boxplot**: Para identificar a mediana, quartis e a presença de *outliers* de forma clara.
 4.  **Análise de Variabilidade**: Explorar a variabilidade dos lançamentos, possivelmente comparando diferentes configurações (se houvesse mais de uma) ou analisando a consistência ao longo do tempo. O `leem` pode oferecer funções para testes de hipóteses simples ou análises de variância, se aplicável.
 5.  **Simulações e Modelagem**: Para um estudo mais avançado, o `leem` pode ser empregado em simulações para entender o comportamento probabilístico dos lançamentos ou para construir modelos simples que relacionem os fatores controlados com o alcance.
 
@@ -171,7 +169,6 @@ Os fatores que podem ter influenciado esses resultados e as possíveis fontes de
 *   **Variações na Execução**: Pequenas diferenças na forma como o operador armava ou liberava a catapulta em cada lançamento podem introduzir variabilidade. A precisão humana é limitada e pode levar a pequenas inconsistências [4].
 *   **Fatores Ambientais**: Correntes de ar, mesmo que sutis, podem afetar a trajetória do projétil. Embora o experimento tenha sido realizado em sala, microclimas ou movimentos de ar podem ter tido impacto [5].
 *   **Limitações dos Instrumentos**: A elasticidade do elástico pode ter variado ligeiramente ao longo dos 22 lançamentos devido à fadiga do material. Além disso, a precisão da medição do alcance pode ter pequenas margens de erro [7].
-*   **Outlier**: O valor de 326.0 cm é um outlier significativo. Sua ocorrência pode ser atribuída a um erro de medição, uma anomalia na liberação da catapulta, ou uma interação inesperada com o ambiente. A decisão de incluir ou excluir outliers da análise depende do contexto e do impacto que eles têm nas conclusões. Neste caso, ele destaca a imprevisibilidade pontual do sistema.
 
 A distribuição dos dados, embora com uma leve assimetria, não apresenta uma tendência clara de desvio para um lado específico, exceto pelo outlier. A interpretação desses dados reforça a necessidade de múltiplas repetições em experimentos para obter uma estimativa robusta da média e da variabilidade, e para identificar a presença de eventos incomuns.
 
@@ -229,9 +226,6 @@ Os principais aprendizados incluem a constatação de que, mesmo em condições 
 
 A qualidade dos dados coletados foi satisfatória para os propósitos da análise, embora a presença do outlier indique a necessidade de rigor ainda maior na execução ou na padronização do equipamento. Para futuras melhorias no procedimento experimental, sugere-se a utilização de um mecanismo de lançamento mais automatizado para reduzir a variabilidade humana, a implementação de sensores mais precisos para medição do alcance e a realização do experimento em um ambiente mais controlado para minimizar a influência de fatores externos como o vento. Além disso, a coleta de um número maior de lançamentos poderia proporcionar uma base de dados mais robusta para análises mais avançadas, como testes de hipóteses sobre a normalidade da distribuição ou a comparação entre diferentes configurações da catapulta.
 
-## Aprenda Quarto
-
-Acesse [Quarto](https://quarto.org/).
 
 ## 📖 Referências
 
