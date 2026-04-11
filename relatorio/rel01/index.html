@@ -144,7 +144,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Data de Publicação</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">10/04/2026, 22:29</p>
+      <p class="date">10/04/2026, 22:44</p>
     </div>
   </div>
   
@@ -238,17 +238,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="exemplos-de-aplicação-do-leem" class="level3" data-number="9.1">
 <h3 data-number="9.1" class="anchored" data-anchor-id="exemplos-de-aplicação-do-leem"><span class="header-section-number">9.1</span> Exemplos de Aplicação do <code>leem</code></h3>
 <p>Com os dados brutos do experimento agora disponíveis, a aplicação do <code>leem</code> pode seguir os seguintes passos gerais:</p>
-<ol type="1">
-<li><strong>Importação e Organização dos Dados</strong>: Os dados de alcance dos lançamentos seriam importados para o ambiente R. O <code>leem</code> pode auxiliar na criação de objetos de dados estruturados para facilitar a análise.</li>
-<li><strong>Cálculo de Medidas Descritivas</strong>: Utilizar funções do <code>leem</code> para calcular rapidamente a média, mediana, desvio padrão, variância, quartis e outras medidas descritivas dos alcances. Isso forneceria um resumo quantitativo da performance da catapulta.</li>
-<li><strong>Visualização de Dados</strong>: O pacote <code>leem</code> permite a criação de gráficos estatísticos essenciais, como histogramas, e gráficos de dispersão. Essas visualizações são cruciais para entender a distribuição dos dados, identificar valores atípicos e observar padrões.
+<p>1.<strong>Organizar os Dados</strong> (Importação): Primeiro, precisamos colocar os números dos alcances da catapulta (aqueles 22 lançamentos) dentro do R. O leem tem funções que nos ajudam a fazer isso de um jeito simples, transformando a lista de números em algo que o programa entende e pode usar para calcular.</p>
+<p>2.<strong>Calcular as Medidas Principais (Estatísticas Descritivas)</strong>: Em vez de calcular a média, mediana e desvio padrão na mão, o leem pode fazer isso para nós com um comando simples. Ele nos daria rapidamente a média (o alcance típico), a mediana (o valor do meio) e o desvio padrão (o quanto os lançamentos variam) dos nossos 22 resultados.</p>
+<p>3.<strong>Análise de Variabilidade</strong>: Explorar a variabilidade dos lançamentos, possivelmente comparando diferentes configurações (se houvesse mais de uma) ou analisando a consistência ao longo do tempo. O <code>leem</code> pode oferecer funções para testes de hipóteses simples ou análises de variância, se aplicável.</p>
+<p>4.<strong>Ver os Dados (Visualização)</strong>: Uma das coisas mais legais que o leem pode fazer é transformar os números em gráficos. Para o experimento da catapulta, ele nos ajudaria a criar:</p>
 <ul>
-<li><strong>Histograma</strong>: Para visualizar a frequência dos diferentes alcances e a forma da distribuição.</li>
-</ul></li>
-<li><strong>Análise de Variabilidade</strong>: Explorar a variabilidade dos lançamentos, possivelmente comparando diferentes configurações (se houvesse mais de uma) ou analisando a consistência ao longo do tempo. O <code>leem</code> pode oferecer funções para testes de hipóteses simples ou análises de variância, se aplicável.</li>
-<li><strong>Simulações e Modelagem</strong>: Para um estudo mais avançado, o <code>leem</code> pode ser empregado em simulações para entender o comportamento probabilístico dos lançamentos ou para construir modelos simples que relacionem os fatores controlados com o alcance.</li>
-</ol>
-<p>O uso do <code>leem</code> no contexto deste experimento reforça a importância da computação estatística como uma ferramenta poderosa para a análise de dados reais, permitindo que os estudantes apliquem conceitos teóricos em um cenário prático e obtenham <em>insights</em> significativos sobre a variabilidade e o desempenho da catapulta.</p>
+<li><p><strong>Histograma</strong>: Um tipo de gráfico que mostra quantas vezes cada faixa de alcance apareceu. Assim, podemos ver rapidamente se os lançamentos se concentram em um lugar só ou se estão bem espalhados, e se tem algum lançamento muito diferente dos outros.</p></li>
+<li><p><strong>Gráfico de Dispersão (se tivéssemos mais variáveis)</strong>: Se tivéssemos medido, por exemplo, a força do elástico em cada lançamento, o leem poderia nos ajudar a fazer um gráfico para ver se existe alguma relação entre a força e o alcance. Isso nos ajudaria a entender se um afeta o outro.</p></li>
+</ul>
+<p>O leem simplifica a vida de quem está aprendendo estatística, permitindo que a gente se concentre em entender o que os números e gráficos significam para o nosso experimento da catapulta, sem ter que se preocupar tanto com os cálculos complicados ou como fazer o gráfico do zero.</p>
 </section>
 <section id="principais-resultados-numéricos" class="level3" data-number="9.2">
 <h3 data-number="9.2" class="anchored" data-anchor-id="principais-resultados-numéricos"><span class="header-section-number">9.2</span> Principais Resultados Numéricos</h3>
