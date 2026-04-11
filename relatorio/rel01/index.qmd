@@ -39,18 +39,6 @@ Este relatório detalha um experimento prático realizado no âmbito da discipli
 
 O experimento da catapulta serve como uma base prática para a coleta de dados reais e a aplicação de técnicas de análise estatística. A catapulta utilizada no experimento permite o controle de diversos fatores que influenciam o lançamento, como a tensão do elástico, o ângulo de disparo e o apoio estrutural.
 
-### Fatores Controlados
-
-Durante o experimento, os seguintes fatores foram controlados para garantir a consistência e permitir a análise da variabilidade:
-
-*   **Tensão do Elástico (Posição A)**: Controla a força e a velocidade inicial do projétil.
-*   **Ângulo de Disparo (Posição B)**: Define o tempo de voo e o alcance horizontal do projétil.
-*   **Apoio Estrutural (Posição O)**: Garante a estabilidade e a geometria do movimento da catapulta.
-
-## Configuração Utilizada
-
-![Catapulta utilizada em sala](catapulta.png){width=40%}
-
 Para a realização dos lançamentos, uma configuração específica foi mantida constante na catapulta:
 
 *   **Posição O-**: Nível 2
@@ -58,9 +46,32 @@ Para a realização dos lançamentos, uma configuração específica foi mantida
 *   **Posição B+**: 90°
 *   **Posição A-**: Nível 4
 
+
+## Funcionamento Mecânico da Catapulta e Configuração Utilizada
+
+Uma catapulta opera convertendo energia potencial armazenada em energia cinética, que é então transferida para um projétil. No contexto do experimento, a catapulta utiliza um braço de lançamento que é puxado para trás contra uma força de resistência de um elástico. Ao ser liberado, o braço acelera rapidamente, impulsionando o projétil. Os principais componentes e seu funcionamento são:
+
+• Braço de Lançamento (Posição A): parte móvel que segura e impulsiona o projétil. Sua trajetória e velocidade final são críticas para o alcance.
+
+• Mecanismo de Tensão (Elástico): Armazena a energia potencial. A força aplicada pelo elástico determina a aceleração inicial do braço e, consequentemente, a velocidade do projétil.
+
+• Ponto de Apoio/Pivô (Posição O): O eixo em torno do qual o braço de lançamento gira. A estabilidade e a posição deste ponto são essenciais para a consistência do movimento.
+
+• Base Estrutural: Fornece a estabilidade necessária para o sistema, garantindo que a energia seja direcionada para o lançamento e não para o movimento indesejado da própria catapulta.
+
+recapitulando: 
+
+*   **Tensão do Elástico (Posição A)**: Controla a força e a velocidade inicial do projétil.
+*   **Ângulo de Disparo (Posição B)**: Define o tempo de voo e o alcance horizontal do projétil.
+*   **Apoio Estrutural (Posição O)**: Garante a estabilidade e a geometria do movimento da catapulta.
+
+
+
+![Catapulta utilizada em sala](catapulta.png){width=40%}
+
 ## Coleta de Dados
 
-Foram realizados 22 lançamentos sob as configurações fixas mencionadas. Apesar da manutenção das mesmas configurações, foram obtidas diferentes distâncias de lançamento. Esta variabilidade observada é um ponto central para a análise estatística, pois permite identificar e discutir os fatores que contribuem para a dispersão dos resultados.
+Foram realizados 22 lançamentos sob as configurações fixas mencionadas. Foram selecionados membros do curso para dividir as tarefas, a fim de garantir a qualidade do lançamento, da coleta e do registro dos dados apresentados. Mais especificamente, duas pessoas ficaram responsáveis pela etapa de lançamento, duas pela etapa de coleta, uma pelo registro dos dados coletados em planilha e uma pelo registro geral da atividade, realizado de forma manuscrita. Apesar da manutenção das mesmas configurações, foram obtidas diferentes distâncias de lançamento. Esta variabilidade observada é um ponto central para a análise estatística, pois permite identificar e discutir os fatores que contribuem para a dispersão dos resultados.
 
 ### Ordenação de Dados (Rol)
 
@@ -82,41 +93,27 @@ A observação de resultados não idênticos, mesmo com configurações fixas, r
 
 ## Medidas Estatísticas
 
-Para a análise dos dados coletados, as seguintes medidas estatísticas foram calculadas:
+Para a análise dos dados coletados, as seguintes medidas estatísticas foram calculadas, (considerando o estágio de conhecimento no dia da coleta desses dados):
 
 *   **Média**: 288.96 cm. Representa o ponto central em torno do qual os dados se concentram.
 *   **Mediana**: 286.20 cm. Indica o valor central dos dados, sendo menos sensível a valores extremos.
-*   **Desvio Padrão**: 11.07 cm. Mede a dispersão ou variação dos dados em relação à média.
 *   **Mínimo**: 276.40 cm.
 *   **Máximo**: 326.00 cm.
-*   **Amplitude**: 49.60 cm.
 
-Essas medidas são cruciais para compreender a distribuição dos lançamentos e facilitar as análises estatísticas subsequentes.
-
-## Identificação de Valores Atípicos
-
-Durante o experimento, a ocorrência de alguns valores de lançamento significativamente maiores ou menores que os demais foi observada. Através da análise de quartis e do Intervalo Interquartil (IQR), foi identificado um valor atípico: **326.0 cm**. Este valor excede o limite superior calculado (Q3 + 1.5 * IQR).
-
-Esse valor atípico pode ter ocorrido por:
-
-*   Erros na execução do lançamento da catapulta.
-*   Variações na deformação do elástico, resultando em maior ou menor força aplicada.
-*   Variações ambientais pontuais que afetaram um lançamento específico.
-
-A identificação e análise desses valores atípicos são importantes para entender a robustez do experimento e a influência de fatores não previstos.
-
+Essas medidas são cruciais para compreender a distribuição dos lançamentos e facilitar as análises estatísticas básicas.
 
 ## Conclusões Estatísticas
 
-Com base nos dados coletados e nas análises estatísticas, diversas conclusões podem ser inferidas sobre o experimento da catapulta:
+Com base nos dados coletados e nas medidas estatísticas calculadas para o experimento da catapulta, podemos tirar algumas conclusões fundamentais, utilizando apenas conceitos básicos de estatística descritiva:
 
-*   **Variabilidade Inerente**: Mesmo sob condições controladas, a variabilidade nos resultados de lançamento é uma característica intrínseca do experimento, reforçando a necessidade de métodos estatísticos para sua compreensão.
-*   **Distribuição dos Dados**: A análise da distribuição dos alcances (por exemplo, através de histogramas e boxplots) pode revelar se os dados seguem uma distribuição normal ou outra forma, o que é crucial para a escolha de testes estatísticos apropriados.
-*   **Impacto dos Fatores Controlados**: Através de análises de variância (ANOVA) ou testes t, é possível determinar se as diferentes configurações dos fatores controlados (tensão, ângulo, apoio) têm um impacto estatisticamente significativo no alcance médio dos lançamentos.
-*   **Controle de Qualidade**: O experimento serve como um excelente exemplo para ilustrar conceitos de controle estatístico de processo (CEP), onde gráficos de controle podem ser utilizados para monitorar a estabilidade do processo de lançamento ao longo do tempo.
+• Variabilidade Observada: Mesmo mantendo as configurações da catapulta fixas, observamos que os alcances dos lançamentos não foram idênticos. Isso demonstra a variabilidade inerente em qualquer processo real, mesmo sob condições controladas. A estatística nos ajuda a quantificar e entender essa variabilidade, em vez de esperar resultados perfeitos e idênticos.
 
+• Medidas de Tendência Central: A média (288.96 cm) e a mediana (286.20 cm) nos dão uma ideia do valor
+central dos lançamentos. A proximidade entre a média e a mediana sugere que os dados não estão excessivamente distorcidos por valores extremos, embora a mediana seja mais robusta a eles.
 
-Em suma, o experimento da catapulta não apenas demonstra os princípios fundamentais da estatística descritiva e inferencial, mas também serve como uma plataforma prática para explorar a complexidade da variabilidade em sistemas reais e a aplicação de ferramentas estatísticas para extrair conhecimento significativo dos dados.
+• Amplitude dos Dados: A amplitude (49.60 cm), que é a diferença entre o valor máximo (326.00 cm) e o mínimo (276.40 cm), nos mostra a extensão total dos resultados obtidos. Isso nos dá uma ideia da faixa de valores que os lançamentos podem atingir sob as condições do experimento.
+
+• Identificação de Valores Atípicos: A análise nos permitiu identificar um valor atípico (326.0 cm). Este é um lançamento que se destaca significativamente dos demais. Em estatística básica, a identificação de valores atípicos é importante porque eles podem indicar eventos incomuns, erros de medição ou simplesmente variações extremas que merecem investigação. No contexto da catapulta, um valor atípico pode ter sido causado por uma execução ligeiramente diferente ou um fator externo momentâneo.
 
 ## Aplicação do Pacote `leem` (R) na Análise de Dados
 
@@ -135,8 +132,6 @@ Com os dados brutos do experimento agora disponíveis, a aplicação do `leem` p
 
 O uso do `leem` no contexto deste experimento reforça a importância da computação estatística como uma ferramenta poderosa para a análise de dados reais, permitindo que os estudantes apliquem conceitos teóricos em um cenário prático e obtenham *insights* significativos sobre a variabilidade e o desempenho da catapulta.
 
-
-
 ### Principais Resultados Numéricos
 
 A tabela a seguir resume as principais medidas estatísticas calculadas para os alcances dos lançamentos:
@@ -145,20 +140,11 @@ A tabela a seguir resume as principais medidas estatísticas calculadas para os 
 | :----------------- | :--------- |
 | Média              | 288.96     |
 | Mediana            | 286.20     |
-| Desvio Padrão      | 11.07      |
-| Variância          | 122.57     |
 | Mínimo             | 276.40     |
 | Máximo             | 326.00     |
 | Amplitude          | 49.60      |
-| Primeiro Quartil (Q1) | 281.73     |
-| Terceiro Quartil (Q3) | 294.60     |
-| Intervalo Interquartil (IQR) | 12.88      |
-| Limite Superior para Outliers | 313.91     |
-| Coeficiente de Variação (CV) | 3.83%      |
 
-A **média** de 288.96 cm indica o valor central dos alcances, enquanto a **mediana** de 286.20 cm, ligeiramente menor, sugere uma possível assimetria à direita na distribuição dos dados, influenciada por valores mais altos. O **desvio padrão** de 11.07 cm e o **coeficiente de variação** de 3.83% indicam uma variabilidade relativamente baixa, mas presente, nos lançamentos, o que é esperado em experimentos físicos mesmo sob condições controladas.
-
-
+A **média** de 288.96 cm indica o valor central dos alcances, enquanto a **mediana** de 286.20 cm, ligeiramente menor, sugere uma possível assimetria à direita na distribuição dos dados, influenciada por valores mais altos.
 
 ### Discussão dos Resultados
 
@@ -192,30 +178,6 @@ desvio_padrao_r <- sd(distancia)
 # Mínimo e Máximo
 minimo_r <- min(distancia)
 maximo_r <- max(distancia)
-
-# Quartis
-quartis_r <- quantile(distancia, probs = c(0.25, 0.75))
-q1_r <- quartis_r[1]
-q3_r <- quartis_r[2]
-
-# Imprimir os resultados (opcional, para verificação)
-cat("\n--- Estatística Descritiva (R) ---\n")
-cat(sprintf("Média: %.2f\n", media_r))
-cat(sprintf("Mediana: %.2f\n", mediana_r))
-cat(sprintf("Desvio Padrão: %.2f\n", desvio_padrao_r))
-cat(sprintf("Mínimo: %.2f\n", minimo_r))
-cat(sprintf("Máximo: %.2f\n", maximo_r))
-cat(sprintf("Q1: %.2f\n", q1_r))
-cat(sprintf("Q3: %.2f\n", q3_r))
-
-# Geração de gráficos em R (exemplo para Quarto)
-# Histograma
-hist(distancia, main = "Distribuição dos Alcances da Catapulta",
-     xlab = "Alcance (cm)", ylab = "Frequência", col = "skyblue", border = "white")
-
-# Boxplot
-boxplot(distancia, main = "Boxplot dos Alcances",
-        ylab = "Alcance (cm)", col = "lightgreen")
 ```
 
 ## 🧠 Considerações finais
