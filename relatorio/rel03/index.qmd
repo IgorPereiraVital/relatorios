@@ -1,7 +1,7 @@
 ---
 # Só mude aqui!!!!
-author: "Nome do Aluno"
-title: "Relatório de Aula Prática 03"
+author: "Igor e Lucas"
+title: "Relatório de Aula Prática 04"
 bibliography: referencias.bib
 # A partir daqui nao faca alteracoes!!!!!
 link-citations: true
@@ -14,12 +14,14 @@ lang: pt-BR
 format:
   html:
     toc: true
+    toc-depth: 3
+    toc-location: right
+    toc-expand: true
+    smooth-scroll: true
     number-sections: true
-    theme: bootstrap
-    #css: styles.css
-    code-fold: true
-    code-tools: true
-execute:
+    theme: cosmo
+
+execute: 
   echo: true
   warning: false
   message: false
@@ -28,99 +30,60 @@ execute:
 
 ## 📌 Introdução
 
-Descreva o contexto da prática e sua importância.
-
-> Exemplo: análise da variabilidade em experimentos físicos utilizando uma catapulta.
+Este relatório representa a análise estatística do experimento da catapulta realizado em sala de aula. O objetivo foi coletar e descrever informações dos dados de arremesso para compreender as variabilidades e os comportamentos de um sistema físico sob condições não controladas.
 
 
+## 📝 Metodologia
 
-## 🎯 Objetivos
+### - Organização da Equipe e Divisão de Tarefas
 
-### Objetivo geral
+A turma foi dividia em dois grandes grupos. Para garantir a variação na coleta dos **40 resultados**, o grupo deste relatório subdividiu-se nas seguintes funções:
 
-Descrever o objetivo principal da prática.
+* **Operadores da Catapulta:** Responsáveis pelo lançamento e pela estabilização da base do instrumento, visando reduzir a movimentação da catapulta. (Marcos e Maria Eduarda)
+* **Equipe de Metrologia:** Responsáveis pelas medições das distâncias de arremesso a partir do local dos lançamentos. (Igor e Lucas).
+* **Relatoria e Registro:** Responsáveis pela tabulação dos dados brutos e pelo registro fotográfico das configurações dos instrumentos. (João Pedro e Wadmilson)
 
-### Objetivos específicos
 
-- Coletar dados experimentais  
-- Aplicar estatística descritiva  
-- Construir gráficos  
-- Interpretar resultados  
+### - Configurações usadas na catapulta
 
----
+O experimento utilizou as seguintes configurações:
 
-## 📚  Fundamentação Teórica
+* **A+:** Posição 2 - Define a pré-tensão do elástico.
+* **A-:** Posição 1 - Ponto de ancoragem.
+* **O-:** Posição 3 - Define o ângulo de saída do projétil.
+* **B+:** Posição 7 - Define a alavanca de força no braço móvel.
 
-Apresente os conceitos principais:
+![Imagem das configurações usadas em aula.](Fotos.png){width=50%}
 
-- Média
-- Variância
-- Desvio padrão
-- Amostragem
+### - Coleta  
 
-$$
-\bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i
-$$
+Foram realizado 40 arremessos. As medidas foram feitas a partir de uma distância de 2,5m da catapulta. O cálculo dessa distância foi utilizando os pisos como referência.
 
----
+![Maneira como calculamos a distância de 2,5m.](Distância.png){width=50%}
 
-## ⚙️ Metodologia
+### - Ajuste de resultados
 
-::: {.callout-note}
-Descreva como o experimento foi realizado.
-:::
+Para se obter a distância real, aplicamos uma correção de 250cm a cada observação coletada, compensando o deslocamento incial da base da catapulta e o ponto zero da trena.
 
-- Materiais utilizados  
-- Procedimento  
-- Número de repetições  
 
----
+**Exemplos práticos utilizando uns dos valores encontrados:**
 
-## 🔍 Resultados e Discussão
 
-Apresente e interprete os resultados obtidos a partir dos dados coletados.
+$$x_i = d_i + 250$$
 
-- Descreva os principais resultados numéricos (média, variabilidade, etc.).
-- Comente o comportamento dos dados observados nos gráficos.
-- Indique se há presença de valores discrepantes (outliers).
-- Avalie se os dados apresentam simetria ou tendência.
+* **Para o 1ª resultado ($d_1 = 96,0$ cm):**
+    $$x_1 = 96,0 + 250 = 346,0 \text{ cm} \text{ (Resultado Real)}$$
+    
+    
+    
+## 📊 Desenvolvimento analítico
 
-Em seguida, discuta os resultados à luz dos conceitos teóricos:
+Apresentação dos dados fundamentais coletados durante o experimento antes de utilzarmos no R: 
 
-- Os resultados estão de acordo com o esperado?
-- Há grande variabilidade? O que isso significa no contexto do experimento?
-- Quais fatores podem ter influenciado os resultados?
-- Existem possíveis fontes de erro experimental?
 
-Procure não apenas descrever, mas **interpretar os dados**.
+### - Organização dos dados em rol
 
-### 💬 Exemplo de como citar uma referência bibliográfica
+Primeiro, organizamos os 40 valores ajustados em ordem crescente (centímetros):
 
-Depois de inserido as informaçõe no arquivo **referencias.bib**, use:
+257.9, 275.0, 293.5, 302.5, 317.0, 318.0, 320.0, 323.0, 324.0, 325.0, 328.0, 329.0, 330.0, 331.0, 331.0, 332.5, 332.5, 333.0, 334.0, 335.0, 336.5, 336.5, 338.0, 339.0, 339.0, 339.0, 339.0, 340.0, 341.0, 341.0, 341.0, 346.0, 347.5, 350.0, 352.0, 357.0, 359.0, 365.0, 368.5, 369.0.
 
-- Segundo @Rbasico2022
-- Tudo é um objeto em R [@Rbasico2022]
-
-### 📊  Análise de Dados
-
-```{r}
-distancia <- c(10.2, 9.8, 10.5, 10.1, 9.9, 10.3)
-distancia
-```
-
-## 🧠 Considerações finais
-
-Apresente uma síntese dos principais pontos observados no experimento.
-
-- Retome o objetivo da prática e indique se ele foi alcançado.
-- Destaque os principais aprendizados obtidos.
-- Comente brevemente sobre a qualidade dos dados coletados.
-- Sugira possíveis melhorias no procedimento experimental.
-
-Evite repetir apenas os resultados; foque nas **conclusões e reflexões** sobre a prática realizada.
-
-## Aprenda Quarto
-
-Acesse [Quarto](https://quarto.org/).
-
-## 📖 Referências
