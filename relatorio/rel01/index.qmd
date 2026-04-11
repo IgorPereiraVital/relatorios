@@ -123,14 +123,20 @@ Para a análise estatística dos dados coletados no experimento da catapulta, o 
 
 Com os dados brutos do experimento agora disponíveis, a aplicação do `leem` pode seguir os seguintes passos gerais:
 
-1.  **Importação e Organização dos Dados**: Os dados de alcance dos lançamentos seriam importados para o ambiente R. O `leem` pode auxiliar na criação de objetos de dados estruturados para facilitar a análise.
-2.  **Cálculo de Medidas Descritivas**: Utilizar funções do `leem` para calcular rapidamente a média, mediana, desvio padrão, variância, quartis e outras medidas descritivas dos alcances. Isso forneceria um resumo quantitativo da performance da catapulta.
-3.  **Visualização de Dados**: O pacote `leem` permite a criação de gráficos estatísticos essenciais, como histogramas, e gráficos de dispersão. Essas visualizações são cruciais para entender a distribuição dos dados, identificar valores atípicos e observar padrões.
-    *   **Histograma**: Para visualizar a frequência dos diferentes alcances e a forma da distribuição.
-4.  **Análise de Variabilidade**: Explorar a variabilidade dos lançamentos, possivelmente comparando diferentes configurações (se houvesse mais de uma) ou analisando a consistência ao longo do tempo. O `leem` pode oferecer funções para testes de hipóteses simples ou análises de variância, se aplicável.
-5.  **Simulações e Modelagem**: Para um estudo mais avançado, o `leem` pode ser empregado em simulações para entender o comportamento probabilístico dos lançamentos ou para construir modelos simples que relacionem os fatores controlados com o alcance.
+1.**Organizar os Dados** (Importação): Primeiro, precisamos colocar os números dos alcances da catapulta (aqueles 22 lançamentos) dentro do R. O leem tem funções que nos ajudam a fazer isso de um jeito simples, transformando a lista de números em algo que o programa entende e pode usar para calcular.
 
-O uso do `leem` no contexto deste experimento reforça a importância da computação estatística como uma ferramenta poderosa para a análise de dados reais, permitindo que os estudantes apliquem conceitos teóricos em um cenário prático e obtenham *insights* significativos sobre a variabilidade e o desempenho da catapulta.
+2.**Calcular as Medidas Principais (Estatísticas Descritivas)**: Em vez de calcular a média, mediana e desvio padrão na mão, o leem pode fazer isso para nós com um comando simples. Ele nos daria rapidamente a média (o alcance típico), a mediana (o valor do meio) e o desvio padrão (o quanto os lançamentos variam) dos nossos 22 resultados.
+
+3.**Análise de Variabilidade**: Explorar a variabilidade dos lançamentos, possivelmente comparando diferentes configurações (se houvesse mais de uma) ou analisando a consistência ao longo do tempo. O `leem` pode oferecer funções para testes de hipóteses simples ou análises de variância, se aplicável.
+
+4.**Ver os Dados (Visualização)**: Uma das coisas mais legais que o leem pode fazer é transformar os números em gráficos. Para o experimento da catapulta, ele nos ajudaria a criar:
+
+* **Histograma**: Um tipo de gráfico que mostra quantas vezes cada faixa de alcance apareceu. Assim, podemos ver rapidamente se os lançamentos se concentram em um lugar só ou se estão bem espalhados, e se tem algum lançamento muito diferente dos outros.
+
+* **Gráfico de Dispersão (se tivéssemos mais variáveis)**: Se tivéssemos medido, por exemplo, a força do elástico em cada lançamento, o leem poderia nos ajudar a fazer um gráfico para ver se existe alguma relação entre a força e o alcance. Isso nos ajudaria a entender se um afeta o outro.
+
+
+O leem simplifica a vida de quem está aprendendo estatística, permitindo que a gente se concentre em entender o que os números e gráficos significam para o nosso experimento da catapulta, sem ter que se preocupar tanto com os cálculos complicados ou como fazer o gráfico do zero.
 
 ### Principais Resultados Numéricos
 
