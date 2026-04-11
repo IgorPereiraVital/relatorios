@@ -35,7 +35,7 @@ execute:
 
 Este relatório detalha um experimento prático realizado no âmbito da disciplina de Estatística e Probabilidade da UFSJ, com foco na análise de dados coletados a partir de lançamentos de uma catapulta. O objetivo principal foi investigar a variabilidade dos resultados de lançamento sob configurações fixas e aplicar técnicas de análise estatística para interpretar os dados obtidos.
 
-## Metodologia e Prática Experimental
+## Metodologia, Prática Experimental e Configuração Utilizada
 
 O experimento da catapulta serve como uma base prática para a coleta de dados reais e a aplicação de técnicas de análise estatística. A catapulta utilizada no experimento permite o controle de diversos fatores que influenciam o lançamento, como a tensão do elástico, o ângulo de disparo e o apoio estrutural.
 
@@ -47,7 +47,7 @@ Para a realização dos lançamentos, uma configuração específica foi mantida
 *   **Posição A-**: Nível 4
 
 
-## Funcionamento Mecânico da Catapulta e Configuração Utilizada
+## Funcionamento Mecânico da Catapulta
 
 Uma catapulta opera convertendo energia potencial armazenada em energia cinética, que é então transferida para um projétil. No contexto do experimento, a catapulta utiliza um braço de lançamento que é puxado para trás contra uma força de resistência de um elástico. Ao ser liberado, o braço acelera rapidamente, impulsionando o projétil. Os principais componentes e seu funcionamento são:
 
@@ -129,7 +129,7 @@ Com os dados brutos do experimento agora disponíveis, a aplicação do `leem` p
 
 3.**Análise de Variabilidade**: Explorar a variabilidade dos lançamentos, possivelmente comparando diferentes configurações (se houvesse mais de uma) ou analisando a consistência ao longo do tempo. O `leem` pode oferecer funções para testes de hipóteses simples ou análises de variância, se aplicável.
 
-4.**Ver os Dados (Visualização)**: Uma das coisas mais legais que o leem pode fazer é transformar os números em gráficos. Para o experimento da catapulta, ele nos ajudaria a criar:
+4.**Ver os Dados (Visualização)**: Uma das coisas que o leem pode fazer é transformar os números em gráficos. Para o experimento da catapulta, ele nos ajudaria a criar:
 
 * **Histograma**: Um tipo de gráfico que mostra quantas vezes cada faixa de alcance apareceu. Assim, podemos ver rapidamente se os lançamentos se concentram em um lugar só ou se estão bem espalhados, e se tem algum lançamento muito diferente dos outros.
 
@@ -158,9 +158,9 @@ Os resultados obtidos estão em grande parte de acordo com o esperado para um ex
 
 Os fatores que podem ter influenciado esses resultados e as possíveis fontes de erro experimental incluem:
 
-*   **Variações na Execução**: Pequenas diferenças na forma como o operador armava ou liberava a catapulta em cada lançamento podem introduzir variabilidade. A precisão humana é limitada e pode levar a pequenas inconsistências [4].
-*   **Fatores Ambientais**: Correntes de ar, mesmo que sutis, podem afetar a trajetória do projétil. Embora o experimento tenha sido realizado em sala, microclimas ou movimentos de ar podem ter tido impacto [5].
-*   **Limitações dos Instrumentos**: A elasticidade do elástico pode ter variado ligeiramente ao longo dos 22 lançamentos devido à fadiga do material. Além disso, a precisão da medição do alcance pode ter pequenas margens de erro [7].
+*   **Variações na Execução**: Pequenas diferenças na forma como o operador armava ou liberava a catapulta em cada lançamento podem introduzir variabilidade. A precisão humana é limitada e pode levar a pequenas inconsistências.
+*   **Fatores Ambientais**: Correntes de ar, mesmo que sutis, podem afetar a trajetória do projétil. Embora o experimento tenha sido realizado em sala, microclimas ou movimentos de ar podem ter tido impacto.
+*   **Limitações dos Instrumentos**: A elasticidade do elástico pode ter variado ligeiramente ao longo dos 22 lançamentos devido à fadiga do material. Além disso, a precisão da medição do alcance pode ter pequenas margens de erro.
 
 A distribuição dos dados, embora com uma leve assimetria, não apresenta uma tendência clara de desvio para um lado específico, exceto pelo outlier. A interpretação desses dados reforça a necessidade de múltiplas repetições em experimentos para obter uma estimativa robusta da média e da variabilidade, e para identificar a presença de eventos incomuns.
 
