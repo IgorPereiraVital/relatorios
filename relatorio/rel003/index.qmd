@@ -1,7 +1,7 @@
 ---
 # Só mude aqui!!!!
 author: "Igor e Lucas"
-title: "Relatório de Experimento da Catapulta"
+title: "Relatório sobre a linguagem R"
 bibliography: referencias.bib
 # A partir daqui nao faca alteracoes!!!!!
 link-citations: true
@@ -14,19 +14,17 @@ lang: pt-BR
 format:
   html:
     toc: true
-    toc-depth: 3
-    toc-location: right
-    toc-expand: true
-    smooth-scroll: true
     number-sections: true
-    theme: cosmo
-
-execute: 
+    theme: bootstrap
+    #css: styles.css
+    code-fold: true
+    code-tools: true
+execute:
   echo: true
   warning: false
   message: false
-
 ---
+
 
 
 ## 📌 Introdução
