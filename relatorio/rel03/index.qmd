@@ -188,3 +188,5 @@ Já a curtose indica o grau de concentração dos dados em torno da média, most
   <img src="assimetria.png" width="45%">
   <img src="curtose.png" width="45%">
 </div>
+
+A análise da assimetria e da curtose são importantes pois permitem compreender melhor o comportamento da distribuição dos dados, indo além das medidas tradicionais como média e desvio padrão. Essas medidas ajudam a identificar padrões, tendências e possíveis irregularidades nos resultados do experimento.
