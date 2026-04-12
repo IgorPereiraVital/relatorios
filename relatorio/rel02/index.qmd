@@ -134,15 +134,33 @@ Dados);
 
 ```{r}
 
-library(leem)
+# Dados
+valores <- c(10, 20, 30, 40, 50, 20, 30, 30)
 
-valores <- c(10,20,30,40,50)
+# Cálculos
+media <- mean(valores)
+mediana <- median(valores)
+freq_abs <- table(valores)
+freq_rel <- prop.table(freq_abs)
+moda <- as.numeric(names(freq_abs)[freq_abs == max(freq_abs)])
 
-valores |>
-  new_leem(variable = 2) |>
-  tabfreq()
+# Criar lista com tudo
+resultado <- list(
+  Media = media,
+  Mediana = mediana,
+  Moda = moda,
+  Frequencia_Absoluta = freq_abs,
+  Frequencia_Relativa = freq_rel
+)
 
-hist(valores, main = "Distribuição dos valores", col = "lightblue")
+# Mostrar tudo de uma vez
+print(resultado)
+
+# Gráfico
+barplot(freq_abs,
+        main = "Frequência dos Valores",
+        xlab = "Valores",
+        ylab = "Frequência")
 
 ```
 

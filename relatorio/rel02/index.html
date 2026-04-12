@@ -96,19 +96,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <main class="content" id="quarto-document-content">
 <div class="logos" style="display: flex; justify-content: center; align-items: center; height: 200px; gap: 20px;">
-
   <a href="https://ufsj.edu.br">
-
     <img src="imagens/ufsj.png" width="220px">
-
   </a>
-
   <a href="https://ufsj.edu.br/defim">
-
     <img src="imagens/defim.png" width="220px">
-
   </a>
-
 </div>
 
 <header id="title-block-header" class="quarto-title-block default">
@@ -131,7 +124,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Data de Publicação</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">11/04/2026, 19:46</p>
+      <p class="date">12/04/2026, 18:49</p>
     </div>
   </div>
   
@@ -239,37 +232,55 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <details class="code-fold">
 <summary>Código</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(leem)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>valores <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">20</span>,<span class="dv">30</span>,<span class="dv">40</span>,<span class="dv">50</span>)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>valores <span class="sc">|&gt;</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">new_leem</span>(<span class="at">variable =</span> <span class="dv">2</span>) <span class="sc">|&gt;</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tabfreq</span>()</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Dados</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>valores <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">30</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Cálculos</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>media <span class="ot">&lt;-</span> <span class="fu">mean</span>(valores)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>mediana <span class="ot">&lt;-</span> <span class="fu">median</span>(valores)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>freq_abs <span class="ot">&lt;-</span> <span class="fu">table</span>(valores)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>freq_rel <span class="ot">&lt;-</span> <span class="fu">prop.table</span>(freq_abs)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>moda <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">names</span>(freq_abs)[freq_abs <span class="sc">==</span> <span class="fu">max</span>(freq_abs)])</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Criar lista com tudo</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>resultado <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">Media =</span> media,</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">Mediana =</span> mediana,</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">Moda =</span> moda,</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">Frequencia_Absoluta =</span> freq_abs,</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">Frequencia_Relativa =</span> freq_rel</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostrar tudo de uma vez</span></span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(resultado)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>
-Tabela de frequência 
-Tipo de variável: continuous
+<pre><code>$Media
+[1] 28.75
 
-       Classes Fi PM  Fr Fac1 Fac2 Fp Fac1p Fac2p
-1 -10 |---  30  2 10 0.4    2    5 40    40   100
-2  30 |---  70  3 50 0.6    5    3 60   100    60
+$Mediana
+[1] 30
 
-============================================== 
-Classes: Agrupamento de classes 
-Fi: Frequência absoluta 
-PM: Ponto médio 
-Fr: Frequência relativa 
-Fac1: Frequência acumulada (abaixo de) 
-Fac2: Frequência acumulada (acima de) 
-Fp: Frequência percentual 
-Fac1p: Frequência acumulada percentual (abaixo de) 
-Fac2p: Frequência acumulada percentual (acima de) </code></pre>
+$Moda
+[1] 30
+
+$Frequencia_Absoluta
+valores
+10 20 30 40 50 
+ 1  2  3  1  1 
+
+$Frequencia_Relativa
+valores
+   10    20    30    40    50 
+0.125 0.250 0.375 0.125 0.125 </code></pre>
 </div>
 <details class="code-fold">
 <summary>Código</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(valores, <span class="at">main =</span> <span class="st">"Distribuição dos valores"</span>, <span class="at">col =</span> <span class="st">"lightblue"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Gráfico</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(freq_abs,</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">main =</span> <span class="st">"Frequência dos Valores"</span>,</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">xlab =</span> <span class="st">"Valores"</span>,</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">ylab =</span> <span class="st">"Frequência"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -888,42 +899,60 @@ Fac2p: Frequência acumulada percentual (acima de) </code></pre>
 <span id="cb6-134"><a href="#cb6-134" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>List: Coleção de objetos que podem ter diferentes tipos e tamanhos.</span>
 <span id="cb6-135"><a href="#cb6-135" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb6-138"><a href="#cb6-138" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb6-139"><a href="#cb6-139" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(leem)</span>
-<span id="cb6-140"><a href="#cb6-140" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-141"><a href="#cb6-141" aria-hidden="true" tabindex="-1"></a>valores <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">20</span>,<span class="dv">30</span>,<span class="dv">40</span>,<span class="dv">50</span>)</span>
-<span id="cb6-142"><a href="#cb6-142" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-143"><a href="#cb6-143" aria-hidden="true" tabindex="-1"></a>valores <span class="sc">|&gt;</span></span>
-<span id="cb6-144"><a href="#cb6-144" aria-hidden="true" tabindex="-1"></a>  <span class="fu">new_leem</span>(<span class="at">variable =</span> <span class="dv">2</span>) <span class="sc">|&gt;</span></span>
-<span id="cb6-145"><a href="#cb6-145" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tabfreq</span>()</span>
-<span id="cb6-146"><a href="#cb6-146" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-147"><a href="#cb6-147" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(valores, <span class="at">main =</span> <span class="st">"Distribuição dos valores"</span>, <span class="at">col =</span> <span class="st">"lightblue"</span>)</span>
+<span id="cb6-139"><a href="#cb6-139" aria-hidden="true" tabindex="-1"></a><span class="co"># Dados</span></span>
+<span id="cb6-140"><a href="#cb6-140" aria-hidden="true" tabindex="-1"></a>valores <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">30</span>)</span>
+<span id="cb6-141"><a href="#cb6-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-142"><a href="#cb6-142" aria-hidden="true" tabindex="-1"></a><span class="co"># Cálculos</span></span>
+<span id="cb6-143"><a href="#cb6-143" aria-hidden="true" tabindex="-1"></a>media <span class="ot">&lt;-</span> <span class="fu">mean</span>(valores)</span>
+<span id="cb6-144"><a href="#cb6-144" aria-hidden="true" tabindex="-1"></a>mediana <span class="ot">&lt;-</span> <span class="fu">median</span>(valores)</span>
+<span id="cb6-145"><a href="#cb6-145" aria-hidden="true" tabindex="-1"></a>freq_abs <span class="ot">&lt;-</span> <span class="fu">table</span>(valores)</span>
+<span id="cb6-146"><a href="#cb6-146" aria-hidden="true" tabindex="-1"></a>freq_rel <span class="ot">&lt;-</span> <span class="fu">prop.table</span>(freq_abs)</span>
+<span id="cb6-147"><a href="#cb6-147" aria-hidden="true" tabindex="-1"></a>moda <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">names</span>(freq_abs)[freq_abs <span class="sc">==</span> <span class="fu">max</span>(freq_abs)])</span>
 <span id="cb6-148"><a href="#cb6-148" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-149"><a href="#cb6-149" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb6-150"><a href="#cb6-150" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-151"><a href="#cb6-151" aria-hidden="true" tabindex="-1"></a><span class="fu">## 🏁 Conclusão</span></span>
-<span id="cb6-152"><a href="#cb6-152" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-153"><a href="#cb6-153" aria-hidden="true" tabindex="-1"></a>7.0 - Onde usar o R? </span>
-<span id="cb6-154"><a href="#cb6-154" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb6-155"><a href="#cb6-155" aria-hidden="true" tabindex="-1"></a>  O R ocupa um espaço relevante no mercado de trabalho, especialmente em áreas como ciência de dados, estatística, finanças, saúde e marketing. Empresas e instituições utilizam a linguagem para extrair valor de dados e apoiar decisões estratégicas. Organizações como o Google, o Facebook (atual Meta), e o IBM já utilizaram ou utilizam R em diferentes contextos analíticos. Além disso, instituições financeiras e órgãos de pesquisa — como o Banco Central do Brasil e o IBGE empregam R para modelagem estatística, previsões econômicas e análise de grandes volumes de dados.</span>
-<span id="cb6-156"><a href="#cb6-156" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-157"><a href="#cb6-157" aria-hidden="true" tabindex="-1"></a>7.1 - Porque o R? </span>
-<span id="cb6-158"><a href="#cb6-158" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb6-159"><a href="#cb6-159" aria-hidden="true" tabindex="-1"></a>  Um dos grandes diferenciais do R está na sua capacidade de manipulação e visualização de dados. Pacotes como o tidyverse transformaram a forma como profissionais lidam com dados, tornando o processo mais intuitivo e produtivo. Isso é extremamente valorizado no mercado, onde a agilidade na análise e a clareza na comunicação de resultados são essenciais. Ferramentas como Shiny e R Markdown também permitem a criação de dashboards e relatórios interativos, habilidades cada vez mais exigidas por empresas que precisam comunicar insights de forma clara para diferentes públicos.</span>
+<span id="cb6-149"><a href="#cb6-149" aria-hidden="true" tabindex="-1"></a><span class="co"># Criar lista com tudo</span></span>
+<span id="cb6-150"><a href="#cb6-150" aria-hidden="true" tabindex="-1"></a>resultado <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb6-151"><a href="#cb6-151" aria-hidden="true" tabindex="-1"></a>  <span class="at">Media =</span> media,</span>
+<span id="cb6-152"><a href="#cb6-152" aria-hidden="true" tabindex="-1"></a>  <span class="at">Mediana =</span> mediana,</span>
+<span id="cb6-153"><a href="#cb6-153" aria-hidden="true" tabindex="-1"></a>  <span class="at">Moda =</span> moda,</span>
+<span id="cb6-154"><a href="#cb6-154" aria-hidden="true" tabindex="-1"></a>  <span class="at">Frequencia_Absoluta =</span> freq_abs,</span>
+<span id="cb6-155"><a href="#cb6-155" aria-hidden="true" tabindex="-1"></a>  <span class="at">Frequencia_Relativa =</span> freq_rel</span>
+<span id="cb6-156"><a href="#cb6-156" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb6-157"><a href="#cb6-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-158"><a href="#cb6-158" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostrar tudo de uma vez</span></span>
+<span id="cb6-159"><a href="#cb6-159" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(resultado)</span>
 <span id="cb6-160"><a href="#cb6-160" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-161"><a href="#cb6-161" aria-hidden="true" tabindex="-1"></a>7.2 - O futuro da linguagem R. </span>
-<span id="cb6-162"><a href="#cb6-162" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb6-163"><a href="#cb6-163" aria-hidden="true" tabindex="-1"></a>  Com o avanço da ciência de dados e da inteligência artificial, cresce a necessidade de ferramentas que não apenas construam modelos, mas também permitam interpretá-los com precisão e é justamente aí que o R se destaca, graças à sua forte base estatística. Além disso, a integração com outras linguagens, como Python (por meio de pacotes como o reticulate)</span>
-<span id="cb6-164"><a href="#cb6-164" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-165"><a href="#cb6-165" aria-hidden="true" tabindex="-1"></a>7.3 - R em meu curriculo. </span>
-<span id="cb6-166"><a href="#cb6-166" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb6-167"><a href="#cb6-167" aria-hidden="true" tabindex="-1"></a>  Em termos de empregabilidade, dominar R pode abrir portas para cargos como cientista de dados, analista de dados, estatístico e pesquisador. Empresas valorizam profissionais que sabem transformar dados em decisões e o R é uma das ferramentas mais eficientes para isso. Mais do que uma linguagem de programação, ele se consolidou como uma competência estratégica no mercado atual. </span>
+<span id="cb6-161"><a href="#cb6-161" aria-hidden="true" tabindex="-1"></a><span class="co"># Gráfico</span></span>
+<span id="cb6-162"><a href="#cb6-162" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(freq_abs,</span>
+<span id="cb6-163"><a href="#cb6-163" aria-hidden="true" tabindex="-1"></a>        <span class="at">main =</span> <span class="st">"Frequência dos Valores"</span>,</span>
+<span id="cb6-164"><a href="#cb6-164" aria-hidden="true" tabindex="-1"></a>        <span class="at">xlab =</span> <span class="st">"Valores"</span>,</span>
+<span id="cb6-165"><a href="#cb6-165" aria-hidden="true" tabindex="-1"></a>        <span class="at">ylab =</span> <span class="st">"Frequência"</span>)</span>
+<span id="cb6-166"><a href="#cb6-166" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-167"><a href="#cb6-167" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb6-168"><a href="#cb6-168" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-169"><a href="#cb6-169" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-170"><a href="#cb6-170" aria-hidden="true" tabindex="-1"></a><span class="fu">## 📖 Referências</span></span>
-<span id="cb6-171"><a href="#cb6-171" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-172"><a href="#cb6-172" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-173"><a href="#cb6-173" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">1</span><span class="co">]</span> *The R Project for Statistical Computing*. Disponível em: <span class="ot">&lt;https://www.r-project.org/&gt;</span>.</span>
-<span id="cb6-174"><a href="#cb6-174" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">2</span><span class="co">]</span> *RStudio Official site*. Disponível em: <span class="ot">&lt;https://posit.co/download/rstudio-desktop/&gt;</span>.</span>
+<span id="cb6-169"><a href="#cb6-169" aria-hidden="true" tabindex="-1"></a><span class="fu">## 🏁 Conclusão</span></span>
+<span id="cb6-170"><a href="#cb6-170" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-171"><a href="#cb6-171" aria-hidden="true" tabindex="-1"></a>7.0 - Onde usar o R? </span>
+<span id="cb6-172"><a href="#cb6-172" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb6-173"><a href="#cb6-173" aria-hidden="true" tabindex="-1"></a>  O R ocupa um espaço relevante no mercado de trabalho, especialmente em áreas como ciência de dados, estatística, finanças, saúde e marketing. Empresas e instituições utilizam a linguagem para extrair valor de dados e apoiar decisões estratégicas. Organizações como o Google, o Facebook (atual Meta), e o IBM já utilizaram ou utilizam R em diferentes contextos analíticos. Além disso, instituições financeiras e órgãos de pesquisa — como o Banco Central do Brasil e o IBGE empregam R para modelagem estatística, previsões econômicas e análise de grandes volumes de dados.</span>
+<span id="cb6-174"><a href="#cb6-174" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-175"><a href="#cb6-175" aria-hidden="true" tabindex="-1"></a>7.1 - Porque o R? </span>
+<span id="cb6-176"><a href="#cb6-176" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb6-177"><a href="#cb6-177" aria-hidden="true" tabindex="-1"></a>  Um dos grandes diferenciais do R está na sua capacidade de manipulação e visualização de dados. Pacotes como o tidyverse transformaram a forma como profissionais lidam com dados, tornando o processo mais intuitivo e produtivo. Isso é extremamente valorizado no mercado, onde a agilidade na análise e a clareza na comunicação de resultados são essenciais. Ferramentas como Shiny e R Markdown também permitem a criação de dashboards e relatórios interativos, habilidades cada vez mais exigidas por empresas que precisam comunicar insights de forma clara para diferentes públicos.</span>
+<span id="cb6-178"><a href="#cb6-178" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-179"><a href="#cb6-179" aria-hidden="true" tabindex="-1"></a>7.2 - O futuro da linguagem R. </span>
+<span id="cb6-180"><a href="#cb6-180" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb6-181"><a href="#cb6-181" aria-hidden="true" tabindex="-1"></a>  Com o avanço da ciência de dados e da inteligência artificial, cresce a necessidade de ferramentas que não apenas construam modelos, mas também permitam interpretá-los com precisão e é justamente aí que o R se destaca, graças à sua forte base estatística. Além disso, a integração com outras linguagens, como Python (por meio de pacotes como o reticulate)</span>
+<span id="cb6-182"><a href="#cb6-182" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-183"><a href="#cb6-183" aria-hidden="true" tabindex="-1"></a>7.3 - R em meu curriculo. </span>
+<span id="cb6-184"><a href="#cb6-184" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb6-185"><a href="#cb6-185" aria-hidden="true" tabindex="-1"></a>  Em termos de empregabilidade, dominar R pode abrir portas para cargos como cientista de dados, analista de dados, estatístico e pesquisador. Empresas valorizam profissionais que sabem transformar dados em decisões e o R é uma das ferramentas mais eficientes para isso. Mais do que uma linguagem de programação, ele se consolidou como uma competência estratégica no mercado atual. </span>
+<span id="cb6-186"><a href="#cb6-186" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-187"><a href="#cb6-187" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-188"><a href="#cb6-188" aria-hidden="true" tabindex="-1"></a><span class="fu">## 📖 Referências</span></span>
+<span id="cb6-189"><a href="#cb6-189" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-190"><a href="#cb6-190" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-191"><a href="#cb6-191" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">1</span><span class="co">]</span> *The R Project for Statistical Computing*. Disponível em: <span class="ot">&lt;https://www.r-project.org/&gt;</span>.</span>
+<span id="cb6-192"><a href="#cb6-192" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">2</span><span class="co">]</span> *RStudio Official site*. Disponível em: <span class="ot">&lt;https://posit.co/download/rstudio-desktop/&gt;</span>.</span>
 </code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
