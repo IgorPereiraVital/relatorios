@@ -91,11 +91,15 @@ Primeiro, organizamos os 40 valores ajustados em ordem crescente (centímetros):
 
 Representação das formúlas que utilzamos no cálculo dos resultados do experimento
 
-#### - Média Aritmética($\bar{x}$): Representa um valor de equilíbrio dos resultados obtidos. Para calcular somamos todas as distâncias reais ($x_i$) e dividimos pelo número total de arremessos ($n = 40$).
+#### - Média Aritmética($\bar{x}$)
+
+Representa um valor de equilíbrio dos resultados obtidos. Para calcular somamos todas as distâncias reais ($x_i$) e dividimos pelo número total de arremessos ($n = 40$).
 
 $$\bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i = \frac{13313,4}{40} = 332,84 \text{ cm}$$
 
-#### - Mediana($Md$): Como o número de observações é par ($n = 40$), a mediana será a média arimética dos valores centrais localizados nas posições $20^a$ e $21^a$ em Rol:
+#### - Mediana($Md$) 
+
+Como o número de observações é par ($n = 40$), a mediana será a média arimética dos valores centrais localizados nas posições $20^a$ e $21^a$ em Rol:
 
 $$Md = \frac{x_{(20)} + x_{(21)}}{2} = \frac{335,0 + 336,5}{2} = 335,75 \text{ cm}$$
 
@@ -103,14 +107,84 @@ $$Md = \frac{x_{(20)} + x_{(21)}}{2} = \frac{335,0 + 336,5}{2} = 335,75 \text{ c
 
 As medidas de dispersão indicam a consistência dos arremessos da equipe.
 
-#### - Amplitude Total ($R$): Diferença entre o maior e o menor valor, indicando o alcance da variação.
+#### - Amplitude Total ($R$) 
+
+Diferença entre o maior e o menor valor, indicando o alcance da variação.
 
 $$R = x_{max} - x_{min} = 369,0 - 257,9 = 111,1 \text{ cm}$$
 
-#### - Desvio Padrão ($s$): Enquanto a média nos mostra onde a maioria dos arremessos atingiu, o Desvio Padrão mede a nossa consistência. Ele revela a "margem de erro" média dos nossos resultados: quanto maior o desvio, mais "espalhados" foram os nossos tiros; quanto menor, mais precisos fomos.
+#### - Desvio Padrão ($s$) 
+
+Enquanto a média nos mostra onde a maioria dos arremessos atingiu, o Desvio Padrão mede a nossa consistência. Ele revela a "margem de erro" média dos nossos resultados: quanto maior o desvio, mais "espalhados" foram os nossos tiros; quanto menor, mais precisos fomos.
 
 A fórmula utilizada é :
 
 $$s = \sqrt{\frac{\sum_{i=1}^{n} (x_i - \bar{x})^2}{n - 1}}$$
 
+Aplicando aos dados coletados, encontramos:
 
+$$
+s \approx 22,0 \text{ cm}
+$$
+O desvio padrão representa que em média, os valores se afastam aproximadamente 22,0 cm da média, evidenciando a variabilidade dos arremessos realizados.
+
+### - Verficação computacional no R
+
+```{r}
+dados <- c(257.9, 275.0, 293.5, 302.5, 317.0, 318.0, 320.0, 323.0, 
+           324.0, 325.0, 328.0, 329.0, 330.0, 331.0, 331.0, 332.5, 
+           332.5, 333.0, 334.0, 335.0, 336.5, 336.5, 338.0, 339.0, 
+           339.0, 339.0, 339.0, 340.0, 341.0, 341.0, 341.0, 346.0, 
+           347.5, 350.0, 352.0, 357.0, 359.0, 365.0, 368.5, 369.0)
+
+n <- length(dados)
+media <- mean(dados)
+  
+dp <- sqrt(sum((dados - media)^2) / (n - 1))
+
+knitr::kable(data.frame(
+  Media = media,
+  Mediana = median(dados),
+  Desvio_Padrao = dp
+), digits = 2)
+```
+### - Análise com agrupamento de dados
+
+O agrupamento de dados colabora para uma análise mais geral da distribuição, facilitando a identificação de padrões. Contudo, ocorre a perca dos valores originais, uma vez que os dados ficam organizados por classes de frequência.  
+    
+```{r}
+library(leem)
+
+dados_leem <- new_leem(dados, variable = "continuous")
+
+tabela <- tabfreq(dados_leem)
+
+tabela
+```
+
+A tabela acima apresenta a distribuição dos resultados em classes de frequência, permitindo uma visão mais geral da concentração que os arremessos tiveram.
+
+### - Comparação entre dados agrupados e não agrupados
+
+Ao comparar os resultados agrupados e não agrupados, percebe-se que a média e o desvio padrão são próximos, mas não com os mesmos valores. Isso acontece porque, ao agrupar os dados, utilizamos intervalos e pontos médios, o que aproxima os valores originais e pode gerar pequenas diferenças nos cálculos. Portanto, o agrupamento é uma ferramenta eficiente, mas apresenta uma pequena perda de precisão em relação aos dados originais.
+
+#### - Representação gráfica
+
+```{r}
+hist(dados,
+     main = "Distribuição das distâncias dos arremessos",
+     xlab = "Distância (cm)",
+     ylab = "Frequência")
+```
+
+
+### - Asssimetria e Curtose
+
+A assimetria mede se os dados estão mais concentrados mais à esquerda ou à direita da média.
+
+Já a curtose indica o grau de concentração dos dados em torno da média, mostrando se a distribuição apresenta maior concentração central ou maior dispersão.
+
+<div style="display: flex; gap: 20px;">
+  <img src="assimetria.png" width="45%">
+  <img src="curtose.png" width="45%">
+</div>
