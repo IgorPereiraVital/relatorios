@@ -193,7 +193,10 @@ A análise da assimetria e da curtose são importantes pois permitem compreender
 
 ### - Análise de Eventos de Erro e Fontes de Variabilidade no Experimento da Catapulta
 
-  O experimento da catapulta, por sua natureza, está sujeito a diversas fontes de variabilidade. Estas podem ser categorizadas como intrínsecas (relacionadas ao sistema da catapulta e projétil) e extrínsecas (relacionadas à operação e medição).
+  A variabilidade observada nos arremessos da catapulta, quantificada por um
+Coeficiente de Variação de 6.59% e pela presença de outliers, sinaliza a necessidade
+de refinamentos metodológicos. As principais fontes de erro podem ser categorizadas
+e abordadas da seguinte forma:  
 
 * **Variabilidade Intrínseca do Sistema**: 
 
@@ -235,8 +238,22 @@ essencial, depende da precisão da medição inicial da distância da catapulta.
 ambiente, mesmo que sutis, podem influenciar a trajetória do projétil,
 especialmente em um experimento com 40 arremessos ao longo do tempo.
 
-### - Conclusão
+## - Conclusão
 
- * O experimento da catapulta, apesar de realizado em condições não controladas, forneceu um conjunto de dados robusto para análise estatística. As medidas de posição (média e mediana) e dispersão (amplitude e desvio padrão) revelaram que os arremessos, embora variáveis, exibem uma tendência central clara.
+ * A análise estatística do experimento da catapulta revelou uma distribuição de arremessos caracterizada por uma média de 332.90 cm e um desvio padrão de 21.93 cm. A assimetria negativa (-1.3815) e a leptocurtose (3.4561) são indicadores cruciais da dinâmica do sistema. A assimetria sugere que, embora a maioria dosarremessos tenda a distâncias mais longas, a ocorrência de alguns arremessos significativamente mais curtos (outliers) desloca a cauda da distribuição para a esquerda. Este fenômeno pode ser atribuído a falhas pontuais na liberação do projétil ou a interações imprevistas com o mecanismo da catapulta, resultando em perda de energia cinética.
 
- * A inclusão da análise de assimetria e curtose enriquece significativamente a compreensão do comportamento do sistema. A assimetria negativa indica que a equipe tendeu a realizar arremessos mais longos, com uma menor frequência de arremessos muito curtos, mas que impactam a média. A leptocurtose sugere que, além de uma concentração de arremessos em torno da média, houve também a ocorrência de valores mais extremos, tanto para distâncias maiores quanto menores, o que pode ser atribuído à variabilidade inerente ao processo de lançamento manual e às configurações da catapulta. Esses insights são cruciais para futuras otimizações, pois apontam para a necessidade de investigar os fatores que levam aos arremessos mais curtos e aos valores extremos, a fim de melhorar a consistência e a precisão dos lançamentos. 
+ * A leptocurtose, por sua vez, indica uma maior concentração de dados em torno da
+média (pico mais agudo) e, simultaneamente, a presença de caudas mais pesadas,
+confirmando a existência de valores extremos. Isso implica que o sistema, apesar de
+uma tendência central, é propenso a produzir resultados tanto muito curtos quanto
+muito longos, o que pode ser explicado pela sensibilidade do sistema a pequenas
+variações nas condições iniciais de lançamento (e.g., ângulo de saída, tensão do
+elástico) e pela natureza estocástica de interações com o ambiente. A identificação de
+outliers, particularmente os arremessos de 257.9 cm a 302.5 cm e de 365.0 cm a 369.0
+cm, corrobora essa interpretação, destacando a necessidade de investigar as causas
+específicas desses eventos extremos.
+
+ * Em suma, o experimento demonstra a complexidade inerente à modelagem de
+sistemas físicos sob condições semi-controladas. A variabilidade observada não é
+meramente um ruído, mas uma manifestação das interações dinâmicas entre o
+equipamento, o operador e o ambiente. 
