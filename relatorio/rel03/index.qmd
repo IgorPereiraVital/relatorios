@@ -178,7 +178,7 @@ hist(dados,
 ```
 
 
-### - Asssimetria e Curtose
+### - Assimetria e Curtose
 
 A assimetria mede se os dados estão mais concentrados mais à esquerda ou à direita da média.
 
@@ -190,3 +190,53 @@ Já a curtose indica o grau de concentração dos dados em torno da média, most
 </div>
 
 A análise da assimetria e da curtose são importantes pois permitem compreender melhor o comportamento da distribuição dos dados, indo além das medidas tradicionais como média e desvio padrão. Essas medidas ajudam a identificar padrões, tendências e possíveis irregularidades nos resultados do experimento.
+
+### - Análise de Eventos de Erro e Fontes de Variabilidade no Experimento da Catapulta
+
+  O experimento da catapulta, por sua natureza, está sujeito a diversas fontes de variabilidade. Estas podem ser categorizadas como intrínsecas (relacionadas ao sistema da catapulta e projétil) e extrínsecas (relacionadas à operação e medição).
+
+* **Variabilidade Intrínseca do Sistema**: 
+
+  * **Consistência do Elástico (A+)**:
+  
+    A pré-tensão do elástico (Posição 2) é um fator
+crítico. Pequenas variações na elasticidade do material ou na forma como é
+tensionado a cada arremesso podem gerar diferenças significativas na força
+aplicada ao projétil, impactando diretamente a distância. O desgaste do elástico
+ao longo dos 40 arremessos também pode ser uma fonte de variabilidade
+gradual. 
+
+  * **Ângulo de Saída do Projétil (O-)**:
+  
+    A posição 3 define o ângulo de saída. Mesmo
+que visualmente pareça constante, pequenas inclinações ou desalinhamentos do
+braço da catapulta no momento do lançamento podem alterar o ângulo,
+resultando em trajetórias e distâncias diferentes. 
+
+
+* **Variabilidade Extrínseca (Erros Operacionais e de Medição)**:
+
+  * **Erro Humano na Operação (Operadores da Catapulta)**: 
+  
+    A estabilização da base do instrumento e o lançamento manual (Marcos e Maria Eduarda) são pontos
+críticos. Movimentos involuntários, força inconsistente ao segurar a base ou
+diferenças na liberação do projétil podem introduzir variabilidade considerável.
+
+  * **Erro Humano na Metrologia (Equipe de Metrologia)**: 
+  
+    A medição das distâncias (Igor e Lucas) é suscetível a erros. A precisão na leitura da trena, o alinhamento
+correto com o ponto de queda do projétil e a interpretação do ponto exato de
+impacto podem variar entre as medições. A correção de 250 cm, embora
+essencial, depende da precisão da medição inicial da distância da catapulta.
+
+ * **Condições Ambientais**: 
+ 
+    Variações na corrente de ar, umidade ou temperatura do
+ambiente, mesmo que sutis, podem influenciar a trajetória do projétil,
+especialmente em um experimento com 40 arremessos ao longo do tempo.
+
+### - Conclusão
+
+ * O experimento da catapulta, apesar de realizado em condições não controladas, forneceu um conjunto de dados robusto para análise estatística. As medidas de posição (média e mediana) e dispersão (amplitude e desvio padrão) revelaram que os arremessos, embora variáveis, exibem uma tendência central clara.
+
+ * A inclusão da análise de assimetria e curtose enriquece significativamente a compreensão do comportamento do sistema. A assimetria negativa indica que a equipe tendeu a realizar arremessos mais longos, com uma menor frequência de arremessos muito curtos, mas que impactam a média. A leptocurtose sugere que, além de uma concentração de arremessos em torno da média, houve também a ocorrência de valores mais extremos, tanto para distâncias maiores quanto menores, o que pode ser atribuído à variabilidade inerente ao processo de lançamento manual e às configurações da catapulta. Esses insights são cruciais para futuras otimizações, pois apontam para a necessidade de investigar os fatores que levam aos arremessos mais curtos e aos valores extremos, a fim de melhorar a consistência e a precisão dos lançamentos. 

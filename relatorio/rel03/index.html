@@ -128,19 +128,28 @@ window.Quarto = {
   <li><a href="#verficação-computacional-no-r" id="toc-verficação-computacional-no-r" class="nav-link" data-scroll-target="#verficação-computacional-no-r"><span class="header-section-number">3.4</span> - Verficação computacional no R</a></li>
   <li><a href="#análise-com-agrupamento-de-dados" id="toc-análise-com-agrupamento-de-dados" class="nav-link" data-scroll-target="#análise-com-agrupamento-de-dados"><span class="header-section-number">3.5</span> - Análise com agrupamento de dados</a></li>
   <li><a href="#comparação-entre-dados-agrupados-e-não-agrupados" id="toc-comparação-entre-dados-agrupados-e-não-agrupados" class="nav-link" data-scroll-target="#comparação-entre-dados-agrupados-e-não-agrupados"><span class="header-section-number">3.6</span> - Comparação entre dados agrupados e não agrupados</a></li>
-  <li><a href="#asssimetria-e-curtose" id="toc-asssimetria-e-curtose" class="nav-link" data-scroll-target="#asssimetria-e-curtose"><span class="header-section-number">3.7</span> - Asssimetria e Curtose</a></li>
+  <li><a href="#assimetria-e-curtose" id="toc-assimetria-e-curtose" class="nav-link" data-scroll-target="#assimetria-e-curtose"><span class="header-section-number">3.7</span> - Assimetria e Curtose</a></li>
+  <li><a href="#análise-de-eventos-de-erro-e-fontes-de-variabilidade-no-experimento-da-catapulta" id="toc-análise-de-eventos-de-erro-e-fontes-de-variabilidade-no-experimento-da-catapulta" class="nav-link" data-scroll-target="#análise-de-eventos-de-erro-e-fontes-de-variabilidade-no-experimento-da-catapulta"><span class="header-section-number">3.8</span> - Análise de Eventos de Erro e Fontes de Variabilidade no Experimento da Catapulta</a></li>
+  <li><a href="#conclusão" id="toc-conclusão" class="nav-link" data-scroll-target="#conclusão"><span class="header-section-number">3.9</span> - Conclusão</a></li>
   </ul></li>
   </ul>
 </nav>
 </div>
 <main class="content" id="quarto-document-content">
 <div class="logos" style="display: flex; justify-content: center; align-items: center; height: 200px; gap: 20px;">
+
   <a href="https://ufsj.edu.br">
+
     <img src="imagens/ufsj.png" width="220px">
+
   </a>
+
   <a href="https://ufsj.edu.br/defim">
+
     <img src="imagens/defim.png" width="220px">
+
   </a>
+
 </div>
 
 <header id="title-block-header" class="quarto-title-block default">
@@ -163,7 +172,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Data de Publicação</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">12/04/2026, 09:42</p>
+      <p class="date">14/04/2026, 00:42</p>
     </div>
   </div>
   
@@ -325,8 +334,8 @@ s \approx 22,0 \text{ cm}
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>
-Table of frequency 
-Type of variable: continuous
+Tabela de frequência 
+Tipo de variável: continuous
 
               Classes Fi     PM   Fr Fac1 Fac2 Fp Fac1p Fac2p
 1 246.79 |---  269.01  1 257.90 0.03    1   40  3   2.5 100.0
@@ -337,15 +346,15 @@ Type of variable: continuous
 6 357.89 |---  380.11  4 369.00 0.10   40    4 10 100.0  10.0
 
 ============================================== 
-Classes: Grouping of classes 
-Fi: Absolute frequency 
-PM: Midpoint 
-Fr: Relative frequency 
-Fac1: Cumulative frequency (below) 
-Fac2: Cumulative frequency (above) 
-Fp: Percentage frequency 
-Fac1p: Cumulative percentage frequency (below) 
-Fac2p: Cumulative percentage frequency (above) </code></pre>
+Classes: Agrupamento de classes 
+Fi: Frequência absoluta 
+PM: Ponto médio 
+Fr: Frequência relativa 
+Fac1: Frequência acumulada (abaixo de) 
+Fac2: Frequência acumulada (acima de) 
+Fp: Frequência percentual 
+Fac1p: Frequência acumulada percentual (abaixo de) 
+Fac2p: Frequência acumulada percentual (acima de) </code></pre>
 </div>
 </div>
 <p>A tabela acima apresenta a distribuição dos resultados em classes de frequência, permitindo uma visão mais geral da concentração que os arremessos tiveram.</p>
@@ -373,14 +382,43 @@ Fac2p: Cumulative percentage frequency (above) </code></pre>
 </div>
 </section>
 </section>
-<section id="asssimetria-e-curtose" class="level3" data-number="3.7">
-<h3 data-number="3.7" class="anchored" data-anchor-id="asssimetria-e-curtose"><span class="header-section-number">3.7</span> - Asssimetria e Curtose</h3>
+<section id="assimetria-e-curtose" class="level3" data-number="3.7">
+<h3 data-number="3.7" class="anchored" data-anchor-id="assimetria-e-curtose"><span class="header-section-number">3.7</span> - Assimetria e Curtose</h3>
 <p>A assimetria mede se os dados estão mais concentrados mais à esquerda ou à direita da média.</p>
 <p>Já a curtose indica o grau de concentração dos dados em torno da média, mostrando se a distribuição apresenta maior concentração central ou maior dispersão.</p>
 <div style="display: flex; gap: 20px;">
 <p><img src="assimetria.png" width="45%"> <img src="curtose.png" width="45%"></p>
 </div>
 <p>A análise da assimetria e da curtose são importantes pois permitem compreender melhor o comportamento da distribuição dos dados, indo além das medidas tradicionais como média e desvio padrão. Essas medidas ajudam a identificar padrões, tendências e possíveis irregularidades nos resultados do experimento.</p>
+</section>
+<section id="análise-de-eventos-de-erro-e-fontes-de-variabilidade-no-experimento-da-catapulta" class="level3" data-number="3.8">
+<h3 data-number="3.8" class="anchored" data-anchor-id="análise-de-eventos-de-erro-e-fontes-de-variabilidade-no-experimento-da-catapulta"><span class="header-section-number">3.8</span> - Análise de Eventos de Erro e Fontes de Variabilidade no Experimento da Catapulta</h3>
+<p>O experimento da catapulta, por sua natureza, está sujeito a diversas fontes de variabilidade. Estas podem ser categorizadas como intrínsecas (relacionadas ao sistema da catapulta e projétil) e extrínsecas (relacionadas à operação e medição).</p>
+<ul>
+<li><p><strong>Variabilidade Intrínseca do Sistema</strong>:</p>
+<ul>
+<li><p><strong>Consistência do Elástico (A+)</strong>:</p>
+<p>A pré-tensão do elástico (Posição 2) é um fator crítico. Pequenas variações na elasticidade do material ou na forma como é tensionado a cada arremesso podem gerar diferenças significativas na força aplicada ao projétil, impactando diretamente a distância. O desgaste do elástico ao longo dos 40 arremessos também pode ser uma fonte de variabilidade gradual.</p></li>
+<li><p><strong>Ângulo de Saída do Projétil (O-)</strong>:</p>
+<p>A posição 3 define o ângulo de saída. Mesmo que visualmente pareça constante, pequenas inclinações ou desalinhamentos do braço da catapulta no momento do lançamento podem alterar o ângulo, resultando em trajetórias e distâncias diferentes.</p></li>
+</ul></li>
+<li><p><strong>Variabilidade Extrínseca (Erros Operacionais e de Medição)</strong>:</p>
+<ul>
+<li><p><strong>Erro Humano na Operação (Operadores da Catapulta)</strong>:</p>
+<p>A estabilização da base do instrumento e o lançamento manual (Marcos e Maria Eduarda) são pontos críticos. Movimentos involuntários, força inconsistente ao segurar a base ou diferenças na liberação do projétil podem introduzir variabilidade considerável.</p></li>
+<li><p><strong>Erro Humano na Metrologia (Equipe de Metrologia)</strong>:</p>
+<p>A medição das distâncias (Igor e Lucas) é suscetível a erros. A precisão na leitura da trena, o alinhamento correto com o ponto de queda do projétil e a interpretação do ponto exato de impacto podem variar entre as medições. A correção de 250 cm, embora essencial, depende da precisão da medição inicial da distância da catapulta.</p></li>
+</ul></li>
+<li><p><strong>Condições Ambientais</strong>:</p>
+<p>Variações na corrente de ar, umidade ou temperatura do ambiente, mesmo que sutis, podem influenciar a trajetória do projétil, especialmente em um experimento com 40 arremessos ao longo do tempo.</p></li>
+</ul>
+</section>
+<section id="conclusão" class="level3" data-number="3.9">
+<h3 data-number="3.9" class="anchored" data-anchor-id="conclusão"><span class="header-section-number">3.9</span> - Conclusão</h3>
+<ul>
+<li><p>O experimento da catapulta, apesar de realizado em condições não controladas, forneceu um conjunto de dados robusto para análise estatística. As medidas de posição (média e mediana) e dispersão (amplitude e desvio padrão) revelaram que os arremessos, embora variáveis, exibem uma tendência central clara.</p></li>
+<li><p>A inclusão da análise de assimetria e curtose enriquece significativamente a compreensão do comportamento do sistema. A assimetria negativa indica que a equipe tendeu a realizar arremessos mais longos, com uma menor frequência de arremessos muito curtos, mas que impactam a média. A leptocurtose sugere que, além de uma concentração de arremessos em torno da média, houve também a ocorrência de valores mais extremos, tanto para distâncias maiores quanto menores, o que pode ser atribuído à variabilidade inerente ao processo de lançamento manual e às configurações da catapulta. Esses insights são cruciais para futuras otimizações, pois apontam para a necessidade de investigar os fatores que levam aos arremessos mais curtos e aos valores extremos, a fim de melhorar a consistência e a precisão dos lançamentos.</p></li>
+</ul>
 <!-- -->
 
 </section>
@@ -1019,7 +1057,7 @@ Fac2p: Cumulative percentage frequency (above) </code></pre>
 <span id="cb5-184"><a href="#cb5-184" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb5-185"><a href="#cb5-185" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-186"><a href="#cb5-186" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-187"><a href="#cb5-187" aria-hidden="true" tabindex="-1"></a><span class="fu">### - Asssimetria e Curtose</span></span>
+<span id="cb5-187"><a href="#cb5-187" aria-hidden="true" tabindex="-1"></a><span class="fu">### - Assimetria e Curtose</span></span>
 <span id="cb5-188"><a href="#cb5-188" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-189"><a href="#cb5-189" aria-hidden="true" tabindex="-1"></a>A assimetria mede se os dados estão mais concentrados mais à esquerda ou à direita da média.</span>
 <span id="cb5-190"><a href="#cb5-190" aria-hidden="true" tabindex="-1"></a></span>
@@ -1031,6 +1069,56 @@ Fac2p: Cumulative percentage frequency (above) </code></pre>
 <span id="cb5-196"><a href="#cb5-196" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;/</span><span class="kw">div</span><span class="dt">&gt;</span></span>
 <span id="cb5-197"><a href="#cb5-197" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-198"><a href="#cb5-198" aria-hidden="true" tabindex="-1"></a>A análise da assimetria e da curtose são importantes pois permitem compreender melhor o comportamento da distribuição dos dados, indo além das medidas tradicionais como média e desvio padrão. Essas medidas ajudam a identificar padrões, tendências e possíveis irregularidades nos resultados do experimento.</span>
+<span id="cb5-199"><a href="#cb5-199" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-200"><a href="#cb5-200" aria-hidden="true" tabindex="-1"></a><span class="fu">### - Análise de Eventos de Erro e Fontes de Variabilidade no Experimento da Catapulta</span></span>
+<span id="cb5-201"><a href="#cb5-201" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-202"><a href="#cb5-202" aria-hidden="true" tabindex="-1"></a>  O experimento da catapulta, por sua natureza, está sujeito a diversas fontes de variabilidade. Estas podem ser categorizadas como intrínsecas (relacionadas ao sistema da catapulta e projétil) e extrínsecas (relacionadas à operação e medição).</span>
+<span id="cb5-203"><a href="#cb5-203" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-204"><a href="#cb5-204" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**Variabilidade Intrínseca do Sistema**: </span>
+<span id="cb5-205"><a href="#cb5-205" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-206"><a href="#cb5-206" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>**Consistência do Elástico (A+)**:</span>
+<span id="cb5-207"><a href="#cb5-207" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb5-208"><a href="#cb5-208" aria-hidden="true" tabindex="-1"></a>    A pré-tensão do elástico (Posição 2) é um fator</span>
+<span id="cb5-209"><a href="#cb5-209" aria-hidden="true" tabindex="-1"></a>crítico. Pequenas variações na elasticidade do material ou na forma como é</span>
+<span id="cb5-210"><a href="#cb5-210" aria-hidden="true" tabindex="-1"></a>tensionado a cada arremesso podem gerar diferenças significativas na força</span>
+<span id="cb5-211"><a href="#cb5-211" aria-hidden="true" tabindex="-1"></a>aplicada ao projétil, impactando diretamente a distância. O desgaste do elástico</span>
+<span id="cb5-212"><a href="#cb5-212" aria-hidden="true" tabindex="-1"></a>ao longo dos 40 arremessos também pode ser uma fonte de variabilidade</span>
+<span id="cb5-213"><a href="#cb5-213" aria-hidden="true" tabindex="-1"></a>gradual. </span>
+<span id="cb5-214"><a href="#cb5-214" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-215"><a href="#cb5-215" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>**Ângulo de Saída do Projétil (O-)**:</span>
+<span id="cb5-216"><a href="#cb5-216" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb5-217"><a href="#cb5-217" aria-hidden="true" tabindex="-1"></a>    A posição 3 define o ângulo de saída. Mesmo</span>
+<span id="cb5-218"><a href="#cb5-218" aria-hidden="true" tabindex="-1"></a>que visualmente pareça constante, pequenas inclinações ou desalinhamentos do</span>
+<span id="cb5-219"><a href="#cb5-219" aria-hidden="true" tabindex="-1"></a>braço da catapulta no momento do lançamento podem alterar o ângulo,</span>
+<span id="cb5-220"><a href="#cb5-220" aria-hidden="true" tabindex="-1"></a>resultando em trajetórias e distâncias diferentes. </span>
+<span id="cb5-221"><a href="#cb5-221" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-222"><a href="#cb5-222" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-223"><a href="#cb5-223" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**Variabilidade Extrínseca (Erros Operacionais e de Medição)**:</span>
+<span id="cb5-224"><a href="#cb5-224" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-225"><a href="#cb5-225" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>**Erro Humano na Operação (Operadores da Catapulta)**: </span>
+<span id="cb5-226"><a href="#cb5-226" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb5-227"><a href="#cb5-227" aria-hidden="true" tabindex="-1"></a>    A estabilização da base do instrumento e o lançamento manual (Marcos e Maria Eduarda) são pontos</span>
+<span id="cb5-228"><a href="#cb5-228" aria-hidden="true" tabindex="-1"></a>críticos. Movimentos involuntários, força inconsistente ao segurar a base ou</span>
+<span id="cb5-229"><a href="#cb5-229" aria-hidden="true" tabindex="-1"></a>diferenças na liberação do projétil podem introduzir variabilidade considerável.</span>
+<span id="cb5-230"><a href="#cb5-230" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-231"><a href="#cb5-231" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>**Erro Humano na Metrologia (Equipe de Metrologia)**: </span>
+<span id="cb5-232"><a href="#cb5-232" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb5-233"><a href="#cb5-233" aria-hidden="true" tabindex="-1"></a>    A medição das distâncias (Igor e Lucas) é suscetível a erros. A precisão na leitura da trena, o alinhamento</span>
+<span id="cb5-234"><a href="#cb5-234" aria-hidden="true" tabindex="-1"></a>correto com o ponto de queda do projétil e a interpretação do ponto exato de</span>
+<span id="cb5-235"><a href="#cb5-235" aria-hidden="true" tabindex="-1"></a>impacto podem variar entre as medições. A correção de 250 cm, embora</span>
+<span id="cb5-236"><a href="#cb5-236" aria-hidden="true" tabindex="-1"></a>essencial, depende da precisão da medição inicial da distância da catapulta.</span>
+<span id="cb5-237"><a href="#cb5-237" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-238"><a href="#cb5-238" aria-hidden="true" tabindex="-1"></a><span class="ss"> * </span>**Condições Ambientais**: </span>
+<span id="cb5-239"><a href="#cb5-239" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb5-240"><a href="#cb5-240" aria-hidden="true" tabindex="-1"></a>    Variações na corrente de ar, umidade ou temperatura do</span>
+<span id="cb5-241"><a href="#cb5-241" aria-hidden="true" tabindex="-1"></a>ambiente, mesmo que sutis, podem influenciar a trajetória do projétil,</span>
+<span id="cb5-242"><a href="#cb5-242" aria-hidden="true" tabindex="-1"></a>especialmente em um experimento com 40 arremessos ao longo do tempo.</span>
+<span id="cb5-243"><a href="#cb5-243" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-244"><a href="#cb5-244" aria-hidden="true" tabindex="-1"></a><span class="fu">### - Conclusão</span></span>
+<span id="cb5-245"><a href="#cb5-245" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-246"><a href="#cb5-246" aria-hidden="true" tabindex="-1"></a><span class="ss"> * </span>O experimento da catapulta, apesar de realizado em condições não controladas, forneceu um conjunto de dados robusto para análise estatística. As medidas de posição (média e mediana) e dispersão (amplitude e desvio padrão) revelaram que os arremessos, embora variáveis, exibem uma tendência central clara.</span>
+<span id="cb5-247"><a href="#cb5-247" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-248"><a href="#cb5-248" aria-hidden="true" tabindex="-1"></a><span class="ss"> * </span>A inclusão da análise de assimetria e curtose enriquece significativamente a compreensão do comportamento do sistema. A assimetria negativa indica que a equipe tendeu a realizar arremessos mais longos, com uma menor frequência de arremessos muito curtos, mas que impactam a média. A leptocurtose sugere que, além de uma concentração de arremessos em torno da média, houve também a ocorrência de valores mais extremos, tanto para distâncias maiores quanto menores, o que pode ser atribuído à variabilidade inerente ao processo de lançamento manual e às configurações da catapulta. Esses insights são cruciais para futuras otimizações, pois apontam para a necessidade de investigar os fatores que levam aos arremessos mais curtos e aos valores extremos, a fim de melhorar a consistência e a precisão dos lançamentos. </span>
 </code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
