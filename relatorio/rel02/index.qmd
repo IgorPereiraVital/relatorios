@@ -113,56 +113,108 @@ mean(x)
 
 5.3 O código acima cria um vetor numérico de tamanho 5 e calcula a sua média, demonstrando uma das funções básicas da linguagem R.
 
-## 💼️ ESTRUTURAS E TIPOS DE DADOS
+## 📝 Explicações de códigos básicos do R
 
-6.1 Para programar em R, é fundamental entender como a linguagem organiza as
-informações. Os principais tipos de dados “atômicos” são:
+### Média 
 
-- Numeric: Números decimais (ex: 10.5);
-- Integer: Números inteiros (ex: 10L);
-- Logical: Valores booleanos (TRUE ou FALSE);
-- Character: Textos ou strings (ex: “Olá Mundo”);
-
-6.2 Além dos tipos simples, o R utiliza estruturas complexas para armazenar conjuntos
-de dados:
-
-- Vector: Sequência de elementos do mesmo tipo;
-- Matrix: Tabela bidimensional com elementos do mesmo tipo;
-- Data Frame: Tabela onde cada coluna pode ter um tipo diferente (mais usada em Ciência de
-Dados);
-- List: Coleção de objetos que podem ter diferentes tipos e tamanhos.
+A média é o resultado da soma de todos os valores divida pela quantidade de elementos.
+No R, utilizamos a função `mean()` para nos referir à média.
 
 ```{r}
+# Exemplo de dados
+valores <- c(10, 20, 30, 40)
 
-# Dados
-valores <- c(10, 20, 30, 40, 50, 20, 30, 30)
+# Calculando a média
+media <- mean(valores) ## Como é feito a média através da função mean: (10+20+30+40) / 4 = 25.
 
-# Cálculos
-media <- mean(valores)
-mediana <- median(valores)
-freq_abs <- table(valores)
-freq_rel <- prop.table(freq_abs)
-moda <- as.numeric(names(freq_abs)[freq_abs == max(freq_abs)])
-
-# Criar lista com tudo
-resultado <- list(
-  Media = media,
-  Mediana = mediana,
-  Moda = moda,
-  Frequencia_Absoluta = freq_abs,
-  Frequencia_Relativa = freq_rel
-)
-
-# Mostrar tudo de uma vez
-print(resultado)
-
-# Gráfico
-barplot(freq_abs,
-        main = "Frequência dos Valores",
-        xlab = "Valores",
-        ylab = "Frequência")
-
+# Mostrando o resultado
+print(media) ## Como o valor encontrado foi 25. O código print(media) mostra o valor da média na tela.
 ```
+
+### Mediana
+
+A mediana representa o valor central dos resultados quando eles estão organizados em rol.
+A função que representa a mediana no R é `median()`.
+
+```{r}
+# Exemeplos de dados
+valores <- c(10, 30, 20, 40)
+
+# Calculando a mediana
+mediana <- median(valores) ## Como é feito o cálculo da mediana através da função median: (30+20)/2 = 25.
+
+# Mostrando o resultado
+print(mediana) ## Como o valor encontrado foi 25. O código print(mediana) mostra o valor da mediana na tela.
+```
+
+### Frequência Absoluta
+
+A frequência absoluta representa quantas vezes cada número aparece no conjunto de resultados.
+A função `table()` representa a Frequência Absoluta no R.
+
+```{r}
+# Exemplo de vetor com dados repetidos
+valores <- c(1, 2, 2, 3, 3, 3) ## Como é feito o cálculo da frequência absoluta. É calculado a quantidade de vezes que um número se repetiu dentre os resultados.
+
+# Calculando a frequência absoluta
+freq <- table(valores) ## Como o valor 1 se repetiu uma vez na tabela, ele fica com frequência 1; como o valor 2 se repetiu duas vezes, ele fica com frequência 2, e aplica-se a mesma lógica ao valor 3.
+
+# Mostrando o resultado
+print(freq)
+```
+
+### Frequência Relativa
+
+A frequência relativa indica a proporção de cada valor em relação ao total.
+A função `prop.table()` transforma a frequência absoluta em valores proporcionais.
+
+```{r}
+# Exemplo de vetor com dados repetidos
+valores <- c(1, 2, 2, 3, 3, 3) ## Como é feito o cálculo da frequência relativa. É calculado a quantidade de vezes que um número se repetiu dentre os resultados divido em relação ao total de valores
+
+# Frequência relativa
+freq_rel <- prop.table(table(valores)) ## Nesse código primeiramente ocorre a conta dos valores repetidos, depois a transformação em proporção e por fim salva os resultados.
+
+# Mostrando o resultado
+print(freq_rel)
+```
+
+### Organização dos resultados
+
+A função `list()` é usada para agrupar os resultados, com o intuito de facilitar a visualização.
+
+```{r}
+# Exemplo de uma lista de informações
+dados <- list(nome = "Joaquim", idade = 83, nota = 2.4) ## Nesse código, as informações são armazenadas em uma lista por meio dos identificadores nome, idade e nota.
+# Mostrando a lista
+print(dados)
+```
+
+### Exibição dos resultados
+A função `print()` mostra os resultados na tela.
+
+```{r}
+# Criando uma mensagem exemplo
+texto <- "Olá, mundo!"
+
+# Mostrando na tela
+print(texto)
+```
+
+### Gráfico
+
+O gráfico de barras é utilizado para representar visualmente a frequência dos resultados.
+A função `barplot()` cria esse tipo de gráfico no R.
+
+```{r}
+# Exemplos de dados
+valores <- c(5, 10, 7, 12)
+
+# Criando o gráfico de barras
+barplot(valores)
+```
+
+
 
 ## 🏁 Conclusão
 
