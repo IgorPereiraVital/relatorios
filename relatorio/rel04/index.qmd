@@ -26,3 +26,170 @@ execute:
 
 
 ## 📌 Introdução
+
+O estudo das variáveis aleatórias e suas distribuições de probabilidade constitui a base da estatística contemporânea, permitindo o estudo de fenômenos reais e a tomada de decisões fundamentada em dados. Em contextos técnicos, como a engenharia e a computação, essas são ferramentas essenciais para prever falhas em sistemas, analisar tráfego de dados e garantir a qualidade dos equipamentos. 
+
+As variáveis aleatórias são classificadas em dois grandes grupos: discretas, que representam contagem de eventos isolados, e contínua, que descrevem grandezas calculáveis em um intervalo real. Para cada tipo de variável, existem distribuições matemáticas específicas que descrevem com precisão o comportamento dos dados.
+
+Este relatório tem como objetivo apresentar uma análise teórica e prática das distribuições Binominal, Poisson e Normal, bem como outros modelos complementares (DISTRIBUIÇÕES DO LUCAS). O relatório será redigido sobre duas perspectivas : a analítica, através de cálculos matemáticos manuais, e a computacional, utilizando a linguagem R com o auxílio do pacote leem, que contribui para visualização dos dados estatísticos.  
+
+## 📋 Distribuições de Probabilidade
+
+Nesta seção, será abordado algumas distribuições estudadas, apresentando suas definições, bem como suas aplicações práticas em engenharia.
+
+### Distribuição Binomial
+
+A Distribuição Binomial é do tipo discreta, modela situações em que se é feito vários experimentos independentes e cada experimento possui apenas dois resultados possíveis (Sucesso ou Fracasso).
+
+Fórmula :  $$P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}$$
+
+#### Exemplo Prático: Controle de Qualidade de Sensores
+
+Um lote de sensores ultrassônicos ( são usados para medir distância) tem uma taxa de defeito de 5% . Se você comprar 12 sensores para montar um robô, qual a probabilidade de exatamente 1 sensor vir com defeito?
+ 
+Cálculo Analítico:
+
+Para o cálculo, utilizamos a combinação $\binom{12}{1} = \frac{12!}{1!(12-1)!} = 12$.$$P(X = 1) = \binom{12}{1} \cdot (0,05)^1 \cdot (0,95)^{12-1}$$$$P(X = 1) = 12 \cdot 0,05 \cdot 0,5688 \approx 0,3413$$
+
+A probabilidade de encontrar exatamente um sensor com defeito é de aproximadamente 34,13%.
+
+### Implemetação no R
+
+Para o cálculo computacional usaremos o pacote leem. Necessitamos conhecer algumas funções que serão usadas no código:
+
+- P: representa densidade. Na Distribuição Binomial, calcula a probabilidade exata para P(X=k). Ou seja, a chance de ocorrer o determinado valor;
+- q: representa quantos sucessos estão sendo procurados;
+- size: representa o número de testes;
+- prob: representa a probabilidade de sucesso em cada teste.
+
+```{r}
+library(leem)
+
+# P(X=1)=P(X≤1)−P(X≤0)
+
+P(q = 1,
+  dist = "binomial",
+  size = 12,
+  prob = 0.05,
+) -
+P(q = 0,
+  dist = "binomial",
+  size = 12,
+  prob = 0.05
+)
+
+
+
+```
+
+### Distribuição Poisson
+
+A Distribuição de Poisson é do tipo discreta,modela a quantidade de vezes que um evento ocorre em um intervalo de tempo, local ou região que está sendo analisado, com taxa média λ.
+
+Fórmula: $$P(X = k) = \frac{e^{-\lambda} \cdot \lambda^k}{k!}$$
+
+Onde:
+
+*   $k$: é o número de ocorrências do evento;
+*   $\lambda$: é a taxa média de ocorrências no intervalo;
+*   $e$: é a constante de Euler.
+
+Usada para casos como:
+
+- Quantos carros passam uma via em meia hora?
+- Quantos defeitos surgem em uma peça?
+- Quantas partículas radioativas são emitidas?
+
+#### Exemplo Prático: Solicitações em Servidores
+
+Um servidor recebe em média 3 requisições por minuto. Qual a probabilidade de receber exatamente 5 requisições em um minuto ?
+
+Onde: 
+
+*   $k$ =  5;
+*   $\lambda$ = 3.
+
+Cálculo Analítico: $$P(X = 5) = \frac{e^{-3} \cdot 3^5}{5!}$$$$P(X = 5) \approx \frac{0,0498 \cdot 243}{120} \approx 0,1008$$
+
+A probabilidade de receber 5 requisições em um minuto é de aproximadamente 10,08%.
+
+#### Implementação no R
+
+Funções que usaremos no código: 
+
+- lambda (λ): representa a média de ocorrências;
+
+```{R}
+library(leem)
+
+# P(X=5)=P(X≤5)−P(X≤4)
+
+P(
+  q = 5,
+  dist = "poisson",
+  lambda = 3,
+) - 
+
+P(
+  q = 4,
+  dist = "poisson",
+  lambda = 3
+)
+
+```
+
+### Distribuição Normal
+
+A distribuição normal é do tipo contínua, usada para modelar fenômenos que tendem a se concentrar em torno de um valor médio, é definida por média μ e por desvio padrão σ.
+
+Fórmula: $$f(x)=\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}$$
+
+Padronização $$Z=\frac{x-\mu}{\sigma}$$
+
+
+Onde: 
+
+*   $x$:  valor observado;
+*   $\mu$: representa a média;
+*   $\sigma$: representa o desvio padrão;
+*   $\sigma^2$: representa a variância.
+*   A padronização é bastante utilizada para transformar valores de uma Distribuição Normal qualquer em valores da Distribuição Normal Padrão.
+
+Usada bastante em:
+
+- Controle de qualidade industrial;
+- Sinais de telecomunicações;
+- Tempo de resposta de um sistema;
+- Alturas e pesos de pessoas.
+
+#### Exemplo prático: Tempo de resposta de um microcontrolador 
+
+Tempo de reposta de um microcontrolador:
+
+- média = 100ms;
+- desvio padrão = 10ms.
+
+Qual a probabilidade de resposta menor que 110ms?
+
+Cálculo Analítico: 
+$$Z=\frac{110-100}{10}$$
+
+$$Z=\frac{10}{10}=1$$
+
+Agora buscamos na tabela da Distribuição Normal Padrão:
+
+$$P(Z<1)\approx0,8413$$
+
+Para obter esse resultado, é necessário realizar a análise da tabela da Distribuição normal.
+
+Como desejamos calcular $P(Z<1)$, utilizamos a propriedade complementar : $$P(Z<1)=1-P(Z>1)$$
+
+![[1]Tabela de Distribuição Normal](Tabelas de Distribuição Normal.png)
+
+Através da tabela da Distribuição Normal, identificamos que $$P(Z > 1)\approx0,1587$$. Assim:
+
+$$
+1-0,1587=0,8413
+$$
+
+Portanto, a probabilidade do microcontrolador apresentar um tempo de resposta menor do 110ms é de aproximadamente 84,13%.  
