@@ -29,9 +29,37 @@ execute:
 
 O estudo das variáveis aleatórias e suas distribuições de probabilidade constitui a base da estatística contemporânea, permitindo o estudo de fenômenos reais e a tomada de decisões fundamentada em dados. Em contextos técnicos, como a engenharia e a computação, essas são ferramentas essenciais para prever falhas em sistemas, analisar tráfego de dados e garantir a qualidade dos equipamentos. 
 
-As variáveis aleatórias são classificadas em dois grandes grupos: discretas, que representam contagem de eventos isolados, e contínua, que descrevem grandezas calculáveis em um intervalo real. Para cada tipo de variável, existem distribuições matemáticas específicas que descrevem com precisão o comportamento dos dados.
-
 Este relatório tem como objetivo apresentar uma análise teórica e prática das distribuições Binominal, Poisson e Normal, bem como outros modelos complementares (DISTRIBUIÇÕES DO LUCAS). O relatório será redigido sobre duas perspectivas : a analítica, através de cálculos matemáticos manuais, e a computacional, utilizando a linguagem R com o auxílio do pacote leem, que contribui para visualização dos dados estatísticos.  
+
+## Tipos de Variáveis
+
+As variáveis podem ser classificadas em dois tipos fundamentais:
+
+### Variáveis Aleatórias Discretas {#vac}
+
+Assumem valores contáveis e podem ser observadas em situações como:
+
+- número de pessoas;
+- quantidade de defeitos;
+- gols em uma partida.
+
+Os valores normalmente são:
+
+$$0,1,2,3,4,5…$$
+
+### Variáveis Aleatórias Contínuas {#vad} 
+
+São variáveis que podem assumir valores em um intervalo real, podem ser analisadas em casos como:
+
+- altura;
+- peso;
+- tempo de resposta;
+- velocidade.
+
+Uma altura pode ser:
+
+$$1,54; 1,731; 1,7431 ...$$
+Ou seja, existem infinitos valores possíveis.
 
 ## 📋 Distribuições de Probabilidade
 
@@ -39,9 +67,18 @@ Nesta seção, será abordado algumas distribuições estudadas, apresentando su
 
 ### Distribuição Binomial
 
-A Distribuição Binomial é do tipo discreta, modela situações em que se é feito vários experimentos independentes e cada experimento possui apenas dois resultados possíveis (Sucesso ou Fracasso).
+A Distribuição Binomial é do tipo [variável aleatória discreta](#vac), modela situações em que se é feito vários experimentos independentes e cada experimento possui apenas dois resultados possíveis (Sucesso ou Fracasso).
 
 Fórmula :  $$P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}$$
+
+A qual:
+
+*   $X$: é a variável aleatória e representa o número de sucessos obtidos;
+*   $k$: representa a quantidade exata de sucessos desejada; 
+*   $n$: o número total de tentativas;
+*   $p$: a probabilidade de acerto em cada tentativa;
+*   $(1-p)$: é a probabildade de fracasso;
+*   $\binom{n}{k}$: calcula a quantidade de maneiras diferentes que o sucesso pode acontecer.
 
 #### Exemplo Prático: Controle de Qualidade de Sensores
 
@@ -84,7 +121,7 @@ P(q = 0,
 
 ### Distribuição Poisson
 
-A Distribuição de Poisson é do tipo discreta,modela a quantidade de vezes que um evento ocorre em um intervalo de tempo, local ou região que está sendo analisado, com taxa média λ.
+A Distribuição de Poisson é do tipo [variável aleatória discreta](#vac),modela a quantidade de vezes que um evento ocorre em um intervalo de tempo, local ou região que está sendo analisado, com taxa média λ.
 
 Fórmula: $$P(X = k) = \frac{e^{-\lambda} \cdot \lambda^k}{k!}$$
 
@@ -140,7 +177,7 @@ P(
 
 ### Distribuição Normal
 
-A distribuição normal é do tipo contínua, usada para modelar fenômenos que tendem a se concentrar em torno de um valor médio, é definida por média μ e por desvio padrão σ.
+A distribuição normal é do tipo [variável aleatória contínua](#vad), usada para modelar fenômenos que tendem a se concentrar em torno de um valor médio, é definida por média μ e por desvio padrão σ.
 
 Fórmula: $$f(x)=\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}$$
 
@@ -192,4 +229,25 @@ $$
 1-0,1587=0,8413
 $$
 
-Portanto, a probabilidade do microcontrolador apresentar um tempo de resposta menor do 110ms é de aproximadamente 84,13%.  
+Portanto, a probabilidade do microcontrolador apresentar um tempo de resposta menor do que 110ms é de aproximadamente 84,13%.  
+
+#### Implementação no R
+
+funções que são usadas no código:
+
+- mean : representa o valor médio esperado da distribuição,isto é, o centro da curva normal;
+- sd : é o desvio padrão e retrata quanto os valores tendem a variar em relação a média dos resultados;
+- q : simboliza o valor que deseja analisar na distribuição.
+
+
+```{R}
+library(leem)
+
+P(
+  q = 110,
+  dist = "normal",
+  mean = 100,
+  sd = 10
+)
+
+```
