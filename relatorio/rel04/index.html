@@ -121,9 +121,8 @@ window.Quarto = {
   <li><a href="#distribuições-de-probabilidade" id="toc-distribuições-de-probabilidade" class="nav-link" data-scroll-target="#distribuições-de-probabilidade"><span class="header-section-number">3</span> 📋 Distribuições de Probabilidade</a>
   <ul class="collapse">
   <li><a href="#distribuição-binomial" id="toc-distribuição-binomial" class="nav-link" data-scroll-target="#distribuição-binomial"><span class="header-section-number">3.1</span> Distribuição Binomial</a></li>
-  <li><a href="#implemetação-no-r" id="toc-implemetação-no-r" class="nav-link" data-scroll-target="#implemetação-no-r"><span class="header-section-number">3.2</span> Implemetação no R</a></li>
-  <li><a href="#distribuição-poisson" id="toc-distribuição-poisson" class="nav-link" data-scroll-target="#distribuição-poisson"><span class="header-section-number">3.3</span> Distribuição Poisson</a></li>
-  <li><a href="#distribuição-normal" id="toc-distribuição-normal" class="nav-link" data-scroll-target="#distribuição-normal"><span class="header-section-number">3.4</span> Distribuição Normal</a></li>
+  <li><a href="#distribuição-poisson" id="toc-distribuição-poisson" class="nav-link" data-scroll-target="#distribuição-poisson"><span class="header-section-number">3.2</span> Distribuição Poisson</a></li>
+  <li><a href="#distribuição-normal" id="toc-distribuição-normal" class="nav-link" data-scroll-target="#distribuição-normal"><span class="header-section-number">3.3</span> Distribuição Normal</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -225,9 +224,8 @@ window.Quarto = {
 <p>Para o cálculo, utilizamos a combinação <span class="math inline">\(\binom{12}{1} = \frac{12!}{1!(12-1)!} = 12\)</span>.<span class="math display">\[P(X = 1) = \binom{12}{1} \cdot (0,05)^1 \cdot (0,95)^{12-1}\]</span><span class="math display">\[P(X = 1) = 12 \cdot 0,05 \cdot 0,5688 \approx 0,3413\]</span></p>
 <p>A probabilidade de encontrar exatamente um sensor com defeito é de aproximadamente 34,13%.</p>
 </section>
-</section>
-<section id="implemetação-no-r" class="level3" data-number="3.2">
-<h3 data-number="3.2" class="anchored" data-anchor-id="implemetação-no-r"><span class="header-section-number">3.2</span> Implemetação no R</h3>
+<section id="implemetação-no-r" class="level4" data-number="3.1.2">
+<h4 data-number="3.1.2" class="anchored" data-anchor-id="implemetação-no-r"><span class="header-section-number">3.1.2</span> Implemetação no R</h4>
 <p>Para o cálculo computacional usaremos o pacote leem. Necessitamos conhecer algumas funções que serão usadas no código:</p>
 <ul>
 <li>P: representa densidade. Na Distribuição Binomial, calcula a probabilidade exata para P(X=k). Ou seja, a chance de ocorrer o determinado valor;</li>
@@ -258,8 +256,9 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="distribuição-poisson" class="level3" data-number="3.3">
-<h3 data-number="3.3" class="anchored" data-anchor-id="distribuição-poisson"><span class="header-section-number">3.3</span> Distribuição Poisson</h3>
+</section>
+<section id="distribuição-poisson" class="level3" data-number="3.2">
+<h3 data-number="3.2" class="anchored" data-anchor-id="distribuição-poisson"><span class="header-section-number">3.2</span> Distribuição Poisson</h3>
 <p>A Distribuição de Poisson é do tipo <a href="#vac">variável aleatória discreta</a>,modela a quantidade de vezes que um evento ocorre em um intervalo de tempo, local ou região que está sendo analisado, com taxa média λ.</p>
 <p>Fórmula: <span class="math display">\[P(X = k) = \frac{e^{-\lambda} \cdot \lambda^k}{k!}\]</span></p>
 <p>Onde:</p>
@@ -274,8 +273,8 @@ window.Quarto = {
 <li>Quantos defeitos surgem em uma peça?</li>
 <li>Quantas partículas radioativas são emitidas?</li>
 </ul>
-<section id="exemplo-prático-solicitações-em-servidores" class="level4" data-number="3.3.1">
-<h4 data-number="3.3.1" class="anchored" data-anchor-id="exemplo-prático-solicitações-em-servidores"><span class="header-section-number">3.3.1</span> Exemplo Prático: Solicitações em Servidores</h4>
+<section id="exemplo-prático-solicitações-em-servidores" class="level4" data-number="3.2.1">
+<h4 data-number="3.2.1" class="anchored" data-anchor-id="exemplo-prático-solicitações-em-servidores"><span class="header-section-number">3.2.1</span> Exemplo Prático: Solicitações em Servidores</h4>
 <p>Um servidor recebe em média 3 requisições por minuto. Qual a probabilidade de receber exatamente 5 requisições em um minuto ?</p>
 <p>Onde:</p>
 <ul>
@@ -285,8 +284,8 @@ window.Quarto = {
 <p>Cálculo Analítico: <span class="math display">\[P(X = 5) = \frac{e^{-3} \cdot 3^5}{5!}\]</span><span class="math display">\[P(X = 5) \approx \frac{0,0498 \cdot 243}{120} \approx 0,1008\]</span></p>
 <p>A probabilidade de receber 5 requisições em um minuto é de aproximadamente 10,08%.</p>
 </section>
-<section id="implementação-no-r" class="level4" data-number="3.3.2">
-<h4 data-number="3.3.2" class="anchored" data-anchor-id="implementação-no-r"><span class="header-section-number">3.3.2</span> Implementação no R</h4>
+<section id="implementação-no-r" class="level4" data-number="3.2.2">
+<h4 data-number="3.2.2" class="anchored" data-anchor-id="implementação-no-r"><span class="header-section-number">3.2.2</span> Implementação no R</h4>
 <p>Funções que usaremos no código:</p>
 <ul>
 <li>lambda (λ): representa a média de ocorrências;</li>
@@ -316,8 +315,8 @@ window.Quarto = {
 </div>
 </section>
 </section>
-<section id="distribuição-normal" class="level3" data-number="3.4">
-<h3 data-number="3.4" class="anchored" data-anchor-id="distribuição-normal"><span class="header-section-number">3.4</span> Distribuição Normal</h3>
+<section id="distribuição-normal" class="level3" data-number="3.3">
+<h3 data-number="3.3" class="anchored" data-anchor-id="distribuição-normal"><span class="header-section-number">3.3</span> Distribuição Normal</h3>
 <p>A distribuição normal é do tipo <a href="#vad">variável aleatória contínua</a>, usada para modelar fenômenos que tendem a se concentrar em torno de um valor médio, é definida por média μ e por desvio padrão σ.</p>
 <p>Fórmula: <span class="math display">\[f(x)=\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}\]</span></p>
 <p>Padronização <span class="math display">\[Z=\frac{x-\mu}{\sigma}\]</span></p>
@@ -336,8 +335,8 @@ window.Quarto = {
 <li>Tempo de resposta de um sistema;</li>
 <li>Alturas e pesos de pessoas.</li>
 </ul>
-<section id="exemplo-prático-tempo-de-resposta-de-um-microcontrolador" class="level4" data-number="3.4.1">
-<h4 data-number="3.4.1" class="anchored" data-anchor-id="exemplo-prático-tempo-de-resposta-de-um-microcontrolador"><span class="header-section-number">3.4.1</span> Exemplo prático: Tempo de resposta de um microcontrolador</h4>
+<section id="exemplo-prático-tempo-de-resposta-de-um-microcontrolador" class="level4" data-number="3.3.1">
+<h4 data-number="3.3.1" class="anchored" data-anchor-id="exemplo-prático-tempo-de-resposta-de-um-microcontrolador"><span class="header-section-number">3.3.1</span> Exemplo prático: Tempo de resposta de um microcontrolador</h4>
 <p>Tempo de reposta de um microcontrolador:</p>
 <ul>
 <li>média = 100ms;</li>
@@ -356,14 +355,14 @@ window.Quarto = {
 <figcaption>[1]Tabela de Distribuição Normal</figcaption>
 </figure>
 </div>
-<p>Através da tabela da Distribuição Normal, identificamos que <span class="math display">\[P(Z &gt; 1)\approx0,1587\]</span>. Assim:</p>
+<p>Através da tabela da Distribuição Normal, identificamos que <span class="math inline">\(P(Z &gt; 1)\approx0,1587\)</span>. Assim:</p>
 <p><span class="math display">\[
 1-0,1587=0,8413
 \]</span></p>
 <p>Portanto, a probabilidade do microcontrolador apresentar um tempo de resposta menor do que 110ms é de aproximadamente 84,13%.</p>
 </section>
-<section id="implementação-no-r-1" class="level4" data-number="3.4.2">
-<h4 data-number="3.4.2" class="anchored" data-anchor-id="implementação-no-r-1"><span class="header-section-number">3.4.2</span> Implementação no R</h4>
+<section id="implementação-no-r-1" class="level4" data-number="3.3.2">
+<h4 data-number="3.3.2" class="anchored" data-anchor-id="implementação-no-r-1"><span class="header-section-number">3.3.2</span> Implementação no R</h4>
 <p>funções que são usadas no código:</p>
 <ul>
 <li>mean : representa o valor médio esperado da distribuição,isto é, o centro da curva normal;</li>
@@ -937,7 +936,7 @@ window.Quarto = {
 <span id="cb7-90"><a href="#cb7-90" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-91"><a href="#cb7-91" aria-hidden="true" tabindex="-1"></a>A probabilidade de encontrar exatamente um sensor com defeito é de aproximadamente 34,13%.</span>
 <span id="cb7-92"><a href="#cb7-92" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-93"><a href="#cb7-93" aria-hidden="true" tabindex="-1"></a><span class="fu">### Implemetação no R</span></span>
+<span id="cb7-93"><a href="#cb7-93" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Implemetação no R</span></span>
 <span id="cb7-94"><a href="#cb7-94" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-95"><a href="#cb7-95" aria-hidden="true" tabindex="-1"></a>Para o cálculo computacional usaremos o pacote leem. Necessitamos conhecer algumas funções que serão usadas no código:</span>
 <span id="cb7-96"><a href="#cb7-96" aria-hidden="true" tabindex="-1"></a></span>
@@ -1070,7 +1069,7 @@ window.Quarto = {
 <span id="cb7-227"><a href="#cb7-227" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-228"><a href="#cb7-228" aria-hidden="true" tabindex="-1"></a>![<span class="co">[</span><span class="ot">1</span><span class="co">]</span>Tabela de Distribuição Normal](Tabelas de Distribuição Normal.png)</span>
 <span id="cb7-229"><a href="#cb7-229" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-230"><a href="#cb7-230" aria-hidden="true" tabindex="-1"></a>Através da tabela da Distribuição Normal, identificamos que $$P(Z &gt; 1)\approx0,1587$$. Assim:</span>
+<span id="cb7-230"><a href="#cb7-230" aria-hidden="true" tabindex="-1"></a>Através da tabela da Distribuição Normal, identificamos que $P(Z &gt; 1)\approx0,1587$. Assim:</span>
 <span id="cb7-231"><a href="#cb7-231" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-232"><a href="#cb7-232" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb7-233"><a href="#cb7-233" aria-hidden="true" tabindex="-1"></a>1-0,1587=0,8413</span>

@@ -90,7 +90,7 @@ Para o cálculo, utilizamos a combinação $\binom{12}{1} = \frac{12!}{1!(12-1)!
 
 A probabilidade de encontrar exatamente um sensor com defeito é de aproximadamente 34,13%.
 
-### Implemetação no R
+#### Implemetação no R
 
 Para o cálculo computacional usaremos o pacote leem. Necessitamos conhecer algumas funções que serão usadas no código:
 
@@ -223,7 +223,7 @@ Como desejamos calcular $P(Z<1)$, utilizamos a propriedade complementar : $$P(Z<
 
 ![[1]Tabela de Distribuição Normal](Tabelas de Distribuição Normal.png)
 
-Através da tabela da Distribuição Normal, identificamos que $$P(Z > 1)\approx0,1587$$. Assim:
+Através da tabela da Distribuição Normal, identificamos que $P(Z > 1)\approx0,1587$. Assim:
 
 $$
 1-0,1587=0,8413
