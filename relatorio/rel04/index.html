@@ -123,18 +123,30 @@ window.Quarto = {
   <li><a href="#distribuição-binomial" id="toc-distribuição-binomial" class="nav-link" data-scroll-target="#distribuição-binomial"><span class="header-section-number">3.1</span> Distribuição Binomial</a></li>
   <li><a href="#distribuição-poisson" id="toc-distribuição-poisson" class="nav-link" data-scroll-target="#distribuição-poisson"><span class="header-section-number">3.2</span> Distribuição Poisson</a></li>
   <li><a href="#distribuição-normal" id="toc-distribuição-normal" class="nav-link" data-scroll-target="#distribuição-normal"><span class="header-section-number">3.3</span> Distribuição Normal</a></li>
+  <li><a href="#distribuição-geométrica" id="toc-distribuição-geométrica" class="nav-link" data-scroll-target="#distribuição-geométrica"><span class="header-section-number">3.4</span> Distribuição Geométrica</a></li>
+  <li><a href="#distribuição-hipergeométrica" id="toc-distribuição-hipergeométrica" class="nav-link" data-scroll-target="#distribuição-hipergeométrica"><span class="header-section-number">3.5</span> Distribuição Hipergeométrica</a></li>
+  <li><a href="#distribuição-uniforme" id="toc-distribuição-uniforme" class="nav-link" data-scroll-target="#distribuição-uniforme"><span class="header-section-number">3.6</span> Distribuição Uniforme</a></li>
+  <li><a href="#distribuição-exponencial" id="toc-distribuição-exponencial" class="nav-link" data-scroll-target="#distribuição-exponencial"><span class="header-section-number">3.7</span> Distribuição Exponencial</a></li>
+  <li><a href="#estudo-de-caso-prático-o-desenvolvimento-do-painel-de-controle-clp---controlador-lógico-programável" id="toc-estudo-de-caso-prático-o-desenvolvimento-do-painel-de-controle-clp---controlador-lógico-programável" class="nav-link" data-scroll-target="#estudo-de-caso-prático-o-desenvolvimento-do-painel-de-controle-clp---controlador-lógico-programável"><span class="header-section-number">3.8</span> Estudo de Caso Prático: O desenvolvimento do painel de controle (CLP - Controlador Lógico Programável)</a></li>
   </ul></li>
   </ul>
 </nav>
 </div>
 <main class="content" id="quarto-document-content">
 <div class="logos" style="display: flex; justify-content: center; align-items: center; height: 200px; gap: 20px;">
+
   <a href="https://ufsj.edu.br">
+
     <img src="imagens/ufsj.png" width="220px">
+
   </a>
+
   <a href="https://ufsj.edu.br/defim">
+
     <img src="imagens/defim.png" width="220px">
+
   </a>
+
 </div>
 
 <header id="title-block-header" class="quarto-title-block default">
@@ -157,7 +169,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Data de Publicação</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">9 de maio de 2026</p>
+      <p class="date">11 de maio de 2026</p>
     </div>
   </div>
   
@@ -172,7 +184,7 @@ window.Quarto = {
 <section id="introdução" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="introdução"><span class="header-section-number">1</span> 📌 Introdução</h2>
 <p>O estudo das variáveis aleatórias e suas distribuições de probabilidade constitui a base da estatística contemporânea, permitindo o estudo de fenômenos reais e a tomada de decisões fundamentada em dados. Em contextos técnicos, como a engenharia e a computação, essas são ferramentas essenciais para prever falhas em sistemas, analisar tráfego de dados e garantir a qualidade dos equipamentos.</p>
-<p>Este relatório tem como objetivo apresentar uma análise teórica e prática das distribuições Binominal, Poisson e Normal, bem como outros modelos complementares (DISTRIBUIÇÕES DO LUCAS). O relatório será redigido sobre duas perspectivas : a analítica, através de cálculos matemáticos manuais, e a computacional, utilizando a linguagem R com o auxílio do pacote leem, que contribui para visualização dos dados estatísticos.</p>
+<p>Este relatório tem como objetivo apresentar uma análise teórica e prática das distribuições Binominal, Poisson e Normal, bem como outros modelos complementares Geométrica, Hipergeométrica, Uniforme e Exponencial. O relatório será redigido sobre duas perspectivas: a analítica, através de cálculos matemáticos manuais, e a computacional, utilizando a linguagem R com o auxílio do pacote leem, que contribui para visualização dos dados estatísticos.</p>
 </section>
 <section id="tipos-de-variáveis" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="tipos-de-variáveis"><span class="header-section-number">2</span> Tipos de Variáveis</h2>
@@ -251,6 +263,20 @@ window.Quarto = {
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">prob =</span> <span class="fl">0.05</span></span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-1-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.34128</code></pre>
 </div>
@@ -309,6 +335,20 @@ window.Quarto = {
 <span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">lambda =</span> <span class="dv">3</span></span>
 <span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-2-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.10082</code></pre>
 </div>
@@ -381,13 +421,349 @@ window.Quarto = {
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">sd =</span> <span class="dv">10</span></span>
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.84134</code></pre>
 </div>
 </div>
+</section>
+</section>
+<section id="distribuição-geométrica" class="level3" data-number="3.4">
+<h3 data-number="3.4" class="anchored" data-anchor-id="distribuição-geométrica"><span class="header-section-number">3.4</span> Distribuição Geométrica</h3>
+<p>A Distribuição de Geométrica é do tipo <a href="#vac">variável aleatória discreta</a>, tem suas raízes nos trabalhos de Jacob Bernoulli (século XVII) sobre o que hoje chamamos de “Ensaios de Bernoulli” — experimentos que resultam em apenas dois resultados possíveis: “sucesso” ou “fracasso”.Enquanto a Distribuição Binomial (também derivada desses ensaios) foi criada para responder “quantos sucessos ocorrem em <span class="math inline">\(n\)</span> tentativas?”, os engenheiros e matemáticos precisavam de uma ferramenta para responder a uma pergunta fundamental de confiabilidade e tempo de espera: “Quantas tentativas independentes são necessárias até que o primeiro sucesso ocorra?”Na engenharia moderna, ela surgiu como a ferramenta definitiva para modelar processos de repetição até o êxito ou falha. Se um robô tenta agarrar uma peça e falha repetidamente devido a variações de iluminação, a distribuição geométrica modela exatamente essa “espera” até o sucesso.</p>
+<p>Fórmula: <span class="math display">\[P(X = k) = (1 - p)^{k - 1} p\]</span></p>
+<p>Métricas de Desempenho (Valor Esperado e Variância):</p>
+<p>Para dimensionar sistemas, precisamos saber a “média” de tentativas esperadas e o quanto isso pode variar.</p>
+<p>Valor Esperado (Média): O número médio de tentativas até o primeiro sucesso.<span class="math display">\[E(X) = \frac{1}{p}\]</span></p>
+<p>Variância: A dispersão em torno da média.<span class="math display">\[Var(X) = \frac{1 - p}{p^2}\]</span></p>
+<p>Onde:</p>
+<p><span class="math inline">\(X\)</span>: A variável aleatória que representa o número da tentativa em que o primeiro sucesso ocorre (<span class="math inline">\(X \in \{1, 2, 3, \dots\}\)</span>). <span class="math inline">\(p\)</span>: A probabilidade de sucesso em uma única tentativa (<span class="math inline">\(0 &lt; p \le 1\)</span>). <span class="math inline">\(1 - p\)</span>: A probabilidade de falha em uma única tentativa (frequentemente denotada como <span class="math inline">\(q\)</span>). <span class="math inline">\(k\)</span>: Um valor específico (número inteiro) de tentativas que estamos avaliando.</p>
+<ul>
+<li><strong>Por Que é Relevante na Engenharia Mecatrônica?</strong></li>
+</ul>
+<p>Sistemas mecatrônicos são compostos por integrações de software, eletrônica e mecânica. A Distribuição Geométrica é crucial para avaliar a resiliência e a confiabilidade dessas integrações:</p>
+<p>Redes de Comunicação Industrial (IoT): Em ambientes ruidosos (chão de fábrica com alta interferência eletromagnética), pacotes de dados de sensores frequentemente falham. A distribuição modela quantas vezes o sistema precisa reenviar o pacote até que o CLP (Controlador Lógico Programável) o receba com sucesso.</p>
+<p>Controle de Qualidade (Visão Computacional): Um algoritmo de inspeção óptica tenta classificar uma peça com uma taxa de acerto <span class="math inline">\(p\)</span>. O modelo ajuda a definir o limite máximo de retentativas antes de descartar a peça.</p>
+<p>Engenharia de Confiabilidade (Fadiga): Usada para modelar a vida útil de componentes discretos, como o número de ciclos que uma válvula solenoide pneumática executa antes de apresentar o primeiro vazamento.4.</p>
+<section id="estudo-de-caso-prático-veículo-guiado-automaticamente-agv" class="level4" data-number="3.4.1">
+<h4 data-number="3.4.1" class="anchored" data-anchor-id="estudo-de-caso-prático-veículo-guiado-automaticamente-agv"><span class="header-section-number">3.4.1</span> Estudo de Caso Prático: Veículo Guiado Automaticamente (AGV)</h4>
+<p>Cenário: Um AGV (Robô Móvel) navega por um armazém logístico. Para se acoplar à sua estação de recarga, ele utiliza um sistema de escaneamento a laser (LiDAR). Devido a poeira e reflexos no ambiente industrial, a probabilidade de o algoritmo do robô reconhecer a estação perfeitamente em um único escaneamento é de 30% (<span class="math inline">\(p = 0.3\)</span>). Cada escaneamento falho força o robô a se reposicionar e tentar novamente.</p>
+<ul>
+<li><strong>Qual a probabilidade de o robô conseguir se acoplar exatamente na 4ª tentativa?</strong></li>
+</ul>
+<p>Queremos encontrar <span class="math inline">\(P(X = 4)\)</span> onde <span class="math inline">\(p = 0.3\)</span>. As 3 primeiras tentativas falham: probabilidade de <span class="math inline">\(1 - 0.3 = 0.7\)</span>. A 4ª tentativa é um sucesso: probabilidade de <span class="math inline">\(0.3\)</span></p>
+<p>Aplicando a fórmula:<span class="math display">\[P(X = 4) = (0.7)^{4 - 1} \cdot 0.3\]</span><span class="math display">\[P(X = 4) = (0.7)^3 \cdot 0.3\]</span><span class="math display">\[P(X = 4) = 0.343 \cdot 0.3\]</span><span class="math display">\[P(X = 4) = 0.1029\]</span> Existe 10.29% de chance de o robô conseguir se alinhar e acoplar exatamente na quarta tentativa. Problema 2: Quantas tentativas o robô fará em média?<span class="math display">\[E(X) = \frac{1}{0.3} \approx 3.33\]</span>Em média, o sistema do AGV precisará realizar entre 3 e 4 escaneamentos por ciclo de acoplamento. Se cada reposicionamento leva 2 segundos, o engenheiro mecatrônico sabe que deve adicionar cerca de 6,6 segundos ao tempo total de ciclo da máquina no cálculo de eficiência da planta.</p>
+</section>
+<section id="implementação-em-r" class="level4" data-number="3.4.2">
+<h4 data-number="3.4.2" class="anchored" data-anchor-id="implementação-em-r"><span class="header-section-number">3.4.2</span> Implementação em R:</h4>
+<div class="cell">
+<details class="code-fold">
+<summary>Código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Criando dados para 0 a 10 falhas</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>dados <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">falhas =</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">10</span>,</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">probabilidade =</span> <span class="fu">dgeom</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">prob =</span> <span class="fl">0.3</span>)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotando</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dados, <span class="fu">aes</span>(<span class="at">x =</span> falhas, <span class="at">y =</span> probabilidade)) <span class="sc">+</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">fill =</span> <span class="st">"steelblue"</span>) <span class="sc">+</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">10</span>) <span class="sc">+</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Distribuição Geométrica (p=0.3)"</span>,</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Número de falhas antes do primeiro sucesso"</span>,</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Quantidade de Falhas"</span>,</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"P(X = x)"</span>) <span class="sc">+</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li><strong>O ggplot2serve para criar gráficos através de uma lógica de camadas.</strong></li>
+</ul>
+<p>Em vez de fornecer um comando pronto para “gráfico de barras” ou “gráfico de linhas”, ele funciona como um software de edição (tipo Photoshop ou Canva), onde você sobrepõe elementos:</p>
+<p>A Base: Você conecta seus dados.</p>
+<p>O Mapeamento: Você diz quem é o eixo X e o eixo Y.</p>
+<p>A Geometria: Você escolhe a forma (pontos, barras, linhas ou áreas).</p>
+<p>O Refinamento: Você adiciona títulos, cores e temas.</p>
+</section>
+</section>
+<section id="distribuição-hipergeométrica" class="level3" data-number="3.5">
+<h3 data-number="3.5" class="anchored" data-anchor-id="distribuição-hipergeométrica"><span class="header-section-number">3.5</span> Distribuição Hipergeométrica</h3>
+<p>A Distribuição Hipergeométrica é do tipo <a href="#vac">variável aleatória discreta</a>, surgiu da necessidade de modelar situações de amostragem sem reposição. Historicamente, sua formalização está ligada ao desenvolvimento da análise combinatória nos séculos XVII e XVIII.</p>
+<p>Enquanto a Distribuição Binomial assume que o “universo” é infinito ou que o item retirado retorna ao lote, a Hipergeométrica reconhece a realidade da manufatura: se eu retiro um sensor defeituoso de uma caixa de 10, a probabilidade de encontrar outro defeituoso nos 9 restantes muda drasticamente.</p>
+<p>Modelagem Matemática:</p>
+<p>Para um engenheiro mecatrônico, a precisão reside nas variáveis. Definimos a probabilidade de obter exatamente <span class="math inline">\(k\)</span> sucessos em uma amostra de tamanho <span class="math inline">\(n\)</span>, extraída de uma população total <span class="math inline">\(N\)</span> que contém <span class="math inline">\(K\)</span> sucessos totais.A FórmulaA função de probabilidade é dada por: <span class="math display">\[P(X = k) = \frac{\binom{K}{k} \binom{N - K}{n - k}}{\binom{N}{n}}\]</span></p>
+<p>Variáveis do Sistema:</p>
+<p><span class="math inline">\(N\)</span>: Tamanho total da população (ex: lote total de componentes). <span class="math inline">\(K\)</span>: Número total de sucessos na população (ex: total de itens com uma característica específica). <span class="math inline">\(n\)</span>: Tamanho da amostra retirada (ex: itens selecionados para teste). <span class="math inline">\(k\)</span>: Número de sucessos observados na amostra.</p>
+<ul>
+<li><strong>Por Que é Relevante na Engenharia Mecatrônica?</strong></li>
+</ul>
+<p>Na mecatrônica, onde trabalhamos com sistemas embarcados, robótica e linhas de montagem automatizadas, a Distribuição Hipergeométrica é vital por três motivos:</p>
+<p>Controle de Qualidade em Lotes Pequenos: Em células de manufatura flexível (Industry 4.0), os lotes costumam ser menores. A aproximação binomial falha aqui por subestimar a variação da probabilidade.</p>
+<p>Testes Destrutivos: Se testar um atuador significa levá-lo à falha, ele não volta para o lote. A amostragem é, por definição, sem reposição.</p>
+<p>Confiabilidade de Sistemas: Avaliar a probabilidade de falha em sistemas redundantes (ex: um drone com 8 motores onde ele precisa de 6 para voar).</p>
+<section id="estudo-de-caso-prático-inspeção-de-microcontroladores" class="level4" data-number="3.5.1">
+<h4 data-number="3.5.1" class="anchored" data-anchor-id="estudo-de-caso-prático-inspeção-de-microcontroladores"><span class="header-section-number">3.5.1</span> Estudo de Caso Prático: Inspeção de Microcontroladores</h4>
+<p>Cenário: Um lote de <span class="math inline">\(N = 50\)</span> microcontroladores chega à bancada. Informações históricas sugerem que, em lotes desse fornecedor, geralmente existem <span class="math inline">\(K = 5\)</span> unidades com clock instável (defeitos). Você seleciona aleatoriamente <span class="math inline">\(n = 10\)</span> unidades para passar pelo teste funcional automático.</p>
+<p>Pergunta: Qual a probabilidade de você encontrar exatamente <span class="math inline">\(k = 2\)</span> unidades defeituosas na sua amostra?</p>
+<p>Resolução: Aplicando os valores na fórmula, Combinações de defeituosos: <span class="math inline">\(\binom{5}{2} = 10\)</span> Combinações de não-defeituosos: <span class="math inline">\(\binom{50-5}{10-2} = \binom{45}{8} = 215.553.195\)</span> Combinações totais da amostra: <span class="math inline">\(\binom{50}{10} = 10.272.278.170\)</span><span class="math display">\[P(X = 2) = \frac{10 \times 215.553.195}{10.272.278.170} \approx 0,2098\]</span></p>
+<p>Conclusão: Existe aproximadamente 21% de chance de detectar exatamente dois componentes instáveis. Esse cálculo permite que o engenheiro ajuste o rigor da inspeção: se a probabilidade de não detectar nenhum defeito (<span class="math inline">\(k=0\)</span>) for alta demais para os padrões de segurança, o tamanho da amostra <span class="math inline">\(n\)</span> deve ser aumentado.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># --- Parâmetros do Sistema (Exemplo dos Microcontroladores) ---</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="dv">50</span>  <span class="co"># População total</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>K <span class="ot">&lt;-</span> <span class="dv">5</span>   <span class="co"># Total de defeituosos no lote</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">10</span>  <span class="co"># Tamanho da amostra de inspeção</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>k_alvo <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="co"># Quantidade exata que queremos encontrar</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co"># --- Cálculo de Probabilidade Pontual ---</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co"># m = K (sucessos)</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co"># n_r = N - K (fracassos)</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co"># k = n (amostra)</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>prob_pontual <span class="ot">&lt;-</span> <span class="fu">dhyper</span>(<span class="at">x =</span> k_alvo, <span class="at">m =</span> K, <span class="at">n =</span> N <span class="sc">-</span> K, <span class="at">k =</span> n)</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">paste</span>(<span class="st">"Probabilidade de encontrar exatamente"</span>, k_alvo, <span class="st">"defeitos:"</span>, <span class="fu">round</span>(prob_pontual <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">2</span>), <span class="st">"%</span><span class="sc">\n</span><span class="st">"</span>))</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Probabilidade de encontrar exatamente 2 defeitos: 20.98 %</code></pre>
+</div>
+<details class="code-fold">
+<summary>Código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># --- Simulação de Cenários (Distribuição Completa) ---</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Vamos ver a probabilidade para 0, 1, 2, 3, 4 e 5 defeitos na amostra</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>x_vals <span class="ot">&lt;-</span> <span class="dv">0</span><span class="sc">:</span>K</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>probabilidades <span class="ot">&lt;-</span> <span class="fu">dhyper</span>(<span class="at">x =</span> x_vals, <span class="at">m =</span> K, <span class="at">n =</span> N <span class="sc">-</span> K, <span class="at">k =</span> n)</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="co"># --- Visualização Técnica ---</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>dados_plot <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Defeitos =</span> <span class="fu">as.factor</span>(x_vals), <span class="at">Prob =</span> probabilidades)</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dados_plot, <span class="fu">aes</span>(<span class="at">x =</span> Defeitos, <span class="at">y =</span> Prob, <span class="at">fill =</span> (Defeitos <span class="sc">==</span> k_alvo))) <span class="sc">+</span></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"gray70"</span>, <span class="st">"#0073C2FF"</span>), <span class="at">guide =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Distribuição Hipergeométrica: Inspeção de Lote"</span>,</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="fu">paste</span>(<span class="st">"N=50, K=5, n=10 | Probabilidade para k=2 é"</span>, <span class="fu">round</span>(prob_pontual, <span class="dv">4</span>)),</span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Quantidade de Defeitos Encontrados (k)"</span>,</span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Probabilidade P(X = k)"</span>) <span class="sc">+</span></span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="distribuição-uniforme" class="level3" data-number="3.6">
+<h3 data-number="3.6" class="anchored" data-anchor-id="distribuição-uniforme"><span class="header-section-number">3.6</span> Distribuição Uniforme</h3>
+<p>A Distribuição Uniforme é do tipo <a href="#vad">variável aleatória contínua</a>, surgiu da necessidade de modelar fenômenos de máxima ignorância ou equipotencialidade. No contexto científico, ela foi formalizada para descrever situações onde não temos motivos para acreditar que um valor em um intervalo ocorra com mais frequência que outro.Na engenharia, sua relevância explodiu com a necessidade de quantificar o erro de quantização em conversores analógico-digitais (ADCs) e a tolerância de componentes fabricados em série, onde o controle de qualidade garante que a peça esteja dentro de um limite <span class="math inline">\([a, b]\)</span>, mas não garante uma tendência central (como ocorre na Gaussiana).</p>
+<p>Formulação Matemática e Variáveis Diferente de outras distribuições, a Uniforme define que a probabilidade é constante ao longo de um intervalo definido. Função Densidade de Probabilidade (PDF). A probabilidade de uma variável <span class="math inline">\(X\)</span> assumir um valor entre os limites inferior (<span class="math inline">\(a\)</span>) e superior (<span class="math inline">\(b\)</span>) é dada por:</p>
+<p><span class="math display">\[f(x) = \begin{cases} \frac{1}{b - a} &amp; \text{para } a \le x \le b \\ 0 &amp; \text{para } x &lt; a \text{ ou } x &gt; b \end{cases}\]</span> Onde:</p>
+<p><span class="math inline">\(a\)</span>: Limite mínimo do intervalo (ex: tensão mínima de operação). <span class="math inline">\(b\)</span>: Limite máximo do intervalo (ex: tensão máxima de operação). Média (Esperança): <span class="math inline">\(E[X] = \frac{a + b}{2}\)</span> Variância: <span class="math inline">\(Var(X) = \frac{(b - a)^2}{12}\)</span></p>
+<ul>
+<li><strong>Por Que é Relevante na Engenharia Mecatrônica?</strong></li>
+</ul>
+<p>-Resolução de Sensores: Se um sensor de posição tem uma resolução de 0,01 mm, o erro de leitura está distribuído uniformemente entre <span class="math inline">\(-0,005\)</span> e <span class="math inline">\(+0,005\)</span>; -Processamento de Sinais: A modelagem do ruído de arredondamento em microcontroladores de 8, 16 ou 32 bits segue este modelo; -Simulação de Monte Carlo: É a base para gerar números aleatórios que alimentam simulações de falhas e confiabilidade de sistemas robóticos.</p>
+<section id="exemplo-aplicado-posicionamento-de-um-atuador-linear." class="level4" data-number="3.6.1">
+<h4 data-number="3.6.1" class="anchored" data-anchor-id="exemplo-aplicado-posicionamento-de-um-atuador-linear."><span class="header-section-number">3.6.1</span> Exemplo Aplicado: Posicionamento de um Atuador Linear.</h4>
+<p>Imagine que você está projetando uma célula de manufatura onde um braço robótico utiliza um Atuador Linear Digital. O controlador envia um comando de posição, mas devido à folga mecânica (backlash) das engrenagens, a posição real do atuador pode variar uniformemente em um intervalo de 2 mm em torno do ponto desejado. Se o objetivo é atingir a posição de <span class="math inline">\(100 \text{ mm}\)</span>, o erro posiciona o atuador em qualquer lugar entre <span class="math inline">\(a = 99 \text{ mm}\)</span> e <span class="math inline">\(b = 101 \text{ mm}\)</span>. Cálculos Estatísticos PDF: <span class="math inline">\(f(x) = \frac{1}{101 - 99} = 0,5\)</span>. Isso significa que a densidade de probabilidade é constante em 0,5 para qualquer ponto nesse intervalo. Incerteza Padrão (Desvio Padrão): Para calcular o erro médio quadrático que o sistema de controle deve compensar:<span class="math display">\[\sigma = \sqrt{\frac{(101 - 99)^2}{12}} = \sqrt{\frac{4}{12}} \approx 0,577 \text{ mm}\]</span></p>
+</section>
+<section id="implementação-em-r-1" class="level4" data-number="3.6.2">
+<h4 data-number="3.6.2" class="anchored" data-anchor-id="implementação-em-r-1"><span class="header-section-number">3.6.2</span> Implementação em R:</h4>
+<div class="cell">
+<details class="code-fold">
+<summary>Código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Definição de Parâmetros do Sistema</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>posicao_desejada <span class="ot">&lt;-</span> <span class="dv">100</span>       <span class="co"># Centro (setpoint) em mm</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>intervalo_erro <span class="ot">&lt;-</span> <span class="dv">2</span>           <span class="co"># Folga total (backlash) em mm</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> posicao_desejada <span class="sc">-</span> (intervalo_erro <span class="sc">/</span> <span class="dv">2</span>) <span class="co"># Limite inferior: 99mm</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> posicao_desejada <span class="sc">+</span> (intervalo_erro <span class="sc">/</span> <span class="dv">2</span>) <span class="co"># Limite superior: 101mm</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Simulação de Dados</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">42</span>) <span class="co"># Para resultados reproduzíveis</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>n_amostras <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>posicoes_reais <span class="ot">&lt;-</span> <span class="fu">runif</span>(n_amostras, <span class="at">min =</span> a, <span class="at">max =</span> b)</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Cálculos Estatísticos Comparativos</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a>media_simulada <span class="ot">&lt;-</span> <span class="fu">mean</span>(posicoes_reais)</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a>sd_simulado <span class="ot">&lt;-</span> <span class="fu">sd</span>(posicoes_reais)</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a>sd_teorico <span class="ot">&lt;-</span> <span class="fu">sqrt</span>((b <span class="sc">-</span> a)<span class="sc">^</span><span class="dv">2</span> <span class="sc">/</span> <span class="dv">12</span>)</span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Imprimindo Relatório no Console</span></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"--- Relatório de Precisão do Atuador ---</span><span class="sc">\n</span><span class="st">"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>--- Relatório de Precisão do Atuador ---</code></pre>
+</div>
+<details class="code-fold">
+<summary>Código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Média Esperada:"</span>, (a <span class="sc">+</span> b) <span class="sc">/</span> <span class="dv">2</span>, <span class="st">"mm | Média Simulada:"</span>, <span class="fu">round</span>(media_simulada, <span class="dv">4</span>), <span class="st">"mm</span><span class="sc">\n</span><span class="st">"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Média Esperada: 100 mm | Média Simulada: 99.9979 mm</code></pre>
+</div>
+<details class="code-fold">
+<summary>Código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Desvio Padrão Teórico:"</span>, <span class="fu">round</span>(sd_teorico, <span class="dv">4</span>), <span class="st">"mm</span><span class="sc">\n</span><span class="st">"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Desvio Padrão Teórico: 0.5774 mm</code></pre>
+</div>
+<details class="code-fold">
+<summary>Código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Desvio Padrão Simulado:"</span>, <span class="fu">round</span>(sd_simulado, <span class="dv">4</span>), <span class="st">"mm</span><span class="sc">\n</span><span class="st">"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Desvio Padrão Simulado: 0.5815 mm</code></pre>
+</div>
+<details class="code-fold">
+<summary>Código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"----------------------------------------</span><span class="sc">\n</span><span class="st">"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>----------------------------------------</code></pre>
+</div>
+<details class="code-fold">
+<summary>Código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Visualização Gráfica para Engenharia</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Dividindo a tela para dois gráficos</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Gráfico 1: Histograma das Posições Reais</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(posicoes_reais, </span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>     <span class="at">breaks =</span> <span class="dv">30</span>, </span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>     <span class="at">probability =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Distribuição de Posicionamento"</span>,</span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Posição Real (mm)"</span>, </span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"Densidade"</span>,</span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">"steelblue"</span>, </span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>     <span class="at">border =</span> <span class="st">"white"</span>)</span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Adiciona a linha da PDF teórica (f(x) = 1/(b-a) = 0.5)</span></span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fl">0.5</span>, <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">lwd =</span> <span class="dv">3</span>, <span class="at">lty =</span> <span class="dv">2</span>)</span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">"topright"</span>, <span class="at">legend =</span> <span class="st">"PDF Teórica (0.5)"</span>, <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">lty =</span> <span class="dv">2</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Gráfico 2: Probabilidade Acumulada (CDF)</span></span>
+<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Útil para saber: "Qual a chance do robô estar abaixo de 100.5mm?"</span></span>
+<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">ecdf</span>(posicoes_reais), </span>
+<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Probabilidade Acumulada (CDF)"</span>,</span>
+<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Posição (mm)"</span>, </span>
+<span id="cb21-24"><a href="#cb21-24" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"F(x)"</span>,</span>
+<span id="cb21-25"><a href="#cb21-25" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">"darkgreen"</span>)</span>
+<span id="cb21-26"><a href="#cb21-26" aria-hidden="true" tabindex="-1"></a><span class="fu">grid</span>()</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="distribuição-exponencial" class="level3" data-number="3.7">
+<h3 data-number="3.7" class="anchored" data-anchor-id="distribuição-exponencial"><span class="header-section-number">3.7</span> Distribuição Exponencial</h3>
+<p>A distribuição exponencial é do tipo <a href="#vad">variável aleatória contínua</a>, tem suas raízes no início do século XX, intimamente ligada ao desenvolvimento da Teoria das Filas e dos Processos de Poisson. Ela surgiu da necessidade de modelar matematicamente o tempo de espera entre eventos que ocorrem de forma contínua e independente a uma taxa média constante. Historicamente, o engenheiro e matemático dinamarquês A.K. Erlang foi um dos pioneiros a utilizar esses conceitos para analisar o tráfego de chamadas telefônicas (um sistema clássico de “distribuição” de sinais). Na engenharia moderna, a distribuição exponencial deixou de ser apenas para telecomunicações e se tornou a espinha dorsal da Engenharia de Confiabilidade. Ela surgiu como uma ferramenta vital porque permite aos engenheiros responder a uma pergunta crítica: “Dado que um componente está funcionando agora, qual é a probabilidade de ele falhar nas próximas <span class="math inline">\(t\)</span> horas?”</p>
+<p>Fundamentação Matemática e Variáveis: A distribuição exponencial descreve o tempo entre eventos em um processo de Poisson. Em mecatrônica, o “evento” é tipicamente a falha de um componente. A principal característica que define a distribuição exponencial é a falta de memória (propriedade de Markov). Isso significa que a probabilidade de um componente falhar no próximo instante depende apenas do seu estado atual de funcionamento e da sua taxa de falha, não do tempo em que ele já esteve operando. (Em termos práticos: assume-se que o componente não sofre desgaste gradativo ao longo do tempo, falhando de forma aleatória). Fórmulas EssenciaisAs equações que regem este modelo utilizam a notação matemática padrão para distribuições contínuas:</p>
+<p>Função Densidade de Probabilidade (PDF): Descreve a probabilidade relativa de a falha ocorrer em um instante exato de tempo <span class="math inline">\(t\)</span>.<span class="math display">\[f(t) = \lambda e^{-\lambda t} \quad \text{para } t \ge 0\]</span></p>
+<p>Função de Distribuição Acumulada (CDF): Probabilidade de Falha: Fornece a probabilidade do componente falhar antes de um tempo <span class="math inline">\(t\)</span>.<span class="math display">\[F(t) = 1 - e^{-\lambda t} \quad \text{para } t \ge 0\]</span></p>
+<p>Função de Confiabilidade (Sobrevivência): Fornece a probabilidade de o componente sobreviver (não falhar) até o tempo <span class="math inline">\(t\)</span>.<span class="math display">\[R(t) = 1 - F(t) = e^{-\lambda t}\]</span></p>
+<p>Variáveis e Parâmetros:</p>
+<p><span class="math inline">\(t\)</span> (Tempo): A variável contínua independente (pode ser horas, ciclos, quilômetros). <span class="math inline">\(\lambda\)</span> (Taxa de Falha): O parâmetro de taxa. Representa o número esperado de falhas por unidade de tempo (ex: <span class="math inline">\(0,001\)</span> falhas/hora). <span class="math inline">\(MTTF\)</span> (Mean Time To Failure): O Tempo Médio Até a Falha. É o valor esperado (a média) da distribuição. É inversamente proporcional à taxa de falha:<span class="math display">\[\mu = MTTF = \frac{1}{\lambda}\]</span></p>
+<ul>
+<li><strong>Por Que é Relevante na Engenharia Mecatrônica?</strong></li>
+</ul>
+<p>Na Engenharia Mecatrônica, que funde mecânica, eletrônica e computação, lidamos com sistemas complexos onde a falha de um subcomponente pode parar uma linha de produção inteira. A distribuição exponencial é relevante por três motivos principais:</p>
+<p>Modelagem de Eletrônicos: Componentes de estado sólido (transistores, microcontroladores, sensores ópticos) geralmente não sofrem desgaste mecânico. Suas falhas são aleatórias (devido a picos de tensão, defeitos microscópicos latentes), enquadrando-se perfeitamente no modelo exponencial de taxa de falha constante.</p>
+<p>Manutenção Preventiva vs.&nbsp;Corretiva: Como a distribuição “não tem memória”, a manutenção preventiva (trocar uma placa eletrônica antes de quebrar) não faz sentido se ela segue puramente a distribuição exponencial. Isso guia gestores a focarem em redundância de sistemas em vez de substituições programadas para esses itens específicos.</p>
+<p>Cálculo de Confiabilidade de Sistemas: Permite calcular a confiabilidade de sistemas em série ou paralelo conectando subsistemas eletrônicos e de automação.</p>
+</section>
+<section id="estudo-de-caso-prático-o-desenvolvimento-do-painel-de-controle-clp---controlador-lógico-programável" class="level3" data-number="3.8">
+<h3 data-number="3.8" class="anchored" data-anchor-id="estudo-de-caso-prático-o-desenvolvimento-do-painel-de-controle-clp---controlador-lógico-programável"><span class="header-section-number">3.8</span> Estudo de Caso Prático: O desenvolvimento do painel de controle (CLP - Controlador Lógico Programável)</h3>
+<p>Cenário: O desenvolvimento do painel de controle (CLP - Controlador Lógico Programável) de um braço robótico de soldagem em uma montadora automotiva.O fabricante dos relés de estado sólido utilizados no CLP garante que a taxa de falha desses componentes em operação normal é constante, com <span class="math inline">\(\lambda = 0,0002\)</span> falhas por hora. Objetivo: O engenheiro mecatrônico precisa saber duas coisas para o manual de especificações técnicas do robô: Qual é o tempo médio até a falha (MTTF) deste relé? Qual a probabilidade de o relé funcionar perfeitamente sem falhas durante um turno intensivo de produção contínua de 1.000 horas?</p>
+<p>Resolução: Cálculo do MTTF: <span class="math display">\[MTTF = \frac{1}{\lambda} = \frac{1}{0,0002} = 5.000 \text{ horas}\]</span> O tempo esperado de vida do componente é de 5.000 horas. Cálculo da Confiabilidade em 1.000 horas: Aplicamos a Função de Confiabilidade para <span class="math inline">\(t = 1000\)</span>:<span class="math display">\[R(1000) = e^{-(0,0002 \cdot 1000)} = e^{-0,2} \approx 0,8187\]</span></p>
+<p>Conclusão: Há aproximadamente 81,87% de probabilidade de o relé operar por 1.000 horas sem falhar. Com base nisso, o engenheiro pode decidir se esse nível de confiabilidade é aceitável para o processo da montadora ou se deve introduzir um segundo relé redundante em paralelo no circuito eletrônico do braço robótico para aumentar a tolerância a falhas do sistema.</p>
+<div class="cell">
+<details class="code-fold">
+<summary>Código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>lambda <span class="ot">&lt;-</span> <span class="fl">0.0002</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>tempo_analise <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>prob_falha <span class="ot">&lt;-</span> <span class="fu">pexp</span>(<span class="at">q =</span> tempo_analise, <span class="at">rate =</span> lambda)</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Probabilidade de falha:"</span>, <span class="fu">round</span>(prob_falha <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">2</span>), <span class="st">"%"</span>))</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Probabilidade de falha: 18.13 %"</code></pre>
+</div>
+<details class="code-fold">
+<summary>Código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Qual a confiabilidade (probabilidade de sobreviver)? R(t)</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Como R(t) = 1 - F(t), podemos usar:</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>confiabilidade <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> <span class="fu">pexp</span>(<span class="at">q =</span> tempo_analise, <span class="at">rate =</span> lambda)</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="co"># OU usar o argumento lower.tail = FALSE (mais preciso computacionalmente)</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>confiabilidade <span class="ot">&lt;-</span> <span class="fu">pexp</span>(<span class="at">q =</span> tempo_analise, <span class="at">rate =</span> lambda, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Confiabilidade:"</span>, <span class="fu">round</span>(confiabilidade <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">2</span>), <span class="st">"%"</span>))</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Confiabilidade: 81.87 %"</code></pre>
+</div>
+<details class="code-fold">
+<summary>Código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Simular o tempo de falha de 100 sensores (Monte Carlo)</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>simulacao <span class="ot">&lt;-</span> <span class="fu">rexp</span>(<span class="at">n =</span> <span class="dv">100</span>, <span class="at">rate =</span> lambda)</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(simulacao, <span class="at">main=</span><span class="st">"Simulação de Falhas em Sensores"</span>, </span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">"Tempo (Horas)"</span>, <span class="at">col=</span><span class="st">"steelblue"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<details class="code-fold">
+<summary>Código</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Criando um data frame para o gráfico (0 a 20.000 horas)</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>tempos <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">t =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">20000</span>, <span class="at">by =</span> <span class="dv">100</span>))</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>tempos<span class="sc">$</span>R_t <span class="ot">&lt;-</span> <span class="fu">exp</span>(<span class="sc">-</span>lambda <span class="sc">*</span> tempos<span class="sc">$</span>t) <span class="co"># Calculando Confiabilidade</span></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(tempos, <span class="fu">aes</span>(<span class="at">x =</span> t, <span class="at">y =</span> R_t)) <span class="sc">+</span></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"red"</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Curva de Confiabilidade Mecatrônica (Decaimento Exponencial)"</span>,</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Tempo de Operação (Horas)"</span>,</span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Confiabilidade R(t)"</span>) <span class="sc">+</span></span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-7-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 <!-- -->
 
-</section>
 </section>
 </section>
 
@@ -844,259 +1220,550 @@ window.Quarto = {
     }
   });
   </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Código fonte</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Só mude aqui!!!!</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Igor e Lucas"</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Relatório sobre os tipos de distribuições em probabilidade"</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> referencias.bib</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co"># A partir daqui nao faca alteracoes!!!!!</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="an">link-citations:</span><span class="co"> true</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="an">csl:</span><span class="co"> associacao-brasileira-de-normas-tecnicas-ipea.csl</span></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "&lt;a href='https://bendeivide.github.io/courses/epaec/' target='_blank'&gt;Estatística e Probabilidade&lt;/a&gt; &lt;/br&gt; &lt;a href='https://bendeivide.github.io' target='_blank'&gt;Prof. Ben Dêivide (DEFIM/CAP/UFSJ)&lt;/a&gt;"</span></span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="an">include-before-body:</span><span class="co"> header.html</span></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> today</span></span>
-<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="an">lang:</span><span class="co"> pt-BR</span></span>
-<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
-<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
-<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
-<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a><span class="co">    number-sections: true</span></span>
-<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a><span class="co">    theme: bootstrap</span></span>
-<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="co">    #css: styles.css</span></span>
-<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: true</span></span>
-<span id="cb7-20"><a href="#cb7-20" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
-<span id="cb7-21"><a href="#cb7-21" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span></span>
-<span id="cb7-22"><a href="#cb7-22" aria-hidden="true" tabindex="-1"></a><span class="co">  echo: true</span></span>
-<span id="cb7-23"><a href="#cb7-23" aria-hidden="true" tabindex="-1"></a><span class="co">  warning: false</span></span>
-<span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a><span class="co">  message: false</span></span>
-<span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb7-26"><a href="#cb7-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-27"><a href="#cb7-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-28"><a href="#cb7-28" aria-hidden="true" tabindex="-1"></a><span class="fu">## 📌 Introdução</span></span>
-<span id="cb7-29"><a href="#cb7-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-30"><a href="#cb7-30" aria-hidden="true" tabindex="-1"></a>O estudo das variáveis aleatórias e suas distribuições de probabilidade constitui a base da estatística contemporânea, permitindo o estudo de fenômenos reais e a tomada de decisões fundamentada em dados. Em contextos técnicos, como a engenharia e a computação, essas são ferramentas essenciais para prever falhas em sistemas, analisar tráfego de dados e garantir a qualidade dos equipamentos. </span>
-<span id="cb7-31"><a href="#cb7-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-32"><a href="#cb7-32" aria-hidden="true" tabindex="-1"></a>Este relatório tem como objetivo apresentar uma análise teórica e prática das distribuições Binominal, Poisson e Normal, bem como outros modelos complementares (DISTRIBUIÇÕES DO LUCAS). O relatório será redigido sobre duas perspectivas : a analítica, através de cálculos matemáticos manuais, e a computacional, utilizando a linguagem R com o auxílio do pacote leem, que contribui para visualização dos dados estatísticos.  </span>
-<span id="cb7-33"><a href="#cb7-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-34"><a href="#cb7-34" aria-hidden="true" tabindex="-1"></a><span class="fu">## Tipos de Variáveis</span></span>
-<span id="cb7-35"><a href="#cb7-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-36"><a href="#cb7-36" aria-hidden="true" tabindex="-1"></a>As variáveis podem ser classificadas em dois tipos fundamentais:</span>
-<span id="cb7-37"><a href="#cb7-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-38"><a href="#cb7-38" aria-hidden="true" tabindex="-1"></a><span class="fu">### Variáveis Aleatórias Discretas {#vac}</span></span>
-<span id="cb7-39"><a href="#cb7-39" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-40"><a href="#cb7-40" aria-hidden="true" tabindex="-1"></a>Assumem valores contáveis e podem ser observadas em situações como:</span>
-<span id="cb7-41"><a href="#cb7-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-42"><a href="#cb7-42" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>número de pessoas;</span>
-<span id="cb7-43"><a href="#cb7-43" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>quantidade de defeitos;</span>
-<span id="cb7-44"><a href="#cb7-44" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>gols em uma partida.</span>
-<span id="cb7-45"><a href="#cb7-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-46"><a href="#cb7-46" aria-hidden="true" tabindex="-1"></a>Os valores normalmente são:</span>
-<span id="cb7-47"><a href="#cb7-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-48"><a href="#cb7-48" aria-hidden="true" tabindex="-1"></a>$$0,1,2,3,4,5…$$</span>
-<span id="cb7-49"><a href="#cb7-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-50"><a href="#cb7-50" aria-hidden="true" tabindex="-1"></a><span class="fu">### Variáveis Aleatórias Contínuas {#vad} </span></span>
-<span id="cb7-51"><a href="#cb7-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-52"><a href="#cb7-52" aria-hidden="true" tabindex="-1"></a>São variáveis que podem assumir valores em um intervalo real, podem ser analisadas em casos como:</span>
-<span id="cb7-53"><a href="#cb7-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-54"><a href="#cb7-54" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>altura;</span>
-<span id="cb7-55"><a href="#cb7-55" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>peso;</span>
-<span id="cb7-56"><a href="#cb7-56" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>tempo de resposta;</span>
-<span id="cb7-57"><a href="#cb7-57" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>velocidade.</span>
-<span id="cb7-58"><a href="#cb7-58" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-59"><a href="#cb7-59" aria-hidden="true" tabindex="-1"></a>Uma altura pode ser:</span>
-<span id="cb7-60"><a href="#cb7-60" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-61"><a href="#cb7-61" aria-hidden="true" tabindex="-1"></a>$$1,54; 1,731; 1,7431 ...$$</span>
-<span id="cb7-62"><a href="#cb7-62" aria-hidden="true" tabindex="-1"></a>Ou seja, existem infinitos valores possíveis.</span>
-<span id="cb7-63"><a href="#cb7-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-64"><a href="#cb7-64" aria-hidden="true" tabindex="-1"></a><span class="fu">## 📋 Distribuições de Probabilidade</span></span>
-<span id="cb7-65"><a href="#cb7-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-66"><a href="#cb7-66" aria-hidden="true" tabindex="-1"></a>Nesta seção, será abordado algumas distribuições estudadas, apresentando suas definições, bem como suas aplicações práticas em engenharia.</span>
-<span id="cb7-67"><a href="#cb7-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-68"><a href="#cb7-68" aria-hidden="true" tabindex="-1"></a><span class="fu">### Distribuição Binomial</span></span>
-<span id="cb7-69"><a href="#cb7-69" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-70"><a href="#cb7-70" aria-hidden="true" tabindex="-1"></a>A Distribuição Binomial é do tipo <span class="co">[</span><span class="ot">variável aleatória discreta</span><span class="co">](#vac)</span>, modela situações em que se é feito vários experimentos independentes e cada experimento possui apenas dois resultados possíveis (Sucesso ou Fracasso).</span>
-<span id="cb7-71"><a href="#cb7-71" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-72"><a href="#cb7-72" aria-hidden="true" tabindex="-1"></a>Fórmula :  $$P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}$$</span>
-<span id="cb7-73"><a href="#cb7-73" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-74"><a href="#cb7-74" aria-hidden="true" tabindex="-1"></a>A qual:</span>
-<span id="cb7-75"><a href="#cb7-75" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-76"><a href="#cb7-76" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>$X$: é a variável aleatória e representa o número de sucessos obtidos;</span>
-<span id="cb7-77"><a href="#cb7-77" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>$k$: representa a quantidade exata de sucessos desejada; </span>
-<span id="cb7-78"><a href="#cb7-78" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>$n$: o número total de tentativas;</span>
-<span id="cb7-79"><a href="#cb7-79" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>$p$: a probabilidade de acerto em cada tentativa;</span>
-<span id="cb7-80"><a href="#cb7-80" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>$(1-p)$: é a probabildade de fracasso;</span>
-<span id="cb7-81"><a href="#cb7-81" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>$\binom{n}{k}$: calcula a quantidade de maneiras diferentes que o sucesso pode acontecer.</span>
-<span id="cb7-82"><a href="#cb7-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-83"><a href="#cb7-83" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Exemplo Prático: Controle de Qualidade de Sensores</span></span>
-<span id="cb7-84"><a href="#cb7-84" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-85"><a href="#cb7-85" aria-hidden="true" tabindex="-1"></a>Um lote de sensores ultrassônicos ( são usados para medir distância) tem uma taxa de defeito de 5% . Se você comprar 12 sensores para montar um robô, qual a probabilidade de exatamente 1 sensor vir com defeito?</span>
-<span id="cb7-86"><a href="#cb7-86" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb7-87"><a href="#cb7-87" aria-hidden="true" tabindex="-1"></a>Cálculo Analítico:</span>
-<span id="cb7-88"><a href="#cb7-88" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-89"><a href="#cb7-89" aria-hidden="true" tabindex="-1"></a>Para o cálculo, utilizamos a combinação $\binom{12}{1} = \frac{12!}{1!(12-1)!} = 12$.$$P(X = 1) = \binom{12}{1} \cdot (0,05)^1 \cdot (0,95)^{12-1}$$$$P(X = 1) = 12 \cdot 0,05 \cdot 0,5688 \approx 0,3413$$</span>
-<span id="cb7-90"><a href="#cb7-90" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-91"><a href="#cb7-91" aria-hidden="true" tabindex="-1"></a>A probabilidade de encontrar exatamente um sensor com defeito é de aproximadamente 34,13%.</span>
-<span id="cb7-92"><a href="#cb7-92" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-93"><a href="#cb7-93" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Implemetação no R</span></span>
-<span id="cb7-94"><a href="#cb7-94" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-95"><a href="#cb7-95" aria-hidden="true" tabindex="-1"></a>Para o cálculo computacional usaremos o pacote leem. Necessitamos conhecer algumas funções que serão usadas no código:</span>
-<span id="cb7-96"><a href="#cb7-96" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-97"><a href="#cb7-97" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>P: representa densidade. Na Distribuição Binomial, calcula a probabilidade exata para P(X=k). Ou seja, a chance de ocorrer o determinado valor;</span>
-<span id="cb7-98"><a href="#cb7-98" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>q: representa quantos sucessos estão sendo procurados;</span>
-<span id="cb7-99"><a href="#cb7-99" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>size: representa o número de testes;</span>
-<span id="cb7-100"><a href="#cb7-100" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>prob: representa a probabilidade de sucesso em cada teste.</span>
-<span id="cb7-101"><a href="#cb7-101" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-104"><a href="#cb7-104" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb7-105"><a href="#cb7-105" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(leem)</span>
-<span id="cb7-106"><a href="#cb7-106" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-107"><a href="#cb7-107" aria-hidden="true" tabindex="-1"></a><span class="co"># P(X=1)=P(X≤1)−P(X≤0)</span></span>
-<span id="cb7-108"><a href="#cb7-108" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-109"><a href="#cb7-109" aria-hidden="true" tabindex="-1"></a><span class="fu">P</span>(<span class="at">q =</span> <span class="dv">1</span>,</span>
-<span id="cb7-110"><a href="#cb7-110" aria-hidden="true" tabindex="-1"></a>  <span class="at">dist =</span> <span class="st">"binomial"</span>,</span>
-<span id="cb7-111"><a href="#cb7-111" aria-hidden="true" tabindex="-1"></a>  <span class="at">size =</span> <span class="dv">12</span>,</span>
-<span id="cb7-112"><a href="#cb7-112" aria-hidden="true" tabindex="-1"></a>  <span class="at">prob =</span> <span class="fl">0.05</span>,</span>
-<span id="cb7-113"><a href="#cb7-113" aria-hidden="true" tabindex="-1"></a>) <span class="sc">-</span></span>
-<span id="cb7-114"><a href="#cb7-114" aria-hidden="true" tabindex="-1"></a><span class="fu">P</span>(<span class="at">q =</span> <span class="dv">0</span>,</span>
-<span id="cb7-115"><a href="#cb7-115" aria-hidden="true" tabindex="-1"></a>  <span class="at">dist =</span> <span class="st">"binomial"</span>,</span>
-<span id="cb7-116"><a href="#cb7-116" aria-hidden="true" tabindex="-1"></a>  <span class="at">size =</span> <span class="dv">12</span>,</span>
-<span id="cb7-117"><a href="#cb7-117" aria-hidden="true" tabindex="-1"></a>  <span class="at">prob =</span> <span class="fl">0.05</span></span>
-<span id="cb7-118"><a href="#cb7-118" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb7-119"><a href="#cb7-119" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-120"><a href="#cb7-120" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-121"><a href="#cb7-121" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-122"><a href="#cb7-122" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb7-123"><a href="#cb7-123" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-124"><a href="#cb7-124" aria-hidden="true" tabindex="-1"></a><span class="fu">### Distribuição Poisson</span></span>
-<span id="cb7-125"><a href="#cb7-125" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-126"><a href="#cb7-126" aria-hidden="true" tabindex="-1"></a>A Distribuição de Poisson é do tipo <span class="co">[</span><span class="ot">variável aleatória discreta</span><span class="co">](#vac)</span>,modela a quantidade de vezes que um evento ocorre em um intervalo de tempo, local ou região que está sendo analisado, com taxa média λ.</span>
-<span id="cb7-127"><a href="#cb7-127" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-128"><a href="#cb7-128" aria-hidden="true" tabindex="-1"></a>Fórmula: $$P(X = k) = \frac{e^{-\lambda} \cdot \lambda^k}{k!}$$</span>
-<span id="cb7-129"><a href="#cb7-129" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-130"><a href="#cb7-130" aria-hidden="true" tabindex="-1"></a>Onde:</span>
-<span id="cb7-131"><a href="#cb7-131" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-132"><a href="#cb7-132" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>$k$: é o número de ocorrências do evento;</span>
-<span id="cb7-133"><a href="#cb7-133" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>$\lambda$: é a taxa média de ocorrências no intervalo;</span>
-<span id="cb7-134"><a href="#cb7-134" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>$e$: é a constante de Euler.</span>
-<span id="cb7-135"><a href="#cb7-135" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-136"><a href="#cb7-136" aria-hidden="true" tabindex="-1"></a>Usada para casos como:</span>
-<span id="cb7-137"><a href="#cb7-137" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-138"><a href="#cb7-138" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Quantos carros passam uma via em meia hora?</span>
-<span id="cb7-139"><a href="#cb7-139" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Quantos defeitos surgem em uma peça?</span>
-<span id="cb7-140"><a href="#cb7-140" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Quantas partículas radioativas são emitidas?</span>
-<span id="cb7-141"><a href="#cb7-141" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-142"><a href="#cb7-142" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Exemplo Prático: Solicitações em Servidores</span></span>
-<span id="cb7-143"><a href="#cb7-143" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-144"><a href="#cb7-144" aria-hidden="true" tabindex="-1"></a>Um servidor recebe em média 3 requisições por minuto. Qual a probabilidade de receber exatamente 5 requisições em um minuto ?</span>
-<span id="cb7-145"><a href="#cb7-145" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-146"><a href="#cb7-146" aria-hidden="true" tabindex="-1"></a>Onde: </span>
-<span id="cb7-147"><a href="#cb7-147" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-148"><a href="#cb7-148" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>$k$ =  5;</span>
-<span id="cb7-149"><a href="#cb7-149" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>$\lambda$ = 3.</span>
-<span id="cb7-150"><a href="#cb7-150" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-151"><a href="#cb7-151" aria-hidden="true" tabindex="-1"></a>Cálculo Analítico: $$P(X = 5) = \frac{e^{-3} \cdot 3^5}{5!}$$$$P(X = 5) \approx \frac{0,0498 \cdot 243}{120} \approx 0,1008$$</span>
-<span id="cb7-152"><a href="#cb7-152" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-153"><a href="#cb7-153" aria-hidden="true" tabindex="-1"></a>A probabilidade de receber 5 requisições em um minuto é de aproximadamente 10,08%.</span>
-<span id="cb7-154"><a href="#cb7-154" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-155"><a href="#cb7-155" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Implementação no R</span></span>
-<span id="cb7-156"><a href="#cb7-156" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-157"><a href="#cb7-157" aria-hidden="true" tabindex="-1"></a>Funções que usaremos no código: </span>
-<span id="cb7-158"><a href="#cb7-158" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-159"><a href="#cb7-159" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>lambda (λ): representa a média de ocorrências;</span>
-<span id="cb7-160"><a href="#cb7-160" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-163"><a href="#cb7-163" aria-hidden="true" tabindex="-1"></a><span class="in">```{R}</span></span>
-<span id="cb7-164"><a href="#cb7-164" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(leem)</span>
-<span id="cb7-165"><a href="#cb7-165" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-166"><a href="#cb7-166" aria-hidden="true" tabindex="-1"></a><span class="co"># P(X=5)=P(X≤5)−P(X≤4)</span></span>
-<span id="cb7-167"><a href="#cb7-167" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-168"><a href="#cb7-168" aria-hidden="true" tabindex="-1"></a><span class="fu">P</span>(</span>
-<span id="cb7-169"><a href="#cb7-169" aria-hidden="true" tabindex="-1"></a>  <span class="at">q =</span> <span class="dv">5</span>,</span>
-<span id="cb7-170"><a href="#cb7-170" aria-hidden="true" tabindex="-1"></a>  <span class="at">dist =</span> <span class="st">"poisson"</span>,</span>
-<span id="cb7-171"><a href="#cb7-171" aria-hidden="true" tabindex="-1"></a>  <span class="at">lambda =</span> <span class="dv">3</span>,</span>
-<span id="cb7-172"><a href="#cb7-172" aria-hidden="true" tabindex="-1"></a>) <span class="sc">-</span> </span>
-<span id="cb7-173"><a href="#cb7-173" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-174"><a href="#cb7-174" aria-hidden="true" tabindex="-1"></a><span class="fu">P</span>(</span>
-<span id="cb7-175"><a href="#cb7-175" aria-hidden="true" tabindex="-1"></a>  <span class="at">q =</span> <span class="dv">4</span>,</span>
-<span id="cb7-176"><a href="#cb7-176" aria-hidden="true" tabindex="-1"></a>  <span class="at">dist =</span> <span class="st">"poisson"</span>,</span>
-<span id="cb7-177"><a href="#cb7-177" aria-hidden="true" tabindex="-1"></a>  <span class="at">lambda =</span> <span class="dv">3</span></span>
-<span id="cb7-178"><a href="#cb7-178" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb7-179"><a href="#cb7-179" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-180"><a href="#cb7-180" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb7-181"><a href="#cb7-181" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-182"><a href="#cb7-182" aria-hidden="true" tabindex="-1"></a><span class="fu">### Distribuição Normal</span></span>
-<span id="cb7-183"><a href="#cb7-183" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-184"><a href="#cb7-184" aria-hidden="true" tabindex="-1"></a>A distribuição normal é do tipo <span class="co">[</span><span class="ot">variável aleatória contínua</span><span class="co">](#vad)</span>, usada para modelar fenômenos que tendem a se concentrar em torno de um valor médio, é definida por média μ e por desvio padrão σ.</span>
-<span id="cb7-185"><a href="#cb7-185" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-186"><a href="#cb7-186" aria-hidden="true" tabindex="-1"></a>Fórmula: $$f(x)=\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}$$</span>
-<span id="cb7-187"><a href="#cb7-187" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-188"><a href="#cb7-188" aria-hidden="true" tabindex="-1"></a>Padronização $$Z=\frac{x-\mu}{\sigma}$$</span>
-<span id="cb7-189"><a href="#cb7-189" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-190"><a href="#cb7-190" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-191"><a href="#cb7-191" aria-hidden="true" tabindex="-1"></a>Onde: </span>
-<span id="cb7-192"><a href="#cb7-192" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-193"><a href="#cb7-193" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>$x$:  valor observado;</span>
-<span id="cb7-194"><a href="#cb7-194" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>$\mu$: representa a média;</span>
-<span id="cb7-195"><a href="#cb7-195" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>$\sigma$: representa o desvio padrão;</span>
-<span id="cb7-196"><a href="#cb7-196" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>$\sigma^2$: representa a variância.</span>
-<span id="cb7-197"><a href="#cb7-197" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>A padronização é bastante utilizada para transformar valores de uma Distribuição Normal qualquer em valores da Distribuição Normal Padrão.</span>
-<span id="cb7-198"><a href="#cb7-198" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-199"><a href="#cb7-199" aria-hidden="true" tabindex="-1"></a>Usada bastante em:</span>
-<span id="cb7-200"><a href="#cb7-200" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-201"><a href="#cb7-201" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Controle de qualidade industrial;</span>
-<span id="cb7-202"><a href="#cb7-202" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Sinais de telecomunicações;</span>
-<span id="cb7-203"><a href="#cb7-203" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Tempo de resposta de um sistema;</span>
-<span id="cb7-204"><a href="#cb7-204" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Alturas e pesos de pessoas.</span>
-<span id="cb7-205"><a href="#cb7-205" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-206"><a href="#cb7-206" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Exemplo prático: Tempo de resposta de um microcontrolador </span></span>
-<span id="cb7-207"><a href="#cb7-207" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-208"><a href="#cb7-208" aria-hidden="true" tabindex="-1"></a>Tempo de reposta de um microcontrolador:</span>
-<span id="cb7-209"><a href="#cb7-209" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-210"><a href="#cb7-210" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>média = 100ms;</span>
-<span id="cb7-211"><a href="#cb7-211" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>desvio padrão = 10ms.</span>
-<span id="cb7-212"><a href="#cb7-212" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-213"><a href="#cb7-213" aria-hidden="true" tabindex="-1"></a>Qual a probabilidade de resposta menor que 110ms?</span>
-<span id="cb7-214"><a href="#cb7-214" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-215"><a href="#cb7-215" aria-hidden="true" tabindex="-1"></a>Cálculo Analítico: </span>
-<span id="cb7-216"><a href="#cb7-216" aria-hidden="true" tabindex="-1"></a>$$Z=\frac{110-100}{10}$$</span>
-<span id="cb7-217"><a href="#cb7-217" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-218"><a href="#cb7-218" aria-hidden="true" tabindex="-1"></a>$$Z=\frac{10}{10}=1$$</span>
-<span id="cb7-219"><a href="#cb7-219" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-220"><a href="#cb7-220" aria-hidden="true" tabindex="-1"></a>Agora buscamos na tabela da Distribuição Normal Padrão:</span>
-<span id="cb7-221"><a href="#cb7-221" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-222"><a href="#cb7-222" aria-hidden="true" tabindex="-1"></a>$$P(Z&lt;1)\approx0,8413$$</span>
-<span id="cb7-223"><a href="#cb7-223" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-224"><a href="#cb7-224" aria-hidden="true" tabindex="-1"></a>Para obter esse resultado, é necessário realizar a análise da tabela da Distribuição normal.</span>
-<span id="cb7-225"><a href="#cb7-225" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-226"><a href="#cb7-226" aria-hidden="true" tabindex="-1"></a>Como desejamos calcular $P(Z&lt;1)$, utilizamos a propriedade complementar : $$P(Z&lt;1)=1-P(Z&gt;1)$$</span>
-<span id="cb7-227"><a href="#cb7-227" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-228"><a href="#cb7-228" aria-hidden="true" tabindex="-1"></a>![<span class="co">[</span><span class="ot">1</span><span class="co">]</span>Tabela de Distribuição Normal](Tabelas de Distribuição Normal.png)</span>
-<span id="cb7-229"><a href="#cb7-229" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-230"><a href="#cb7-230" aria-hidden="true" tabindex="-1"></a>Através da tabela da Distribuição Normal, identificamos que $P(Z &gt; 1)\approx0,1587$. Assim:</span>
-<span id="cb7-231"><a href="#cb7-231" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-232"><a href="#cb7-232" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb7-233"><a href="#cb7-233" aria-hidden="true" tabindex="-1"></a>1-0,1587=0,8413</span>
-<span id="cb7-234"><a href="#cb7-234" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb7-235"><a href="#cb7-235" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-236"><a href="#cb7-236" aria-hidden="true" tabindex="-1"></a>Portanto, a probabilidade do microcontrolador apresentar um tempo de resposta menor do que 110ms é de aproximadamente 84,13%.  </span>
-<span id="cb7-237"><a href="#cb7-237" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-238"><a href="#cb7-238" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Implementação no R</span></span>
-<span id="cb7-239"><a href="#cb7-239" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-240"><a href="#cb7-240" aria-hidden="true" tabindex="-1"></a>funções que são usadas no código:</span>
-<span id="cb7-241"><a href="#cb7-241" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-242"><a href="#cb7-242" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>mean : representa o valor médio esperado da distribuição,isto é, o centro da curva normal;</span>
-<span id="cb7-243"><a href="#cb7-243" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>sd : é o desvio padrão e retrata quanto os valores tendem a variar em relação a média dos resultados;</span>
-<span id="cb7-244"><a href="#cb7-244" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>q : simboliza o valor que deseja analisar na distribuição.</span>
-<span id="cb7-245"><a href="#cb7-245" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-246"><a href="#cb7-246" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-249"><a href="#cb7-249" aria-hidden="true" tabindex="-1"></a><span class="in">```{R}</span></span>
-<span id="cb7-250"><a href="#cb7-250" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(leem)</span>
-<span id="cb7-251"><a href="#cb7-251" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-252"><a href="#cb7-252" aria-hidden="true" tabindex="-1"></a><span class="fu">P</span>(</span>
-<span id="cb7-253"><a href="#cb7-253" aria-hidden="true" tabindex="-1"></a>  <span class="at">q =</span> <span class="dv">110</span>,</span>
-<span id="cb7-254"><a href="#cb7-254" aria-hidden="true" tabindex="-1"></a>  <span class="at">dist =</span> <span class="st">"normal"</span>,</span>
-<span id="cb7-255"><a href="#cb7-255" aria-hidden="true" tabindex="-1"></a>  <span class="at">mean =</span> <span class="dv">100</span>,</span>
-<span id="cb7-256"><a href="#cb7-256" aria-hidden="true" tabindex="-1"></a>  <span class="at">sd =</span> <span class="dv">10</span></span>
-<span id="cb7-257"><a href="#cb7-257" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb7-258"><a href="#cb7-258" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-259"><a href="#cb7-259" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Só mude aqui!!!!</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Igor e Lucas"</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Relatório sobre os tipos de distribuições em probabilidade"</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> referencias.bib</span></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a><span class="co"># A partir daqui nao faca alteracoes!!!!!</span></span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="an">link-citations:</span><span class="co"> true</span></span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a><span class="an">csl:</span><span class="co"> associacao-brasileira-de-normas-tecnicas-ipea.csl</span></span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a><span class="an">subtitle:</span><span class="co"> "&lt;a href='https://bendeivide.github.io/courses/epaec/' target='_blank'&gt;Estatística e Probabilidade&lt;/a&gt; &lt;/br&gt; &lt;a href='https://bendeivide.github.io' target='_blank'&gt;Prof. Ben Dêivide (DEFIM/CAP/UFSJ)&lt;/a&gt;"</span></span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a><span class="an">include-before-body:</span><span class="co"> header.html</span></span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> today</span></span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a><span class="an">lang:</span><span class="co"> pt-BR</span></span>
+<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
+<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a><span class="co">    number-sections: true</span></span>
+<span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a><span class="co">    theme: bootstrap</span></span>
+<span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a><span class="co">    #css: styles.css</span></span>
+<span id="cb28-19"><a href="#cb28-19" aria-hidden="true" tabindex="-1"></a><span class="co">    code-fold: true</span></span>
+<span id="cb28-20"><a href="#cb28-20" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
+<span id="cb28-21"><a href="#cb28-21" aria-hidden="true" tabindex="-1"></a><span class="an">execute:</span></span>
+<span id="cb28-22"><a href="#cb28-22" aria-hidden="true" tabindex="-1"></a><span class="co">  echo: true</span></span>
+<span id="cb28-23"><a href="#cb28-23" aria-hidden="true" tabindex="-1"></a><span class="co">  warning: false</span></span>
+<span id="cb28-24"><a href="#cb28-24" aria-hidden="true" tabindex="-1"></a><span class="co">  message: false</span></span>
+<span id="cb28-25"><a href="#cb28-25" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb28-26"><a href="#cb28-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-27"><a href="#cb28-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-28"><a href="#cb28-28" aria-hidden="true" tabindex="-1"></a><span class="fu">## 📌 Introdução</span></span>
+<span id="cb28-29"><a href="#cb28-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-30"><a href="#cb28-30" aria-hidden="true" tabindex="-1"></a>O estudo das variáveis aleatórias e suas distribuições de probabilidade constitui a base da estatística contemporânea, permitindo o estudo de fenômenos reais e a tomada de decisões fundamentada em dados. Em contextos técnicos, como a engenharia e a computação, essas são ferramentas essenciais para prever falhas em sistemas, analisar tráfego de dados e garantir a qualidade dos equipamentos. </span>
+<span id="cb28-31"><a href="#cb28-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-32"><a href="#cb28-32" aria-hidden="true" tabindex="-1"></a>Este relatório tem como objetivo apresentar uma análise teórica e prática das distribuições Binominal, Poisson e Normal, bem como outros modelos complementares Geométrica, Hipergeométrica, Uniforme e Exponencial. O relatório será redigido sobre duas perspectivas: a analítica, através de cálculos matemáticos manuais, e a computacional, utilizando a linguagem R com o auxílio do pacote leem, que contribui para visualização dos dados estatísticos.  </span>
+<span id="cb28-33"><a href="#cb28-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-34"><a href="#cb28-34" aria-hidden="true" tabindex="-1"></a><span class="fu">## Tipos de Variáveis</span></span>
+<span id="cb28-35"><a href="#cb28-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-36"><a href="#cb28-36" aria-hidden="true" tabindex="-1"></a>As variáveis podem ser classificadas em dois tipos fundamentais:</span>
+<span id="cb28-37"><a href="#cb28-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-38"><a href="#cb28-38" aria-hidden="true" tabindex="-1"></a><span class="fu">### Variáveis Aleatórias Discretas {#vac}</span></span>
+<span id="cb28-39"><a href="#cb28-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-40"><a href="#cb28-40" aria-hidden="true" tabindex="-1"></a>Assumem valores contáveis e podem ser observadas em situações como:</span>
+<span id="cb28-41"><a href="#cb28-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-42"><a href="#cb28-42" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>número de pessoas;</span>
+<span id="cb28-43"><a href="#cb28-43" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>quantidade de defeitos;</span>
+<span id="cb28-44"><a href="#cb28-44" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>gols em uma partida.</span>
+<span id="cb28-45"><a href="#cb28-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-46"><a href="#cb28-46" aria-hidden="true" tabindex="-1"></a>Os valores normalmente são:</span>
+<span id="cb28-47"><a href="#cb28-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-48"><a href="#cb28-48" aria-hidden="true" tabindex="-1"></a>$$0,1,2,3,4,5…$$</span>
+<span id="cb28-49"><a href="#cb28-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-50"><a href="#cb28-50" aria-hidden="true" tabindex="-1"></a><span class="fu">### Variáveis Aleatórias Contínuas {#vad} </span></span>
+<span id="cb28-51"><a href="#cb28-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-52"><a href="#cb28-52" aria-hidden="true" tabindex="-1"></a>São variáveis que podem assumir valores em um intervalo real, podem ser analisadas em casos como:</span>
+<span id="cb28-53"><a href="#cb28-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-54"><a href="#cb28-54" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>altura;</span>
+<span id="cb28-55"><a href="#cb28-55" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>peso;</span>
+<span id="cb28-56"><a href="#cb28-56" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>tempo de resposta;</span>
+<span id="cb28-57"><a href="#cb28-57" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>velocidade.</span>
+<span id="cb28-58"><a href="#cb28-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-59"><a href="#cb28-59" aria-hidden="true" tabindex="-1"></a>Uma altura pode ser:</span>
+<span id="cb28-60"><a href="#cb28-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-61"><a href="#cb28-61" aria-hidden="true" tabindex="-1"></a>$$1,54; 1,731; 1,7431 ...$$</span>
+<span id="cb28-62"><a href="#cb28-62" aria-hidden="true" tabindex="-1"></a>Ou seja, existem infinitos valores possíveis.</span>
+<span id="cb28-63"><a href="#cb28-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-64"><a href="#cb28-64" aria-hidden="true" tabindex="-1"></a><span class="fu">## 📋 Distribuições de Probabilidade</span></span>
+<span id="cb28-65"><a href="#cb28-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-66"><a href="#cb28-66" aria-hidden="true" tabindex="-1"></a>Nesta seção, será abordado algumas distribuições estudadas, apresentando suas definições, bem como suas aplicações práticas em engenharia.</span>
+<span id="cb28-67"><a href="#cb28-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-68"><a href="#cb28-68" aria-hidden="true" tabindex="-1"></a><span class="fu">### Distribuição Binomial</span></span>
+<span id="cb28-69"><a href="#cb28-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-70"><a href="#cb28-70" aria-hidden="true" tabindex="-1"></a>A Distribuição Binomial é do tipo <span class="co">[</span><span class="ot">variável aleatória discreta</span><span class="co">](#vac)</span>, modela situações em que se é feito vários experimentos independentes e cada experimento possui apenas dois resultados possíveis (Sucesso ou Fracasso).</span>
+<span id="cb28-71"><a href="#cb28-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-72"><a href="#cb28-72" aria-hidden="true" tabindex="-1"></a>Fórmula :  $$P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}$$</span>
+<span id="cb28-73"><a href="#cb28-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-74"><a href="#cb28-74" aria-hidden="true" tabindex="-1"></a>A qual:</span>
+<span id="cb28-75"><a href="#cb28-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-76"><a href="#cb28-76" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>$X$: é a variável aleatória e representa o número de sucessos obtidos;</span>
+<span id="cb28-77"><a href="#cb28-77" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>$k$: representa a quantidade exata de sucessos desejada; </span>
+<span id="cb28-78"><a href="#cb28-78" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>$n$: o número total de tentativas;</span>
+<span id="cb28-79"><a href="#cb28-79" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>$p$: a probabilidade de acerto em cada tentativa;</span>
+<span id="cb28-80"><a href="#cb28-80" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>$(1-p)$: é a probabildade de fracasso;</span>
+<span id="cb28-81"><a href="#cb28-81" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>$\binom{n}{k}$: calcula a quantidade de maneiras diferentes que o sucesso pode acontecer.</span>
+<span id="cb28-82"><a href="#cb28-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-83"><a href="#cb28-83" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Exemplo Prático: Controle de Qualidade de Sensores</span></span>
+<span id="cb28-84"><a href="#cb28-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-85"><a href="#cb28-85" aria-hidden="true" tabindex="-1"></a>Um lote de sensores ultrassônicos ( são usados para medir distância) tem uma taxa de defeito de 5% . Se você comprar 12 sensores para montar um robô, qual a probabilidade de exatamente 1 sensor vir com defeito?</span>
+<span id="cb28-86"><a href="#cb28-86" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb28-87"><a href="#cb28-87" aria-hidden="true" tabindex="-1"></a>Cálculo Analítico:</span>
+<span id="cb28-88"><a href="#cb28-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-89"><a href="#cb28-89" aria-hidden="true" tabindex="-1"></a>Para o cálculo, utilizamos a combinação $\binom{12}{1} = \frac{12!}{1!(12-1)!} = 12$.$$P(X = 1) = \binom{12}{1} \cdot (0,05)^1 \cdot (0,95)^{12-1}$$$$P(X = 1) = 12 \cdot 0,05 \cdot 0,5688 \approx 0,3413$$</span>
+<span id="cb28-90"><a href="#cb28-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-91"><a href="#cb28-91" aria-hidden="true" tabindex="-1"></a>A probabilidade de encontrar exatamente um sensor com defeito é de aproximadamente 34,13%.</span>
+<span id="cb28-92"><a href="#cb28-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-93"><a href="#cb28-93" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Implemetação no R</span></span>
+<span id="cb28-94"><a href="#cb28-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-95"><a href="#cb28-95" aria-hidden="true" tabindex="-1"></a>Para o cálculo computacional usaremos o pacote leem. Necessitamos conhecer algumas funções que serão usadas no código:</span>
+<span id="cb28-96"><a href="#cb28-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-97"><a href="#cb28-97" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>P: representa densidade. Na Distribuição Binomial, calcula a probabilidade exata para P(X=k). Ou seja, a chance de ocorrer o determinado valor;</span>
+<span id="cb28-98"><a href="#cb28-98" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>q: representa quantos sucessos estão sendo procurados;</span>
+<span id="cb28-99"><a href="#cb28-99" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>size: representa o número de testes;</span>
+<span id="cb28-100"><a href="#cb28-100" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>prob: representa a probabilidade de sucesso em cada teste.</span>
+<span id="cb28-101"><a href="#cb28-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-104"><a href="#cb28-104" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb28-105"><a href="#cb28-105" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(leem)</span>
+<span id="cb28-106"><a href="#cb28-106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-107"><a href="#cb28-107" aria-hidden="true" tabindex="-1"></a><span class="co"># P(X=1)=P(X≤1)−P(X≤0)</span></span>
+<span id="cb28-108"><a href="#cb28-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-109"><a href="#cb28-109" aria-hidden="true" tabindex="-1"></a><span class="fu">P</span>(<span class="at">q =</span> <span class="dv">1</span>,</span>
+<span id="cb28-110"><a href="#cb28-110" aria-hidden="true" tabindex="-1"></a>  <span class="at">dist =</span> <span class="st">"binomial"</span>,</span>
+<span id="cb28-111"><a href="#cb28-111" aria-hidden="true" tabindex="-1"></a>  <span class="at">size =</span> <span class="dv">12</span>,</span>
+<span id="cb28-112"><a href="#cb28-112" aria-hidden="true" tabindex="-1"></a>  <span class="at">prob =</span> <span class="fl">0.05</span>,</span>
+<span id="cb28-113"><a href="#cb28-113" aria-hidden="true" tabindex="-1"></a>) <span class="sc">-</span></span>
+<span id="cb28-114"><a href="#cb28-114" aria-hidden="true" tabindex="-1"></a><span class="fu">P</span>(<span class="at">q =</span> <span class="dv">0</span>,</span>
+<span id="cb28-115"><a href="#cb28-115" aria-hidden="true" tabindex="-1"></a>  <span class="at">dist =</span> <span class="st">"binomial"</span>,</span>
+<span id="cb28-116"><a href="#cb28-116" aria-hidden="true" tabindex="-1"></a>  <span class="at">size =</span> <span class="dv">12</span>,</span>
+<span id="cb28-117"><a href="#cb28-117" aria-hidden="true" tabindex="-1"></a>  <span class="at">prob =</span> <span class="fl">0.05</span></span>
+<span id="cb28-118"><a href="#cb28-118" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb28-119"><a href="#cb28-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-120"><a href="#cb28-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-121"><a href="#cb28-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-122"><a href="#cb28-122" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb28-123"><a href="#cb28-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-124"><a href="#cb28-124" aria-hidden="true" tabindex="-1"></a><span class="fu">### Distribuição Poisson</span></span>
+<span id="cb28-125"><a href="#cb28-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-126"><a href="#cb28-126" aria-hidden="true" tabindex="-1"></a>A Distribuição de Poisson é do tipo <span class="co">[</span><span class="ot">variável aleatória discreta</span><span class="co">](#vac)</span>,modela a quantidade de vezes que um evento ocorre em um intervalo de tempo, local ou região que está sendo analisado, com taxa média λ.</span>
+<span id="cb28-127"><a href="#cb28-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-128"><a href="#cb28-128" aria-hidden="true" tabindex="-1"></a>Fórmula: $$P(X = k) = \frac{e^{-\lambda} \cdot \lambda^k}{k!}$$</span>
+<span id="cb28-129"><a href="#cb28-129" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-130"><a href="#cb28-130" aria-hidden="true" tabindex="-1"></a>Onde:</span>
+<span id="cb28-131"><a href="#cb28-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-132"><a href="#cb28-132" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>$k$: é o número de ocorrências do evento;</span>
+<span id="cb28-133"><a href="#cb28-133" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>$\lambda$: é a taxa média de ocorrências no intervalo;</span>
+<span id="cb28-134"><a href="#cb28-134" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>$e$: é a constante de Euler.</span>
+<span id="cb28-135"><a href="#cb28-135" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-136"><a href="#cb28-136" aria-hidden="true" tabindex="-1"></a>Usada para casos como:</span>
+<span id="cb28-137"><a href="#cb28-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-138"><a href="#cb28-138" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Quantos carros passam uma via em meia hora?</span>
+<span id="cb28-139"><a href="#cb28-139" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Quantos defeitos surgem em uma peça?</span>
+<span id="cb28-140"><a href="#cb28-140" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Quantas partículas radioativas são emitidas?</span>
+<span id="cb28-141"><a href="#cb28-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-142"><a href="#cb28-142" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Exemplo Prático: Solicitações em Servidores</span></span>
+<span id="cb28-143"><a href="#cb28-143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-144"><a href="#cb28-144" aria-hidden="true" tabindex="-1"></a>Um servidor recebe em média 3 requisições por minuto. Qual a probabilidade de receber exatamente 5 requisições em um minuto ?</span>
+<span id="cb28-145"><a href="#cb28-145" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-146"><a href="#cb28-146" aria-hidden="true" tabindex="-1"></a>Onde: </span>
+<span id="cb28-147"><a href="#cb28-147" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-148"><a href="#cb28-148" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>$k$ =  5;</span>
+<span id="cb28-149"><a href="#cb28-149" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>$\lambda$ = 3.</span>
+<span id="cb28-150"><a href="#cb28-150" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-151"><a href="#cb28-151" aria-hidden="true" tabindex="-1"></a>Cálculo Analítico: $$P(X = 5) = \frac{e^{-3} \cdot 3^5}{5!}$$$$P(X = 5) \approx \frac{0,0498 \cdot 243}{120} \approx 0,1008$$</span>
+<span id="cb28-152"><a href="#cb28-152" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-153"><a href="#cb28-153" aria-hidden="true" tabindex="-1"></a>A probabilidade de receber 5 requisições em um minuto é de aproximadamente 10,08%.</span>
+<span id="cb28-154"><a href="#cb28-154" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-155"><a href="#cb28-155" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Implementação no R</span></span>
+<span id="cb28-156"><a href="#cb28-156" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-157"><a href="#cb28-157" aria-hidden="true" tabindex="-1"></a>Funções que usaremos no código: </span>
+<span id="cb28-158"><a href="#cb28-158" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-159"><a href="#cb28-159" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>lambda (λ): representa a média de ocorrências;</span>
+<span id="cb28-160"><a href="#cb28-160" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-163"><a href="#cb28-163" aria-hidden="true" tabindex="-1"></a><span class="in">```{R}</span></span>
+<span id="cb28-164"><a href="#cb28-164" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(leem)</span>
+<span id="cb28-165"><a href="#cb28-165" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-166"><a href="#cb28-166" aria-hidden="true" tabindex="-1"></a><span class="co"># P(X=5)=P(X≤5)−P(X≤4)</span></span>
+<span id="cb28-167"><a href="#cb28-167" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-168"><a href="#cb28-168" aria-hidden="true" tabindex="-1"></a><span class="fu">P</span>(</span>
+<span id="cb28-169"><a href="#cb28-169" aria-hidden="true" tabindex="-1"></a>  <span class="at">q =</span> <span class="dv">5</span>,</span>
+<span id="cb28-170"><a href="#cb28-170" aria-hidden="true" tabindex="-1"></a>  <span class="at">dist =</span> <span class="st">"poisson"</span>,</span>
+<span id="cb28-171"><a href="#cb28-171" aria-hidden="true" tabindex="-1"></a>  <span class="at">lambda =</span> <span class="dv">3</span>,</span>
+<span id="cb28-172"><a href="#cb28-172" aria-hidden="true" tabindex="-1"></a>) <span class="sc">-</span> </span>
+<span id="cb28-173"><a href="#cb28-173" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-174"><a href="#cb28-174" aria-hidden="true" tabindex="-1"></a><span class="fu">P</span>(</span>
+<span id="cb28-175"><a href="#cb28-175" aria-hidden="true" tabindex="-1"></a>  <span class="at">q =</span> <span class="dv">4</span>,</span>
+<span id="cb28-176"><a href="#cb28-176" aria-hidden="true" tabindex="-1"></a>  <span class="at">dist =</span> <span class="st">"poisson"</span>,</span>
+<span id="cb28-177"><a href="#cb28-177" aria-hidden="true" tabindex="-1"></a>  <span class="at">lambda =</span> <span class="dv">3</span></span>
+<span id="cb28-178"><a href="#cb28-178" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb28-179"><a href="#cb28-179" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-180"><a href="#cb28-180" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb28-181"><a href="#cb28-181" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-182"><a href="#cb28-182" aria-hidden="true" tabindex="-1"></a><span class="fu">### Distribuição Normal</span></span>
+<span id="cb28-183"><a href="#cb28-183" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-184"><a href="#cb28-184" aria-hidden="true" tabindex="-1"></a>A distribuição normal é do tipo <span class="co">[</span><span class="ot">variável aleatória contínua</span><span class="co">](#vad)</span>, usada para modelar fenômenos que tendem a se concentrar em torno de um valor médio, é definida por média μ e por desvio padrão σ.</span>
+<span id="cb28-185"><a href="#cb28-185" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-186"><a href="#cb28-186" aria-hidden="true" tabindex="-1"></a>Fórmula: $$f(x)=\frac{1}{\sigma\sqrt{2\pi}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}$$</span>
+<span id="cb28-187"><a href="#cb28-187" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-188"><a href="#cb28-188" aria-hidden="true" tabindex="-1"></a>Padronização $$Z=\frac{x-\mu}{\sigma}$$</span>
+<span id="cb28-189"><a href="#cb28-189" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-190"><a href="#cb28-190" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-191"><a href="#cb28-191" aria-hidden="true" tabindex="-1"></a>Onde: </span>
+<span id="cb28-192"><a href="#cb28-192" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-193"><a href="#cb28-193" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>$x$:  valor observado;</span>
+<span id="cb28-194"><a href="#cb28-194" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>$\mu$: representa a média;</span>
+<span id="cb28-195"><a href="#cb28-195" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>$\sigma$: representa o desvio padrão;</span>
+<span id="cb28-196"><a href="#cb28-196" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>$\sigma^2$: representa a variância.</span>
+<span id="cb28-197"><a href="#cb28-197" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>A padronização é bastante utilizada para transformar valores de uma Distribuição Normal qualquer em valores da Distribuição Normal Padrão.</span>
+<span id="cb28-198"><a href="#cb28-198" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-199"><a href="#cb28-199" aria-hidden="true" tabindex="-1"></a>Usada bastante em:</span>
+<span id="cb28-200"><a href="#cb28-200" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-201"><a href="#cb28-201" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Controle de qualidade industrial;</span>
+<span id="cb28-202"><a href="#cb28-202" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Sinais de telecomunicações;</span>
+<span id="cb28-203"><a href="#cb28-203" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Tempo de resposta de um sistema;</span>
+<span id="cb28-204"><a href="#cb28-204" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Alturas e pesos de pessoas.</span>
+<span id="cb28-205"><a href="#cb28-205" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-206"><a href="#cb28-206" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Exemplo prático: Tempo de resposta de um microcontrolador </span></span>
+<span id="cb28-207"><a href="#cb28-207" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-208"><a href="#cb28-208" aria-hidden="true" tabindex="-1"></a>Tempo de reposta de um microcontrolador:</span>
+<span id="cb28-209"><a href="#cb28-209" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-210"><a href="#cb28-210" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>média = 100ms;</span>
+<span id="cb28-211"><a href="#cb28-211" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>desvio padrão = 10ms.</span>
+<span id="cb28-212"><a href="#cb28-212" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-213"><a href="#cb28-213" aria-hidden="true" tabindex="-1"></a>Qual a probabilidade de resposta menor que 110ms?</span>
+<span id="cb28-214"><a href="#cb28-214" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-215"><a href="#cb28-215" aria-hidden="true" tabindex="-1"></a>Cálculo Analítico: </span>
+<span id="cb28-216"><a href="#cb28-216" aria-hidden="true" tabindex="-1"></a>$$Z=\frac{110-100}{10}$$</span>
+<span id="cb28-217"><a href="#cb28-217" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-218"><a href="#cb28-218" aria-hidden="true" tabindex="-1"></a>$$Z=\frac{10}{10}=1$$</span>
+<span id="cb28-219"><a href="#cb28-219" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-220"><a href="#cb28-220" aria-hidden="true" tabindex="-1"></a>Agora buscamos na tabela da Distribuição Normal Padrão:</span>
+<span id="cb28-221"><a href="#cb28-221" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-222"><a href="#cb28-222" aria-hidden="true" tabindex="-1"></a>$$P(Z&lt;1)\approx0,8413$$</span>
+<span id="cb28-223"><a href="#cb28-223" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-224"><a href="#cb28-224" aria-hidden="true" tabindex="-1"></a>Para obter esse resultado, é necessário realizar a análise da tabela da Distribuição normal.</span>
+<span id="cb28-225"><a href="#cb28-225" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-226"><a href="#cb28-226" aria-hidden="true" tabindex="-1"></a>Como desejamos calcular $P(Z&lt;1)$, utilizamos a propriedade complementar : $$P(Z&lt;1)=1-P(Z&gt;1)$$</span>
+<span id="cb28-227"><a href="#cb28-227" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-228"><a href="#cb28-228" aria-hidden="true" tabindex="-1"></a>![<span class="co">[</span><span class="ot">1</span><span class="co">]</span>Tabela de Distribuição Normal](Tabelas de Distribuição Normal.png)</span>
+<span id="cb28-229"><a href="#cb28-229" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-230"><a href="#cb28-230" aria-hidden="true" tabindex="-1"></a>Através da tabela da Distribuição Normal, identificamos que $P(Z &gt; 1)\approx0,1587$. Assim:</span>
+<span id="cb28-231"><a href="#cb28-231" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-232"><a href="#cb28-232" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb28-233"><a href="#cb28-233" aria-hidden="true" tabindex="-1"></a>1-0,1587=0,8413</span>
+<span id="cb28-234"><a href="#cb28-234" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb28-235"><a href="#cb28-235" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-236"><a href="#cb28-236" aria-hidden="true" tabindex="-1"></a>Portanto, a probabilidade do microcontrolador apresentar um tempo de resposta menor do que 110ms é de aproximadamente 84,13%.  </span>
+<span id="cb28-237"><a href="#cb28-237" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-238"><a href="#cb28-238" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Implementação no R</span></span>
+<span id="cb28-239"><a href="#cb28-239" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-240"><a href="#cb28-240" aria-hidden="true" tabindex="-1"></a>funções que são usadas no código:</span>
+<span id="cb28-241"><a href="#cb28-241" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-242"><a href="#cb28-242" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>mean : representa o valor médio esperado da distribuição,isto é, o centro da curva normal;</span>
+<span id="cb28-243"><a href="#cb28-243" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>sd : é o desvio padrão e retrata quanto os valores tendem a variar em relação a média dos resultados;</span>
+<span id="cb28-244"><a href="#cb28-244" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>q : simboliza o valor que deseja analisar na distribuição.</span>
+<span id="cb28-245"><a href="#cb28-245" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-246"><a href="#cb28-246" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-249"><a href="#cb28-249" aria-hidden="true" tabindex="-1"></a><span class="in">```{R}</span></span>
+<span id="cb28-250"><a href="#cb28-250" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(leem)</span>
+<span id="cb28-251"><a href="#cb28-251" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-252"><a href="#cb28-252" aria-hidden="true" tabindex="-1"></a><span class="fu">P</span>(</span>
+<span id="cb28-253"><a href="#cb28-253" aria-hidden="true" tabindex="-1"></a>  <span class="at">q =</span> <span class="dv">110</span>,</span>
+<span id="cb28-254"><a href="#cb28-254" aria-hidden="true" tabindex="-1"></a>  <span class="at">dist =</span> <span class="st">"normal"</span>,</span>
+<span id="cb28-255"><a href="#cb28-255" aria-hidden="true" tabindex="-1"></a>  <span class="at">mean =</span> <span class="dv">100</span>,</span>
+<span id="cb28-256"><a href="#cb28-256" aria-hidden="true" tabindex="-1"></a>  <span class="at">sd =</span> <span class="dv">10</span></span>
+<span id="cb28-257"><a href="#cb28-257" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb28-258"><a href="#cb28-258" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-259"><a href="#cb28-259" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb28-260"><a href="#cb28-260" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-261"><a href="#cb28-261" aria-hidden="true" tabindex="-1"></a><span class="fu">### Distribuição Geométrica</span></span>
+<span id="cb28-262"><a href="#cb28-262" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-263"><a href="#cb28-263" aria-hidden="true" tabindex="-1"></a>A Distribuição de Geométrica é do tipo <span class="co">[</span><span class="ot">variável aleatória discreta</span><span class="co">](#vac)</span>, tem suas raízes nos trabalhos de Jacob Bernoulli (século XVII) sobre o que hoje chamamos de "Ensaios de Bernoulli" — experimentos que resultam em apenas dois resultados possíveis: "sucesso" ou "fracasso".Enquanto a Distribuição Binomial (também derivada desses ensaios) foi criada para responder "quantos sucessos ocorrem em $n$ tentativas?", os engenheiros e matemáticos precisavam de uma ferramenta para responder a uma pergunta fundamental de confiabilidade e tempo de espera: "Quantas tentativas independentes são necessárias até que o primeiro sucesso ocorra?"Na engenharia moderna, ela surgiu como a ferramenta definitiva para modelar processos de repetição até o êxito ou falha. Se um robô tenta agarrar uma peça e falha repetidamente devido a variações de iluminação, a distribuição geométrica modela exatamente essa "espera" até o sucesso.</span>
+<span id="cb28-264"><a href="#cb28-264" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-265"><a href="#cb28-265" aria-hidden="true" tabindex="-1"></a>Fórmula: $$P(X = k) = (1 - p)^{k - 1} p$$</span>
+<span id="cb28-266"><a href="#cb28-266" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-267"><a href="#cb28-267" aria-hidden="true" tabindex="-1"></a>Métricas de Desempenho (Valor Esperado e Variância):</span>
+<span id="cb28-268"><a href="#cb28-268" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-269"><a href="#cb28-269" aria-hidden="true" tabindex="-1"></a>Para dimensionar sistemas, precisamos saber a "média" de tentativas esperadas e o quanto isso pode variar.</span>
+<span id="cb28-270"><a href="#cb28-270" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-271"><a href="#cb28-271" aria-hidden="true" tabindex="-1"></a>Valor Esperado (Média): O número médio de tentativas até o primeiro sucesso.$$E(X) = \frac{1}{p}$$</span>
+<span id="cb28-272"><a href="#cb28-272" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-273"><a href="#cb28-273" aria-hidden="true" tabindex="-1"></a>Variância: A dispersão em torno da média.$$Var(X) = \frac{1 - p}{p^2}$$</span>
+<span id="cb28-274"><a href="#cb28-274" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-275"><a href="#cb28-275" aria-hidden="true" tabindex="-1"></a>Onde: </span>
+<span id="cb28-276"><a href="#cb28-276" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-277"><a href="#cb28-277" aria-hidden="true" tabindex="-1"></a>$X$: A variável aleatória que representa o número da tentativa em que o primeiro sucesso ocorre ($X \in <span class="sc">\{</span>1, 2, 3, \dots<span class="sc">\}</span>$).</span>
+<span id="cb28-278"><a href="#cb28-278" aria-hidden="true" tabindex="-1"></a>$p$: A probabilidade de sucesso em uma única tentativa ($0 &lt; p \le 1$).</span>
+<span id="cb28-279"><a href="#cb28-279" aria-hidden="true" tabindex="-1"></a>$1 - p$: A probabilidade de falha em uma única tentativa (frequentemente denotada como $q$).</span>
+<span id="cb28-280"><a href="#cb28-280" aria-hidden="true" tabindex="-1"></a>$k$: Um valor específico (número inteiro) de tentativas que estamos avaliando.</span>
+<span id="cb28-281"><a href="#cb28-281" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-282"><a href="#cb28-282" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**Por Que é Relevante na Engenharia Mecatrônica?**</span>
+<span id="cb28-283"><a href="#cb28-283" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-284"><a href="#cb28-284" aria-hidden="true" tabindex="-1"></a>Sistemas mecatrônicos são compostos por integrações de software, eletrônica e mecânica. A Distribuição Geométrica é crucial para avaliar a resiliência e a confiabilidade dessas integrações:</span>
+<span id="cb28-285"><a href="#cb28-285" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-286"><a href="#cb28-286" aria-hidden="true" tabindex="-1"></a>Redes de Comunicação Industrial (IoT): Em ambientes ruidosos (chão de fábrica com alta interferência eletromagnética), pacotes de dados de sensores frequentemente falham. A distribuição modela quantas vezes o sistema precisa reenviar o pacote até que o CLP (Controlador Lógico Programável) o receba com sucesso.</span>
+<span id="cb28-287"><a href="#cb28-287" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-288"><a href="#cb28-288" aria-hidden="true" tabindex="-1"></a>Controle de Qualidade (Visão Computacional): Um algoritmo de inspeção óptica tenta classificar uma peça com uma taxa de acerto $p$. O modelo ajuda a definir o limite máximo de retentativas antes de descartar a peça.</span>
+<span id="cb28-289"><a href="#cb28-289" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-290"><a href="#cb28-290" aria-hidden="true" tabindex="-1"></a>Engenharia de Confiabilidade (Fadiga): Usada para modelar a vida útil de componentes discretos, como o número de ciclos que uma válvula solenoide pneumática executa antes de apresentar o primeiro vazamento.4. </span>
+<span id="cb28-291"><a href="#cb28-291" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-292"><a href="#cb28-292" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Estudo de Caso Prático: Veículo Guiado Automaticamente (AGV)</span></span>
+<span id="cb28-293"><a href="#cb28-293" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-294"><a href="#cb28-294" aria-hidden="true" tabindex="-1"></a>Cenário: Um AGV (Robô Móvel) navega por um armazém logístico. Para se acoplar à sua estação de recarga, ele utiliza um sistema de escaneamento a laser (LiDAR). Devido a poeira e reflexos no ambiente industrial, a probabilidade de o algoritmo do robô reconhecer a estação perfeitamente em um único escaneamento é de 30% ($p = 0.3$). Cada escaneamento falho força o robô a se reposicionar e tentar novamente.</span>
+<span id="cb28-295"><a href="#cb28-295" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-296"><a href="#cb28-296" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**Qual a probabilidade de o robô conseguir se acoplar exatamente na 4ª tentativa?**</span>
+<span id="cb28-297"><a href="#cb28-297" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-298"><a href="#cb28-298" aria-hidden="true" tabindex="-1"></a>Queremos encontrar $P(X = 4)$ onde $p = 0.3$. As 3 primeiras tentativas falham: probabilidade de $1 - 0.3 = 0.7$. A 4ª tentativa é um sucesso: probabilidade de $0.3$</span>
+<span id="cb28-299"><a href="#cb28-299" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-300"><a href="#cb28-300" aria-hidden="true" tabindex="-1"></a>Aplicando a fórmula:$$P(X = 4) = (0.7)^{4 - 1} \cdot 0.3$$$$P(X = 4) = (0.7)^3 \cdot 0.3$$$$P(X = 4) = 0.343 \cdot 0.3$$$$P(X = 4) = 0.1029$$ Existe 10.29% de chance de o robô conseguir se alinhar e acoplar exatamente na quarta tentativa. Problema 2: Quantas tentativas o robô fará em média?$$E(X) = \frac{1}{0.3} \approx 3.33$$Em média, o sistema do AGV precisará realizar entre 3 e 4 escaneamentos por ciclo de acoplamento. Se cada reposicionamento leva 2 segundos, o engenheiro mecatrônico sabe que deve adicionar cerca de 6,6 segundos ao tempo total de ciclo da máquina no cálculo de eficiência da planta.</span>
+<span id="cb28-301"><a href="#cb28-301" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-302"><a href="#cb28-302" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Implementação em R: </span></span>
+<span id="cb28-305"><a href="#cb28-305" aria-hidden="true" tabindex="-1"></a><span class="in">```{R}</span></span>
+<span id="cb28-306"><a href="#cb28-306" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb28-307"><a href="#cb28-307" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-308"><a href="#cb28-308" aria-hidden="true" tabindex="-1"></a><span class="co"># Criando dados para 0 a 10 falhas</span></span>
+<span id="cb28-309"><a href="#cb28-309" aria-hidden="true" tabindex="-1"></a>dados <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb28-310"><a href="#cb28-310" aria-hidden="true" tabindex="-1"></a>  <span class="at">falhas =</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">10</span>,</span>
+<span id="cb28-311"><a href="#cb28-311" aria-hidden="true" tabindex="-1"></a>  <span class="at">probabilidade =</span> <span class="fu">dgeom</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">10</span>, <span class="at">prob =</span> <span class="fl">0.3</span>)</span>
+<span id="cb28-312"><a href="#cb28-312" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb28-313"><a href="#cb28-313" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-314"><a href="#cb28-314" aria-hidden="true" tabindex="-1"></a><span class="co"># Plotando</span></span>
+<span id="cb28-315"><a href="#cb28-315" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dados, <span class="fu">aes</span>(<span class="at">x =</span> falhas, <span class="at">y =</span> probabilidade)) <span class="sc">+</span></span>
+<span id="cb28-316"><a href="#cb28-316" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">fill =</span> <span class="st">"steelblue"</span>) <span class="sc">+</span></span>
+<span id="cb28-317"><a href="#cb28-317" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="dv">0</span><span class="sc">:</span><span class="dv">10</span>) <span class="sc">+</span></span>
+<span id="cb28-318"><a href="#cb28-318" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Distribuição Geométrica (p=0.3)"</span>,</span>
+<span id="cb28-319"><a href="#cb28-319" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Número de falhas antes do primeiro sucesso"</span>,</span>
+<span id="cb28-320"><a href="#cb28-320" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Quantidade de Falhas"</span>,</span>
+<span id="cb28-321"><a href="#cb28-321" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"P(X = x)"</span>) <span class="sc">+</span></span>
+<span id="cb28-322"><a href="#cb28-322" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb28-323"><a href="#cb28-323" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb28-324"><a href="#cb28-324" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**O ggplot2serve para criar gráficos através de uma lógica de camadas.**</span>
+<span id="cb28-325"><a href="#cb28-325" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-326"><a href="#cb28-326" aria-hidden="true" tabindex="-1"></a>Em vez de fornecer um comando pronto para "gráfico de barras" ou "gráfico de linhas", ele funciona como um software de edição (tipo Photoshop ou Canva), onde você sobrepõe elementos:</span>
+<span id="cb28-327"><a href="#cb28-327" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-328"><a href="#cb28-328" aria-hidden="true" tabindex="-1"></a>A Base: Você conecta seus dados.</span>
+<span id="cb28-329"><a href="#cb28-329" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-330"><a href="#cb28-330" aria-hidden="true" tabindex="-1"></a>O Mapeamento: Você diz quem é o eixo X e o eixo Y.</span>
+<span id="cb28-331"><a href="#cb28-331" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-332"><a href="#cb28-332" aria-hidden="true" tabindex="-1"></a>A Geometria: Você escolhe a forma (pontos, barras, linhas ou áreas).</span>
+<span id="cb28-333"><a href="#cb28-333" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-334"><a href="#cb28-334" aria-hidden="true" tabindex="-1"></a>O Refinamento: Você adiciona títulos, cores e temas.</span>
+<span id="cb28-335"><a href="#cb28-335" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-336"><a href="#cb28-336" aria-hidden="true" tabindex="-1"></a><span class="fu">### Distribuição Hipergeométrica</span></span>
+<span id="cb28-337"><a href="#cb28-337" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-338"><a href="#cb28-338" aria-hidden="true" tabindex="-1"></a>A Distribuição Hipergeométrica é do tipo <span class="co">[</span><span class="ot">variável aleatória discreta</span><span class="co">](#vac)</span>, surgiu da necessidade de modelar situações de amostragem sem reposição. Historicamente, sua formalização está ligada ao desenvolvimento da análise combinatória nos séculos XVII e XVIII.</span>
+<span id="cb28-339"><a href="#cb28-339" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-340"><a href="#cb28-340" aria-hidden="true" tabindex="-1"></a>Enquanto a Distribuição Binomial assume que o "universo" é infinito ou que o item retirado retorna ao lote, a Hipergeométrica reconhece a realidade da manufatura: se eu retiro um sensor defeituoso de uma caixa de 10, a probabilidade de encontrar outro defeituoso nos 9 restantes muda drasticamente.</span>
+<span id="cb28-341"><a href="#cb28-341" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-342"><a href="#cb28-342" aria-hidden="true" tabindex="-1"></a>Modelagem Matemática:</span>
+<span id="cb28-343"><a href="#cb28-343" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-344"><a href="#cb28-344" aria-hidden="true" tabindex="-1"></a>Para um engenheiro mecatrônico, a precisão reside nas variáveis. Definimos a probabilidade de obter exatamente $k$ sucessos em uma amostra de tamanho $n$, extraída de uma população total $N$ que contém $K$ sucessos totais.A FórmulaA função de probabilidade é dada por: $$P(X = k) = \frac{\binom{K}{k} \binom{N - K}{n - k}}{\binom{N}{n}}$$</span>
+<span id="cb28-345"><a href="#cb28-345" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-346"><a href="#cb28-346" aria-hidden="true" tabindex="-1"></a>Variáveis do Sistema:</span>
+<span id="cb28-347"><a href="#cb28-347" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-348"><a href="#cb28-348" aria-hidden="true" tabindex="-1"></a>$N$: Tamanho total da população (ex: lote total de componentes).</span>
+<span id="cb28-349"><a href="#cb28-349" aria-hidden="true" tabindex="-1"></a>$K$: Número total de sucessos na população (ex: total de itens com uma característica específica).</span>
+<span id="cb28-350"><a href="#cb28-350" aria-hidden="true" tabindex="-1"></a>$n$: Tamanho da amostra retirada (ex: itens selecionados para teste).</span>
+<span id="cb28-351"><a href="#cb28-351" aria-hidden="true" tabindex="-1"></a>$k$: Número de sucessos observados na amostra.</span>
+<span id="cb28-352"><a href="#cb28-352" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-353"><a href="#cb28-353" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**Por Que é Relevante na Engenharia Mecatrônica?**</span>
+<span id="cb28-354"><a href="#cb28-354" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-355"><a href="#cb28-355" aria-hidden="true" tabindex="-1"></a>Na mecatrônica, onde trabalhamos com sistemas embarcados, robótica e linhas de montagem automatizadas, a Distribuição Hipergeométrica é vital por três motivos:</span>
+<span id="cb28-356"><a href="#cb28-356" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-357"><a href="#cb28-357" aria-hidden="true" tabindex="-1"></a>Controle de Qualidade em Lotes Pequenos: Em células de manufatura flexível (Industry 4.0), os lotes costumam ser menores. A aproximação binomial falha aqui por subestimar a variação da probabilidade.</span>
+<span id="cb28-358"><a href="#cb28-358" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-359"><a href="#cb28-359" aria-hidden="true" tabindex="-1"></a>Testes Destrutivos: Se testar um atuador significa levá-lo à falha, ele não volta para o lote. A amostragem é, por definição, sem reposição.</span>
+<span id="cb28-360"><a href="#cb28-360" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-361"><a href="#cb28-361" aria-hidden="true" tabindex="-1"></a>Confiabilidade de Sistemas: Avaliar a probabilidade de falha em sistemas redundantes (ex: um drone com 8 motores onde ele precisa de 6 para voar).</span>
+<span id="cb28-362"><a href="#cb28-362" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-363"><a href="#cb28-363" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Estudo de Caso Prático: Inspeção de Microcontroladores</span></span>
+<span id="cb28-364"><a href="#cb28-364" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-365"><a href="#cb28-365" aria-hidden="true" tabindex="-1"></a>Cenário: Um lote de $N = 50$ microcontroladores chega à bancada. Informações históricas sugerem que, em lotes desse fornecedor, geralmente existem $K = 5$ unidades com clock instável (defeitos). Você seleciona aleatoriamente $n = 10$ unidades para passar pelo teste funcional automático.</span>
+<span id="cb28-366"><a href="#cb28-366" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-367"><a href="#cb28-367" aria-hidden="true" tabindex="-1"></a>Pergunta: Qual a probabilidade de você encontrar exatamente $k = 2$ unidades defeituosas na sua amostra?</span>
+<span id="cb28-368"><a href="#cb28-368" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-369"><a href="#cb28-369" aria-hidden="true" tabindex="-1"></a>Resolução: Aplicando os valores na fórmula, Combinações de defeituosos: $\binom{5}{2} = 10$ Combinações de não-defeituosos: $\binom{50-5}{10-2} = \binom{45}{8} = 215.553.195$ Combinações totais da amostra: $\binom{50}{10} = 10.272.278.170$$$P(X = 2) = \frac{10 \times 215.553.195}{10.272.278.170} \approx 0,2098$$</span>
+<span id="cb28-370"><a href="#cb28-370" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-371"><a href="#cb28-371" aria-hidden="true" tabindex="-1"></a>Conclusão: Existe aproximadamente 21% de chance de detectar exatamente dois componentes instáveis. Esse cálculo permite que o engenheiro ajuste o rigor da inspeção: se a probabilidade de não detectar nenhum defeito ($k=0$) for alta demais para os padrões de segurança, o tamanho da amostra $n$ deve ser aumentado.</span>
+<span id="cb28-372"><a href="#cb28-372" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-375"><a href="#cb28-375" aria-hidden="true" tabindex="-1"></a><span class="in">```{R}</span></span>
+<span id="cb28-376"><a href="#cb28-376" aria-hidden="true" tabindex="-1"></a><span class="co"># --- Parâmetros do Sistema (Exemplo dos Microcontroladores) ---</span></span>
+<span id="cb28-377"><a href="#cb28-377" aria-hidden="true" tabindex="-1"></a>N <span class="ot">&lt;-</span> <span class="dv">50</span>  <span class="co"># População total</span></span>
+<span id="cb28-378"><a href="#cb28-378" aria-hidden="true" tabindex="-1"></a>K <span class="ot">&lt;-</span> <span class="dv">5</span>   <span class="co"># Total de defeituosos no lote</span></span>
+<span id="cb28-379"><a href="#cb28-379" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">10</span>  <span class="co"># Tamanho da amostra de inspeção</span></span>
+<span id="cb28-380"><a href="#cb28-380" aria-hidden="true" tabindex="-1"></a>k_alvo <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="co"># Quantidade exata que queremos encontrar</span></span>
+<span id="cb28-381"><a href="#cb28-381" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-382"><a href="#cb28-382" aria-hidden="true" tabindex="-1"></a><span class="co"># --- Cálculo de Probabilidade Pontual ---</span></span>
+<span id="cb28-383"><a href="#cb28-383" aria-hidden="true" tabindex="-1"></a><span class="co"># m = K (sucessos)</span></span>
+<span id="cb28-384"><a href="#cb28-384" aria-hidden="true" tabindex="-1"></a><span class="co"># n_r = N - K (fracassos)</span></span>
+<span id="cb28-385"><a href="#cb28-385" aria-hidden="true" tabindex="-1"></a><span class="co"># k = n (amostra)</span></span>
+<span id="cb28-386"><a href="#cb28-386" aria-hidden="true" tabindex="-1"></a>prob_pontual <span class="ot">&lt;-</span> <span class="fu">dhyper</span>(<span class="at">x =</span> k_alvo, <span class="at">m =</span> K, <span class="at">n =</span> N <span class="sc">-</span> K, <span class="at">k =</span> n)</span>
+<span id="cb28-387"><a href="#cb28-387" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-388"><a href="#cb28-388" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">paste</span>(<span class="st">"Probabilidade de encontrar exatamente"</span>, k_alvo, <span class="st">"defeitos:"</span>, <span class="fu">round</span>(prob_pontual <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">2</span>), <span class="st">"%</span><span class="sc">\n</span><span class="st">"</span>))</span>
+<span id="cb28-389"><a href="#cb28-389" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-390"><a href="#cb28-390" aria-hidden="true" tabindex="-1"></a><span class="co"># --- Simulação de Cenários (Distribuição Completa) ---</span></span>
+<span id="cb28-391"><a href="#cb28-391" aria-hidden="true" tabindex="-1"></a><span class="co"># Vamos ver a probabilidade para 0, 1, 2, 3, 4 e 5 defeitos na amostra</span></span>
+<span id="cb28-392"><a href="#cb28-392" aria-hidden="true" tabindex="-1"></a>x_vals <span class="ot">&lt;-</span> <span class="dv">0</span><span class="sc">:</span>K</span>
+<span id="cb28-393"><a href="#cb28-393" aria-hidden="true" tabindex="-1"></a>probabilidades <span class="ot">&lt;-</span> <span class="fu">dhyper</span>(<span class="at">x =</span> x_vals, <span class="at">m =</span> K, <span class="at">n =</span> N <span class="sc">-</span> K, <span class="at">k =</span> n)</span>
+<span id="cb28-394"><a href="#cb28-394" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-395"><a href="#cb28-395" aria-hidden="true" tabindex="-1"></a><span class="co"># --- Visualização Técnica ---</span></span>
+<span id="cb28-396"><a href="#cb28-396" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb28-397"><a href="#cb28-397" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-398"><a href="#cb28-398" aria-hidden="true" tabindex="-1"></a>dados_plot <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Defeitos =</span> <span class="fu">as.factor</span>(x_vals), <span class="at">Prob =</span> probabilidades)</span>
+<span id="cb28-399"><a href="#cb28-399" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-400"><a href="#cb28-400" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dados_plot, <span class="fu">aes</span>(<span class="at">x =</span> Defeitos, <span class="at">y =</span> Prob, <span class="at">fill =</span> (Defeitos <span class="sc">==</span> k_alvo))) <span class="sc">+</span></span>
+<span id="cb28-401"><a href="#cb28-401" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb28-402"><a href="#cb28-402" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"gray70"</span>, <span class="st">"#0073C2FF"</span>), <span class="at">guide =</span> <span class="st">"none"</span>) <span class="sc">+</span></span>
+<span id="cb28-403"><a href="#cb28-403" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Distribuição Hipergeométrica: Inspeção de Lote"</span>,</span>
+<span id="cb28-404"><a href="#cb28-404" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="fu">paste</span>(<span class="st">"N=50, K=5, n=10 | Probabilidade para k=2 é"</span>, <span class="fu">round</span>(prob_pontual, <span class="dv">4</span>)),</span>
+<span id="cb28-405"><a href="#cb28-405" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Quantidade de Defeitos Encontrados (k)"</span>,</span>
+<span id="cb28-406"><a href="#cb28-406" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Probabilidade P(X = k)"</span>) <span class="sc">+</span></span>
+<span id="cb28-407"><a href="#cb28-407" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb28-408"><a href="#cb28-408" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb28-409"><a href="#cb28-409" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-410"><a href="#cb28-410" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-411"><a href="#cb28-411" aria-hidden="true" tabindex="-1"></a><span class="fu">### Distribuição Uniforme</span></span>
+<span id="cb28-412"><a href="#cb28-412" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-413"><a href="#cb28-413" aria-hidden="true" tabindex="-1"></a>A Distribuição Uniforme é do tipo <span class="co">[</span><span class="ot">variável aleatória contínua</span><span class="co">](#vad)</span>, surgiu da necessidade de modelar fenômenos de máxima ignorância ou equipotencialidade. No contexto científico, ela foi formalizada para descrever situações onde não temos motivos para acreditar que um valor em um intervalo ocorra com mais frequência que outro.Na engenharia, sua relevância explodiu com a necessidade de quantificar o erro de quantização em conversores analógico-digitais (ADCs) e a tolerância de componentes fabricados em série, onde o controle de qualidade garante que a peça esteja dentro de um limite $<span class="co">[</span><span class="ot">a, b</span><span class="co">]</span>$, mas não garante uma tendência central (como ocorre na Gaussiana).</span>
+<span id="cb28-414"><a href="#cb28-414" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-415"><a href="#cb28-415" aria-hidden="true" tabindex="-1"></a>Formulação Matemática e Variáveis Diferente de outras distribuições, a Uniforme define que a probabilidade é constante ao longo de um intervalo definido. Função Densidade de Probabilidade (PDF). A probabilidade de uma variável $X$ assumir um valor entre os limites inferior ($a$) e superior ($b$) é dada por:</span>
+<span id="cb28-416"><a href="#cb28-416" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-417"><a href="#cb28-417" aria-hidden="true" tabindex="-1"></a>$$f(x) = \begin{cases} \frac{1}{b - a} &amp; \text{para } a \le x \le b <span class="sc">\\</span> 0 &amp; \text{para } x &lt; a \text{ ou } x &gt; b \end{cases}$$</span>
+<span id="cb28-418"><a href="#cb28-418" aria-hidden="true" tabindex="-1"></a>Onde: </span>
+<span id="cb28-419"><a href="#cb28-419" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-420"><a href="#cb28-420" aria-hidden="true" tabindex="-1"></a>$a$: Limite mínimo do intervalo (ex: tensão mínima de operação).</span>
+<span id="cb28-421"><a href="#cb28-421" aria-hidden="true" tabindex="-1"></a>$b$: Limite máximo do intervalo (ex: tensão máxima de operação).</span>
+<span id="cb28-422"><a href="#cb28-422" aria-hidden="true" tabindex="-1"></a>Média (Esperança): $E<span class="co">[</span><span class="ot">X</span><span class="co">]</span> = \frac{a + b}{2}$</span>
+<span id="cb28-423"><a href="#cb28-423" aria-hidden="true" tabindex="-1"></a>Variância: $Var(X) = \frac{(b - a)^2}{12}$</span>
+<span id="cb28-424"><a href="#cb28-424" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-425"><a href="#cb28-425" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**Por Que é Relevante na Engenharia Mecatrônica?**</span>
+<span id="cb28-426"><a href="#cb28-426" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-427"><a href="#cb28-427" aria-hidden="true" tabindex="-1"></a>-Resolução de Sensores: Se um sensor de posição tem uma resolução de 0,01 mm, o erro de leitura está distribuído uniformemente entre $-0,005$ e $+0,005$;</span>
+<span id="cb28-428"><a href="#cb28-428" aria-hidden="true" tabindex="-1"></a>-Processamento de Sinais: A modelagem do ruído de arredondamento em microcontroladores de 8, 16 ou 32 bits segue este modelo;</span>
+<span id="cb28-429"><a href="#cb28-429" aria-hidden="true" tabindex="-1"></a>-Simulação de Monte Carlo: É a base para gerar números aleatórios que alimentam simulações de falhas e confiabilidade de sistemas robóticos.</span>
+<span id="cb28-430"><a href="#cb28-430" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-431"><a href="#cb28-431" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Exemplo Aplicado: Posicionamento de um Atuador Linear.</span></span>
+<span id="cb28-432"><a href="#cb28-432" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-433"><a href="#cb28-433" aria-hidden="true" tabindex="-1"></a>Imagine que você está projetando uma célula de manufatura onde um braço robótico utiliza um Atuador Linear Digital. O controlador envia um comando de posição, mas devido à folga mecânica (backlash) das engrenagens, a posição real do atuador pode variar uniformemente em um intervalo de 2 mm em torno do ponto desejado. Se o objetivo é atingir a posição de $100 \text{ mm}$, o erro posiciona o atuador em qualquer lugar entre $a = 99 \text{ mm}$ e $b = 101 \text{ mm}$. Cálculos Estatísticos PDF: $f(x) = \frac{1}{101 - 99} = 0,5$. Isso significa que a densidade de probabilidade é constante em 0,5 para qualquer ponto nesse intervalo. Incerteza Padrão (Desvio Padrão): Para calcular o erro médio quadrático que o sistema de controle deve compensar:$$\sigma = \sqrt{\frac{(101 - 99)^2}{12}} = \sqrt{\frac{4}{12}} \approx 0,577 \text{ mm}$$</span>
+<span id="cb28-434"><a href="#cb28-434" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-435"><a href="#cb28-435" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Implementação em R: </span></span>
+<span id="cb28-436"><a href="#cb28-436" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-439"><a href="#cb28-439" aria-hidden="true" tabindex="-1"></a><span class="in">```{R}</span></span>
+<span id="cb28-440"><a href="#cb28-440" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. Definição de Parâmetros do Sistema</span></span>
+<span id="cb28-441"><a href="#cb28-441" aria-hidden="true" tabindex="-1"></a>posicao_desejada <span class="ot">&lt;-</span> <span class="dv">100</span>       <span class="co"># Centro (setpoint) em mm</span></span>
+<span id="cb28-442"><a href="#cb28-442" aria-hidden="true" tabindex="-1"></a>intervalo_erro <span class="ot">&lt;-</span> <span class="dv">2</span>           <span class="co"># Folga total (backlash) em mm</span></span>
+<span id="cb28-443"><a href="#cb28-443" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> posicao_desejada <span class="sc">-</span> (intervalo_erro <span class="sc">/</span> <span class="dv">2</span>) <span class="co"># Limite inferior: 99mm</span></span>
+<span id="cb28-444"><a href="#cb28-444" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> posicao_desejada <span class="sc">+</span> (intervalo_erro <span class="sc">/</span> <span class="dv">2</span>) <span class="co"># Limite superior: 101mm</span></span>
+<span id="cb28-445"><a href="#cb28-445" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-446"><a href="#cb28-446" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. Simulação de Dados</span></span>
+<span id="cb28-447"><a href="#cb28-447" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">42</span>) <span class="co"># Para resultados reproduzíveis</span></span>
+<span id="cb28-448"><a href="#cb28-448" aria-hidden="true" tabindex="-1"></a>n_amostras <span class="ot">&lt;-</span> <span class="dv">10000</span></span>
+<span id="cb28-449"><a href="#cb28-449" aria-hidden="true" tabindex="-1"></a>posicoes_reais <span class="ot">&lt;-</span> <span class="fu">runif</span>(n_amostras, <span class="at">min =</span> a, <span class="at">max =</span> b)</span>
+<span id="cb28-450"><a href="#cb28-450" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-451"><a href="#cb28-451" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. Cálculos Estatísticos Comparativos</span></span>
+<span id="cb28-452"><a href="#cb28-452" aria-hidden="true" tabindex="-1"></a>media_simulada <span class="ot">&lt;-</span> <span class="fu">mean</span>(posicoes_reais)</span>
+<span id="cb28-453"><a href="#cb28-453" aria-hidden="true" tabindex="-1"></a>sd_simulado <span class="ot">&lt;-</span> <span class="fu">sd</span>(posicoes_reais)</span>
+<span id="cb28-454"><a href="#cb28-454" aria-hidden="true" tabindex="-1"></a>sd_teorico <span class="ot">&lt;-</span> <span class="fu">sqrt</span>((b <span class="sc">-</span> a)<span class="sc">^</span><span class="dv">2</span> <span class="sc">/</span> <span class="dv">12</span>)</span>
+<span id="cb28-455"><a href="#cb28-455" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-456"><a href="#cb28-456" aria-hidden="true" tabindex="-1"></a><span class="co"># Imprimindo Relatório no Console</span></span>
+<span id="cb28-457"><a href="#cb28-457" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"--- Relatório de Precisão do Atuador ---</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb28-458"><a href="#cb28-458" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Média Esperada:"</span>, (a <span class="sc">+</span> b) <span class="sc">/</span> <span class="dv">2</span>, <span class="st">"mm | Média Simulada:"</span>, <span class="fu">round</span>(media_simulada, <span class="dv">4</span>), <span class="st">"mm</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb28-459"><a href="#cb28-459" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Desvio Padrão Teórico:"</span>, <span class="fu">round</span>(sd_teorico, <span class="dv">4</span>), <span class="st">"mm</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb28-460"><a href="#cb28-460" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Desvio Padrão Simulado:"</span>, <span class="fu">round</span>(sd_simulado, <span class="dv">4</span>), <span class="st">"mm</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb28-461"><a href="#cb28-461" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"----------------------------------------</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb28-462"><a href="#cb28-462" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-463"><a href="#cb28-463" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. Visualização Gráfica para Engenharia</span></span>
+<span id="cb28-464"><a href="#cb28-464" aria-hidden="true" tabindex="-1"></a><span class="co"># Dividindo a tela para dois gráficos</span></span>
+<span id="cb28-465"><a href="#cb28-465" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))</span>
+<span id="cb28-466"><a href="#cb28-466" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-467"><a href="#cb28-467" aria-hidden="true" tabindex="-1"></a><span class="co"># Gráfico 1: Histograma das Posições Reais</span></span>
+<span id="cb28-468"><a href="#cb28-468" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(posicoes_reais, </span>
+<span id="cb28-469"><a href="#cb28-469" aria-hidden="true" tabindex="-1"></a>     <span class="at">breaks =</span> <span class="dv">30</span>, </span>
+<span id="cb28-470"><a href="#cb28-470" aria-hidden="true" tabindex="-1"></a>     <span class="at">probability =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb28-471"><a href="#cb28-471" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Distribuição de Posicionamento"</span>,</span>
+<span id="cb28-472"><a href="#cb28-472" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Posição Real (mm)"</span>, </span>
+<span id="cb28-473"><a href="#cb28-473" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"Densidade"</span>,</span>
+<span id="cb28-474"><a href="#cb28-474" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">"steelblue"</span>, </span>
+<span id="cb28-475"><a href="#cb28-475" aria-hidden="true" tabindex="-1"></a>     <span class="at">border =</span> <span class="st">"white"</span>)</span>
+<span id="cb28-476"><a href="#cb28-476" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-477"><a href="#cb28-477" aria-hidden="true" tabindex="-1"></a><span class="co"># Adiciona a linha da PDF teórica (f(x) = 1/(b-a) = 0.5)</span></span>
+<span id="cb28-478"><a href="#cb28-478" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fl">0.5</span>, <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">lwd =</span> <span class="dv">3</span>, <span class="at">lty =</span> <span class="dv">2</span>)</span>
+<span id="cb28-479"><a href="#cb28-479" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="st">"topright"</span>, <span class="at">legend =</span> <span class="st">"PDF Teórica (0.5)"</span>, <span class="at">col =</span> <span class="st">"red"</span>, <span class="at">lty =</span> <span class="dv">2</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span>
+<span id="cb28-480"><a href="#cb28-480" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-481"><a href="#cb28-481" aria-hidden="true" tabindex="-1"></a><span class="co"># Gráfico 2: Probabilidade Acumulada (CDF)</span></span>
+<span id="cb28-482"><a href="#cb28-482" aria-hidden="true" tabindex="-1"></a><span class="co"># Útil para saber: "Qual a chance do robô estar abaixo de 100.5mm?"</span></span>
+<span id="cb28-483"><a href="#cb28-483" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">ecdf</span>(posicoes_reais), </span>
+<span id="cb28-484"><a href="#cb28-484" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Probabilidade Acumulada (CDF)"</span>,</span>
+<span id="cb28-485"><a href="#cb28-485" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Posição (mm)"</span>, </span>
+<span id="cb28-486"><a href="#cb28-486" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"F(x)"</span>,</span>
+<span id="cb28-487"><a href="#cb28-487" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">"darkgreen"</span>)</span>
+<span id="cb28-488"><a href="#cb28-488" aria-hidden="true" tabindex="-1"></a><span class="fu">grid</span>()</span>
+<span id="cb28-489"><a href="#cb28-489" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb28-490"><a href="#cb28-490" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-491"><a href="#cb28-491" aria-hidden="true" tabindex="-1"></a><span class="fu">### Distribuição Exponencial</span></span>
+<span id="cb28-492"><a href="#cb28-492" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-493"><a href="#cb28-493" aria-hidden="true" tabindex="-1"></a>A distribuição exponencial é do tipo <span class="co">[</span><span class="ot">variável aleatória contínua</span><span class="co">](#vad)</span>, tem suas raízes no início do século XX, intimamente ligada ao desenvolvimento da Teoria das Filas e dos Processos de Poisson. Ela surgiu da necessidade de modelar matematicamente o tempo de espera entre eventos que ocorrem de forma contínua e independente a uma taxa média constante. Historicamente, o engenheiro e matemático dinamarquês A.K. Erlang foi um dos pioneiros a utilizar esses conceitos para analisar o tráfego de chamadas telefônicas (um sistema clássico de "distribuição" de sinais). Na engenharia moderna, a distribuição exponencial deixou de ser apenas para telecomunicações e se tornou a espinha dorsal da Engenharia de Confiabilidade. Ela surgiu como uma ferramenta vital porque permite aos engenheiros responder a uma pergunta crítica: "Dado que um componente está funcionando agora, qual é a probabilidade de ele falhar nas próximas $t$ horas?"</span>
+<span id="cb28-494"><a href="#cb28-494" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-495"><a href="#cb28-495" aria-hidden="true" tabindex="-1"></a>Fundamentação Matemática e Variáveis: A distribuição exponencial descreve o tempo entre eventos em um processo de Poisson. Em mecatrônica, o "evento" é tipicamente a falha de um componente. A principal característica que define a distribuição exponencial é a falta de memória (propriedade de Markov). Isso significa que a probabilidade de um componente falhar no próximo instante depende apenas do seu estado atual de funcionamento e da sua taxa de falha, não do tempo em que ele já esteve operando. (Em termos práticos: assume-se que o componente não sofre desgaste gradativo ao longo do tempo, falhando de forma aleatória). Fórmulas EssenciaisAs equações que regem este modelo utilizam a notação matemática padrão para distribuições contínuas:</span>
+<span id="cb28-496"><a href="#cb28-496" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-497"><a href="#cb28-497" aria-hidden="true" tabindex="-1"></a>Função Densidade de Probabilidade (PDF): Descreve a probabilidade relativa de a falha ocorrer em um instante exato de tempo $t$.$$f(t) = \lambda e^{-\lambda t} \quad \text{para } t \ge 0$$</span>
+<span id="cb28-498"><a href="#cb28-498" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-499"><a href="#cb28-499" aria-hidden="true" tabindex="-1"></a>Função de Distribuição Acumulada (CDF): Probabilidade de Falha: Fornece a probabilidade do componente falhar antes de um tempo $t$.$$F(t) = 1 - e^{-\lambda t} \quad \text{para } t \ge 0$$</span>
+<span id="cb28-500"><a href="#cb28-500" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-501"><a href="#cb28-501" aria-hidden="true" tabindex="-1"></a>Função de Confiabilidade (Sobrevivência): Fornece a probabilidade de o componente sobreviver (não falhar) até o tempo $t$.$$R(t) = 1 - F(t) = e^{-\lambda t}$$</span>
+<span id="cb28-502"><a href="#cb28-502" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-503"><a href="#cb28-503" aria-hidden="true" tabindex="-1"></a>Variáveis e Parâmetros:</span>
+<span id="cb28-504"><a href="#cb28-504" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-505"><a href="#cb28-505" aria-hidden="true" tabindex="-1"></a>$t$ (Tempo): A variável contínua independente (pode ser horas, ciclos, quilômetros).</span>
+<span id="cb28-506"><a href="#cb28-506" aria-hidden="true" tabindex="-1"></a>$\lambda$ (Taxa de Falha): O parâmetro de taxa. Representa o número esperado de falhas por unidade de tempo (ex: $0,001$ falhas/hora).</span>
+<span id="cb28-507"><a href="#cb28-507" aria-hidden="true" tabindex="-1"></a>$MTTF$ (Mean Time To Failure): O Tempo Médio Até a Falha. É o valor esperado (a média) da distribuição. É inversamente proporcional à taxa de falha:$$\mu = MTTF = \frac{1}{\lambda}$$</span>
+<span id="cb28-508"><a href="#cb28-508" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-509"><a href="#cb28-509" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**Por Que é Relevante na Engenharia Mecatrônica?**</span>
+<span id="cb28-510"><a href="#cb28-510" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-511"><a href="#cb28-511" aria-hidden="true" tabindex="-1"></a>Na Engenharia Mecatrônica, que funde mecânica, eletrônica e computação, lidamos com sistemas complexos onde a falha de um subcomponente pode parar uma linha de produção inteira. A distribuição exponencial é relevante por três motivos principais:</span>
+<span id="cb28-512"><a href="#cb28-512" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-513"><a href="#cb28-513" aria-hidden="true" tabindex="-1"></a>Modelagem de Eletrônicos: Componentes de estado sólido (transistores, microcontroladores, sensores ópticos) geralmente não sofrem desgaste mecânico. Suas falhas são aleatórias (devido a picos de tensão, defeitos microscópicos latentes), enquadrando-se perfeitamente no modelo exponencial de taxa de falha constante.</span>
+<span id="cb28-514"><a href="#cb28-514" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-515"><a href="#cb28-515" aria-hidden="true" tabindex="-1"></a>Manutenção Preventiva vs. Corretiva: Como a distribuição "não tem memória", a manutenção preventiva (trocar uma placa eletrônica antes de quebrar) não faz sentido se ela segue puramente a distribuição exponencial. Isso guia gestores a focarem em redundância de sistemas em vez de substituições programadas para esses itens específicos.</span>
+<span id="cb28-516"><a href="#cb28-516" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-517"><a href="#cb28-517" aria-hidden="true" tabindex="-1"></a>Cálculo de Confiabilidade de Sistemas: Permite calcular a confiabilidade de sistemas em série ou paralelo conectando subsistemas eletrônicos e de automação.</span>
+<span id="cb28-518"><a href="#cb28-518" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-519"><a href="#cb28-519" aria-hidden="true" tabindex="-1"></a><span class="fu">### Estudo de Caso Prático: O desenvolvimento do painel de controle (CLP - Controlador Lógico Programável)</span></span>
+<span id="cb28-520"><a href="#cb28-520" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-521"><a href="#cb28-521" aria-hidden="true" tabindex="-1"></a>Cenário: O desenvolvimento do painel de controle (CLP - Controlador Lógico Programável) de um braço robótico de soldagem em uma montadora automotiva.O fabricante dos relés de estado sólido utilizados no CLP garante que a taxa de falha desses componentes em operação normal é constante, com $\lambda = 0,0002$ falhas por hora. Objetivo: O engenheiro mecatrônico precisa saber duas coisas para o manual de especificações técnicas do robô: Qual é o tempo médio até a falha (MTTF) deste relé? Qual a probabilidade de o relé funcionar perfeitamente sem falhas durante um turno intensivo de produção contínua de 1.000 horas? </span>
+<span id="cb28-522"><a href="#cb28-522" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-523"><a href="#cb28-523" aria-hidden="true" tabindex="-1"></a>Resolução: Cálculo do MTTF: $$MTTF = \frac{1}{\lambda} = \frac{1}{0,0002} = 5.000 \text{ horas}$$ O tempo esperado de vida do componente é de 5.000 horas. Cálculo da Confiabilidade em 1.000 horas: Aplicamos a Função de Confiabilidade para $t = 1000$:$$R(1000) = e^{-(0,0002 \cdot 1000)} = e^{-0,2} \approx 0,8187$$</span>
+<span id="cb28-524"><a href="#cb28-524" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-525"><a href="#cb28-525" aria-hidden="true" tabindex="-1"></a>Conclusão: Há aproximadamente 81,87% de probabilidade de o relé operar por 1.000 horas sem falhar. Com base nisso, o engenheiro pode decidir se esse nível de confiabilidade é aceitável para o processo da montadora ou se deve introduzir um segundo relé redundante em paralelo no circuito eletrônico do braço robótico para aumentar a tolerância a falhas do sistema.</span>
+<span id="cb28-526"><a href="#cb28-526" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-527"><a href="#cb28-527" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-530"><a href="#cb28-530" aria-hidden="true" tabindex="-1"></a><span class="in">```{R}</span></span>
+<span id="cb28-531"><a href="#cb28-531" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb28-532"><a href="#cb28-532" aria-hidden="true" tabindex="-1"></a>lambda <span class="ot">&lt;-</span> <span class="fl">0.0002</span></span>
+<span id="cb28-533"><a href="#cb28-533" aria-hidden="true" tabindex="-1"></a>tempo_analise <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb28-534"><a href="#cb28-534" aria-hidden="true" tabindex="-1"></a>prob_falha <span class="ot">&lt;-</span> <span class="fu">pexp</span>(<span class="at">q =</span> tempo_analise, <span class="at">rate =</span> lambda)</span>
+<span id="cb28-535"><a href="#cb28-535" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Probabilidade de falha:"</span>, <span class="fu">round</span>(prob_falha <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">2</span>), <span class="st">"%"</span>))</span>
+<span id="cb28-536"><a href="#cb28-536" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-537"><a href="#cb28-537" aria-hidden="true" tabindex="-1"></a><span class="co"># Qual a confiabilidade (probabilidade de sobreviver)? R(t)</span></span>
+<span id="cb28-538"><a href="#cb28-538" aria-hidden="true" tabindex="-1"></a><span class="co"># Como R(t) = 1 - F(t), podemos usar:</span></span>
+<span id="cb28-539"><a href="#cb28-539" aria-hidden="true" tabindex="-1"></a>confiabilidade <span class="ot">&lt;-</span> <span class="dv">1</span> <span class="sc">-</span> <span class="fu">pexp</span>(<span class="at">q =</span> tempo_analise, <span class="at">rate =</span> lambda)</span>
+<span id="cb28-540"><a href="#cb28-540" aria-hidden="true" tabindex="-1"></a><span class="co"># OU usar o argumento lower.tail = FALSE (mais preciso computacionalmente)</span></span>
+<span id="cb28-541"><a href="#cb28-541" aria-hidden="true" tabindex="-1"></a>confiabilidade <span class="ot">&lt;-</span> <span class="fu">pexp</span>(<span class="at">q =</span> tempo_analise, <span class="at">rate =</span> lambda, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb28-542"><a href="#cb28-542" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">paste</span>(<span class="st">"Confiabilidade:"</span>, <span class="fu">round</span>(confiabilidade <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">2</span>), <span class="st">"%"</span>))</span>
+<span id="cb28-543"><a href="#cb28-543" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-544"><a href="#cb28-544" aria-hidden="true" tabindex="-1"></a><span class="co"># Simular o tempo de falha de 100 sensores (Monte Carlo)</span></span>
+<span id="cb28-545"><a href="#cb28-545" aria-hidden="true" tabindex="-1"></a>simulacao <span class="ot">&lt;-</span> <span class="fu">rexp</span>(<span class="at">n =</span> <span class="dv">100</span>, <span class="at">rate =</span> lambda)</span>
+<span id="cb28-546"><a href="#cb28-546" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(simulacao, <span class="at">main=</span><span class="st">"Simulação de Falhas em Sensores"</span>, </span>
+<span id="cb28-547"><a href="#cb28-547" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab=</span><span class="st">"Tempo (Horas)"</span>, <span class="at">col=</span><span class="st">"steelblue"</span>)</span>
+<span id="cb28-548"><a href="#cb28-548" aria-hidden="true" tabindex="-1"></a><span class="co"># Criando um data frame para o gráfico (0 a 20.000 horas)</span></span>
+<span id="cb28-549"><a href="#cb28-549" aria-hidden="true" tabindex="-1"></a>tempos <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">t =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">20000</span>, <span class="at">by =</span> <span class="dv">100</span>))</span>
+<span id="cb28-550"><a href="#cb28-550" aria-hidden="true" tabindex="-1"></a>tempos<span class="sc">$</span>R_t <span class="ot">&lt;-</span> <span class="fu">exp</span>(<span class="sc">-</span>lambda <span class="sc">*</span> tempos<span class="sc">$</span>t) <span class="co"># Calculando Confiabilidade</span></span>
+<span id="cb28-551"><a href="#cb28-551" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-552"><a href="#cb28-552" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(tempos, <span class="fu">aes</span>(<span class="at">x =</span> t, <span class="at">y =</span> R_t)) <span class="sc">+</span></span>
+<span id="cb28-553"><a href="#cb28-553" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"red"</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb28-554"><a href="#cb28-554" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Curva de Confiabilidade Mecatrônica (Decaimento Exponencial)"</span>,</span>
+<span id="cb28-555"><a href="#cb28-555" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Tempo de Operação (Horas)"</span>,</span>
+<span id="cb28-556"><a href="#cb28-556" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Confiabilidade R(t)"</span>) <span class="sc">+</span></span>
+<span id="cb28-557"><a href="#cb28-557" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb28-558"><a href="#cb28-558" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 </code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
