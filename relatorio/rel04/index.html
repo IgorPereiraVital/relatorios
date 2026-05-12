@@ -138,12 +138,19 @@ window.Quarto = {
 </div>
 <main class="content" id="quarto-document-content">
 <div class="logos" style="display: flex; justify-content: center; align-items: center; height: 200px; gap: 20px;">
+
   <a href="https://ufsj.edu.br">
+
     <img src="imagens/ufsj.png" width="220px">
+
   </a>
+
   <a href="https://ufsj.edu.br/defim">
+
     <img src="imagens/defim.png" width="220px">
+
   </a>
+
 </div>
 
 <header id="title-block-header" class="quarto-title-block default">
@@ -269,6 +276,20 @@ window.Quarto = {
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">prob =</span> <span class="fl">0.05</span></span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-1-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.34128</code></pre>
 </div>
@@ -327,6 +348,20 @@ window.Quarto = {
 <span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">lambda =</span> <span class="dv">3</span></span>
 <span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-2-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.10082</code></pre>
 </div>
@@ -399,6 +434,13 @@ window.Quarto = {
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">sd =</span> <span class="dv">10</span></span>
 <span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.84134</code></pre>
 </div>
@@ -407,7 +449,7 @@ window.Quarto = {
 </section>
 <section id="distribuição-geométrica" class="level3" data-number="5.4">
 <h3 data-number="5.4" class="anchored" data-anchor-id="distribuição-geométrica"><span class="header-section-number">5.4</span> Distribuição Geométrica</h3>
-<p>A Distribuição de Geométrica é do tipo <a href="#vac">variável aleatória discreta</a>, tem suas raízes nos trabalhos de Jacob Bernoulli (século XVII) sobre o que hoje chamamos de “Ensaios de Bernoulli” — experimentos que resultam em apenas dois resultados possíveis: “sucesso” ou “fracasso”.Enquanto a Distribuição Binomial (também derivada desses ensaios) foi criada para responder “quantos sucessos ocorrem em <span class="math inline">\(n\)</span> tentativas?”, os engenheiros e matemáticos precisavam de uma ferramenta para responder a uma pergunta fundamental de confiabilidade e tempo de espera: “Quantas tentativas independentes são necessárias até que o primeiro sucesso ocorra?”Na engenharia moderna, ela surgiu como a ferramenta definitiva para modelar processos de repetição até o êxito ou falha. Se um robô tenta agarrar uma peça e falha repetidamente devido a variações de iluminação, a distribuição geométrica modela exatamente essa “espera” até o sucesso.</p>
+<p>A Distribuição de Geométrica é do tipo <a href="#vac">variável aleatória discreta</a>, tem suas raízes nos trabalhos de Jacob Bernoulli (século XVII) sobre o que hoje chamamos de “Ensaios de Bernoulli” — experimentos que resultam em apenas dois resultados possíveis: “sucesso” ou “fracasso”. Enquanto a Distribuição Binomial (também derivada desses ensaios) foi criada para responder “quantos sucessos ocorrem em <span class="math inline">\(n\)</span> tentativas?”, os engenheiros e matemáticos precisavam de uma ferramenta para responder a uma pergunta fundamental de confiabilidade e tempo de espera: “Quantas tentativas independentes são necessárias até que o primeiro sucesso ocorra?”. Na engenharia moderna, ela surgiu como a ferramenta definitiva para modelar processos de repetição até o êxito ou falha. Se um robô tenta agarrar uma peça e falha repetidamente devido a variações de iluminação, a distribuição geométrica modela exatamente essa “espera” até o sucesso.</p>
 <p>Fórmula: <span class="math display">\[P(X = k) = (1 - p)^{k - 1} p\]</span></p>
 <p>Onde:</p>
 <ul>
@@ -420,7 +462,7 @@ window.Quarto = {
 <p>Sistemas mecatrônicos são compostos por integrações de software, eletrônica e mecânica. A Distribuição Geométrica é crucial para avaliar a resiliência e a confiabilidade dessas integrações:</p>
 <p>Redes de Comunicação Industrial (IoT): Em ambientes ruidosos (chão de fábrica com alta interferência eletromagnética), pacotes de dados de sensores frequentemente falham. A distribuição modela quantas vezes o sistema precisa reenviar o pacote até que o CLP (Controlador Lógico Programável) o receba com sucesso.</p>
 <p>Controle de Qualidade (Visão Computacional): Um algoritmo de inspeção óptica tenta classificar uma peça com uma taxa de acerto <span class="math inline">\(p\)</span>. O modelo ajuda a definir o limite máximo de retentativas antes de descartar a peça.</p>
-<p>Engenharia de Confiabilidade (Fadiga): Usada para modelar a vida útil de componentes discretos, como o número de ciclos que uma válvula solenoide pneumática executa antes de apresentar o primeiro vazamento.4.</p>
+<p>Engenharia de Confiabilidade (Fadiga): Usada para modelar a vida útil de componentes discretos, como o número de ciclos que uma válvula solenoide pneumática executa antes de apresentar o primeiro vazamento.</p>
 <section id="estudo-de-caso-prático-veículo-guiado-automaticamente-agv" class="level4" data-number="5.4.1">
 <h4 data-number="5.4.1" class="anchored" data-anchor-id="estudo-de-caso-prático-veículo-guiado-automaticamente-agv"><span class="header-section-number">5.4.1</span> Estudo de Caso Prático: Veículo Guiado Automaticamente (AGV)</h4>
 <p>Cenário: Um AGV (Robô Móvel) navega por um armazém logístico. Para se acoplar à sua estação de recarga, ele utiliza um sistema de escaneamento a laser (LiDAR). Devido a poeira e reflexos no ambiente industrial, a probabilidade de o algoritmo do robô reconhecer a estação perfeitamente em um único escaneamento é de 30% (<span class="math inline">\(p = 0.3\)</span>). Cada escaneamento falho força o robô a se reposicionar e tentar novamente.</p>
@@ -678,9 +720,17 @@ P(c \le X \le d)=\frac{d-c}{b-a}
 <span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">q =</span> <span class="dv">1000</span>,</span>
 <span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">dist =</span> <span class="st">"exp"</span>,</span>
 <span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">rate =</span> <span class="fl">0.0002</span>,</span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">lower.tail =</span> <span class="cn">FALSE</span></span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">gui =</span> <span class="st">"plot"</span>,</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">lower.tail =</span> <span class="cn">FALSE</span></span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.81873</code></pre>
 </div>
@@ -1418,7 +1468,7 @@ P(c \le X \le d)=\frac{d-c}{b-a}
 <span id="cb25-273"><a href="#cb25-273" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-274"><a href="#cb25-274" aria-hidden="true" tabindex="-1"></a><span class="fu">### Distribuição Geométrica</span></span>
 <span id="cb25-275"><a href="#cb25-275" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-276"><a href="#cb25-276" aria-hidden="true" tabindex="-1"></a>A Distribuição de Geométrica é do tipo <span class="co">[</span><span class="ot">variável aleatória discreta</span><span class="co">](#vac)</span>, tem suas raízes nos trabalhos de Jacob Bernoulli (século XVII) sobre o que hoje chamamos de "Ensaios de Bernoulli" — experimentos que resultam em apenas dois resultados possíveis: "sucesso" ou "fracasso".Enquanto a Distribuição Binomial (também derivada desses ensaios) foi criada para responder "quantos sucessos ocorrem em $n$ tentativas?", os engenheiros e matemáticos precisavam de uma ferramenta para responder a uma pergunta fundamental de confiabilidade e tempo de espera: "Quantas tentativas independentes são necessárias até que o primeiro sucesso ocorra?"Na engenharia moderna, ela surgiu como a ferramenta definitiva para modelar processos de repetição até o êxito ou falha. Se um robô tenta agarrar uma peça e falha repetidamente devido a variações de iluminação, a distribuição geométrica modela exatamente essa "espera" até o sucesso.</span>
+<span id="cb25-276"><a href="#cb25-276" aria-hidden="true" tabindex="-1"></a>A Distribuição de Geométrica é do tipo <span class="co">[</span><span class="ot">variável aleatória discreta</span><span class="co">](#vac)</span>, tem suas raízes nos trabalhos de Jacob Bernoulli (século XVII) sobre o que hoje chamamos de "Ensaios de Bernoulli" — experimentos que resultam em apenas dois resultados possíveis: "sucesso" ou "fracasso". Enquanto a Distribuição Binomial (também derivada desses ensaios) foi criada para responder "quantos sucessos ocorrem em $n$ tentativas?", os engenheiros e matemáticos precisavam de uma ferramenta para responder a uma pergunta fundamental de confiabilidade e tempo de espera: "Quantas tentativas independentes são necessárias até que o primeiro sucesso ocorra?". Na engenharia moderna, ela surgiu como a ferramenta definitiva para modelar processos de repetição até o êxito ou falha. Se um robô tenta agarrar uma peça e falha repetidamente devido a variações de iluminação, a distribuição geométrica modela exatamente essa "espera" até o sucesso.</span>
 <span id="cb25-277"><a href="#cb25-277" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-278"><a href="#cb25-278" aria-hidden="true" tabindex="-1"></a>Fórmula: $$P(X = k) = (1 - p)^{k - 1} p$$</span>
 <span id="cb25-279"><a href="#cb25-279" aria-hidden="true" tabindex="-1"></a></span>
@@ -1437,7 +1487,7 @@ P(c \le X \le d)=\frac{d-c}{b-a}
 <span id="cb25-292"><a href="#cb25-292" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-293"><a href="#cb25-293" aria-hidden="true" tabindex="-1"></a>Controle de Qualidade (Visão Computacional): Um algoritmo de inspeção óptica tenta classificar uma peça com uma taxa de acerto $p$. O modelo ajuda a definir o limite máximo de retentativas antes de descartar a peça.</span>
 <span id="cb25-294"><a href="#cb25-294" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-295"><a href="#cb25-295" aria-hidden="true" tabindex="-1"></a>Engenharia de Confiabilidade (Fadiga): Usada para modelar a vida útil de componentes discretos, como o número de ciclos que uma válvula solenoide pneumática executa antes de apresentar o primeiro vazamento.4. </span>
+<span id="cb25-295"><a href="#cb25-295" aria-hidden="true" tabindex="-1"></a>Engenharia de Confiabilidade (Fadiga): Usada para modelar a vida útil de componentes discretos, como o número de ciclos que uma válvula solenoide pneumática executa antes de apresentar o primeiro vazamento. </span>
 <span id="cb25-296"><a href="#cb25-296" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb25-297"><a href="#cb25-297" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Estudo de Caso Prático: Veículo Guiado Automaticamente (AGV)</span></span>
 <span id="cb25-298"><a href="#cb25-298" aria-hidden="true" tabindex="-1"></a></span>
@@ -1664,14 +1714,15 @@ P(c \le X \le d)=\frac{d-c}{b-a}
 <span id="cb25-527"><a href="#cb25-527" aria-hidden="true" tabindex="-1"></a>  <span class="at">q =</span> <span class="dv">1000</span>,</span>
 <span id="cb25-528"><a href="#cb25-528" aria-hidden="true" tabindex="-1"></a>  <span class="at">dist =</span> <span class="st">"exp"</span>,</span>
 <span id="cb25-529"><a href="#cb25-529" aria-hidden="true" tabindex="-1"></a>  <span class="at">rate =</span> <span class="fl">0.0002</span>,</span>
-<span id="cb25-530"><a href="#cb25-530" aria-hidden="true" tabindex="-1"></a>  <span class="at">lower.tail =</span> <span class="cn">FALSE</span></span>
-<span id="cb25-531"><a href="#cb25-531" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb25-532"><a href="#cb25-532" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-533"><a href="#cb25-533" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb25-534"><a href="#cb25-534" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-535"><a href="#cb25-535" aria-hidden="true" tabindex="-1"></a><span class="fu">## Resultados e Discussão</span></span>
-<span id="cb25-536"><a href="#cb25-536" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-537"><a href="#cb25-537" aria-hidden="true" tabindex="-1"></a><span class="fu">## Conclusão</span></span>
+<span id="cb25-530"><a href="#cb25-530" aria-hidden="true" tabindex="-1"></a>  <span class="at">gui =</span> <span class="st">"plot"</span>,</span>
+<span id="cb25-531"><a href="#cb25-531" aria-hidden="true" tabindex="-1"></a>  <span class="at">lower.tail =</span> <span class="cn">FALSE</span></span>
+<span id="cb25-532"><a href="#cb25-532" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb25-533"><a href="#cb25-533" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-534"><a href="#cb25-534" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb25-535"><a href="#cb25-535" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-536"><a href="#cb25-536" aria-hidden="true" tabindex="-1"></a><span class="fu">## Resultados e Discussão</span></span>
+<span id="cb25-537"><a href="#cb25-537" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-538"><a href="#cb25-538" aria-hidden="true" tabindex="-1"></a><span class="fu">## Conclusão</span></span>
 </code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
