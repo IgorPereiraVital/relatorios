@@ -267,7 +267,7 @@ P(
 
 ### Distribuição Geométrica
 
-A Distribuição de Geométrica é do tipo [variável aleatória discreta](#vac), tem suas raízes nos trabalhos de Jacob Bernoulli (século XVII) sobre o que hoje chamamos de "Ensaios de Bernoulli" — experimentos que resultam em apenas dois resultados possíveis: "sucesso" ou "fracasso". Enquanto a Distribuição Binomial (também derivada desses ensaios) foi criada para responder "quantos sucessos ocorrem em $n$ tentativas?", os engenheiros e matemáticos precisavam de uma ferramenta para responder a uma pergunta fundamental de confiabilidade e tempo de espera: "Quantas tentativas independentes são necessárias até que o primeiro sucesso ocorra?". Na engenharia moderna, ela surgiu como a ferramenta definitiva para modelar processos de repetição até o êxito ou falha. Se um robô tenta agarrar uma peça e falha repetidamente devido a variações de iluminação, a distribuição geométrica modela exatamente essa "espera" até o sucesso.
+A Distribuição de Geométrica é do tipo [variável aleatória discreta](#vac), tem suas raízes nos trabalhos de Jacob Bernoulli (século XVII) sobre o que hoje chamamos de "Ensaios de Bernoulli" — experimentos que resultam em apenas dois resultados possíveis: "sucesso" ou "fracasso".Enquanto a Distribuição Binomial (também derivada desses ensaios) foi criada para responder "quantos sucessos ocorrem em $n$ tentativas?", os engenheiros e matemáticos precisavam de uma ferramenta para responder a uma pergunta fundamental de confiabilidade e tempo de espera: "Quantas tentativas independentes são necessárias até que o primeiro sucesso ocorra?"Na engenharia moderna, ela surgiu como a ferramenta definitiva para modelar processos de repetição até o êxito ou falha. Se um robô tenta agarrar uma peça e falha repetidamente devido a variações de iluminação, a distribuição geométrica modela exatamente essa "espera" até o sucesso.
 
 Fórmula: $$P(X = k) = (1 - p)^{k - 1} p$$
 
@@ -286,7 +286,7 @@ Redes de Comunicação Industrial (IoT): Em ambientes ruidosos (chão de fábric
 
 Controle de Qualidade (Visão Computacional): Um algoritmo de inspeção óptica tenta classificar uma peça com uma taxa de acerto $p$. O modelo ajuda a definir o limite máximo de retentativas antes de descartar a peça.
 
-Engenharia de Confiabilidade (Fadiga): Usada para modelar a vida útil de componentes discretos, como o número de ciclos que uma válvula solenoide pneumática executa antes de apresentar o primeiro vazamento. 
+Engenharia de Confiabilidade (Fadiga): Usada para modelar a vida útil de componentes discretos, como o número de ciclos que uma válvula solenoide pneumática executa antes de apresentar o primeiro vazamento.4. 
 
 #### Estudo de Caso Prático: Veículo Guiado Automaticamente (AGV)
 
@@ -485,4 +485,5 @@ P(
 ## 🗪  Resultados e Discussão
 
 ## 💡 Conclusão
+
 
