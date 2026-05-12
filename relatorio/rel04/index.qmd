@@ -30,21 +30,21 @@ execute:
 
 O estudo das variáveis aleatórias e suas distribuições de probabilidade constitui a base da estatística contemporânea, permitindo o estudo de fenômenos reais e a tomada de decisões fundamentada em dados. Em contextos técnicos, como a engenharia e a computação, essas são ferramentas essenciais para prever falhas em sistemas, analisar tráfego de dados e garantir a qualidade dos equipamentos. 
 
-Este relatório tem como objetivo apresentar uma análise teórica e prática das distribuições Binominal, Poisson e Normal, bem como outros modelos complementares Geométrica, Hipergeométrica, Uniforme e Exponencial. O relatório será redigido sobre duas perspectivas: a analítica, através de cálculos matemáticos manuais, e a computacional, utilizando a linguagem R com o auxílio do pacote leem, que contribui para visualização dos dados estatísticos.  
+Este relatório tem como objetivo apresentar uma análise teórica e prática das distribuições Binomial, Poisson e Normal, bem como outros modelos complementares Geométrica, Hipergeométrica, Uniforme e Exponencial. O relatório será redigido sobre duas perspectivas: a analítica, através de cálculos matemáticos manuais, e a computacional, utilizando a linguagem R com o auxílio do pacote leem, que contribui para visualização dos dados estatísticos.  
 
 
-## Objetivos
+## 🎯 Objetivos
 
 Este relatório tem como propósito apresentar os principais modelos de distribuições de probabilidade utilizados na estatística, analisando suas características matemáticas, aplicações práticas na área da Engenharia Mecatrônica e 
 sua implementação utilizando a linguagem computacional R.
 
-## Metodologia 
+## 📑 Metodologia 
 
 O desenvolvimento deste relatório foi realizado por meio dos estudos desenvolvidos em sala de aula, bem como o uso de livros didáticos. Inicialmente, foram estudadas as definições teóricas das principais distribuições discretas e contínuas, analisando suas principais propriedades, diferenças e formas de aplicação.
 
 Posteriormente, foram utilizados exemplos reais aplicados à Engenharia Mecatrônica, nos quais os modelos probabilísticos podem ser empregados. Para complementar a análise teórica, foram realizados cálculos analíticos manuais e implementações computacionais utilizando a linguagem R, juntamente ao pacote leem.
 
-## Tipos de Variáveis
+## 🔡 Tipos de Variáveis
 
 As variáveis podem ser classificadas em dois tipos fundamentais:
 
@@ -82,7 +82,7 @@ Nesta seção, será abordado algumas distribuições estudadas, apresentando su
 
 A Distribuição Binomial é do tipo [variável aleatória discreta](#vac), modela situações em que se é feito vários experimentos independentes e cada experimento possui apenas dois resultados possíveis (Sucesso ou Fracasso).
 
-Fórmula :  $$P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}$$
+  Fórmula :  $$P(X = k) = \binom{n}{k} p^k (1-p)^{n-k}$$
 
 A qual:
 
@@ -103,7 +103,7 @@ Para o cálculo, utilizamos a combinação $\binom{12}{1} = \frac{12!}{1!(12-1)!
 
 A probabilidade de encontrar exatamente um sensor com defeito é de aproximadamente 34,13%.
 
-#### Implemetação no R
+#### Implementação no R
 
 Para o cálculo computacional usaremos o pacote leem. Necessitamos conhecer algumas funções que serão usadas no código:
 
@@ -303,7 +303,7 @@ Aplicando a fórmula:$$P(X = 4) = (0.7)^{4 - 1} \cdot 0.3$$$$P(X = 4) = (0.7)^3 
 library(leem)
 
 P(
-  q = 3,
+  q = 4,
   dist = "geom",
   prob = 0.3,
   gui = "plot")
@@ -339,7 +339,7 @@ Confiabilidade de Sistemas: Avaliar a probabilidade de falha em sistemas redunda
 
 #### Estudo de Caso Prático: Inspeção de Microcontroladores
 
-Cenário: Um lote de $N = 50$ microcontroladores chega à bancada. Informações históricas sugerem que, em lotes desse fornecedor, geralmente existem $K = 5$ unidades com clock instável (defeitos). Você seleciona aleatoriamente $n = 10$ unidades para passar pelo teste funcional automático.
+Um lote de $N = 50$ microcontroladores chega à bancada. Informações históricas sugerem que, em lotes desse fornecedor, geralmente existem $K = 5$ unidades com clock instável (defeitos). Você seleciona aleatoriamente $n = 10$ unidades para passar pelo teste funcional automático.
 
 **Qual a probabilidade de você encontrar exatamente $k = 2$ unidades defeituosas na sua amostra?**
 
@@ -352,38 +352,13 @@ Combinações totais da amostra: $\binom{50}{10} = 10.272.278.170$$$P(X = 2) = \
 Através do cálculo analítico foi possível identificar que a probabilidade de se encontrar um k = 2 unidades com defeito é de aproximadamente 20,98%.
 
 ```{R}
-# --- Parâmetros do Sistema (Exemplo dos Microcontroladores) ---
-N <- 50  # População total
-K <- 5   # Total de defeituosos no lote
-n <- 10  # Tamanho da amostra de inspeção
-k_alvo <- 2 # Quantidade exata que queremos encontrar
-
-# --- Cálculo de Probabilidade Pontual ---
-# m = K (sucessos)
-# n_r = N - K (fracassos)
-# k = n (amostra)
-prob_pontual <- dhyper(x = k_alvo, m = K, n = N - K, k = n)
-
-cat(paste("Probabilidade de encontrar exatamente", k_alvo, "defeitos:", round(prob_pontual * 100, 2), "%\n"))
-
-# --- Simulação de Cenários (Distribuição Completa) ---
-# Vamos ver a probabilidade para 0, 1, 2, 3, 4 e 5 defeitos na amostra
-x_vals <- 0:K
-probabilidades <- dhyper(x = x_vals, m = K, n = N - K, k = n)
-
-# --- Visualização Técnica ---
-library(ggplot2)
-
-dados_plot <- data.frame(Defeitos = as.factor(x_vals), Prob = probabilidades)
-
-ggplot(dados_plot, aes(x = Defeitos, y = Prob, fill = (Defeitos == k_alvo))) +
-  geom_bar(stat = "identity", color = "black") +
-  scale_fill_manual(values = c("gray70", "#0073C2FF"), guide = "none") +
-  labs(title = "Distribuição Hipergeométrica: Inspeção de Lote",
-       subtitle = paste("N=50, K=5, n=10 | Probabilidade para k=2 é", round(prob_pontual, 4)),
-       x = "Quantidade de Defeitos Encontrados (k)",
-       y = "Probabilidade P(X = k)") +
-  theme_minimal()
+P(
+  q = 2,
+  dist = "hyper",
+  m = 5,
+  n = 45,
+  k = 10,
+)
 ```
 
 
@@ -410,68 +385,43 @@ Onde:
 
 **Por Que é Relevante na Engenharia Mecatrônica?**
 
-É revelante para compreensão de casos onde se tem um sensor de posição com uma resolução de 0,01 mm, o qual o erro de leitura está distribuído uniformemente entre $-0,005$ e $+0,005$;
+É relevante para compreensão de casos onde se tem um sensor de posição com uma resolução de 0,01 mm, o qual o erro de leitura está distribuído uniformemente entre $-0,005$ e $+0,005$;
 
 -Processamento de Sinais: A modelagem do ruído de arredondamento em microcontroladores de 8, 16 ou 32 bits segue este modelo;
 
 -Simulação de Monte Carlo: É a base para gerar números aleatórios que alimentam simulações de falhas e confiabilidade de sistemas robóticos.
 
 #### Exemplo prático: Posicionamento de um Atuador Linear.
+Um motor de passo utilizado em uma impressora 3D industrial leva entre 12 e 20 segundos para completar um ciclo de movimentação. Assume-se que qualquer valor dentro desse intervalo possui a mesma probabilidade de ocorrer.
 
-Imagine que você está projetando uma célula de manufatura onde um braço robótico utiliza um Atuador Linear Digital. O controlador envia um comando de posição, mas devido à folga mecânica (backlash) das engrenagens, a posição real do atuador pode variar uniformemente em um intervalo de 2 mm em torno do ponto desejado. Se o objetivo é atingir a posição de $100 \text{ mm}$, o erro posiciona o atuador em qualquer lugar entre $a = 99 \text{ mm}$ e $b = 101 \text{ mm}$. Cálculos Estatísticos PDF: $f(x) = \frac{1}{101 - 99} = 0,5$. Isso significa que a densidade de probabilidade é constante em 0,5 para qualquer ponto nesse intervalo. Incerteza Padrão (Desvio Padrão): Para calcular o erro médio quadrático que o sistema de controle deve compensar:$$\sigma = \sqrt{\frac{(101 - 99)^2}{12}} = \sqrt{\frac{4}{12}} \approx 0,577 \text{ mm}$$
+Qual a probabilidade de o motor concluir o movimento entre 14 e 17 segundos?
+
+Resolução Analítica:
+
+$$P(c \le X \le d)=\frac{d-c}{b-a}$$
+
+Colocando os valores do exercício: 
+
+$$P(14 \le X \le 17)=\frac{17-14}{20-12}$$
+
+$$P(14 \le X \le 17)=\frac{3}{8}$$
+
+$$P(14 \le X \le 17)=0.375$$
+
+
+A chance do motor concluir o ciclo entre 14 e 17 segundos é de aproximadamente $$37.5\%$$.
 
 #### Implementação em R: 
 
 ```{R}
-# 1. Definição de Parâmetros do Sistema
-posicao_desejada <- 100       # Centro (setpoint) em mm
-intervalo_erro <- 2           # Folga total (backlash) em mm
-a <- posicao_desejada - (intervalo_erro / 2) # Limite inferior: 99mm
-b <- posicao_desejada + (intervalo_erro / 2) # Limite superior: 101mm
+library(leem)
 
-# 2. Simulação de Dados
-set.seed(42) # Para resultados reproduzíveis
-n_amostras <- 10000
-posicoes_reais <- runif(n_amostras, min = a, max = b)
-
-# 3. Cálculos Estatísticos Comparativos
-media_simulada <- mean(posicoes_reais)
-sd_simulado <- sd(posicoes_reais)
-sd_teorico <- sqrt((b - a)^2 / 12)
-
-# Imprimindo Relatório no Console
-cat("--- Relatório de Precisão do Atuador ---\n")
-cat("Média Esperada:", (a + b) / 2, "mm | Média Simulada:", round(media_simulada, 4), "mm\n")
-cat("Desvio Padrão Teórico:", round(sd_teorico, 4), "mm\n")
-cat("Desvio Padrão Simulado:", round(sd_simulado, 4), "mm\n")
-cat("----------------------------------------\n")
-
-# 4. Visualização Gráfica para Engenharia
-# Dividindo a tela para dois gráficos
-par(mfrow = c(1, 2))
-
-# Gráfico 1: Histograma das Posições Reais
-hist(posicoes_reais, 
-     breaks = 30, 
-     probability = TRUE, 
-     main = "Distribuição de Posicionamento",
-     xlab = "Posição Real (mm)", 
-     ylab = "Densidade",
-     col = "steelblue", 
-     border = "white")
-
-# Adiciona a linha da PDF teórica (f(x) = 1/(b-a) = 0.5)
-abline(h = 0.5, col = "red", lwd = 3, lty = 2)
-legend("topright", legend = "PDF Teórica (0.5)", col = "red", lty = 2, lwd = 2)
-
-# Gráfico 2: Probabilidade Acumulada (CDF)
-# Útil para saber: "Qual a chance do robô estar abaixo de 100.5mm?"
-plot(ecdf(posicoes_reais), 
-     main = "Probabilidade Acumulada (CDF)",
-     xlab = "Posição (mm)", 
-     ylab = "F(x)",
-     col = "darkgreen")
-grid()
+P( q = 14 %<=X<=% 17,
+  dist = "unif",
+  min = 12,
+  max = 20,
+  gui = "plot"
+) 
 ```
 
 ### Distribuição Exponencial
@@ -480,7 +430,7 @@ A distribuição exponencial é do tipo [variável aleatória contínua](#vad), 
 
 Fundamentação Matemática e Variáveis: A distribuição exponencial descreve o tempo entre eventos em um processo de Poisson. Em mecatrônica, o "evento" é tipicamente a falha de um componente. A principal característica que define a distribuição exponencial é a falta de memória (propriedade de Markov). Isso significa que a probabilidade de um componente falhar no próximo instante depende apenas do seu estado atual de funcionamento e da sua taxa de falha, não do tempo em que ele já esteve operando. (Em termos práticos: assume-se que o componente não sofre desgaste gradativo ao longo do tempo, falhando de forma aleatória). Fórmulas EssenciaisAs equações que regem este modelo utilizam a notação matemática padrão para distribuições contínuas:
 
-Fórmula: $t$.$$f(t) = \lambda e^{-\lambda t} \quad \text{para } t \ge 0$$
+Fórmula: $$f(t) = \lambda e^{-\lambda t} \quad \text{para } t \ge 0$$
 
 Variáveis e Parâmetros:
 
@@ -499,27 +449,40 @@ Cálculo de Confiabilidade de Sistemas: Permite calcular a confiabilidade de sis
 
 ### Exemplo Prático: O desenvolvimento do painel de controle (CLP - Controlador Lógico Programável)
 
-Cenário: O desenvolvimento do painel de controle (CLP - Controlador Lógico Programável) de um braço robótico de soldagem em uma montadora automotiva.O fabricante dos relés de estado sólido utilizados no CLP garante que a taxa de falha desses componentes em operação normal é constante, com $\lambda = 0,0002$ falhas por hora. Objetivo: O engenheiro mecatrônico precisa saber duas coisas para o manual de especificações técnicas do robô: Qual é o tempo médio até a falha (MTTF) deste relé? Qual a probabilidade de o relé funcionar perfeitamente sem falhas durante um turno intensivo de produção contínua de 1.000 horas? 
+Um sensor industrial utilizado em um braço robótico possui taxa média de falha constante de λ=0.002 falhas por hora.
 
-Resolução: Cálculo do MTTF: $$MTTF = \frac{1}{\lambda} = \frac{1}{0,0002} = 5.000 \text{ horas}$$ O tempo esperado de vida do componente é de 5.000 horas. Cálculo da Confiabilidade em 1.000 horas: Aplicamos a Função de Confiabilidade para $t = 1000$:$$R(1000) = e^{-(0,0002 \cdot 1000)} = e^{-0,2} \approx 0,8187$$
+Qual a probabilidade de o sensor funcionar por mais de 500 horas sem falhar?
 
-Conclusão: Há aproximadamente 81,87% de probabilidade de o relé operar por 1.000 horas sem falhar. Com base nisso, o engenheiro pode decidir se esse nível de confiabilidade é aceitável para o processo da montadora ou se deve introduzir um segundo relé redundante em paralelo no circuito eletrônico do braço robótico para aumentar a tolerância a falhas do sistema.
+Cálculo Analítico: 
+
+$$P(X>x)=e^{-\lambda x}$$
+
+Substituindo os valores:
+
+$$P(X>500)=e^{-0.002\cdot500}$$
+
+$$P(X>500)=e^{-1}$$
+
+$$P(X>500)\approx0.3679$$
+
+A probabilidade do sensor funcionar sem falhar por mais de 500 horas é de $$36.79\%$$.
+
 
 
 ```{R}
 library(leem)
 
 P(
-  q = 1000,
+  q = 500,
   dist = "exp",
-  rate = 0.0002,
+  rate = 0.002,
   gui = "plot",
   lower.tail = FALSE
 )
 
 ```
 
-## Resultados e Discussão
+## 🗪  Resultados e Discussão
 
-## Conclusão
+## 💡 Conclusão
 
