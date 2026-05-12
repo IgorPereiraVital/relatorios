@@ -484,6 +484,9 @@ P(
 
 ## 🗪  Resultados e Discussão
 
+A partir da análise das distribuições de probabilidade abordadas nesse relatório, foi possível observar a importância destes diferentes modelos estatísticos na resolução de problemas reais da Engenharia Mecatrônica, tanto pelo contexto discreto quanto contínuo.
+
+
 ## 💡 Conclusão
 
 O relatório explora distribuições discretas e contínuas, demonstrando suas características matemáticas e aplicações práticas. A Distribuição Binomial mostrou-se essencial para cenários com um número fixo de tentativas e dois resultados possíveis, como no controle de qualidade de sensores. A Distribuição de Poisson permitiu modelar a ocorrência de eventos em um intervalo contínuo, exemplificado por requisições em servidores. A Distribuição Normal, com sua ubiquidade em fenômenos naturais e industriais, foi aplicada na análise de tempos de resposta de microcontroladores, destacando a importância da padronização para a interpretação de dados.
