@@ -1,0 +1,26 @@
+---
+# Só mude aqui!!!!
+author: "Igor e Lucas"
+title: "Relatório 05 como aproximar as distribuições Binomial e Poisson podem ser aproximadas à distribuição Normal."
+bibliography: referencias.bib
+# A partir daqui nao faca alteracoes!!!!!
+link-citations: true
+csl: associacao-brasileira-de-normas-tecnicas-ipea.csl
+subtitle: "<a href='https://bendeivide.github.io/courses/epaec/' target='_blank'>Estatística e Probabilidade</a> </br> <a href='https://bendeivide.github.io' target='_blank'>Prof. Ben Dêivide (DEFIM/CAP/UFSJ)</a>"
+include-before-body: header.html
+date: today
+lang: pt-BR
+format:
+  html:
+    toc: true
+    number-sections: true
+    theme: bootstrap
+    #css: styles.css
+    code-fold: true
+    code-tools: true
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
