@@ -23,3 +23,53 @@ execute:
   warning: false
   message: false
 ---
+
+## 📢Introdução
+
+As distribuições de probabilidade são essênciais na Estatística, sendo utilizadas para analisar diversas áreas da ciência e da engenharia. Entre as várias distribuições destacam-se a Binomial e a Poisson. Em determinadas situações, essas distribuições podem ser aproximadas através da distribuição Normal, facilitando o cálculo probabilístico e análises estatísticas. Esse relatório apresenta as formas dessas aproximações, demonstrações matemáticas e aplicações utilizando a linguagem R.
+
+## 🎯Objetivos
+
+### Objetivo Geral
+
+Analisar como as distribuições Binomial e Poisson podem ser aproximadas à distribuição Normal.
+
+### Objetivo Específicos do Relatório
+
+- Apresentar os conceitos das distribuições;
+- Demonstrar como ocorre as aproximações; 
+- Aplicar exemplos práticos;
+- Implementar utilizando a linguagem R;
+- Comparar os resultados obtidos.
+
+
+## 📝Metodologia 
+
+O trabalho foi criado por meio de estudos realizados em sala de aula e pesquisas bibliográficas sobre as distribuições Binomial, Poisson e Normal. Foram realizados cálculos e exemplos práticos utilizando a linguagem R e o pacote leem no RStudio, com o objetivo de compreender as aproximações das distribuições.
+
+## Distribuição Binomial
+
+A distribuição Binomial é muito utilizada para situações as quais se possui apenas dois resultados possíveis em um experimento (Sucesso ou Fracasso).
+
+A função de probabilidade da distribuição Binomial é dada pela formúla:
+
+$$P(X = k)=\binom{n}{k}p^k(1-p)^{n-k}$$
+Onde:
+
+*   $X$: é a variável aleatória e representa o número de sucessos obtidos;
+*   $k$: representa a quantidade exata de sucessos desejada; 
+*   $n$: o número total de tentativas;
+*   $p$: a probabilidade de acerto em cada tentativa;
+*   $(1-p)$: é a probabildade de fracasso;
+*   $\binom{n}{k}$: calcula a quantidade de maneiras diferentes que o sucesso pode acontecer.
+
+
+## Aproximação Binomial pela Normal
+
+
+
+
+
+
+
+
