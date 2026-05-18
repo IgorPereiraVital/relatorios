@@ -484,7 +484,11 @@ P(
 
 ## 🗪  Resultados e Discussão
 
-A partir da análise das distribuições de probabilidade abordadas nesse relatório, foi possível observar a importância destes diferentes modelos estatísticos na resolução de problemas reais da Engenharia Mecatrônica, tanto pelo contexto discreto quanto contínuo.
+A partir da análise das distribuições de probabilidade abordadas nesse relatório, foi possível observar a importância destes diferentes modelos estatísticos na resolução de problemas reais da Engenharia Mecatrônica, tanto pelo contexto discreto quanto contínuo. As distribuições de probabilidade, embora frequentemente percebidas como conceitos abstratos da matemática e estatística, são, na realidade, pilares invisíveis que sustentam grande parte do progresso tecnológico e da segurança social na era moderna. Seu valor científico transcende as fronteiras acadêmicas, permeando o cotidiano e influenciando decisões que afetam milhões de pessoas.
+
+Do ponto de vista social, a aplicação dessas distribuições é vasta e impactante. No setor da saúde, por exemplo, a Distribuição Normal e a Distribuição de Poisson são empregadas para modelar a incidência de doenças, a eficácia de tratamentos e a demanda por serviços hospitalares, permitindo um planejamento mais eficiente de recursos e campanhas de saúde pública. Em engenharia civil e urbana, a previsão de eventos extremos (chuvas torrenciais, ventos fortes) através de distribuições como a Exponencial ou a Weibull (relacionada à Exponencial) é crucial para o design de infraestruturas resilientes, como pontes, edifícios e sistemas de drenagem, protegendo vidas e patrimônios. A Distribuição Binomial e a Hipergeométrica são fundamentais no controle de qualidade de produtos, desde eletrônicos a alimentos, garantindo que os bens de consumo atendam a padrões mínimos de segurança e desempenho, o que se traduz em confiança do consumidor e redução de riscos.
+
+Em um mundo cada vez mais impulsionado por dados, a compreensão e aplicação das distribuições de probabilidade são mais relevantes do que nunca. Elas permitem que a sociedade não apenas reaja a eventos, mas os preveja e se prepare para eles, otimizando recursos, mitigando riscos e impulsionando a inovação. São, em essência, a ponte entre a aleatoriedade do universo e a capacidade humana de compreendê-lo e moldá-lo para um futuro mais eficiente.
 
 
 ## 💡 Conclusão
