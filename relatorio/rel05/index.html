@@ -136,19 +136,12 @@ window.Quarto = {
 </div>
 <main class="content" id="quarto-document-content">
 <div class="logos" style="display: flex; justify-content: center; align-items: center; height: 200px; gap: 20px;">
-
   <a href="https://ufsj.edu.br">
-
     <img src="imagens/ufsj.png" width="220px">
-
   </a>
-
   <a href="https://ufsj.edu.br/defim">
-
     <img src="imagens/defim.png" width="220px">
-
   </a>
-
 </div>
 
 <header id="title-block-header" class="quarto-title-block default">
@@ -185,7 +178,7 @@ window.Quarto = {
 
 <section id="introdução" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="introdução"><span class="header-section-number">1</span> 📢Introdução</h2>
-<p>As distribuições de probabilidade são essenciais na Estatística, sendo utilizadas para analisar diversas áreas da ciência e da engenharia. Entre as várias distribuições destacam-se a Binomial e a Poisson. Em determinadas situações, essas distribuições podem ser aproximadas através da distribuição Normal, facilitando o cálculo probabilístico e análises estatísticas. Este relatório apresenta os fundamentos teóricos dessas aproximações, demonstrações matemáticas e aplicações utilizando a linguagem R.</p>
+<p>As distribuições de probabilidade são essenciais na Estatística, sendo utilizadas para analisar diversas áreas da ciência e da engenharia. Entre as várias distribuições destacam-se a Binomial e a Poisson. Em determinadas situações, essas distribuições podem ser aproximadas pela distribuição Normal, facilitando o cálculo probabilístico e análises estatísticas. Este relatório apresenta os fundamentos teóricos dessas aproximações, demonstrações matemáticas e aplicações utilizando a linguagem R.</p>
 </section>
 <section id="objetivos" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="objetivos"><span class="header-section-number">2</span> 🎯Objetivos</h2>
@@ -210,7 +203,7 @@ window.Quarto = {
 </section>
 <section id="distribuição-binomial" class="level2" data-number="4">
 <h2 data-number="4" class="anchored" data-anchor-id="distribuição-binomial"><span class="header-section-number">4</span> Distribuição Binomial</h2>
-<p>A distribuição Binomial é muito utilizada em experimentos aleatórios nos quais se possui apenas dois resultados possíveis no experimento (Sucesso ou Fracasso).</p>
+<p>A distribuição Binomial é muito utilizada em experimentos aleatórios nos quais existem apenas dois resultados possíveis no experimento (Sucesso ou Fracasso).</p>
 <p>A função de probabilidade da distribuição Binomial é dada pela fórmula:</p>
 <p><span class="math display">\[P(X = k)=\binom{n}{k}p^k(1-p)^{n-k}\]</span> Onde:</p>
 <ul>
@@ -218,7 +211,7 @@ window.Quarto = {
 <li><span class="math inline">\(k\)</span>: representa a quantidade exata de sucessos desejada;</li>
 <li><span class="math inline">\(n\)</span>: o número total de tentativas;</li>
 <li><span class="math inline">\(p\)</span>: a probabilidade de acerto em cada tentativa;</li>
-<li><span class="math inline">\((1-p)\)</span>: é a probabildade de fracasso;</li>
+<li><span class="math inline">\((1-p)\)</span>: é a probabilidade de fracasso;</li>
 <li><span class="math inline">\(\binom{n}{k}\)</span>: calcula a quantidade de maneiras diferentes que o sucesso pode acontecer.</li>
 </ul>
 <section id="aproximação-binomial-pela-normal" class="level3" data-number="4.1">
@@ -231,7 +224,7 @@ window.Quarto = {
 </figure>
 </div>
 <p>A variável Binomial pode ser analisada como a soma de várias variáveis aleatórias independentes de Bernoulli.</p>
-<p><span class="math display">\[X=X_1+X_2+\cdots+X_n\]</span> Segundo o Teorema Central do Limite, a soma de um grande número de variáveis aleatórias independentes tendem a seguir uma distribuição Normal, mesmo que as variáveis originais usadas sejam discretas.</p>
+<p><span class="math display">\[X=X_1+X_2+\cdots+X_n\]</span> Segundo o Teorema Central do Limite, a soma de um grande número de variáveis aleatórias independentes tende a seguir uma distribuição Normal, mesmo que as variáveis originais usadas sejam discretas.</p>
 <p>A aproximação é vantajosa nos casos em que:</p>
 <p><span class="math display">\[np \geq 5\]</span></p>
 <p>e</p>
@@ -285,7 +278,7 @@ window.Quarto = {
 <pre><code>[1] 0.9666235</code></pre>
 </div>
 </div>
-<p>Observa-se que a probabilidade calculada pela distribuição Binomial e pela aproximação Normal apresentaram valores próximos. Isso demonstra que, para valores de n grandes, a aproximação Normal fornece resultados condizentes.</p>
+<p>Observa-se que a probabilidade calculada pela distribuição Binomial e pela aproximação Normal apresentou valores próximos. Isso demonstra que, para valores de <span class="math inline">\(n\)</span> grandes, a aproximação Normal fornece resultados condizentes.</p>
 </section>
 </section>
 <section id="distribuição-de-poisson" class="level2" data-number="5">
@@ -377,12 +370,22 @@ window.Quarto = {
 </section>
 <section id="resultados-e-discussão" class="level2" data-number="6">
 <h2 data-number="6" class="anchored" data-anchor-id="resultados-e-discussão"><span class="header-section-number">6</span> 🗪 Resultados e Discussão</h2>
+<p>Os resultados obtidos demonstraram que as aproximações pela distribuição Normal forneceram valores bastante próximos às probabilidades exatas calculadas pelas distribuições Binomial e Poisson, quando se tem valores de <span class="math inline">\(np\)</span>, <span class="math inline">\(n(1-p)\)</span> e <span class="math inline">\(\lambda\)</span> bastante grandes.</p>
+<p>Na distribuição Binomial, foi possível observar que, para valores elevados de <span class="math inline">\(np\)</span> e <span class="math inline">\(n(1-p)\)</span>, a aproximação Normal apresentou resultados muito precisos em relação à distribuição Binomial.</p>
+<p>Para a distribuição Poisson, verificou-se que o aumento do parâmetro <span class="math inline">\(\lambda\)</span> reduz a assimetria da distribuição, fazendo com que esta distribuição fique bastante semelhante à curva Normal.</p>
 </section>
 <section id="conclusão" class="level2" data-number="7">
 <h2 data-number="7" class="anchored" data-anchor-id="conclusão"><span class="header-section-number">7</span> 💡 Conclusão</h2>
+<p>Portanto, as distribuições Binomial e Poisson podem ser aproximadas pela distribuição Normal sob determinadas condições.</p>
+<p>Na distribuição Binomial, a aproximação ocorre quando os valores de <span class="math inline">\((np)\)</span> e <span class="math inline">\((n(1-p))\)</span> são bastante grandes. Já na distribuição Poisson, a aproximação apresenta boa precisão quando o parâmetro <span class="math inline">\((\lambda)\)</span> assume valores elevados.</p>
+<p>Os exemplos desenvolvidos na linguagem R utilizando o pacote leem mostraram que as probabilidades aproximadas apresentaram valores bem próximos aos cálculos exatos, principalmente após a aplicação da correção de continuidade.</p>
+<p>Dessa forma, os objetivos propostos neste relatório foram atingidos satisfatoriamente.</p>
 </section>
 <section id="referências" class="level2" data-number="8">
 <h2 data-number="8" class="anchored" data-anchor-id="referências"><span class="header-section-number">8</span> 📑 Referências</h2>
+<p>[1] MORETTIN, P. A.; BUSSAB, W. O. Estatística Básica. 9. ed.&nbsp;São Paulo: Saraiva, 2017.</p>
+<p>[2] MONTGOMERY, D. C.; RUNGER, G. C. Applied Statistics and Probability for Engineers. 6. ed.&nbsp;Hoboken, NJ: John Wiley &amp; Sons, Inc., 2014.</p>
+<p>[3] DÊIVIDE, B. Estatística e Probabilidade Aplicada à Engenharia. Material da disciplina disponibilizado no curso de Estatística e Probabilidade, Universidade Federal de São João del-Rei (UFSJ), 2026.</p>
 <!-- -->
 
 </section>
@@ -868,7 +871,7 @@ window.Quarto = {
 <span id="cb9-26"><a href="#cb9-26" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-27"><a href="#cb9-27" aria-hidden="true" tabindex="-1"></a><span class="fu">## 📢Introdução</span></span>
 <span id="cb9-28"><a href="#cb9-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>As distribuições de probabilidade são essenciais na Estatística, sendo utilizadas para analisar diversas áreas da ciência e da engenharia. Entre as várias distribuições destacam-se a Binomial e a Poisson. Em determinadas situações, essas distribuições podem ser aproximadas através da distribuição Normal, facilitando o cálculo probabilístico e análises estatísticas. Este relatório apresenta os fundamentos teóricos dessas aproximações, demonstrações matemáticas e aplicações utilizando a linguagem R.</span>
+<span id="cb9-29"><a href="#cb9-29" aria-hidden="true" tabindex="-1"></a>As distribuições de probabilidade são essenciais na Estatística, sendo utilizadas para analisar diversas áreas da ciência e da engenharia. Entre as várias distribuições destacam-se a Binomial e a Poisson. Em determinadas situações, essas distribuições podem ser aproximadas pela distribuição Normal, facilitando o cálculo probabilístico e análises estatísticas. Este relatório apresenta os fundamentos teóricos dessas aproximações, demonstrações matemáticas e aplicações utilizando a linguagem R.</span>
 <span id="cb9-30"><a href="#cb9-30" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-31"><a href="#cb9-31" aria-hidden="true" tabindex="-1"></a><span class="fu">## 🎯Objetivos</span></span>
 <span id="cb9-32"><a href="#cb9-32" aria-hidden="true" tabindex="-1"></a></span>
@@ -891,7 +894,7 @@ window.Quarto = {
 <span id="cb9-49"><a href="#cb9-49" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-50"><a href="#cb9-50" aria-hidden="true" tabindex="-1"></a><span class="fu">## Distribuição Binomial</span></span>
 <span id="cb9-51"><a href="#cb9-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-52"><a href="#cb9-52" aria-hidden="true" tabindex="-1"></a>A distribuição Binomial é muito utilizada em experimentos aleatórios nos quais se possui apenas dois resultados possíveis no experimento (Sucesso ou Fracasso).</span>
+<span id="cb9-52"><a href="#cb9-52" aria-hidden="true" tabindex="-1"></a>A distribuição Binomial é muito utilizada em experimentos aleatórios nos quais existem apenas dois resultados possíveis no experimento (Sucesso ou Fracasso).</span>
 <span id="cb9-53"><a href="#cb9-53" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-54"><a href="#cb9-54" aria-hidden="true" tabindex="-1"></a>A função de probabilidade da distribuição Binomial é dada pela fórmula:</span>
 <span id="cb9-55"><a href="#cb9-55" aria-hidden="true" tabindex="-1"></a></span>
@@ -902,7 +905,7 @@ window.Quarto = {
 <span id="cb9-60"><a href="#cb9-60" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>$k$: representa a quantidade exata de sucessos desejada; </span>
 <span id="cb9-61"><a href="#cb9-61" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>$n$: o número total de tentativas;</span>
 <span id="cb9-62"><a href="#cb9-62" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>$p$: a probabilidade de acerto em cada tentativa;</span>
-<span id="cb9-63"><a href="#cb9-63" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>$(1-p)$: é a probabildade de fracasso;</span>
+<span id="cb9-63"><a href="#cb9-63" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>$(1-p)$: é a probabilidade de fracasso;</span>
 <span id="cb9-64"><a href="#cb9-64" aria-hidden="true" tabindex="-1"></a><span class="ss">*   </span>$\binom{n}{k}$: calcula a quantidade de maneiras diferentes que o sucesso pode acontecer.</span>
 <span id="cb9-65"><a href="#cb9-65" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-66"><a href="#cb9-66" aria-hidden="true" tabindex="-1"></a></span>
@@ -916,7 +919,7 @@ window.Quarto = {
 <span id="cb9-74"><a href="#cb9-74" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-75"><a href="#cb9-75" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-76"><a href="#cb9-76" aria-hidden="true" tabindex="-1"></a>$$X=X_1+X_2+\cdots+X_n$$</span>
-<span id="cb9-77"><a href="#cb9-77" aria-hidden="true" tabindex="-1"></a>Segundo o Teorema Central do Limite, a soma de um grande número de variáveis aleatórias independentes tendem a seguir uma distribuição Normal, mesmo que as variáveis originais usadas sejam discretas.</span>
+<span id="cb9-77"><a href="#cb9-77" aria-hidden="true" tabindex="-1"></a>Segundo o Teorema Central do Limite, a soma de um grande número de variáveis aleatórias independentes tende a seguir uma distribuição Normal, mesmo que as variáveis originais usadas sejam discretas.</span>
 <span id="cb9-78"><a href="#cb9-78" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-79"><a href="#cb9-79" aria-hidden="true" tabindex="-1"></a>A aproximação é vantajosa nos casos em que: </span>
 <span id="cb9-80"><a href="#cb9-80" aria-hidden="true" tabindex="-1"></a></span>
@@ -970,7 +973,7 @@ window.Quarto = {
 <span id="cb9-130"><a href="#cb9-130" aria-hidden="true" tabindex="-1"></a>prob_normal</span>
 <span id="cb9-131"><a href="#cb9-131" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb9-132"><a href="#cb9-132" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-133"><a href="#cb9-133" aria-hidden="true" tabindex="-1"></a>Observa-se que a probabilidade calculada pela distribuição Binomial e pela aproximação Normal apresentaram valores próximos. Isso demonstra que, para valores de n grandes, a aproximação Normal fornece resultados condizentes.</span>
+<span id="cb9-133"><a href="#cb9-133" aria-hidden="true" tabindex="-1"></a>Observa-se que a probabilidade calculada pela distribuição Binomial e pela aproximação Normal apresentou valores próximos. Isso demonstra que, para valores de $n$ grandes, a aproximação Normal fornece resultados condizentes.</span>
 <span id="cb9-134"><a href="#cb9-134" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-135"><a href="#cb9-135" aria-hidden="true" tabindex="-1"></a><span class="fu">## Distribuição de Poisson </span></span>
 <span id="cb9-136"><a href="#cb9-136" aria-hidden="true" tabindex="-1"></a></span>
@@ -1056,9 +1059,29 @@ window.Quarto = {
 <span id="cb9-218"><a href="#cb9-218" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-219"><a href="#cb9-219" aria-hidden="true" tabindex="-1"></a><span class="fu">## 🗪  Resultados e Discussão</span></span>
 <span id="cb9-220"><a href="#cb9-220" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-221"><a href="#cb9-221" aria-hidden="true" tabindex="-1"></a><span class="fu">## 💡 Conclusão</span></span>
+<span id="cb9-221"><a href="#cb9-221" aria-hidden="true" tabindex="-1"></a>Os resultados obtidos demonstraram que as aproximações pela distribuição Normal forneceram valores bastante próximos às probabilidades exatas calculadas pelas distribuições Binomial e Poisson, quando se tem valores de $np$, $n(1-p)$ e $\lambda$ bastante grandes.</span>
 <span id="cb9-222"><a href="#cb9-222" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-223"><a href="#cb9-223" aria-hidden="true" tabindex="-1"></a><span class="fu">## 📑  Referências</span></span>
+<span id="cb9-223"><a href="#cb9-223" aria-hidden="true" tabindex="-1"></a>Na distribuição Binomial, foi possível observar que, para valores elevados de $np$ e $n(1-p)$, a aproximação Normal apresentou resultados muito precisos em relação à distribuição Binomial.</span>
+<span id="cb9-224"><a href="#cb9-224" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-225"><a href="#cb9-225" aria-hidden="true" tabindex="-1"></a>Para a distribuição Poisson, verificou-se que o aumento do parâmetro $\lambda$ reduz a assimetria da distribuição, fazendo com que esta distribuição fique bastante semelhante à curva Normal.</span>
+<span id="cb9-226"><a href="#cb9-226" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-227"><a href="#cb9-227" aria-hidden="true" tabindex="-1"></a><span class="fu">## 💡 Conclusão</span></span>
+<span id="cb9-228"><a href="#cb9-228" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-229"><a href="#cb9-229" aria-hidden="true" tabindex="-1"></a>Portanto, as distribuições Binomial e Poisson podem ser aproximadas pela distribuição Normal sob determinadas condições.</span>
+<span id="cb9-230"><a href="#cb9-230" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-231"><a href="#cb9-231" aria-hidden="true" tabindex="-1"></a>Na distribuição Binomial, a aproximação ocorre quando os valores de $(np)$ e $(n(1-p))$ são bastante grandes. Já na distribuição Poisson, a aproximação apresenta boa precisão quando o parâmetro $(\lambda)$ assume valores elevados.</span>
+<span id="cb9-232"><a href="#cb9-232" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-233"><a href="#cb9-233" aria-hidden="true" tabindex="-1"></a>Os exemplos desenvolvidos na linguagem R utilizando o pacote leem mostraram que as probabilidades aproximadas apresentaram valores bem próximos aos cálculos exatos, principalmente após a aplicação da correção de continuidade.</span>
+<span id="cb9-234"><a href="#cb9-234" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-235"><a href="#cb9-235" aria-hidden="true" tabindex="-1"></a>Dessa forma, os objetivos propostos neste relatório foram atingidos satisfatoriamente.</span>
+<span id="cb9-236"><a href="#cb9-236" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-237"><a href="#cb9-237" aria-hidden="true" tabindex="-1"></a><span class="fu">## 📑  Referências</span></span>
+<span id="cb9-238"><a href="#cb9-238" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-239"><a href="#cb9-239" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">1</span><span class="co">]</span> MORETTIN, P. A.; BUSSAB, W. O. Estatística Básica. 9. ed. São Paulo: Saraiva, 2017.</span>
+<span id="cb9-240"><a href="#cb9-240" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-241"><a href="#cb9-241" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">2</span><span class="co">]</span> MONTGOMERY, D. C.; RUNGER, G. C. Applied Statistics and Probability for Engineers. 6. ed. Hoboken, NJ: John Wiley &amp; Sons, Inc., 2014.</span>
+<span id="cb9-242"><a href="#cb9-242" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-243"><a href="#cb9-243" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">3</span><span class="co">]</span> DÊIVIDE, B. Estatística e Probabilidade Aplicada à Engenharia. Material da disciplina disponibilizado no curso de Estatística e Probabilidade, Universidade Federal de São João del-Rei (UFSJ), 2026.</span>
 </code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

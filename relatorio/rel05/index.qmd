@@ -26,7 +26,7 @@ execute:
 
 ## 📢Introdução
 
-As distribuições de probabilidade são essenciais na Estatística, sendo utilizadas para analisar diversas áreas da ciência e da engenharia. Entre as várias distribuições destacam-se a Binomial e a Poisson. Em determinadas situações, essas distribuições podem ser aproximadas através da distribuição Normal, facilitando o cálculo probabilístico e análises estatísticas. Este relatório apresenta os fundamentos teóricos dessas aproximações, demonstrações matemáticas e aplicações utilizando a linguagem R.
+As distribuições de probabilidade são essenciais na Estatística, sendo utilizadas para analisar diversas áreas da ciência e da engenharia. Entre as várias distribuições destacam-se a Binomial e a Poisson. Em determinadas situações, essas distribuições podem ser aproximadas pela distribuição Normal, facilitando o cálculo probabilístico e análises estatísticas. Este relatório apresenta os fundamentos teóricos dessas aproximações, demonstrações matemáticas e aplicações utilizando a linguagem R.
 
 ## 🎯Objetivos
 
@@ -49,7 +49,7 @@ O trabalho foi desenvolvido por meio de estudos realizados em sala de aula e pes
 
 ## Distribuição Binomial
 
-A distribuição Binomial é muito utilizada em experimentos aleatórios nos quais se possui apenas dois resultados possíveis no experimento (Sucesso ou Fracasso).
+A distribuição Binomial é muito utilizada em experimentos aleatórios nos quais existem apenas dois resultados possíveis no experimento (Sucesso ou Fracasso).
 
 A função de probabilidade da distribuição Binomial é dada pela fórmula:
 
@@ -60,7 +60,7 @@ Onde:
 *   $k$: representa a quantidade exata de sucessos desejada; 
 *   $n$: o número total de tentativas;
 *   $p$: a probabilidade de acerto em cada tentativa;
-*   $(1-p)$: é a probabildade de fracasso;
+*   $(1-p)$: é a probabilidade de fracasso;
 *   $\binom{n}{k}$: calcula a quantidade de maneiras diferentes que o sucesso pode acontecer.
 
 
@@ -74,7 +74,7 @@ A variável Binomial pode ser analisada como a soma de várias variáveis aleat�
 
 
 $$X=X_1+X_2+\cdots+X_n$$
-Segundo o Teorema Central do Limite, a soma de um grande número de variáveis aleatórias independentes tendem a seguir uma distribuição Normal, mesmo que as variáveis originais usadas sejam discretas.
+Segundo o Teorema Central do Limite, a soma de um grande número de variáveis aleatórias independentes tende a seguir uma distribuição Normal, mesmo que as variáveis originais usadas sejam discretas.
 
 A aproximação é vantajosa nos casos em que: 
 
@@ -128,7 +128,7 @@ prob_binomial
 prob_normal
 ```
 
-Observa-se que a probabilidade calculada pela distribuição Binomial e pela aproximação Normal apresentaram valores próximos. Isso demonstra que, para valores de n grandes, a aproximação Normal fornece resultados condizentes.
+Observa-se que a probabilidade calculada pela distribuição Binomial e pela aproximação Normal apresentou valores próximos. Isso demonstra que, para valores de $n$ grandes, a aproximação Normal fornece resultados condizentes.
 
 ## Distribuição de Poisson 
 
@@ -214,6 +214,26 @@ A condição estabelecida foi atendida: $\lambda = 16 \geq 10$.O cálculo exato 
 
 ## 🗪  Resultados e Discussão
 
+Os resultados obtidos demonstraram que as aproximações pela distribuição Normal forneceram valores bastante próximos às probabilidades exatas calculadas pelas distribuições Binomial e Poisson, quando se tem valores de $np$, $n(1-p)$ e $\lambda$ bastante grandes.
+
+Na distribuição Binomial, foi possível observar que, para valores elevados de $np$ e $n(1-p)$, a aproximação Normal apresentou resultados muito precisos em relação à distribuição Binomial.
+
+Para a distribuição Poisson, verificou-se que o aumento do parâmetro $\lambda$ reduz a assimetria da distribuição, fazendo com que esta distribuição fique bastante semelhante à curva Normal.
+
 ## 💡 Conclusão
 
+Portanto, as distribuições Binomial e Poisson podem ser aproximadas pela distribuição Normal sob determinadas condições.
+
+Na distribuição Binomial, a aproximação ocorre quando os valores de $(np)$ e $(n(1-p))$ são bastante grandes. Já na distribuição Poisson, a aproximação apresenta boa precisão quando o parâmetro $(\lambda)$ assume valores elevados.
+
+Os exemplos desenvolvidos na linguagem R utilizando o pacote leem mostraram que as probabilidades aproximadas apresentaram valores bem próximos aos cálculos exatos, principalmente após a aplicação da correção de continuidade.
+
+Dessa forma, os objetivos propostos neste relatório foram atingidos satisfatoriamente.
+
 ## 📑  Referências
+
+[1] MORETTIN, P. A.; BUSSAB, W. O. Estatística Básica. 9. ed. São Paulo: Saraiva, 2017.
+
+[2] MONTGOMERY, D. C.; RUNGER, G. C. Applied Statistics and Probability for Engineers. 6. ed. Hoboken, NJ: John Wiley & Sons, Inc., 2014.
+
+[3] DÊIVIDE, B. Estatística e Probabilidade Aplicada à Engenharia. Material da disciplina disponibilizado no curso de Estatística e Probabilidade, Universidade Federal de São João del-Rei (UFSJ), 2026.
