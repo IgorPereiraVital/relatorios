@@ -27,7 +27,7 @@ execute:
 
 ## 📢 Introdução
   
-A distribuição F é uma distribuição de probabilidade contínua utilizada principalmente na comparação de variâncias. Seus valores assumem apenas números reais positivos e sua forma depende de dois parâmetros que são chamados de graus de liberdade. Sua aplicação é fundamental em situações envolvendo populações normais independentes, permitindo verificar diferenças de dispersão entre grupos e auxiliar na análise de modelos estatísticos mais complexos.
+A distribuição F (também conhecida como distribuição F de Snedecor) é uma distribuição de probabilidade contínua utilizada principalmente na comparação de variâncias. Seus valores assumem apenas números reais positivos e sua forma depende de dois parâmetros que são chamados de graus de liberdade. Sua aplicação é fundamental em situações envolvendo populações normais independentes, permitindo verificar diferenças de dispersão entre grupos e auxiliar na análise de modelos estatísticos mais complexos.
 
 ## 🎯 Objetivo
 
@@ -89,7 +89,7 @@ Na qual:
 
 A distribuição F apresenta algumas características importantes:
 
-- Assume apenas valores positivos da reta real;
+- Assume apenas valores positivos da reta real  no intervalo $[0, +\infty)$;
 - Possui assimetria à direita;
 - Depende de dois graus de liberdade;
 - Torna-se menos assimétrica enquanto os graus de liberdade aumentam;
@@ -155,7 +155,7 @@ $$
 Portanto, a variável aleatória segue uma distribuição F com graus de liberdade:
 
 $$
-(n_1 - 1,\ n_2 - 1)
+F \sim F(n_1 - 1, \, n_2 - 1)
 $$
 
 Os graus de liberdade da distribuição F estão associados aos tamanhos das amostras utilizadas na pesquisa. Para amostras de tamanho $n_1$ e $n_2$, a distribuição F possui graus de liberdade $(n_1-1, n_2-1)$.
@@ -165,15 +165,8 @@ Exemplo:
 - Primeira amostra: $n_1$ = 10;
 - Segunda amostra: $n_2$ = 15.
 
-A distribuição F será:
+Os respectivos graus de liberdade serão: $v_1 = 10 - 1 = 9$ e $v_2 = 15 - 1 = 14$. Logo, a estatística calculada será confrontada com a distribuição crítica $F \sim F(9, 14)$.
 
-$$(10 - 1, 15 - 1)$$
-
-Logo:
-
-$$
-F \sim F(9,14)
-$$
 
 ## 📑 Aplicações da Distribuição F
 
@@ -259,13 +252,11 @@ Por fim, utilizamos a função plot() para gerar o gráfico da distribuição, p
 
 ##  🗪  Resultados e Discussão
 
-Os resultados obtidos permitiram observar o comportamento da distribuição F para diferentes graus de liberdade.
+A análise comparativa das simulações computacionais confirmou o comportamento teórico previsto para a distribuição F. Observou-se nitidamente que a curva está restrita ao quadrante positivo do plano cartesiano e exibe assimetria à direita.
 
-Por meio dos gráficos desenvolvidos na linguagem R, foi possível visualizar que a distribuição F assume apenas valores positivos e apresenta assimetria à direita.
+Comparando o Gráfico 1 ($df_1 = 5, df_2 = 10$) com o Gráfico 2 ($df_1 = 12, df_2 = 1$), fica evidente a sensibilidade da função em relação aos graus de liberdade do denominador ($df_2$). Valores baixos de graus de liberdade concentram a densidade de probabilidade drasticamente próxima à origem, com uma cauda longa e pesada, enquanto o aumento dos parâmetros suaviza a curva em direção a um comportamento de distribuição normal.
 
-Além disso, observou-se que o formato da distribuição F varia conforme os graus de liberdade utilizados na análise, tornando-se menos assimétrica à medida que esses valores aumentam.
-
-A aplicação utilizando sensores no contexto da Engenharia Mecatrônica demonstrou a importância da distribuição F na comparação de variâncias e análise da precisão dos sistemas de medição.
+No contexto prático da Engenharia Mecatrônica, a validação dessa estatística provou ser uma ferramenta robusta para tomada de decisões preditivas, permitindo diagnosticar falhas ocultas de precisão em instrumentação industrial antes que estas afetem a qualidade do produto final.
 
 ## 💡 Conclusão
 
@@ -277,7 +268,7 @@ As aplicações utilizando a linguagem R permitiram compreender a distribuição
 
 Dessa forma, os objetivos propostos neste trabalho foram atingidos. 
 
-## 📑 Referências 
+## 📑 Referências
 
 [1] MORETTIN, P. A.; BUSSAB, W. O. Estatística Básica. 9. ed. São Paulo: Saraiva, 2017.
 
