@@ -1,0 +1,166 @@
+---
+# Só mude aqui!!!!
+author: "Igor e Lucas"
+title: "Relatório de Aula Prática 05 - Distribuição F"
+bibliography: referencias.bib
+# A partir daqui nao faca alteracoes!!!!!
+link-citations: true
+csl: associacao-brasileira-de-normas-tecnicas-ipea.csl
+subtitle: "<a href='https://bendeivide.github.io/courses/epaec/' target='_blank'>Estatística e Probabilidade</a> </br> <a href='https://bendeivide.github.io' target='_blank'>Prof. Ben Dêivide (DEFIM/CAP/UFSJ)</a>"
+include-before-body: header.html
+date: today
+lang: pt-BR
+format:
+  html:
+    toc: true
+    number-sections: true
+    theme: bootstrap
+    #css: styles.css
+    code-fold: true
+    code-tools: true
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+
+## 📌 Introdução
+  
+A distribuição F é uma distribuição de probabilidade contínua utilizada principalmente na comparação de variâncias. Seus valores assumem apenas números reais positivos e sua forma depende de dois parâmetros que são chamados de graus de liberdades.Sua aplicação é fundamental em situações envolvendo populações normais independentes, permitindo verificar diferenças de dispersão entre grupos e auxiliar na análise de modelos estatísticos mais complexos.
+
+## Objetivo Geral
+
+Estudar a distribuição F e sua relação com funções de amostras de duas populações normais independentes.
+
+### Objetivos Específicos
+
+- Definir a distribuição F;
+- Apresentar suas principais propriedades;
+- Relacionar a distribuição F com variâncias amostrais;
+- Explicar sua construção matemática;
+- Aplicações em testes estatísticos;
+- Utilizar a linguagem R para simulações e visualizações gráficas.
+
+## Fundamentação Teórica
+
+A distribuição F é uma distribuição contínua de probabilidade que é definida apenas para valores positivos. Ela é obtida a partir da razão entre duas variáveis aleatórias independentes com distribuição qui-quadrado.
+
+A distribuição F surge quando se divide uma variável qui-quadrada por outra variável qui-quadrada, ambas ajustadas para os dois graus de liberdade.
+
+Exemplo:
+
+$$
+U_1 \sim \chi^2(v_1)
+$$
+e
+
+$$
+U_2 \sim \chi^2(v_2)
+$$
+
+Logo, ao ajustar essas variáveis para os graus de liberdade, obtém-se:
+
+$$
+F=\frac{U_1/v_1}{U_2/v_2}
+$$
+
+A variável aleatória $F$ segue uma distribuição F com $v1$ e $v2$ grus de liberdade, sendo representados por:
+$$
+F \sim F(v_1, v_2)
+$$
+
+Na qual:
+
+- $v_1$: graus de liberdade do numerador;
+- $v_2$: graus de liberdade do denominador.
+
+## Características da Distribuição F
+
+A distribuição F apresenta algumas características importantes:
+
+- Assume apenas valores positivos da reta real;
+- Possui assimetria à direita;
+- Depende de dois graus de liberdade;
+- Torna-se menos assimétrica enquanto os graus de liberdade aumentam;
+
+O formato da distribuição varia conforme os graus da liberdade escolhidos.
+
+## Relação com populações normais independentes
+
+Considere duas populações normais independentes:
+
+$$
+X_1, X_2, \dots, X_{n_1} \sim N(\mu_1, \sigma_1^2)
+$$
+
+e
+
+$$
+Y_1, Y_2, \dots, Y_{n_2} \sim N(\mu_2, \sigma_2^2)
+$$
+
+Essas expressões representam duas amostras obtidas de populações com distribuição normal e independentes entre si.
+
+Na primeira e segunda população:
+
+- $\mu_1$ e $\mu_2$: representam a média populacional;
+- $\sigma_1^2$ e $\sigma_2^2$: representam a variância populacional;
+- $n_1$ e $n_2$: representam o tamanho da amostra.
+
+As populações são independentes, o que significa que os valores observados em uma população não interferem nos valores da outra.
+
+A partir dessas amostras, é possível calcular as variâncias amostrais de $S_1^2$ e $S_2^2$, que serão utilizadas na construção da distribuição F.
+
+Uma propriedade importante das populações normais afirma que as variâncias amostrais podem ser relacionados com a distribuição qui-quadrado, pelo fato que esta distribuição é definida matematicamente como a soma dos quadrados de variáveis aleatórias normais independentes.
+
+Logo, para a primeira população, tem-se:
+
+$$
+\frac{(n_1-1)S_1^2}{\sigma_1^2} \sim \chi^2(n_1-1)
+$$
+
+e, para a segunda população:
+
+$$
+\frac{(n_2-1)S_2^2}{\sigma_2^2} \sim \chi^2(n_2-1)
+$$
+Como as duas populações são independentes, essas variáveis qui-quadrado também serão.
+
+A partir da razão entre essas variáveis ajustadas pelos determinados graus de liberdade, obtém-se a distribuição F:
+
+$$
+F=\frac{S_1^2/\sigma_1^2}{S_2^2/\sigma_2^2}
+$$
+Quando as variâncias populacionais são iguais:
+
+$$
+\sigma_1^2 = \sigma_2^2
+$$
+A expressão pode ser simplificada para:
+
+$$
+F=\frac{S_1^2}{S_2^2}
+$$
+Portanto, a variável aleatória segue uma distribuição F com graus de liberdade:
+
+$$
+(n_1 - 1,\ n_2 - 1)
+$$
+
+Os graus de liberdade da distribuição F estão associados aos tamanhos das amostras utilizadas na pesquisa. Para amostras de tamanho $n_1$ e $n_2$, a distribuição F possui graus de liberdade $(n_1-1, n_2-1)$.
+
+Exemplo:
+
+- Primeira amostra: $n_1$ = 10;
+- Segunda amostra: $n_2$ = 15.
+
+A distribuição F será:
+
+$$(10 - 1, 15 - 1)$$
+
+Logo:
+
+$$
+F \sim F(9,14)
+$$
