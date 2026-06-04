@@ -139,12 +139,19 @@ window.Quarto = {
 </div>
 <main class="content" id="quarto-document-content">
 <div class="logos" style="display: flex; justify-content: center; align-items: center; height: 200px; gap: 20px;">
+
   <a href="https://ufsj.edu.br">
+
     <img src="imagens/ufsj.png" width="220px">
+
   </a>
+
   <a href="https://ufsj.edu.br/defim">
+
     <img src="imagens/defim.png" width="220px">
+
   </a>
+
 </div>
 
 <header id="title-block-header" class="quarto-title-block default">
@@ -181,7 +188,7 @@ window.Quarto = {
 
 <section id="introdução" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="introdução"><span class="header-section-number">1</span> 📢 Introdução</h2>
-<p>A distribuição F é uma distribuição de probabilidade contínua utilizada principalmente na comparação de variâncias. Seus valores assumem apenas números reais positivos e sua forma depende de dois parâmetros que são chamados de graus de liberdade. Sua aplicação é fundamental em situações envolvendo populações normais independentes, permitindo verificar diferenças de dispersão entre grupos e auxiliar na análise de modelos estatísticos mais complexos.</p>
+<p>A distribuição F (também conhecida como distribuição F de Snedecor) é uma distribuição de probabilidade contínua utilizada principalmente na comparação de variâncias. Seus valores assumem apenas números reais positivos e sua forma depende de dois parâmetros que são chamados de graus de liberdade. Sua aplicação é fundamental em situações envolvendo populações normais independentes, permitindo verificar diferenças de dispersão entre grupos e auxiliar na análise de modelos estatísticos mais complexos.</p>
 </section>
 <section id="objetivo" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="objetivo"><span class="header-section-number">2</span> 🎯 Objetivo</h2>
@@ -235,7 +242,7 @@ F \sim F(v_1, v_2)
 <h2 data-number="5" class="anchored" data-anchor-id="características-da-distribuição-f"><span class="header-section-number">5</span> 🔎 Características da Distribuição F</h2>
 <p>A distribuição F apresenta algumas características importantes:</p>
 <ul>
-<li>Assume apenas valores positivos da reta real;</li>
+<li>Assume apenas valores positivos da reta real no intervalo <span class="math inline">\([0, +\infty)\)</span>;</li>
 <li>Possui assimetria à direita;</li>
 <li>Depende de dois graus de liberdade;</li>
 <li>Torna-se menos assimétrica enquanto os graus de liberdade aumentam;</li>
@@ -281,7 +288,7 @@ F=\frac{S_1^2/\sigma_1^2}{S_2^2/\sigma_2^2}
 F=\frac{S_1^2}{S_2^2}
 \]</span> Portanto, a variável aleatória segue uma distribuição F com graus de liberdade:</p>
 <p><span class="math display">\[
-(n_1 - 1,\ n_2 - 1)
+F \sim F(n_1 - 1, \, n_2 - 1)
 \]</span></p>
 <p>Os graus de liberdade da distribuição F estão associados aos tamanhos das amostras utilizadas na pesquisa. Para amostras de tamanho <span class="math inline">\(n_1\)</span> e <span class="math inline">\(n_2\)</span>, a distribuição F possui graus de liberdade <span class="math inline">\((n_1-1, n_2-1)\)</span>.</p>
 <p>Exemplo:</p>
@@ -289,12 +296,7 @@ F=\frac{S_1^2}{S_2^2}
 <li>Primeira amostra: <span class="math inline">\(n_1\)</span> = 10;</li>
 <li>Segunda amostra: <span class="math inline">\(n_2\)</span> = 15.</li>
 </ul>
-<p>A distribuição F será:</p>
-<p><span class="math display">\[(10 - 1, 15 - 1)\]</span></p>
-<p>Logo:</p>
-<p><span class="math display">\[
-F \sim F(9,14)
-\]</span></p>
+<p>Os respectivos graus de liberdade serão: <span class="math inline">\(v_1 = 10 - 1 = 9\)</span> e <span class="math inline">\(v_2 = 15 - 1 = 14\)</span>. Logo, a estatística calculada será confrontada com a distribuição crítica <span class="math inline">\(F \sim F(9, 14)\)</span>.</p>
 </section>
 <section id="aplicações-da-distribuição-f" class="level2" data-number="7">
 <h2 data-number="7" class="anchored" data-anchor-id="aplicações-da-distribuição-f"><span class="header-section-number">7</span> 📑 Aplicações da Distribuição F</h2>
@@ -392,10 +394,9 @@ F=\frac{S_1^2}{S_2^2}
 </section>
 <section id="resultados-e-discussão" class="level2" data-number="9">
 <h2 data-number="9" class="anchored" data-anchor-id="resultados-e-discussão"><span class="header-section-number">9</span> 🗪 Resultados e Discussão</h2>
-<p>Os resultados obtidos permitiram observar o comportamento da distribuição F para diferentes graus de liberdade.</p>
-<p>Por meio dos gráficos desenvolvidos na linguagem R, foi possível visualizar que a distribuição F assume apenas valores positivos e apresenta assimetria à direita.</p>
-<p>Além disso, observou-se que o formato da distribuição F varia conforme os graus de liberdade utilizados na análise, tornando-se menos assimétrica à medida que esses valores aumentam.</p>
-<p>A aplicação utilizando sensores no contexto da Engenharia Mecatrônica demonstrou a importância da distribuição F na comparação de variâncias e análise da precisão dos sistemas de medição.</p>
+<p>A análise comparativa das simulações computacionais confirmou o comportamento teórico previsto para a distribuição F. Observou-se nitidamente que a curva está restrita ao quadrante positivo do plano cartesiano e exibe assimetria à direita.</p>
+<p>Comparando o Gráfico 1 (<span class="math inline">\(df_1 = 5, df_2 = 10\)</span>) com o Gráfico 2 (<span class="math inline">\(df_1 = 12, df_2 = 1\)</span>), fica evidente a sensibilidade da função em relação aos graus de liberdade do denominador (<span class="math inline">\(df_2\)</span>). Valores baixos de graus de liberdade concentram a densidade de probabilidade drasticamente próxima à origem, com uma cauda longa e pesada, enquanto o aumento dos parâmetros suaviza a curva em direção a um comportamento de distribuição normal.</p>
+<p>No contexto prático da Engenharia Mecatrônica, a validação dessa estatística provou ser uma ferramenta robusta para tomada de decisões preditivas, permitindo diagnosticar falhas ocultas de precisão em instrumentação industrial antes que estas afetem a qualidade do produto final.</p>
 </section>
 <section id="conclusão" class="level2" data-number="10">
 <h2 data-number="10" class="anchored" data-anchor-id="conclusão"><span class="header-section-number">10</span> 💡 Conclusão</h2>
@@ -895,7 +896,7 @@ F=\frac{S_1^2}{S_2^2}
 <span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="fu">## 📢 Introdução</span></span>
 <span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>A distribuição F é uma distribuição de probabilidade contínua utilizada principalmente na comparação de variâncias. Seus valores assumem apenas números reais positivos e sua forma depende de dois parâmetros que são chamados de graus de liberdade. Sua aplicação é fundamental em situações envolvendo populações normais independentes, permitindo verificar diferenças de dispersão entre grupos e auxiliar na análise de modelos estatísticos mais complexos.</span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>A distribuição F (também conhecida como distribuição F de Snedecor) é uma distribuição de probabilidade contínua utilizada principalmente na comparação de variâncias. Seus valores assumem apenas números reais positivos e sua forma depende de dois parâmetros que são chamados de graus de liberdade. Sua aplicação é fundamental em situações envolvendo populações normais independentes, permitindo verificar diferenças de dispersão entre grupos e auxiliar na análise de modelos estatísticos mais complexos.</span>
 <span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a><span class="fu">## 🎯 Objetivo</span></span>
 <span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a></span>
@@ -957,7 +958,7 @@ F=\frac{S_1^2}{S_2^2}
 <span id="cb3-89"><a href="#cb3-89" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-90"><a href="#cb3-90" aria-hidden="true" tabindex="-1"></a>A distribuição F apresenta algumas características importantes:</span>
 <span id="cb3-91"><a href="#cb3-91" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-92"><a href="#cb3-92" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Assume apenas valores positivos da reta real;</span>
+<span id="cb3-92"><a href="#cb3-92" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Assume apenas valores positivos da reta real  no intervalo $[0, +\infty)$;</span>
 <span id="cb3-93"><a href="#cb3-93" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Possui assimetria à direita;</span>
 <span id="cb3-94"><a href="#cb3-94" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Depende de dois graus de liberdade;</span>
 <span id="cb3-95"><a href="#cb3-95" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Torna-se menos assimétrica enquanto os graus de liberdade aumentam;</span>
@@ -1023,7 +1024,7 @@ F=\frac{S_1^2}{S_2^2}
 <span id="cb3-155"><a href="#cb3-155" aria-hidden="true" tabindex="-1"></a>Portanto, a variável aleatória segue uma distribuição F com graus de liberdade:</span>
 <span id="cb3-156"><a href="#cb3-156" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-157"><a href="#cb3-157" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb3-158"><a href="#cb3-158" aria-hidden="true" tabindex="-1"></a>(n_1 - 1,\ n_2 - 1)</span>
+<span id="cb3-158"><a href="#cb3-158" aria-hidden="true" tabindex="-1"></a>F \sim F(n_1 - 1, \, n_2 - 1)</span>
 <span id="cb3-159"><a href="#cb3-159" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb3-160"><a href="#cb3-160" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-161"><a href="#cb3-161" aria-hidden="true" tabindex="-1"></a>Os graus de liberdade da distribuição F estão associados aos tamanhos das amostras utilizadas na pesquisa. Para amostras de tamanho $n_1$ e $n_2$, a distribuição F possui graus de liberdade $(n_1-1, n_2-1)$.</span>
@@ -1033,125 +1034,116 @@ F=\frac{S_1^2}{S_2^2}
 <span id="cb3-165"><a href="#cb3-165" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Primeira amostra: $n_1$ = 10;</span>
 <span id="cb3-166"><a href="#cb3-166" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Segunda amostra: $n_2$ = 15.</span>
 <span id="cb3-167"><a href="#cb3-167" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-168"><a href="#cb3-168" aria-hidden="true" tabindex="-1"></a>A distribuição F será:</span>
+<span id="cb3-168"><a href="#cb3-168" aria-hidden="true" tabindex="-1"></a>Os respectivos graus de liberdade serão: $v_1 = 10 - 1 = 9$ e $v_2 = 15 - 1 = 14$. Logo, a estatística calculada será confrontada com a distribuição crítica $F \sim F(9, 14)$.</span>
 <span id="cb3-169"><a href="#cb3-169" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-170"><a href="#cb3-170" aria-hidden="true" tabindex="-1"></a>$$(10 - 1, 15 - 1)$$</span>
-<span id="cb3-171"><a href="#cb3-171" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-172"><a href="#cb3-172" aria-hidden="true" tabindex="-1"></a>Logo:</span>
-<span id="cb3-173"><a href="#cb3-173" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-174"><a href="#cb3-174" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb3-175"><a href="#cb3-175" aria-hidden="true" tabindex="-1"></a>F \sim F(9,14)</span>
-<span id="cb3-176"><a href="#cb3-176" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb3-177"><a href="#cb3-177" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-178"><a href="#cb3-178" aria-hidden="true" tabindex="-1"></a><span class="fu">## 📑 Aplicações da Distribuição F</span></span>
-<span id="cb3-179"><a href="#cb3-179" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-180"><a href="#cb3-180" aria-hidden="true" tabindex="-1"></a><span class="fu">### Aplicação dentro do contexto da Engenharia Mecatrônica</span></span>
-<span id="cb3-181"><a href="#cb3-181" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-182"><a href="#cb3-182" aria-hidden="true" tabindex="-1"></a>Na Engenharia Mecatrônica, a distribuição F pode ser utilizada na comparação da variabilidade de sensores e sistemas de medição.</span>
-<span id="cb3-183"><a href="#cb3-183" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-184"><a href="#cb3-184" aria-hidden="true" tabindex="-1"></a>Considere dois sensores de temperatura utilizados em um sistema de automação industrial. Deseja-se verificar se ambos apresentam a mesma variabilidade nas medições realizadas.</span>
-<span id="cb3-185"><a href="#cb3-185" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-186"><a href="#cb3-186" aria-hidden="true" tabindex="-1"></a>Para isso, são coletadas amostras independentes dos dois sensores e calculadas suas variâncias amostrais:</span>
-<span id="cb3-187"><a href="#cb3-187" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-188"><a href="#cb3-188" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb3-189"><a href="#cb3-189" aria-hidden="true" tabindex="-1"></a>S_1^2</span>
-<span id="cb3-190"><a href="#cb3-190" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb3-170"><a href="#cb3-170" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-171"><a href="#cb3-171" aria-hidden="true" tabindex="-1"></a><span class="fu">## 📑 Aplicações da Distribuição F</span></span>
+<span id="cb3-172"><a href="#cb3-172" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-173"><a href="#cb3-173" aria-hidden="true" tabindex="-1"></a><span class="fu">### Aplicação dentro do contexto da Engenharia Mecatrônica</span></span>
+<span id="cb3-174"><a href="#cb3-174" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-175"><a href="#cb3-175" aria-hidden="true" tabindex="-1"></a>Na Engenharia Mecatrônica, a distribuição F pode ser utilizada na comparação da variabilidade de sensores e sistemas de medição.</span>
+<span id="cb3-176"><a href="#cb3-176" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-177"><a href="#cb3-177" aria-hidden="true" tabindex="-1"></a>Considere dois sensores de temperatura utilizados em um sistema de automação industrial. Deseja-se verificar se ambos apresentam a mesma variabilidade nas medições realizadas.</span>
+<span id="cb3-178"><a href="#cb3-178" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-179"><a href="#cb3-179" aria-hidden="true" tabindex="-1"></a>Para isso, são coletadas amostras independentes dos dois sensores e calculadas suas variâncias amostrais:</span>
+<span id="cb3-180"><a href="#cb3-180" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-181"><a href="#cb3-181" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb3-182"><a href="#cb3-182" aria-hidden="true" tabindex="-1"></a>S_1^2</span>
+<span id="cb3-183"><a href="#cb3-183" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb3-184"><a href="#cb3-184" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-185"><a href="#cb3-185" aria-hidden="true" tabindex="-1"></a>e </span>
+<span id="cb3-186"><a href="#cb3-186" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-187"><a href="#cb3-187" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb3-188"><a href="#cb3-188" aria-hidden="true" tabindex="-1"></a>S_2^2</span>
+<span id="cb3-189"><a href="#cb3-189" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb3-190"><a href="#cb3-190" aria-hidden="true" tabindex="-1"></a>A estatística F então será calculada por:</span>
 <span id="cb3-191"><a href="#cb3-191" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-192"><a href="#cb3-192" aria-hidden="true" tabindex="-1"></a>e </span>
-<span id="cb3-193"><a href="#cb3-193" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-192"><a href="#cb3-192" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb3-193"><a href="#cb3-193" aria-hidden="true" tabindex="-1"></a>F=\frac{S_1^2}{S_2^2}</span>
 <span id="cb3-194"><a href="#cb3-194" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb3-195"><a href="#cb3-195" aria-hidden="true" tabindex="-1"></a>S_2^2</span>
-<span id="cb3-196"><a href="#cb3-196" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb3-197"><a href="#cb3-197" aria-hidden="true" tabindex="-1"></a>A estatística F então será calculada por:</span>
+<span id="cb3-195"><a href="#cb3-195" aria-hidden="true" tabindex="-1"></a>Se o valor encontrado for muito diferente de 1, isso pode indicar que os sensores possuem níveis de precisão diferentes, logo um dos sensores pode precisar de manutenção.</span>
+<span id="cb3-196"><a href="#cb3-196" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-197"><a href="#cb3-197" aria-hidden="true" tabindex="-1"></a><span class="fu">## 👨🏻‍💻 Aplicação no R</span></span>
 <span id="cb3-198"><a href="#cb3-198" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-199"><a href="#cb3-199" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb3-200"><a href="#cb3-200" aria-hidden="true" tabindex="-1"></a>F=\frac{S_1^2}{S_2^2}</span>
-<span id="cb3-201"><a href="#cb3-201" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb3-202"><a href="#cb3-202" aria-hidden="true" tabindex="-1"></a>Se o valor encontrado for muito diferente de 1, isso pode indicar que os sensores possuem níveis de precisão diferentes, logo um dos sensores pode precisar de manutenção.</span>
-<span id="cb3-203"><a href="#cb3-203" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-204"><a href="#cb3-204" aria-hidden="true" tabindex="-1"></a><span class="fu">## 👨🏻‍💻 Aplicação no R</span></span>
-<span id="cb3-205"><a href="#cb3-205" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-206"><a href="#cb3-206" aria-hidden="true" tabindex="-1"></a>Explicação das variáveis que serão utilizadas:</span>
-<span id="cb3-207"><a href="#cb3-207" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-208"><a href="#cb3-208" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>seq(): cria uma sequência numérica;</span>
-<span id="cb3-209"><a href="#cb3-209" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>df(): calcula a densidade da distribuição F;</span>
-<span id="cb3-210"><a href="#cb3-210" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>df1 e df2: representam os graus de liberdade do numerador e do denominador;</span>
-<span id="cb3-211"><a href="#cb3-211" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>plot(): cria o gráfico, eixo horizontal(x) e eixo vertical(y);</span>
-<span id="cb3-212"><a href="#cb3-212" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>type = "l": representa gráfico em linha;</span>
-<span id="cb3-213"><a href="#cb3-213" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>lwd = 2: representa a espessura da linha;</span>
-<span id="cb3-214"><a href="#cb3-214" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>col = "": define a cor da linha;</span>
-<span id="cb3-215"><a href="#cb3-215" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>main = "": define o título do gráfico;</span>
-<span id="cb3-216"><a href="#cb3-216" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>xlab e ylab: define o nome do eixo horizontal e vertical.</span>
-<span id="cb3-217"><a href="#cb3-217" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-218"><a href="#cb3-218" aria-hidden="true" tabindex="-1"></a><span class="fu">### Gráfico 1</span></span>
-<span id="cb3-221"><a href="#cb3-221" aria-hidden="true" tabindex="-1"></a><span class="in">```{R}</span></span>
-<span id="cb3-222"><a href="#cb3-222" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">5</span>,<span class="fl">0.01</span>)</span>
-<span id="cb3-223"><a href="#cb3-223" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-224"><a href="#cb3-224" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">df</span>(x, <span class="at">df1 =</span> <span class="dv">5</span>, <span class="at">df2 =</span> <span class="dv">10</span>)</span>
-<span id="cb3-225"><a href="#cb3-225" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-226"><a href="#cb3-226" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x, y,</span>
-<span id="cb3-227"><a href="#cb3-227" aria-hidden="true" tabindex="-1"></a>     <span class="at">type =</span> <span class="st">"l"</span>,</span>
-<span id="cb3-228"><a href="#cb3-228" aria-hidden="true" tabindex="-1"></a>     <span class="at">lwd =</span> <span class="dv">2</span>,</span>
-<span id="cb3-229"><a href="#cb3-229" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">"blue"</span>,</span>
-<span id="cb3-230"><a href="#cb3-230" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Distribuição F com df1 = 5 e df2 = 10"</span>,</span>
-<span id="cb3-231"><a href="#cb3-231" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"x"</span>,</span>
-<span id="cb3-232"><a href="#cb3-232" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"f(x)"</span>)</span>
-<span id="cb3-233"><a href="#cb3-233" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-234"><a href="#cb3-234" aria-hidden="true" tabindex="-1"></a><span class="in">```</span> </span>
-<span id="cb3-235"><a href="#cb3-235" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-236"><a href="#cb3-236" aria-hidden="true" tabindex="-1"></a><span class="fu">### Gráfico 2</span></span>
-<span id="cb3-239"><a href="#cb3-239" aria-hidden="true" tabindex="-1"></a><span class="in">```{R}</span></span>
-<span id="cb3-240"><a href="#cb3-240" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">5</span>,<span class="fl">0.01</span>)</span>
-<span id="cb3-241"><a href="#cb3-241" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-242"><a href="#cb3-242" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">df</span>(x, <span class="at">df1 =</span> <span class="dv">12</span>, <span class="at">df2 =</span> <span class="dv">1</span>)</span>
-<span id="cb3-243"><a href="#cb3-243" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-244"><a href="#cb3-244" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x, y,</span>
-<span id="cb3-245"><a href="#cb3-245" aria-hidden="true" tabindex="-1"></a>     <span class="at">type =</span> <span class="st">"l"</span>,</span>
-<span id="cb3-246"><a href="#cb3-246" aria-hidden="true" tabindex="-1"></a>     <span class="at">lwd =</span> <span class="dv">2</span>,</span>
-<span id="cb3-247"><a href="#cb3-247" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">"blue"</span>,</span>
-<span id="cb3-248"><a href="#cb3-248" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Distribuição F com df1 = 12 e df2 = 1"</span>,</span>
-<span id="cb3-249"><a href="#cb3-249" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"x"</span>,</span>
-<span id="cb3-250"><a href="#cb3-250" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"f(x)"</span>)</span>
-<span id="cb3-251"><a href="#cb3-251" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-252"><a href="#cb3-252" aria-hidden="true" tabindex="-1"></a><span class="in">```</span> </span>
-<span id="cb3-253"><a href="#cb3-253" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-254"><a href="#cb3-254" aria-hidden="true" tabindex="-1"></a>O código desenvolvido em R teve o intuito de demonstrar o gráfico da função F a partir de determinados graus de liberdade.</span>
-<span id="cb3-255"><a href="#cb3-255" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-256"><a href="#cb3-256" aria-hidden="true" tabindex="-1"></a>Inicialmente, foi criada uma sequência de valores no eixo horizontal por meio da função seq(). Em seguida, foi utilizada a função df() para calcular os valores da densidade da distribuição F considerando df1 = 5 e df2 = 10 (Gráfico 1) e df1 = 12 e df2 = 1 (Gráfico 2).</span>
-<span id="cb3-257"><a href="#cb3-257" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-258"><a href="#cb3-258" aria-hidden="true" tabindex="-1"></a>Por fim, utilizamos a função plot() para gerar o gráfico da distribuição, permitindo visualizar características importantes da função F, como:</span>
-<span id="cb3-259"><a href="#cb3-259" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-260"><a href="#cb3-260" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>definida apenas para valores positivos;</span>
-<span id="cb3-261"><a href="#cb3-261" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>assimetria à direita;</span>
-<span id="cb3-262"><a href="#cb3-262" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>comportamento da densidade de probabilidade.</span>
-<span id="cb3-263"><a href="#cb3-263" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-264"><a href="#cb3-264" aria-hidden="true" tabindex="-1"></a><span class="fu">##  🗪  Resultados e Discussão</span></span>
-<span id="cb3-265"><a href="#cb3-265" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-266"><a href="#cb3-266" aria-hidden="true" tabindex="-1"></a>Os resultados obtidos permitiram observar o comportamento da distribuição F para diferentes graus de liberdade.</span>
-<span id="cb3-267"><a href="#cb3-267" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-268"><a href="#cb3-268" aria-hidden="true" tabindex="-1"></a>Por meio dos gráficos desenvolvidos na linguagem R, foi possível visualizar que a distribuição F assume apenas valores positivos e apresenta assimetria à direita.</span>
-<span id="cb3-269"><a href="#cb3-269" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-270"><a href="#cb3-270" aria-hidden="true" tabindex="-1"></a>Além disso, observou-se que o formato da distribuição F varia conforme os graus de liberdade utilizados na análise, tornando-se menos assimétrica à medida que esses valores aumentam.</span>
-<span id="cb3-271"><a href="#cb3-271" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-272"><a href="#cb3-272" aria-hidden="true" tabindex="-1"></a>A aplicação utilizando sensores no contexto da Engenharia Mecatrônica demonstrou a importância da distribuição F na comparação de variâncias e análise da precisão dos sistemas de medição.</span>
-<span id="cb3-273"><a href="#cb3-273" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-274"><a href="#cb3-274" aria-hidden="true" tabindex="-1"></a><span class="fu">## 💡 Conclusão</span></span>
-<span id="cb3-275"><a href="#cb3-275" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-276"><a href="#cb3-276" aria-hidden="true" tabindex="-1"></a>Conclui-se que a distribuição F possui grande importância dentro da estatística, especialmente em problemas relacionados à comparação e análise de variâncias.</span>
-<span id="cb3-277"><a href="#cb3-277" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-278"><a href="#cb3-278" aria-hidden="true" tabindex="-1"></a>Ao longo deste trabalho, foi possível compreender sua construção matemática a partir da razão entre duas variáveis de distribuição qui-quadrado independentes, bem como a sua relação com populações normais independentes.</span>
-<span id="cb3-279"><a href="#cb3-279" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-280"><a href="#cb3-280" aria-hidden="true" tabindex="-1"></a>As aplicações utilizando a linguagem R permitiram compreender a distribuição F e entender suas principais características. </span>
-<span id="cb3-281"><a href="#cb3-281" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-282"><a href="#cb3-282" aria-hidden="true" tabindex="-1"></a>Dessa forma, os objetivos propostos neste trabalho foram atingidos. </span>
-<span id="cb3-283"><a href="#cb3-283" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-284"><a href="#cb3-284" aria-hidden="true" tabindex="-1"></a><span class="fu">## 📑 Referências </span></span>
-<span id="cb3-285"><a href="#cb3-285" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-286"><a href="#cb3-286" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">1</span><span class="co">]</span> MORETTIN, P. A.; BUSSAB, W. O. Estatística Básica. 9. ed. São Paulo: Saraiva, 2017.</span>
-<span id="cb3-287"><a href="#cb3-287" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-288"><a href="#cb3-288" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">2</span><span class="co">]</span> MONTGOMERY, D. C.; RUNGER, G. C. Applied Statistics and Probability for Engineers. 6. ed. Hoboken, NJ: John Wiley &amp; Sons, Inc., 2014.</span>
-<span id="cb3-289"><a href="#cb3-289" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-290"><a href="#cb3-290" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">3</span><span class="co">]</span> MAGALHÃES, M. N.; LIMA, A. C. P. Noções de Probabilidade e Estatística. 7. ed. São Paulo: EDUSP, 2015.</span>
+<span id="cb3-199"><a href="#cb3-199" aria-hidden="true" tabindex="-1"></a>Explicação das variáveis que serão utilizadas:</span>
+<span id="cb3-200"><a href="#cb3-200" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-201"><a href="#cb3-201" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>seq(): cria uma sequência numérica;</span>
+<span id="cb3-202"><a href="#cb3-202" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>df(): calcula a densidade da distribuição F;</span>
+<span id="cb3-203"><a href="#cb3-203" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>df1 e df2: representam os graus de liberdade do numerador e do denominador;</span>
+<span id="cb3-204"><a href="#cb3-204" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>plot(): cria o gráfico, eixo horizontal(x) e eixo vertical(y);</span>
+<span id="cb3-205"><a href="#cb3-205" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>type = "l": representa gráfico em linha;</span>
+<span id="cb3-206"><a href="#cb3-206" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>lwd = 2: representa a espessura da linha;</span>
+<span id="cb3-207"><a href="#cb3-207" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>col = "": define a cor da linha;</span>
+<span id="cb3-208"><a href="#cb3-208" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>main = "": define o título do gráfico;</span>
+<span id="cb3-209"><a href="#cb3-209" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>xlab e ylab: define o nome do eixo horizontal e vertical.</span>
+<span id="cb3-210"><a href="#cb3-210" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-211"><a href="#cb3-211" aria-hidden="true" tabindex="-1"></a><span class="fu">### Gráfico 1</span></span>
+<span id="cb3-214"><a href="#cb3-214" aria-hidden="true" tabindex="-1"></a><span class="in">```{R}</span></span>
+<span id="cb3-215"><a href="#cb3-215" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">5</span>,<span class="fl">0.01</span>)</span>
+<span id="cb3-216"><a href="#cb3-216" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-217"><a href="#cb3-217" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">df</span>(x, <span class="at">df1 =</span> <span class="dv">5</span>, <span class="at">df2 =</span> <span class="dv">10</span>)</span>
+<span id="cb3-218"><a href="#cb3-218" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-219"><a href="#cb3-219" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x, y,</span>
+<span id="cb3-220"><a href="#cb3-220" aria-hidden="true" tabindex="-1"></a>     <span class="at">type =</span> <span class="st">"l"</span>,</span>
+<span id="cb3-221"><a href="#cb3-221" aria-hidden="true" tabindex="-1"></a>     <span class="at">lwd =</span> <span class="dv">2</span>,</span>
+<span id="cb3-222"><a href="#cb3-222" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">"blue"</span>,</span>
+<span id="cb3-223"><a href="#cb3-223" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Distribuição F com df1 = 5 e df2 = 10"</span>,</span>
+<span id="cb3-224"><a href="#cb3-224" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"x"</span>,</span>
+<span id="cb3-225"><a href="#cb3-225" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"f(x)"</span>)</span>
+<span id="cb3-226"><a href="#cb3-226" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-227"><a href="#cb3-227" aria-hidden="true" tabindex="-1"></a><span class="in">```</span> </span>
+<span id="cb3-228"><a href="#cb3-228" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-229"><a href="#cb3-229" aria-hidden="true" tabindex="-1"></a><span class="fu">### Gráfico 2</span></span>
+<span id="cb3-232"><a href="#cb3-232" aria-hidden="true" tabindex="-1"></a><span class="in">```{R}</span></span>
+<span id="cb3-233"><a href="#cb3-233" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="dv">0</span>,<span class="dv">5</span>,<span class="fl">0.01</span>)</span>
+<span id="cb3-234"><a href="#cb3-234" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-235"><a href="#cb3-235" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">df</span>(x, <span class="at">df1 =</span> <span class="dv">12</span>, <span class="at">df2 =</span> <span class="dv">1</span>)</span>
+<span id="cb3-236"><a href="#cb3-236" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-237"><a href="#cb3-237" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(x, y,</span>
+<span id="cb3-238"><a href="#cb3-238" aria-hidden="true" tabindex="-1"></a>     <span class="at">type =</span> <span class="st">"l"</span>,</span>
+<span id="cb3-239"><a href="#cb3-239" aria-hidden="true" tabindex="-1"></a>     <span class="at">lwd =</span> <span class="dv">2</span>,</span>
+<span id="cb3-240"><a href="#cb3-240" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">"blue"</span>,</span>
+<span id="cb3-241"><a href="#cb3-241" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Distribuição F com df1 = 12 e df2 = 1"</span>,</span>
+<span id="cb3-242"><a href="#cb3-242" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"x"</span>,</span>
+<span id="cb3-243"><a href="#cb3-243" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"f(x)"</span>)</span>
+<span id="cb3-244"><a href="#cb3-244" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-245"><a href="#cb3-245" aria-hidden="true" tabindex="-1"></a><span class="in">```</span> </span>
+<span id="cb3-246"><a href="#cb3-246" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-247"><a href="#cb3-247" aria-hidden="true" tabindex="-1"></a>O código desenvolvido em R teve o intuito de demonstrar o gráfico da função F a partir de determinados graus de liberdade.</span>
+<span id="cb3-248"><a href="#cb3-248" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-249"><a href="#cb3-249" aria-hidden="true" tabindex="-1"></a>Inicialmente, foi criada uma sequência de valores no eixo horizontal por meio da função seq(). Em seguida, foi utilizada a função df() para calcular os valores da densidade da distribuição F considerando df1 = 5 e df2 = 10 (Gráfico 1) e df1 = 12 e df2 = 1 (Gráfico 2).</span>
+<span id="cb3-250"><a href="#cb3-250" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-251"><a href="#cb3-251" aria-hidden="true" tabindex="-1"></a>Por fim, utilizamos a função plot() para gerar o gráfico da distribuição, permitindo visualizar características importantes da função F, como:</span>
+<span id="cb3-252"><a href="#cb3-252" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-253"><a href="#cb3-253" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>definida apenas para valores positivos;</span>
+<span id="cb3-254"><a href="#cb3-254" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>assimetria à direita;</span>
+<span id="cb3-255"><a href="#cb3-255" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>comportamento da densidade de probabilidade.</span>
+<span id="cb3-256"><a href="#cb3-256" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-257"><a href="#cb3-257" aria-hidden="true" tabindex="-1"></a><span class="fu">##  🗪  Resultados e Discussão</span></span>
+<span id="cb3-258"><a href="#cb3-258" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-259"><a href="#cb3-259" aria-hidden="true" tabindex="-1"></a>A análise comparativa das simulações computacionais confirmou o comportamento teórico previsto para a distribuição F. Observou-se nitidamente que a curva está restrita ao quadrante positivo do plano cartesiano e exibe assimetria à direita.</span>
+<span id="cb3-260"><a href="#cb3-260" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-261"><a href="#cb3-261" aria-hidden="true" tabindex="-1"></a>Comparando o Gráfico 1 ($df_1 = 5, df_2 = 10$) com o Gráfico 2 ($df_1 = 12, df_2 = 1$), fica evidente a sensibilidade da função em relação aos graus de liberdade do denominador ($df_2$). Valores baixos de graus de liberdade concentram a densidade de probabilidade drasticamente próxima à origem, com uma cauda longa e pesada, enquanto o aumento dos parâmetros suaviza a curva em direção a um comportamento de distribuição normal.</span>
+<span id="cb3-262"><a href="#cb3-262" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-263"><a href="#cb3-263" aria-hidden="true" tabindex="-1"></a>No contexto prático da Engenharia Mecatrônica, a validação dessa estatística provou ser uma ferramenta robusta para tomada de decisões preditivas, permitindo diagnosticar falhas ocultas de precisão em instrumentação industrial antes que estas afetem a qualidade do produto final.</span>
+<span id="cb3-264"><a href="#cb3-264" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-265"><a href="#cb3-265" aria-hidden="true" tabindex="-1"></a><span class="fu">## 💡 Conclusão</span></span>
+<span id="cb3-266"><a href="#cb3-266" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-267"><a href="#cb3-267" aria-hidden="true" tabindex="-1"></a>Conclui-se que a distribuição F possui grande importância dentro da estatística, especialmente em problemas relacionados à comparação e análise de variâncias.</span>
+<span id="cb3-268"><a href="#cb3-268" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-269"><a href="#cb3-269" aria-hidden="true" tabindex="-1"></a>Ao longo deste trabalho, foi possível compreender sua construção matemática a partir da razão entre duas variáveis de distribuição qui-quadrado independentes, bem como a sua relação com populações normais independentes.</span>
+<span id="cb3-270"><a href="#cb3-270" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-271"><a href="#cb3-271" aria-hidden="true" tabindex="-1"></a>As aplicações utilizando a linguagem R permitiram compreender a distribuição F e entender suas principais características. </span>
+<span id="cb3-272"><a href="#cb3-272" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-273"><a href="#cb3-273" aria-hidden="true" tabindex="-1"></a>Dessa forma, os objetivos propostos neste trabalho foram atingidos. </span>
+<span id="cb3-274"><a href="#cb3-274" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-275"><a href="#cb3-275" aria-hidden="true" tabindex="-1"></a><span class="fu">## 📑 Referências</span></span>
+<span id="cb3-276"><a href="#cb3-276" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-277"><a href="#cb3-277" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">1</span><span class="co">]</span> MORETTIN, P. A.; BUSSAB, W. O. Estatística Básica. 9. ed. São Paulo: Saraiva, 2017.</span>
+<span id="cb3-278"><a href="#cb3-278" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-279"><a href="#cb3-279" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">2</span><span class="co">]</span> MONTGOMERY, D. C.; RUNGER, G. C. Applied Statistics and Probability for Engineers. 6. ed. Hoboken, NJ: John Wiley &amp; Sons, Inc., 2014.</span>
+<span id="cb3-280"><a href="#cb3-280" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-281"><a href="#cb3-281" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">3</span><span class="co">]</span> MAGALHÃES, M. N.; LIMA, A. C. P. Noções de Probabilidade e Estatística. 7. ed. São Paulo: EDUSP, 2015.</span>
 </code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
