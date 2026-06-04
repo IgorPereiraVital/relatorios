@@ -1,7 +1,7 @@
 ---
 # Só mude aqui!!!!
 author: "Igor e Lucas"
-title: "Relatório de Aula Prática 05 - Distribuição F"
+title: "Relatório de Aula Prática 06 - Distribuição F"
 bibliography: referencias.bib
 # A partir daqui nao faca alteracoes!!!!!
 link-citations: true
