@@ -24,3 +24,29 @@ execute:
   message: false
 ---
 
+## Introdução
+  
+Na Estatística Inferencial, o principal objetivo é entender uma população através da análise dos dados amostrais. Embora uma estimativa pontual ofereça um valor único para o parâmetro de interesse, ela não expressa a incerteza associada ao processo de amostragem.Para superar essa limitação, utilizam-se os estimadores intervalares, que fornecem intervalos de confiança capazes de conter o verdadeiro parâmetro populacional com um determinado nível de confiança.
+  
+
+## Objetivo
+
+### Objetivo Geral
+
+Compreender a construção e aplicação dos estimadores intervalares para diferentes parâmetros populacionais no contexto da Estatística Inferencial.
+
+### Objetivos Específicos
+
+- Deduzir intervalos de confiança para médias e variâncias populacionais.
+- Compreender intervalos de confiança para a comparação entre duas populações normais independentes .
+- Construir intervalos para proporções em populações Bernoulli.
+- Relacionar os resultados com a Distribuição F estudada no Relatório 6.
+- Realizar aplicações utilizando a linguagem R e o pacote Leem.
+- Apresentar aplicações dos estimadores intervalares no contexto da Engenharia Mecatrônica.
+
+## Metodologia
+
+Este trabalho foi desenvolvido por meio de estudos bibliográficos em livros, artigos científicos e materiais acadêmicos relacionados à inferência estatística e à teoria dos intervalos de confiança.
+
+Além da fundamentação teórica, foram realizados simulações computacionais utilizando a linguagem R, junto ao pacote Leem com o objetivo de ilustar a construção dos estimadores intervalares e verificar seu comportamento em diferentes situações dento da Engenharia Mecatrônica.
+
