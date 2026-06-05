@@ -23,30 +23,456 @@ execute:
   warning: false
   message: false
 ---
-
+  
 ## Introdução
-  
+    
 Na Estatística Inferencial, o principal objetivo é entender uma população através da análise dos dados amostrais. Embora uma estimativa pontual ofereça um valor único para o parâmetro de interesse, ela não expressa a incerteza associada ao processo de amostragem.Para superar essa limitação, utilizam-se os estimadores intervalares, que fornecem intervalos de confiança capazes de conter o verdadeiro parâmetro populacional com um determinado nível de confiança.
+    
   
-
 ## Objetivo
-
+  
 ### Objetivo Geral
-
+  
 Compreender a construção e aplicação dos estimadores intervalares para diferentes parâmetros populacionais no contexto da Estatística Inferencial.
-
+  
 ### Objetivos Específicos
-
+  
 - Deduzir intervalos de confiança para médias e variâncias populacionais.
 - Compreender intervalos de confiança para a comparação entre duas populações normais independentes .
 - Construir intervalos para proporções em populações Bernoulli.
 - Relacionar os resultados com a Distribuição F estudada no Relatório 6.
 - Realizar aplicações utilizando a linguagem R e o pacote Leem.
 - Apresentar aplicações dos estimadores intervalares no contexto da Engenharia Mecatrônica.
-
+    
 ## Metodologia
-
+  
 Este trabalho foi desenvolvido por meio de estudos bibliográficos em livros, artigos científicos e materiais acadêmicos relacionados à inferência estatística e à teoria dos intervalos de confiança.
+  
+Além da fundamentação teórica, foram realizadas simulações computacionais utilizando a linguagem R, junto ao pacote Leem com o objetivo de ilustrar a construção dos estimadores intervalares e verificar seu comportamento em diferentes situações dentro da Engenharia Mecatrônica.
+  
+## Fundamentação Teórica
+  
+### Intervalo de confiança para a média de uma população normal com variância conhecida
+  
+Considere uma população com distribuição Normal dada por  
+  
+$$
+X \sim N(\mu,\sigma^2)
+$$
+  
+onde a média populacional $\mu$ é desconhecida e a variância populacional $\sigma^2$ é conhecida.
+  
+Deseja-se construir um intervalo de confiança para o parâmetro $\mu$ com nível de confiança igual a $100(1-\alpha)\%$.
+  
+Seja uma amostra aleatória simples
+  
+$$
+X_1,X_2,\ldots,X_n
+$$
+retirada dessa população. A média amostral é definida por
+  
+$$
+\bar X=
+\frac{1}{n}
+\sum_{i=1}^{n}X_i.
+$$
+  
+Como a população possui distribuição Normal, a média amostral também possui distribuição Normal, dada por
+  
+$$
+\bar X \sim N\left(\mu,\frac{\sigma^2}{n}\right).
+$$
+  
+Consequentemente, 
+  
+$$
+E(\bar X)=\mu
+$$
+  
+e
+  
+$$
+Var(\bar X)=\frac{\sigma^2}{n}.
+$$
+Tomando a raiz quadrada da variância obtém-se o desvio padrão da média amostral:
+  
+$$
+DP(\bar X)=
+\sqrt{\frac{\sigma^2}{n}}
+=
+\frac{\sigma}{\sqrt n}.
+$$
+Esse valor é conhecido como o erro padrão da média e mede a variabilidade da média amostral em torno da média populacional.
+  
+Fazendo a padronização da média amostral, obtém-se
+  
+$$
+Z=
+\frac{\bar X-\mu}
+{\sigma/\sqrt n},
+$$
+  
+onde
+  
+$$
+Z\sim N(0,1).
+$$
+  
+Utilizando a distribuição Normal padrão, tem-se 
+  
+$$
+P\left(
+-z_{\alpha/2}
+\le
+Z
+\le
+z_{\alpha/2}
+\right)
+=
+1-\alpha.
+$$
+  
+Substituindo a expressão de $Z$:
+  
+$$
+P\left(
+-z_{\alpha/2}
+\le
+\frac{\bar X-\mu}
+{\sigma/\sqrt n}
+\le
+z_{\alpha/2}
+\right)
+=
+1-\alpha.
+$$
+  
+Multiplicando todos os termos por $\sigma/\sqrt n$:
+  
+$$
+P\left(
+-z_{\alpha/2}\frac{\sigma}{\sqrt n}
+\le
+\bar X-\mu
+\le
+z_{\alpha/2}\frac{\sigma}{\sqrt n}
+\right)
+=
+1-\alpha.
+$$
+    
+Isolando o parâmetro $\mu$, obtém-se
+  
+$$
+P\left(
+\bar X-z_{\alpha/2}\frac{\sigma}{\sqrt n}
+\le
+\mu
+\le
+\bar X+z_{\alpha/2}\frac{\sigma}{\sqrt n}
+\right)
+=
+1-\alpha.
+$$
+  
+Portanto, o intervalo de confiança para a média populacional é dado por
+  
+$$
+IC(\mu)=
+\left[
+\bar X-z_{\alpha/2}\frac{\sigma}{\sqrt n},
+\;
+\bar X+z_{\alpha/2}\frac{\sigma}{\sqrt n}
+\right].
+$$  
+Observe-se que a largura do intervalo depende diretamente do tamanho da amostra e da variabilidade da população. Quanto maior o tamanho amostral, menor será a margem de erro e mais de erro e mais precisa será a estimativa da média populacional.
 
-Além da fundamentação teórica, foram realizados simulações computacionais utilizando a linguagem R, junto ao pacote Leem com o objetivo de ilustar a construção dos estimadores intervalares e verificar seu comportamento em diferentes situações dento da Engenharia Mecatrônica.
+### Intervalo de confiança para a variância populacional
 
+Considere uma amostra aleatória simples
+
+$$
+X_1,X_2,\dots,X_n
+$$
+que foi retirada de uma população 
+
+$$
+X \sim N(\mu,\sigma^2),
+$$
+
+Queremos estimar intervalarmente a variância populacional $\sigma^2$.
+
+A variância amostral é definida por
+
+$$
+S^2=
+\frac{1}{n-1}
+\sum_{i=1}^{n}
+(X_i-\bar X)^2.
+$$
+
+Quando a população é normal, é importante o seguinte teorema:
+
+$$
+\frac{(n-1)S^2}{\sigma^2}
+\sim
+\chi^2_{n-1}
+$$
+no qual $\chi^2_{n-1}$ é uma variável aleatória com distribuição qui-quadrado $n-1$ graus de liberdade.
+
+Para a região central da distribuição Qui-Quadrado, com:
+
+$$
+\chi^2_{\alpha/2,n-1}
+$$
+e
+
+$$
+\chi^2_{1-\alpha/2,n-1}
+$$
+representando os quantis da distribuição qui-quadrado com $n-1$ graus de liberdade.
+
+Obtém-se:
+
+$$
+P\left(
+\chi^2_{\alpha/2,n-1}
+\le
+\frac{(n-1)S^2}{\sigma^2}
+\le
+\chi^2_{1-\alpha/2,n-1}
+\right)
+=
+1-\alpha.
+$$
+Multiplicando todos os membros por $\sigma^2$:
+
+$$
+P\left(
+\sigma^2\chi^2_{\alpha/2,n-1}
+\le
+(n-1)S^2
+\le
+\sigma^2\chi^2_{1-\alpha/2,n-1}
+\right)
+=
+1-\alpha.
+$$
+Como a distribuição Qui-Quadrado assume apenas valores não negativos, seus quantis são estritamente positivos. Portanto, ao dividir os membros das desigualdades por esses quantis para o isolar o parâmetro $\sigma^2$, o sentindo das desigualdes se manteve preservado.
+
+$$
+P\left(
+\frac{(n-1)S^2}
+{\chi^2_{1-\alpha/2,n-1}}
+\le
+\sigma^2
+\le
+\frac{(n-1)S^2}
+{\chi^2_{\alpha/2,n-1}}
+\right)
+=
+1-\alpha.
+$$
+Logo, o estimador intervalar para a variância, foi:
+
+$$
+IC(\sigma^2)
+=
+\left[
+\frac{(n-1)S^2}
+{\chi^2_{1-\alpha/2,n-1}},
+\;
+\frac{(n-1)S^2}
+{\chi^2_{\alpha/2,n-1}}
+\right].
+$$
+É possível observar que a construção desse intervalo depende diretamente da distribuição Qui-Quadrado. Além disso, quanto maior for o tamanho da amostra, menor será a amplitude do intervalo, o que colabora para uma estimativa de variância populacional mais precisa. 
+
+### Estimador Intervalar para a diferença entre médias populacionais com variâncias homocedásticas
+
+Considere:
+
+$$
+X_1,\dots,X_n \sim
+N(\mu_1,\sigma^2)
+$$
+$$
+Y_1,\dots,Y_n \sim
+N(\mu_2,\sigma^2),
+$$
+
+com amostras independentes e
+$$
+\sigma^2_1 = \sigma^2_2 = \sigma^2
+$$
+Deseja-se construir um intervalo de confiança para a diferença entre as médias populacionais
+
+$$
+\mu_1-\mu_2.
+$$
+
+As médias amostrais são dadas por
+
+$$
+\bar X
+=
+\frac{1}{n_1}
+\sum_{i=1}^{n_1}X_i
+$$
+
+e
+
+$$
+\bar Y
+=
+\frac{1}{n_2}
+\sum_{i=1}^{n_2}Y_i.
+$$
+
+Como as amostras são independentes, a diferença entre as médias amostrais possui distribuição
+
+$$
+\bar X-\bar Y
+\sim
+N
+\left(
+\mu_1-\mu_2,
+\sigma^2
+\left(
+\frac{1}{n_1}
++ 
+\frac{1}{n_2}
+\right)
+\right).
+$$
+
+Como a variância populacional é desconhecida, utiliza-se o estimador combinado da variância, denominado variância agrupada:
+$$
+S_p^2=
+\frac{
+(n_1-1)S_1^2
++
+(n_2-1)S_2^2
+}
+{n_1+n_2-2}.
+$$
+
+A estatística
+
+$$
+T=
+\frac{
+(\bar X-\bar Y)-(\mu_1-\mu_2)
+}
+{
+S_p
+\sqrt{
+\frac{1}{n_1}
++
+\frac{1}{n_2}
+}
+}
+$$
+
+segue uma distribuição t de Student com $n_1+n_2-2$ graus de liberdade.
+
+Assim,
+
+$$
+P
+\left(
+-t_{\alpha/2,n_1+n_2-2}
+\le
+T
+\le
+t_{\alpha/2,n_1+n_2-2}
+\right)
+=
+1-\alpha.
+$$
+
+Substituindo a expressão de $T$:
+
+$$
+P
+\left(
+-t_{\alpha/2,n_1+n_2-2}
+\le
+\frac{
+(\bar X-\bar Y)-(\mu_1-\mu_2)
+}
+{
+S_p
+\sqrt{
+\frac{1}{n_1}
++
+\frac{1}{n_2}
+}
+}
+\le
+t_{\alpha/2,n_1+n_2-2}
+\right)
+=
+1-\alpha.
+$$
+
+Isolando o parâmetro $\mu_1-\mu_2$, obtém-se
+
+$$
+P
+\left[
+(\bar X-\bar Y)
+-
+t_{\alpha/2,n_1+n_2-2}
+S_p
+\sqrt{
+\frac{1}{n_1}
++
+\frac{1}{n_2}
+}
+\le
+\mu_1-\mu_2
+\le
+(\bar X-\bar Y)
++
+t_{\alpha/2,n_1+n_2-2}
+S_p
+\sqrt{
+\frac{1}{n_1}
++
+\frac{1}{n_2}
+}
+\right]
+=
+1-\alpha.
+$$
+
+Portanto, o intervalo de confiança para a diferença entre as médias populacionais é dado por
+
+$$
+IC(\mu_1-\mu_2)
+=
+\left[
+(\bar X-\bar Y)
+-
+t_{\alpha/2,n_1+n_2-2}
+S_p
+\sqrt{
+\frac{1}{n_1}
++
+\frac{1}{n_2}
+},
+\;
+(\bar X-\bar Y)
++
+t_{\alpha/2,n_1+n_2-2}
+S_p
+\sqrt{
+\frac{1}{n_1}
++
+\frac{1}{n_2}
+}
+\right].
+$$
+
+Observa-se que esse intervalo é válido apenas quando as duas populações possuem variâncias iguais. Nessa situação, a utilização da variância agrupada fornece uma estimativa mais eficiente da variabilidade comum das populações.
