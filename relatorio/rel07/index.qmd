@@ -477,125 +477,223 @@ $$
 
 Observa-se que esse intervalo é válido apenas quando as duas populações possuem variâncias iguais. Nessa situação, a utilização da variância agrupada fornece uma estimativa mais eficiente da variabilidade comum das populações.
 
-## 🔗 Relação com o Assunto Estudado no Relatório 6
+## 🔗 Relação com o Relatório 6
 
-O Relatório 6 teve como cerne a Distribuição F de Snedecor, mapeando sua origem matemática como a razão balanceada de duas variáveis com distribuição Qui-Quadrado ($\chi^2$). A conexão estrutural com este novo relatório manifesta-se em três pilares fundamentais:
+Relação entre a Distribuição F de Snedecor e os Estimadores Intervalares
 
-* **A Origem dos Pivôs para Variância:**
+O Relatório 6 focou na Distribuição F de Snedecor, que é fundamental para a comparação de variâncias e para a Análise de Variância (ANOVA). A conexão estrutural entre a Distribuição F e os estimadores intervalares apresentados neste relatório manifesta-se em pontos cruciais.
 
-No Relatório 6, estabeleceu-se que $\frac{(n-1)S^2}{\sigma^2} \sim \chi^2(n-1)$. Sem essa modelagem teórica primária, torna-se impossível deduzir o intervalo de confiança para uma única variância (Item I.2).
+### A Origem dos Pivôs para Variância
 
-* **O Estimador da Razão de Variâncias:**
+A Distribuição F é definida como a razão de duas variáveis Qui-Quadrado independentes, cada uma dividida por seus respectivos graus de liberdade. A estatística
 
-A dedução do intervalo $IC\left(\frac{\sigma_1^2}{\sigma_2^2}\right)$ é o reflexo direto da propriedade demonstrada na fundamentação teórica do Relatório 6: se dividirmos duas variâncias amostrais corrigidas, a variável flutua estocasticamente sob a distribuição $F$.
+$$
+\frac{(n-1)S^2}{\sigma^2} \sim \chi^2_{(n-1)}
+$$
 
-* **Cálculo do Intervalo Exato de Bernoulli:**
+constitui o pilar para a construção do intervalo de confiança para uma única variância populacional. Sem a compreensão da distribuição Qui-Quadrado — e, por extensão, da Distribuição F, que dela deriva — a inferência sobre variâncias seria inviável.
 
-Surpreendentemente, a forma matemática rigorosa de evitar aproximações lineares para dados binários (Clopper-Pearson) repousa sobre os quantis da própria distribuição $F$, interligando probabilidades discretas a funções contínuas de razão de variâncias.
+### O Estimador da Razão de Variâncias
+
+A dedução do intervalo de confiança para a razão entre duas variâncias populacionais,
+
+$$
+IC\left(\frac{\sigma_1^2}{\sigma_2^2}\right),
+$$
+
+é uma aplicação direta da Distribuição F. Considerando duas amostras independentes provenientes de populações normais, a razão
+
+$$
+\frac{S_1^2/\sigma_1^2}{S_2^2/\sigma_2^2}
+$$
+
+segue uma distribuição F com graus de liberdade associados às duas amostras.
+
+Esse resultado permite testar a hipótese de igualdade de variâncias ou construir um intervalo de confiança para sua razão, sendo fundamental para verificar a premissa de homocedasticidade em testes *t* para comparação de médias.
+
+### Intervalos para Proporções (Método de Clopper-Pearson)
+
+Embora a aproximação Normal seja frequentemente utilizada para a construção de intervalos de confiança para proporções, ela pode apresentar desempenho inadequado em amostras pequenas ou quando a proporção observada está muito próxima de 0 ou 1.
+
+Nessas situações, métodos exatos, como o intervalo de Clopper-Pearson para proporções em populações Bernoulli, tornam-se mais apropriados. A construção desse intervalo baseia-se nos quantis da própria Distribuição F, estabelecendo uma importante conexão entre probabilidades discretas e distribuições contínuas derivadas da razão de variâncias.
+
+Esse fato evidencia a versatilidade da Distribuição F em aplicações que vão além da simples comparação de variâncias.
+
+### Análise de Variância (ANOVA)
+
+Além da estimação intervalar, a Distribuição F constitui a base teórica da Análise de Variância (ANOVA), uma das técnicas estatísticas mais utilizadas para comparar simultaneamente três ou mais médias populacionais.
+
+Em aplicações de engenharia, a ANOVA é empregada para avaliar o efeito de diferentes fatores, como tipos de material, métodos de fabricação ou configurações de processo, sobre uma variável de resposta, como resistência mecânica, produtividade ou desempenho.
+
+A estatística F utilizada na ANOVA compara a variabilidade entre os grupos com a variabilidade dentro dos grupos. Quando essa razão é suficientemente elevada, conclui-se que as diferenças observadas entre as médias dificilmente podem ser atribuídas apenas ao acaso.
+
+### Conclusão
+
+Portanto, o estudo da Distribuição F fornece a fundamentação teórica necessária não apenas para a construção de intervalos de confiança para a razão entre variâncias, mas também para diversos testes de hipóteses e procedimentos inferenciais mais sofisticados. Sua aplicação estende-se à verificação da homogeneidade de variâncias, à construção de intervalos exatos para proporções e à Análise de Variância, consolidando-a como uma ferramenta indispensável da Estatística Inferencial.
+
+
 
 ## 💻 Aplicações em R
 
-
-* **Intervalo para a Média (σ conhecido)**
 ```{R}
-library(Leem)
+set.seed(123)
 
-x <- c(98,102,105,97,100,103,99,101,104,98)
+x <- rnorm(30, mean = 100, sd = 15) # Gera uma amostra de 30 observações de uma N(100, 15^2)
 
-ic.media(x,
-         sigma = 15,
-         conf = 0.95)
-```
+mean(x) # Média amostral
+sd(x)   # Desvio padrão amostral
 
-* **Intervalo para a Variância**
-```{R}
-library(Leem)
+# Intervalo para a Média (σ conhecido)
+# Premissa: A variância populacional (sigma^2) é conhecida.
+# Utiliza a distribuição Normal Padrão (z) para os quantis.
 
-x <- c(98,102,105,97,100,103,99,101,104,98)
+media <- mean(x)
+sigma <- 15 # Desvio padrão populacional conhecido
+n <- length(x)
 
-ic.var(x,
-       conf = 0.95)
-```
+erro <- qnorm(0.975) * sigma / sqrt(n) # Margem de erro: z_{alpha/2} * (sigma / sqrt(n))
 
-* **Diferença de Médias (variâncias iguais)**
-```{R}
-library(Leem)
+IC <- c(media - erro, media + erro) # Limite Inferior e Superior do IC
 
-x <- rnorm(20,100,10)
-y <- rnorm(20,95,10)
+IC
 
-ic.medias(x,
-          y,
-          var.iguais = TRUE,
-          conf = 0.95)
-```
+# Intervalo para a Variância
+# Premissa: População Normal. Utiliza a distribuição Qui-Quadrado para os quantis.
+# Nota: O código original tinha um erro na definição de 's2' e 'n'. Assumindo 's2' como a variância amostral.
 
-* **Diferença entre médias (variâncias diferentes)**
-```{R}
-library(Leem)
+s2 <- var(x) # Variância amostral (S^2)
+n <- length(x)
 
-x <- rnorm(20,100,10)
-y <- rnorm(20,95,20)
+# Quantis da Qui-Quadrado: qchisq(probabilidade, graus_de_liberdade)
+# Para um IC de 95%, alpha = 0.05. alpha/2 = 0.025. 1-alpha/2 = 0.975.
+# O quantil inferior é qchisq(0.025, n-1) e o superior é qchisq(0.975, n-1).
+# Lembre-se que na fórmula do IC para variância, os quantis são invertidos na divisão.
 
-ic.medias(x,
-          y,
-          var.iguais = FALSE,
-          conf = 0.95)
-```
+IC.var <- c(
+  ((n-1) * s2) / qchisq(0.975, n-1), # Limite Inferior: (n-1)S^2 / chi^2_{alpha/2, n-1}
+  ((n-1) * s2) / qchisq(0.025, n-1)  # Limite Superior: (n-1)S^2 / chi^2_{1-alpha/2, n-1}
+)
 
-* **Razão entre Variâncias**
-```{R}
-library(Leem)
+IC.var
 
-x <- rnorm(20,100,10)
-y <- rnorm(20,100,15)
+# Diferença de Médias Homocedásticas
+# Premissa: Duas populações Normais independentes com variâncias iguais (homocedásticas).
+# Utiliza o teste t de Student com variâncias agrupadas.
 
-ic.var2(x,
-        y,
-        conf = 0.95)
-```
+x_homocedasticas <- rnorm(20, 100, 10) # Amostra 1
+y_homocedasticas <- rnorm(20, 95, 10)  # Amostra 2
 
-* **Proporção Bernoulli**
-```{R}
-library(Leem)
+t.test(x_homocedasticas, y_homocedasticas,
+       var.equal = TRUE, # Indica que as variâncias são assumidas como iguais
+       conf.level = 0.95) # Nível de confiança de 95%
 
-ic.prop(x = 70,
-        n = 100,
-        conf = 0.95)
+# Diferença de Médias Heterocedásticas (Teste de Welch)
+# Premissa: Duas populações Normais independentes com variâncias desiguais (heterocedásticas).
+# Utiliza o teste t de Welch, que ajusta os graus de liberdade.
+
+x_heterocedasticas <- rnorm(20, 100, 10) # Amostra 1
+y_heterocedasticas <- rnorm(20, 95, 20)  # Amostra 2 (com maior desvio padrão)
+
+t.test(x_heterocedasticas, y_heterocedasticas,
+       var.equal = FALSE, # Indica que as variâncias são assumidas como desiguais
+       conf.level = 0.95) # Nível de confiança de 95%
+
+# Razão entre Variâncias (Teste F)
+# Premissa: Duas populações Normais independentes. Utiliza a distribuição F.
+# Constrói um IC para a razão sigma_1^2 / sigma_2^2.
+
+x_variancia <- rnorm(20, 100, 10) # Amostra 1
+y_variancia <- rnorm(20, 95, 15)  # Amostra 2 (com desvio padrão diferente)
+
+s1_sq <- var(x_variancia) # Variância amostral de x
+s2_sq <- var(y_variancia) # Variância amostral de y
+
+# A estatística F é a razão das variâncias amostrais (S1^2 / S2^2)
+# Para construir o IC, precisamos da razão (S1^2/sigma1^2) / (S2^2/sigma2^2) ~ F(n1-1, n2-1)
+# O IC para sigma1^2/sigma2^2 é dado por:
+# [ (S1^2/S2^2) / F_{alpha/2, n1-1, n2-1} , (S1^2/S2^2) / F_{1-alpha/2, n1-1, n2-1} ]
+
+Fobs <- s1_sq / s2_sq # Razão das variâncias amostrais
+
+# Graus de liberdade: n1-1 = 19, n2-1 = 19
+# Quantis da F: qf(probabilidade, df1, df2)
+
+LI_F <- Fobs / qf(0.975, 19, 19) # Limite Inferior
+LS_F <- Fobs / qf(0.025, 19, 19)  # Limite Superior
+
+c(LI_F, LS_F)
+
+# Proporção Bernoulli (Intervalo de Confiança para Proporção)
+# Utiliza a função prop.test, que por padrão usa a aproximação Normal com correção de continuidade.
+# Para métodos exatos (e.g., Clopper-Pearson), seriam necessários outros pacotes ou implementações.
+
+x_bernoulli <- rbinom(100, 1, 0.7) # Gera 100 observações de uma Bernoulli(0.7)
+
+prop.test(sum(x_bernoulli), # Número de sucessos
+          length(x_bernoulli), # Número total de tentativas
+          conf.level = 0.95) # Nível de confiança de 95%
 ```
 
 ## 📑 Aplicações na Engenharia Mecatrônica
 
-A transição das deduções abstratas para o chão de fábrica e laboratórios de automação ocorre de forma direta na Engenharia Mecatrônica:
+A transição das deduções abstratas da estatística inferencial para o chão de fábrica e laboratórios de automação na Engenharia Mecatrônica ocorre de forma direta e impactante. A capacidade de quantificar a incerteza e tomar decisões baseadas em dados é crucial para o desenvolvimento e otimização de sistemas complexos.
 
-* Validação de Sensores e Calibração (IC de Variância Única e Razão de Variâncias): Na linha de montagem robótica, monitorar a variância espacial de um giroscópio ou sensor de proximidade industrial garante o controle de qualidade. Se o intervalo de confiança para a razão de variâncias de dois sensores concorrentes capturar o valor $1.0$, prova-se estatisticamente que a precisão de ambos é equivalente, otimizando custos de instrumentação.
+•
+Validação de Sensores e Calibração (IC de Variância Única e Razão de Variâncias): Em sistemas mecatrônicos, a precisão e a repetibilidade dos sensores são críticas. Monitorar a variância espacial de um giroscópio, a estabilidade de um sensor de proximidade industrial ou a consistência de um encoder rotativo é fundamental para o controle de qualidade. A construção de um intervalo de confiança para uma única variância permite avaliar se a dispersão das leituras de um sensor está dentro de limites aceitáveis. Além disso, ao comparar dois sensores concorrentes, o intervalo de confiança para a razão de variâncias é uma ferramenta poderosa. Se este intervalo capturar o valor $1.0$, isso indica estatisticamente que a precisão (variabilidade) de ambos os sensores é equivalente, permitindo otimizar custos de instrumentação sem comprometer a qualidade. Por exemplo, se um sensor mais barato tiver uma variância estatisticamente indistinguível de um mais caro, a escolha pelo mais econômico é justificada por dados.
 
-* Análise de Desempenho de Controladores (IC para Diferença de Médias): Ao sintonizar algoritmos de controle (como malhas PID tradicionais versus algoritmos preditivos avançados), engenheiros analisam o tempo de acomodação ou o erro em regime permanente. O intervalo para a diferença de médias indica se o novo algoritmo realmente diminuiu o tempo de resposta do sistema ou se a oscilação observada foi puro ruído amostral.
+•
+Análise de Desempenho de Controladores (IC para Diferença de Médias): No projeto e ajuste de algoritmos de controle (como controladores PID tradicionais versus algoritmos preditivos avançados), engenheiros frequentemente analisam métricas de desempenho como o tempo de acomodação, o erro em regime permanente ou o overshoot. Ao comparar dois algoritmos de controle, um intervalo de confiança para a diferença de médias dessas métricas é indispensável. Ele permite determinar se um novo algoritmo realmente resultou em uma melhoria estatisticamente significativa no tempo de resposta do sistema ou na redução do erro, ou se as diferenças observadas foram meramente flutuações aleatórias devido à variabilidade amostral. Por exemplo, um IC para a diferença de tempos de acomodação que não inclui zero sugere que um controlador é de fato mais rápido que o outro.
 
-* Confiabilidade de Sistemas Concorrentes e Redundantes (IC Bernoulli): Em sistemas de automação de segurança crítica (ex.: braços robóticos operando perto de humanos), atuadores trabalham em regime binário de Sucesso/Falha. O uso do intervalo exato de Bernoulli computa de forma fidedigna taxas mínimas toleráveis de falha em testes de estresse cíclicos de componentes mecatrônicos.
+•
+Confiabilidade de Sistemas Críticos e Redundantes (IC Bernoulli): Em sistemas de automação de segurança crítica, como braços robóticos operando em colaboração com humanos ou sistemas de frenagem autônomos, a confiabilidade dos componentes é paramount. Atuadores, válvulas e relés frequentemente operam em um regime binário de Sucesso/Falha. O uso de um intervalo de confiança para proporções (especialmente métodos exatos como Clopper-Pearson para pequenas amostras de falhas) permite computar de forma fidedigna as taxas mínimas toleráveis de falha em testes de estresse cíclicos de componentes mecatrônicos. Isso é vital para garantir que a probabilidade de falha de um sistema esteja abaixo de um limite de segurança predefinido, informando decisões sobre redundância e manutenção preventiva.
 
-## 🗪 Resultados e Discussão
 
-Os estimadores intervalares permitem quantificar a incerteza associada à estimação de parâmetros populacionais. Diferentemente dos estimadores pontuais, eles fornecem uma faixa de valores plausíveis para o parâmetro estudado.
+## Resultados e Discussão
 
-Observou-se que diferentes distribuições amostrais são utilizadas na construção dos intervalos:
+Os estimadores intervalares representam uma ferramenta estatística indispensável para a quantificação da incerteza associada à estimação de parâmetros populacionais. Em contraste com os estimadores pontuais, que fornecem apenas um valor único para o parâmetro de interesse, os intervalos de confiança oferecem uma faixa de valores plausíveis para o parâmetro estudado, acompanhada de um nível de confiança que expressa a confiabilidade do procedimento estatístico utilizado. Essa abordagem é fundamental para a tomada de decisões baseada em dados, pois permite incorporar explicitamente a variabilidade inerente ao processo de amostragem.
 
-- Distribuição Normal para médias com variância conhecida;
-- Distribuição t de Student para médias com variância desconhecida;
-- Distribuição Qui-Quadrado para variâncias;
-- Distribuição F para razão entre variâncias;
-- Aproximação Normal e distribuição Binomial para proporções.
+Observou-se, ao longo deste estudo, que a construção dos diferentes tipos de intervalos de confiança depende diretamente da distribuição amostral da estatística empregada. Cada parâmetro populacional exige uma modelagem específica, baseada em propriedades probabilísticas distintas. As principais distribuições utilizadas foram:
 
-As simulações em R confirmaram os resultados teóricos e demonstraram a aplicação prática dos métodos em problemas típicos de engenharia.
+### Distribuição Normal
+
+A Distribuição Normal é empregada na construção de intervalos de confiança para médias populacionais quando a variância da população é conhecida. Além disso, pode ser utilizada na estimação intervalar de proporções em amostras suficientemente grandes, graças ao Teorema Central do Limite, que garante a aproximação da distribuição amostral por uma Normal.
+
+### Distribuição *t* de Student
+
+A distribuição *t* de Student é aplicada quando a variância populacional é desconhecida, situação bastante comum em aplicações práticas. Essa distribuição também é utilizada na construção de intervalos de confiança para a diferença entre médias de duas populações independentes, tanto em situações homocedásticas quanto heterocedásticas, mediante os ajustes apropriados dos graus de liberdade.
+
+### Distribuição Qui-Quadrado
+
+A distribuição Qui-Quadrado ($\chi^2$) desempenha papel fundamental na construção de intervalos de confiança para a variância populacional. Sua importância decorre da relação existente entre a variância amostral e a soma dos quadrados dos desvios em populações normalmente distribuídas.
+
+### Distribuição F de Snedecor
+
+A distribuição F é essencial para a estimação intervalar da razão entre duas variâncias populacionais. Além disso, constitui a base teórica da Análise de Variância (ANOVA), permitindo comparar simultaneamente médias de múltiplos grupos por meio da razão entre variabilidades.
+
+### Distribuição Binomial
+
+A distribuição Binomial é utilizada na construção de intervalos de confiança para proporções populacionais. Em amostras grandes, frequentemente utiliza-se a aproximação Normal. Entretanto, em situações envolvendo amostras reduzidas ou proporções extremas, métodos exatos, como o intervalo de Clopper-Pearson, apresentam resultados mais confiáveis.
+
+As simulações realizadas utilizando a linguagem R permitiram verificar, na prática, os resultados obtidos teoricamente. A geração de amostras aleatórias e a implementação computacional dos intervalos de confiança possibilitaram observar o comportamento dos estimadores sob diferentes cenários, reforçando a compreensão dos conceitos estatísticos estudados.
+
+Além disso, as aplicações apresentadas no contexto da Engenharia Mecatrônica demonstraram a relevância desses métodos em problemas reais de engenharia. Questões relacionadas ao controle de qualidade, validação de sensores, comparação de sistemas de controle, análise de confiabilidade e monitoramento de processos industriais dependem diretamente da capacidade de estimar parâmetros populacionais com precisão e de quantificar adequadamente a incerteza associada às medições.
+
+Dessa forma, os resultados obtidos evidenciam que os estimadores intervalares constituem ferramentas fundamentais para a Estatística Inferencial, permitindo análises mais robustas e decisões mais confiáveis em aplicações científicas e tecnológicas.
 
 ## 💡 Conclusão
 
-Neste relatório foram deduzidos os principais estimadores intervalares utilizados na inferência estatística para médias, variâncias e proporções.
+Neste relatório, foram deduzidos e analisados os principais estimadores intervalares utilizados na inferência estatística para médias, variâncias e proporções. A abordagem focou na compreensão das premissas, na derivação matemática e na interpretação estatística rigorosa de cada intervalo.
 
-Foi possível verificar que a construção desses intervalos depende diretamente das distribuições amostrais estudadas em Estatística, destacando-se as distribuições Normal, t de Student, Qui-Quadrado e F.
+Foi possível verificar que a construção desses intervalos depende diretamente das distribuições amostrais fundamentais em Estatística, destacando-se as distribuições Normal, t de Student, Qui-Quadrado e F. A interconexão entre essas distribuições foi particularmente evidente na discussão sobre a Distribuição F, que se revelou uma base teórica crucial não apenas para a razão de variâncias, mas também para métodos exatos de proporções e para a ANOVA.
 
-Também foi estabelecida uma relação direta com o Relatório 6, mostrando que a distribuição F é a base teórica para a construção de intervalos de confiança para a razão entre variâncias populacionais.
+As aplicações computacionais em linguagem R permitiram visualizar e implementar os métodos estudados, enquanto os exemplos contextualizados na Engenharia Mecatrônica evidenciaram a importância prática da estatística inferencial em processos de controle de qualidade, automação industrial, instrumentação e avaliação da confiabilidade de sistemas. Dessa forma, todos os objetivos propostos foram atingidos com sucesso, fornecendo uma análise abrangente e aprofundada dos estimadores intervalares.
 
-As aplicações computacionais em linguagem R permitiram visualizar e implementar os métodos estudados, enquanto os exemplos da Engenharia Mecatrônica evidenciaram sua importância em processos de controle de qualidade, automação industrial, instrumentação e confiabilidade de sistemas.
 
-Dessa forma, todos os objetivos propostos foram atingidos com sucesso.
+
+## 📚 Referências Bibliográficas
+
+[1] BUSSAB, Wilton de O.; MORETTIN, Pedro A. Estatística Básica. 9. ed. São Paulo: Saraiva, 2017.
+
+[2] CASELLA, George; BERGER, Roger L. Inferência Estatística. 2. ed. São Paulo: Cengage Learning, 2010.
+
+[3] MONTGOMERY, Douglas C.; RUNGER, George C. Estatística Aplicada e Probabilidade para Engenheiros. 7. ed. Rio de Janeiro: LTC, 2021. 
