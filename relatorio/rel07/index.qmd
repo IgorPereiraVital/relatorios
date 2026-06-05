@@ -476,3 +476,126 @@ S_p
 $$
 
 Observa-se que esse intervalo é válido apenas quando as duas populações possuem variâncias iguais. Nessa situação, a utilização da variância agrupada fornece uma estimativa mais eficiente da variabilidade comum das populações.
+
+## 🔗 Relação com o Assunto Estudado no Relatório 6
+
+O Relatório 6 teve como cerne a Distribuição F de Snedecor, mapeando sua origem matemática como a razão balanceada de duas variáveis com distribuição Qui-Quadrado ($\chi^2$). A conexão estrutural com este novo relatório manifesta-se em três pilares fundamentais:
+
+* **A Origem dos Pivôs para Variância:**
+
+No Relatório 6, estabeleceu-se que $\frac{(n-1)S^2}{\sigma^2} \sim \chi^2(n-1)$. Sem essa modelagem teórica primária, torna-se impossível deduzir o intervalo de confiança para uma única variância (Item I.2).
+
+* **O Estimador da Razão de Variâncias:**
+
+A dedução do intervalo $IC\left(\frac{\sigma_1^2}{\sigma_2^2}\right)$ é o reflexo direto da propriedade demonstrada na fundamentação teórica do Relatório 6: se dividirmos duas variâncias amostrais corrigidas, a variável flutua estocasticamente sob a distribuição $F$.
+
+* **Cálculo do Intervalo Exato de Bernoulli:**
+
+Surpreendentemente, a forma matemática rigorosa de evitar aproximações lineares para dados binários (Clopper-Pearson) repousa sobre os quantis da própria distribuição $F$, interligando probabilidades discretas a funções contínuas de razão de variâncias.
+
+## 💻 Aplicações em R
+
+
+* **Intervalo para a Média (σ conhecido)**
+```{R}
+library(Leem)
+
+x <- c(98,102,105,97,100,103,99,101,104,98)
+
+ic.media(x,
+         sigma = 15,
+         conf = 0.95)
+```
+
+* **Intervalo para a Variância**
+```{R}
+library(Leem)
+
+x <- c(98,102,105,97,100,103,99,101,104,98)
+
+ic.var(x,
+       conf = 0.95)
+```
+
+* **Diferença de Médias (variâncias iguais)**
+```{R}
+library(Leem)
+
+x <- rnorm(20,100,10)
+y <- rnorm(20,95,10)
+
+ic.medias(x,
+          y,
+          var.iguais = TRUE,
+          conf = 0.95)
+```
+
+* **Diferença entre médias (variâncias diferentes)**
+```{R}
+library(Leem)
+
+x <- rnorm(20,100,10)
+y <- rnorm(20,95,20)
+
+ic.medias(x,
+          y,
+          var.iguais = FALSE,
+          conf = 0.95)
+```
+
+* **Razão entre Variâncias**
+```{R}
+library(Leem)
+
+x <- rnorm(20,100,10)
+y <- rnorm(20,100,15)
+
+ic.var2(x,
+        y,
+        conf = 0.95)
+```
+
+* **Proporção Bernoulli**
+```{R}
+library(Leem)
+
+ic.prop(x = 70,
+        n = 100,
+        conf = 0.95)
+```
+
+## 📑 Aplicações na Engenharia Mecatrônica
+
+A transição das deduções abstratas para o chão de fábrica e laboratórios de automação ocorre de forma direta na Engenharia Mecatrônica:
+
+* Validação de Sensores e Calibração (IC de Variância Única e Razão de Variâncias): Na linha de montagem robótica, monitorar a variância espacial de um giroscópio ou sensor de proximidade industrial garante o controle de qualidade. Se o intervalo de confiança para a razão de variâncias de dois sensores concorrentes capturar o valor $1.0$, prova-se estatisticamente que a precisão de ambos é equivalente, otimizando custos de instrumentação.
+
+* Análise de Desempenho de Controladores (IC para Diferença de Médias): Ao sintonizar algoritmos de controle (como malhas PID tradicionais versus algoritmos preditivos avançados), engenheiros analisam o tempo de acomodação ou o erro em regime permanente. O intervalo para a diferença de médias indica se o novo algoritmo realmente diminuiu o tempo de resposta do sistema ou se a oscilação observada foi puro ruído amostral.
+
+* Confiabilidade de Sistemas Concorrentes e Redundantes (IC Bernoulli): Em sistemas de automação de segurança crítica (ex.: braços robóticos operando perto de humanos), atuadores trabalham em regime binário de Sucesso/Falha. O uso do intervalo exato de Bernoulli computa de forma fidedigna taxas mínimas toleráveis de falha em testes de estresse cíclicos de componentes mecatrônicos.
+
+## 🗪 Resultados e Discussão
+
+Os estimadores intervalares permitem quantificar a incerteza associada à estimação de parâmetros populacionais. Diferentemente dos estimadores pontuais, eles fornecem uma faixa de valores plausíveis para o parâmetro estudado.
+
+Observou-se que diferentes distribuições amostrais são utilizadas na construção dos intervalos:
+
+- Distribuição Normal para médias com variância conhecida;
+- Distribuição t de Student para médias com variância desconhecida;
+- Distribuição Qui-Quadrado para variâncias;
+- Distribuição F para razão entre variâncias;
+- Aproximação Normal e distribuição Binomial para proporções.
+
+As simulações em R confirmaram os resultados teóricos e demonstraram a aplicação prática dos métodos em problemas típicos de engenharia.
+
+## 💡 Conclusão
+
+Neste relatório foram deduzidos os principais estimadores intervalares utilizados na inferência estatística para médias, variâncias e proporções.
+
+Foi possível verificar que a construção desses intervalos depende diretamente das distribuições amostrais estudadas em Estatística, destacando-se as distribuições Normal, t de Student, Qui-Quadrado e F.
+
+Também foi estabelecida uma relação direta com o Relatório 6, mostrando que a distribuição F é a base teórica para a construção de intervalos de confiança para a razão entre variâncias populacionais.
+
+As aplicações computacionais em linguagem R permitiram visualizar e implementar os métodos estudados, enquanto os exemplos da Engenharia Mecatrônica evidenciaram sua importância em processos de controle de qualidade, automação industrial, instrumentação e confiabilidade de sistemas.
+
+Dessa forma, todos os objetivos propostos foram atingidos com sucesso.
