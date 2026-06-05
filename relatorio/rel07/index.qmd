@@ -258,7 +258,7 @@ P\left(
 =
 1-\alpha.
 $$
-Como a distribuição Qui-Quadrado assume apenas valores não negativos, seus quantis são estritamente positivos. Portanto, ao dividir os membros das desigualdades por esses quantis para o isolar o parâmetro $\sigma^2$, o sentindo das desigualdes se manteve preservado.
+Como a distribuição Qui-Quadrado assume apenas valores estritamente positivos, seus quantis também são positivos. Dessa forma, ao dividir todos os termos da desigualdade por esses quantis, o sentido das desigualdades é preservado, uma vez que a divisão por números positivos não altera a ordem das desigualdades.
 
 $$
 P\left(
@@ -299,7 +299,7 @@ $$
 $$
 Y_1,\dots,Y_n \sim
 N(\mu_2,\sigma^2),
-$$
+$$ 
 
 com amostras independentes e
 $$
@@ -346,7 +346,7 @@ N
 \right).
 $$
 
-Como a variância populacional é desconhecida, utiliza-se o estimador combinado da variância, denominado variância agrupada:
+Como a variância populacional é desconhecida, utiliza-se o estimador combinado de variância, denominado variância agrupada:
 $$
 S_p^2=
 \frac{
@@ -477,11 +477,340 @@ $$
 
 Observa-se que esse intervalo é válido apenas quando as duas populações possuem variâncias iguais. Nessa situação, a utilização da variância agrupada fornece uma estimativa mais eficiente da variabilidade comum das populações.
 
+### Estimador Intervalar para a diferença entre médias populacionais com variâncias heterocedásticas
+
+Considerando 
+
+$$
+X_1,\dots,X_{n_1} \sim N(\mu_1,\sigma_1^2)
+$$
+$$
+Y_1,\dots,Y_{n_2} \sim N(\mu_2,\sigma_2^2)
+$$
+com
+
+$$
+\sigma_1^2 \neq \sigma_2^2
+$$
+Neste caso, não podemos utilizar a variância agrupada, pois as populações possuem variâncias distintas. A variância agrupada pressupõe a existência de uma única variância populacional comum às duas populações, o que não é satisfeito neste contexto.  
+
+Neste caso, utiliza-se o procedimento de Welch, que considera separadamente a variabilidade de cada população.
+
+$$
+T=
+\frac{
+(\bar X-\bar Y)-(\mu_1-\mu_2)
+}
+{
+\sqrt{
+\frac{S_1^2}{n_1}
++
+\frac{S_2^2}{n_2}
+}
+}.
+$$
+Como as variâncias populacionais são desconhecidas e não são assumidas iguais, a estatística utilizada não segue a distribuição T de Student. Para superar esse problema, é utilizado a aproximação de Welch-Satterhwaite, que fornece um número efetivo de graus de liberdade dado por
+
+$$
+\nu=
+\frac{
+\left(
+\frac{S_1^2}{n_1}
++
+\frac{S_2^2}{n_2}
+\right)^2
+}
+{
+\frac{
+\left(\frac{S_1^2}{n_1}\right)^2
+}
+{n_1-1}
++
+\frac{
+\left(\frac{S_2^2}{n_2}\right)^2
+}
+{n_2-1}
+}.
+$$
+A partir do resultado anterior, sabemos que aproximadamente:
+
+$$
+T \sim t_{\nu}
+$$
+
+onde $\nu$ é dado pela aproximação de Welch-Satterthwaite.
+
+Assim, podemos escrever a probabilidade central:
+
+$$
+P\left(
+-t_{\alpha/2,\nu}
+\le
+T
+\le
+t_{\alpha/2,\nu}
+\right)
+= 1 - \alpha.
+$$
+
+Substituindo a expressão de $T$, temos:
+
+$$
+P\left(
+-t_{\alpha/2,\nu}
+\le
+\frac{
+(\bar X - \bar Y) - (\mu_1 - \mu_2)
+}{
+\sqrt{
+\frac{S_1^2}{n_1}
++
+\frac{S_2^2}{n_2}
+}
+}
+\le
+t_{\alpha/2,\nu}
+\right)
+= 1 - \alpha.
+$$
+
+Multiplicando todos os termos pela quantidade positiva
+
+$$
+\sqrt{
+\frac{S_1^2}{n_1}
++
+\frac{S_2^2}{n_2}
+},
+$$
+
+obtemos:
+
+$$
+P\left(
+-t_{\alpha/2,\nu}
+\sqrt{
+\frac{S_1^2}{n_1}
++
+\frac{S_2^2}{n_2}
+}
+\le
+(\bar X - \bar Y) - (\mu_1 - \mu_2)
+\le
+t_{\alpha/2,\nu}
+\sqrt{
+\frac{S_1^2}{n_1}
++
+\frac{S_2^2}{n_2}
+}
+\right)
+= 1 - \alpha.
+$$
+
+Isolando o parâmetro $\mu_1 - \mu_2$, chegamos ao intervalo de confiança:
+
+$$
+IC(\mu_1 - \mu_2)
+=
+\left[
+(\bar X - \bar Y)
+-
+t_{\alpha/2,\nu}
+\sqrt{
+\frac{S_1^2}{n_1}
++
+\frac{S_2^2}{n_2}
+},
+\;
+(\bar X - \bar Y)
++
+t_{\alpha/2,\nu}
+\sqrt{
+\frac{S_1^2}{n_1}
++
+\frac{S_2^2}{n_2}
+}
+\right].
+$$
+
+Este intervalo de confiança é conhecido como intervalo de Welch e é bastante utilizado quando não se pode assumir igualdade entre as variâncias populacionais.
+
+
+### Estimador Intervalar para a razão entre variâncias populacionais 
+
+Considerando duas populações normais independentes
+
+$$
+X \sim N(\mu_1,\sigma_1^2)
+$$
+$$
+Y \sim N(\mu_2,\sigma_2^2)
+$$
+Deseja-se estimar   
+
+$$
+\frac{\sigma^2_1}{\sigma^2_2}  
+$$
+É conhecido que 
+
+$$
+\frac{(n_1-1)S_1^2}{\sigma_1^2} \sim \chi^2_{n_1-1}
+$$
+$$
+\frac{(n_2-1)S_2^2}{\sigma_2^2} \sim \chi^2_{n_2-1}
+$$
+Agora ao dividirmos duas qui-quadrados independentes, temos uma distribuição F:
+
+$$
+F =
+\frac{
+\frac{(n_1-1)S_1^2}{\sigma_1^2}
+}{
+\frac{(n_2-1)S_2^2}{\sigma_2^2}
+}
+\sim F_{(n_1-1,n_2-1)}
+$$
+Separando os termos da expressão:
+
+$$
+F =
+\frac{S_1^2}{S_2^2}
+\cdot
+\frac{\sigma_2^2}{\sigma_1^2}
+$$
+Ao isolarmos o padrão de interesse no caso os $\sigma^2$, obtemos:
+
+$$
+\frac{\sigma_1^2}{\sigma_2^2}
+=
+\frac{S_1^2}{S_2^2}
+\cdot \frac{1}{F}
+$$
+Sabendo que:
+
+$$
+F_{\alpha/2,\,n_1-1,\,n_2-1}
+\le
+F
+\le
+F_{1-\alpha/2,\,n_1-1,\,n_2-1},
+$$
+
+podemos manipular a desigualdade para obter o intervalo de confiança:
+
+$$
+IC\left(\frac{\sigma_1^2}{\sigma_2^2}\right)
+=
+\left[
+\frac{S_1^2/S_2^2}{F_{1-\alpha/2,\,n_1-1,\,n_2-1}},
+\;
+\frac{S_1^2/S_2^2}{F_{\alpha/2,\,n_1-1,\,n_2-1}}
+\right].
+$$
+A razão entre variâncias é uma medida da diferença de dispersão entre duas populações. Valores próximos de 1 indicam variabilidades semelhantes, enquanto valores significativamente maiores ou menores que 1 indicam diferença entre as dispersões populacionais.
+
+### Intervalo de confiança para uma proporção populacional
+
+Considerando uma variável aleatória:
+
+$$X_1, X_2, \dots, X_n \sim \text{Bernoulli}(p)$$
+A qual:
+
+- Cada observação vale:
+  - 1 = "sucesso"
+  - 0 = "fracasso"
+- A probabilidade de sucesso é o parâmetro deseconhecido $p$.
+
+Para estimar o valor p, o mais comum é a média das observações:
+
+$$
+\hat{p} = \frac{1}{n}\sum_{i=1}^{n} X_i
+$$
+Se for definido:
+
+$$
+X = \sum_{i=1}^{n} X_i
+$$
+então:
+
+$$
+\hat{p} = \frac{X}{n}
+$$
+O valor $\hat{p}$ representa a proporção de sucessos na amostra.
+
+Como cada $X_i$ é Bernoulli:
+
+  - $E(X_i) = p$
+  - $Var(X_i) = p(1-p)$
+
+Logo, a esperança $E(\hat{p}) = p$ o que representa que o estimador não é viesado.
+
+Já na variância, como a soma de variáveis independentes, utiliza-se a propriedade de que a variância da soma é a soma das variâncias, resultando em 
+
+$$Var(\hat{p}) = \frac{p(1-p)}{n}$$      
+Utilizando o Teorema do Limite Central, quando $n$ é grande:
+$$
+\hat{p} \approx N\left(p, \frac{p(1-p)}{n}\right)
+$$  
+Isso permite utilizar a distribuição Normal.
+
+Com essa possibilidade de se utilizar a Normal, é possível realizar a padronização transformando em uma Normal padrâo:
+
+$$
+Z = \frac{\hat{p} - p}{\sqrt{\frac{p(1-p)}{n}}}
+$$
+Então
+
+$$
+Z \sim N(0,1)
+$$
+Na região central da Normal, sabemos que:
+
+$$
+P\left(-z_{\alpha/2} \le Z \le z_{\alpha/2}\right) = 1 - \alpha
+$$
+Substituindo o valor de Z:
+
+$$
+P\left(
+-z_{\alpha/2}
+\le
+\frac{\hat{p} - p}{\sqrt{\frac{p(1-p)}{n}}}
+\le
+z_{\alpha/2}
+\right)
+= 1 - \alpha
+$$
+Agora basta multiplicar pelo denominador
+
+$$
+\sqrt{\frac{p(1-p)}{n}}
+$$
+e isolar o valor $p$. Mas, como o valor $p$ é desconhecido, substituimos pelo valor $\hat{p}$.
+
+Logo, o intervalo de confiança final aproximado será
+
+$$
+IC(p) =
+\hat{p} \pm z_{\alpha/2}
+\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}
+$$
+De forma expandida:
+
+$$
+IC(p)=
+\left[
+\hat{p} - z_{\alpha/2}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}},
+\;
+\hat{p} + z_{\alpha/2}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}
+\right]
+$$
+
 ## 🔗 Relação com o Relatório 6
 
 Relação entre a Distribuição F de Snedecor e os Estimadores Intervalares
 
-O Relatório 6 focou na Distribuição F de Snedecor, que é fundamental para a comparação de variâncias e para a Análise de Variância (ANOVA). A conexão estrutural entre a Distribuição F e os estimadores intervalares apresentados neste relatório manifesta-se em pontos cruciais.
+O Relatório 6 focou na Distribuição F de Snedecor, que é fundamental para a comparação de variâncias e para a Análise de Variância (ANOVA). A conexão estrutural entre a Distribuição F e os estimadores intervalares apresentados neste relatório manifesta-se em pontos centrais da inferência estatística, especialmente na construção de intervalos de confiança para variâncias e na comparação de dispersões populacionais.
 
 ### A Origem dos Pivôs para Variância
 
@@ -534,6 +863,21 @@ Portanto, o estudo da Distribuição F fornece a fundamentação teórica necess
 
 
 ## 💻 Aplicações em R
+
+### Explicação das funções
+
+- set.seed() → fixa a semente do gerador de números aleatórios, garantindo reprodutibilidade dos resultados.
+- rnorm() → gera uma amostra aleatória de uma distribuição Normal com média e desvio padrão definidos.
+- mean() → calcula a média aritmética da amostra, estimando a média populacional.
+- sd() → calcula o desvio padrão amostral, medindo a dispersão dos dados.
+- length() → retorna o número de elementos da amostra (tamanho da amostra).
+- qnorm() → retorna quantis da distribuição Normal padrão, usado em intervalos de confiança.
+- var() → calcula a variância amostral, estimando a variância populacional.
+- qchisq() → retorna quantis da distribuição Qui-Quadrado, usada para intervalos da variância.
+- qf() → retorna quantis da distribuição F de Snedecor, usada para razão entre variâncias.
+- t.test() → realiza teste t e constrói intervalos de confiança para médias ou diferença de médias.
+- rbinom() → gera dados de uma distribuição binomial (ou Bernoulli quando size = 1).
+- prop.test() → calcula intervalo de confiança para proporções com aproximação Normal.
 
 ```{R}
 set.seed(123)

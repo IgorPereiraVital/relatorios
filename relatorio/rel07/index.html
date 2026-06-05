@@ -124,6 +124,9 @@ window.Quarto = {
   <li><a href="#intervalo-de-confiança-para-a-média-de-uma-população-normal-com-variância-conhecida" id="toc-intervalo-de-confiança-para-a-média-de-uma-população-normal-com-variância-conhecida" class="nav-link" data-scroll-target="#intervalo-de-confiança-para-a-média-de-uma-população-normal-com-variância-conhecida"><span class="header-section-number">4.1</span> Intervalo de confiança para a média de uma população normal com variância conhecida</a></li>
   <li><a href="#intervalo-de-confiança-para-a-variância-populacional" id="toc-intervalo-de-confiança-para-a-variância-populacional" class="nav-link" data-scroll-target="#intervalo-de-confiança-para-a-variância-populacional"><span class="header-section-number">4.2</span> Intervalo de confiança para a variância populacional</a></li>
   <li><a href="#estimador-intervalar-para-a-diferença-entre-médias-populacionais-com-variâncias-homocedásticas" id="toc-estimador-intervalar-para-a-diferença-entre-médias-populacionais-com-variâncias-homocedásticas" class="nav-link" data-scroll-target="#estimador-intervalar-para-a-diferença-entre-médias-populacionais-com-variâncias-homocedásticas"><span class="header-section-number">4.3</span> Estimador Intervalar para a diferença entre médias populacionais com variâncias homocedásticas</a></li>
+  <li><a href="#estimador-intervalar-para-a-diferença-entre-médias-populacionais-com-variâncias-heterocedásticas" id="toc-estimador-intervalar-para-a-diferença-entre-médias-populacionais-com-variâncias-heterocedásticas" class="nav-link" data-scroll-target="#estimador-intervalar-para-a-diferença-entre-médias-populacionais-com-variâncias-heterocedásticas"><span class="header-section-number">4.4</span> Estimador Intervalar para a diferença entre médias populacionais com variâncias heterocedásticas</a></li>
+  <li><a href="#estimador-intervalar-para-a-razão-entre-variâncias-populacionais" id="toc-estimador-intervalar-para-a-razão-entre-variâncias-populacionais" class="nav-link" data-scroll-target="#estimador-intervalar-para-a-razão-entre-variâncias-populacionais"><span class="header-section-number">4.5</span> Estimador Intervalar para a razão entre variâncias populacionais</a></li>
+  <li><a href="#intervalo-de-confiança-para-uma-proporção-populacional" id="toc-intervalo-de-confiança-para-uma-proporção-populacional" class="nav-link" data-scroll-target="#intervalo-de-confiança-para-uma-proporção-populacional"><span class="header-section-number">4.6</span> Intervalo de confiança para uma proporção populacional</a></li>
   </ul></li>
   <li><a href="#relação-com-o-relatório-6" id="toc-relação-com-o-relatório-6" class="nav-link" data-scroll-target="#relação-com-o-relatório-6"><span class="header-section-number">5</span> 🔗 Relação com o Relatório 6</a>
   <ul class="collapse">
@@ -133,7 +136,10 @@ window.Quarto = {
   <li><a href="#análise-de-variância-anova" id="toc-análise-de-variância-anova" class="nav-link" data-scroll-target="#análise-de-variância-anova"><span class="header-section-number">5.4</span> Análise de Variância (ANOVA)</a></li>
   <li><a href="#conclusão" id="toc-conclusão" class="nav-link" data-scroll-target="#conclusão"><span class="header-section-number">5.5</span> Conclusão</a></li>
   </ul></li>
-  <li><a href="#aplicações-em-r" id="toc-aplicações-em-r" class="nav-link" data-scroll-target="#aplicações-em-r"><span class="header-section-number">6</span> 💻 Aplicações em R</a></li>
+  <li><a href="#aplicações-em-r" id="toc-aplicações-em-r" class="nav-link" data-scroll-target="#aplicações-em-r"><span class="header-section-number">6</span> 💻 Aplicações em R</a>
+  <ul class="collapse">
+  <li><a href="#explicação-das-funções" id="toc-explicação-das-funções" class="nav-link" data-scroll-target="#explicação-das-funções"><span class="header-section-number">6.1</span> Explicação das funções</a></li>
+  </ul></li>
   <li><a href="#aplicações-na-engenharia-mecatrônica" id="toc-aplicações-na-engenharia-mecatrônica" class="nav-link" data-scroll-target="#aplicações-na-engenharia-mecatrônica"><span class="header-section-number">7</span> 📑 Aplicações na Engenharia Mecatrônica</a></li>
   <li><a href="#resultados-e-discussão" id="toc-resultados-e-discussão" class="nav-link" data-scroll-target="#resultados-e-discussão"><span class="header-section-number">8</span> Resultados e Discussão</a>
   <ul class="collapse">
@@ -150,19 +156,12 @@ window.Quarto = {
 </div>
 <main class="content" id="quarto-document-content">
 <div class="logos" style="display: flex; justify-content: center; align-items: center; height: 200px; gap: 20px;">
-
   <a href="https://ufsj.edu.br">
-
     <img src="imagens/ufsj.png" width="220px">
-
   </a>
-
   <a href="https://ufsj.edu.br/defim">
-
     <img src="imagens/defim.png" width="220px">
-
   </a>
-
 </div>
 
 <header id="title-block-header" class="quarto-title-block default">
@@ -383,7 +382,7 @@ P\left(
 \right)
 =
 1-\alpha.
-\]</span> Como a distribuição Qui-Quadrado assume apenas valores não negativos, seus quantis são estritamente positivos. Portanto, ao dividir os membros das desigualdades por esses quantis para o isolar o parâmetro <span class="math inline">\(\sigma^2\)</span>, o sentindo das desigualdes se manteve preservado.</p>
+\]</span> Como a distribuição Qui-Quadrado assume apenas valores estritamente positivos, seus quantis também são positivos. Dessa forma, ao dividir todos os termos da desigualdade por esses quantis, o sentido das desigualdades é preservado, uma vez que a divisão por números positivos não altera a ordem das desigualdades.</p>
 <p><span class="math display">\[
 P\left(
 \frac{(n-1)S^2}
@@ -454,7 +453,7 @@ N
 \right)
 \right).
 \]</span></p>
-<p>Como a variância populacional é desconhecida, utiliza-se o estimador combinado da variância, denominado variância agrupada: <span class="math display">\[
+<p>Como a variância populacional é desconhecida, utiliza-se o estimador combinado de variância, denominado variância agrupada: <span class="math display">\[
 S_p^2=
 \frac{
 (n_1-1)S_1^2
@@ -572,11 +571,273 @@ S_p
 \]</span></p>
 <p>Observa-se que esse intervalo é válido apenas quando as duas populações possuem variâncias iguais. Nessa situação, a utilização da variância agrupada fornece uma estimativa mais eficiente da variabilidade comum das populações.</p>
 </section>
+<section id="estimador-intervalar-para-a-diferença-entre-médias-populacionais-com-variâncias-heterocedásticas" class="level3" data-number="4.4">
+<h3 data-number="4.4" class="anchored" data-anchor-id="estimador-intervalar-para-a-diferença-entre-médias-populacionais-com-variâncias-heterocedásticas"><span class="header-section-number">4.4</span> Estimador Intervalar para a diferença entre médias populacionais com variâncias heterocedásticas</h3>
+<p>Considerando</p>
+<p><span class="math display">\[
+X_1,\dots,X_{n_1} \sim N(\mu_1,\sigma_1^2)
+\]</span> <span class="math display">\[
+Y_1,\dots,Y_{n_2} \sim N(\mu_2,\sigma_2^2)
+\]</span> com</p>
+<p><span class="math display">\[
+\sigma_1^2 \neq \sigma_2^2
+\]</span> Neste caso, não podemos utilizar a variância agrupada, pois as populações possuem variâncias distintas. A variância agrupada pressupõe a existência de uma única variância populacional comum às duas populações, o que não é satisfeito neste contexto.</p>
+<p>Neste caso, utiliza-se o procedimento de Welch, que considera separadamente a variabilidade de cada população.</p>
+<p><span class="math display">\[
+T=
+\frac{
+(\bar X-\bar Y)-(\mu_1-\mu_2)
+}
+{
+\sqrt{
+\frac{S_1^2}{n_1}
++
+\frac{S_2^2}{n_2}
+}
+}.
+\]</span> Como as variâncias populacionais são desconhecidas e não são assumidas iguais, a estatística utilizada não segue a distribuição T de Student. Para superar esse problema, é utilizado a aproximação de Welch-Satterhwaite, que fornece um número efetivo de graus de liberdade dado por</p>
+<p><span class="math display">\[
+\nu=
+\frac{
+\left(
+\frac{S_1^2}{n_1}
++
+\frac{S_2^2}{n_2}
+\right)^2
+}
+{
+\frac{
+\left(\frac{S_1^2}{n_1}\right)^2
+}
+{n_1-1}
++
+\frac{
+\left(\frac{S_2^2}{n_2}\right)^2
+}
+{n_2-1}
+}.
+\]</span> A partir do resultado anterior, sabemos que aproximadamente:</p>
+<p><span class="math display">\[
+T \sim t_{\nu}
+\]</span></p>
+<p>onde <span class="math inline">\(\nu\)</span> é dado pela aproximação de Welch-Satterthwaite.</p>
+<p>Assim, podemos escrever a probabilidade central:</p>
+<p><span class="math display">\[
+P\left(
+-t_{\alpha/2,\nu}
+\le
+T
+\le
+t_{\alpha/2,\nu}
+\right)
+= 1 - \alpha.
+\]</span></p>
+<p>Substituindo a expressão de <span class="math inline">\(T\)</span>, temos:</p>
+<p><span class="math display">\[
+P\left(
+-t_{\alpha/2,\nu}
+\le
+\frac{
+(\bar X - \bar Y) - (\mu_1 - \mu_2)
+}{
+\sqrt{
+\frac{S_1^2}{n_1}
++
+\frac{S_2^2}{n_2}
+}
+}
+\le
+t_{\alpha/2,\nu}
+\right)
+= 1 - \alpha.
+\]</span></p>
+<p>Multiplicando todos os termos pela quantidade positiva</p>
+<p><span class="math display">\[
+\sqrt{
+\frac{S_1^2}{n_1}
++
+\frac{S_2^2}{n_2}
+},
+\]</span></p>
+<p>obtemos:</p>
+<p><span class="math display">\[
+P\left(
+-t_{\alpha/2,\nu}
+\sqrt{
+\frac{S_1^2}{n_1}
++
+\frac{S_2^2}{n_2}
+}
+\le
+(\bar X - \bar Y) - (\mu_1 - \mu_2)
+\le
+t_{\alpha/2,\nu}
+\sqrt{
+\frac{S_1^2}{n_1}
++
+\frac{S_2^2}{n_2}
+}
+\right)
+= 1 - \alpha.
+\]</span></p>
+<p>Isolando o parâmetro <span class="math inline">\(\mu_1 - \mu_2\)</span>, chegamos ao intervalo de confiança:</p>
+<p><span class="math display">\[
+IC(\mu_1 - \mu_2)
+=
+\left[
+(\bar X - \bar Y)
+-
+t_{\alpha/2,\nu}
+\sqrt{
+\frac{S_1^2}{n_1}
++
+\frac{S_2^2}{n_2}
+},
+\;
+(\bar X - \bar Y)
++
+t_{\alpha/2,\nu}
+\sqrt{
+\frac{S_1^2}{n_1}
++
+\frac{S_2^2}{n_2}
+}
+\right].
+\]</span></p>
+<p>Este intervalo de confiança é conhecido como intervalo de Welch e é bastante utilizado quando não se pode assumir igualdade entre as variâncias populacionais.</p>
+</section>
+<section id="estimador-intervalar-para-a-razão-entre-variâncias-populacionais" class="level3" data-number="4.5">
+<h3 data-number="4.5" class="anchored" data-anchor-id="estimador-intervalar-para-a-razão-entre-variâncias-populacionais"><span class="header-section-number">4.5</span> Estimador Intervalar para a razão entre variâncias populacionais</h3>
+<p>Considerando duas populações normais independentes</p>
+<p><span class="math display">\[
+X \sim N(\mu_1,\sigma_1^2)
+\]</span> <span class="math display">\[
+Y \sim N(\mu_2,\sigma_2^2)
+\]</span> Deseja-se estimar</p>
+<p><span class="math display">\[
+\frac{\sigma^2_1}{\sigma^2_2}  
+\]</span> É conhecido que</p>
+<p><span class="math display">\[
+\frac{(n_1-1)S_1^2}{\sigma_1^2} \sim \chi^2_{n_1-1}
+\]</span> <span class="math display">\[
+\frac{(n_2-1)S_2^2}{\sigma_2^2} \sim \chi^2_{n_2-1}
+\]</span> Agora ao dividirmos duas qui-quadrados independentes, temos uma distribuição F:</p>
+<p><span class="math display">\[
+F =
+\frac{
+\frac{(n_1-1)S_1^2}{\sigma_1^2}
+}{
+\frac{(n_2-1)S_2^2}{\sigma_2^2}
+}
+\sim F_{(n_1-1,n_2-1)}
+\]</span> Separando os termos da expressão:</p>
+<p><span class="math display">\[
+F =
+\frac{S_1^2}{S_2^2}
+\cdot
+\frac{\sigma_2^2}{\sigma_1^2}
+\]</span> Ao isolarmos o padrão de interesse no caso os <span class="math inline">\(\sigma^2\)</span>, obtemos:</p>
+<p><span class="math display">\[
+\frac{\sigma_1^2}{\sigma_2^2}
+=
+\frac{S_1^2}{S_2^2}
+\cdot \frac{1}{F}
+\]</span> Sabendo que:</p>
+<p><span class="math display">\[
+F_{\alpha/2,\,n_1-1,\,n_2-1}
+\le
+F
+\le
+F_{1-\alpha/2,\,n_1-1,\,n_2-1},
+\]</span></p>
+<p>podemos manipular a desigualdade para obter o intervalo de confiança:</p>
+<p><span class="math display">\[
+IC\left(\frac{\sigma_1^2}{\sigma_2^2}\right)
+=
+\left[
+\frac{S_1^2/S_2^2}{F_{1-\alpha/2,\,n_1-1,\,n_2-1}},
+\;
+\frac{S_1^2/S_2^2}{F_{\alpha/2,\,n_1-1,\,n_2-1}}
+\right].
+\]</span> A razão entre variâncias é uma medida da diferença de dispersão entre duas populações. Valores próximos de 1 indicam variabilidades semelhantes, enquanto valores significativamente maiores ou menores que 1 indicam diferença entre as dispersões populacionais.</p>
+</section>
+<section id="intervalo-de-confiança-para-uma-proporção-populacional" class="level3" data-number="4.6">
+<h3 data-number="4.6" class="anchored" data-anchor-id="intervalo-de-confiança-para-uma-proporção-populacional"><span class="header-section-number">4.6</span> Intervalo de confiança para uma proporção populacional</h3>
+<p>Considerando uma variável aleatória:</p>
+<p><span class="math display">\[X_1, X_2, \dots, X_n \sim \text{Bernoulli}(p)\]</span> A qual:</p>
+<ul>
+<li>Cada observação vale:
+<ul>
+<li>1 = “sucesso”</li>
+<li>0 = “fracasso”</li>
+</ul></li>
+<li>A probabilidade de sucesso é o parâmetro deseconhecido <span class="math inline">\(p\)</span>.</li>
+</ul>
+<p>Para estimar o valor p, o mais comum é a média das observações:</p>
+<p><span class="math display">\[
+\hat{p} = \frac{1}{n}\sum_{i=1}^{n} X_i
+\]</span> Se for definido:</p>
+<p><span class="math display">\[
+X = \sum_{i=1}^{n} X_i
+\]</span> então:</p>
+<p><span class="math display">\[
+\hat{p} = \frac{X}{n}
+\]</span> O valor <span class="math inline">\(\hat{p}\)</span> representa a proporção de sucessos na amostra.</p>
+<p>Como cada <span class="math inline">\(X_i\)</span> é Bernoulli:</p>
+<ul>
+<li><span class="math inline">\(E(X_i) = p\)</span></li>
+<li><span class="math inline">\(Var(X_i) = p(1-p)\)</span></li>
+</ul>
+<p>Logo, a esperança <span class="math inline">\(E(\hat{p}) = p\)</span> o que representa que o estimador não é viesado.</p>
+<p>Já na variância, como a soma de variáveis independentes, utiliza-se a propriedade de que a variância da soma é a soma das variâncias, resultando em</p>
+<p><span class="math display">\[Var(\hat{p}) = \frac{p(1-p)}{n}\]</span><br>
+Utilizando o Teorema do Limite Central, quando <span class="math inline">\(n\)</span> é grande: <span class="math display">\[
+\hat{p} \approx N\left(p, \frac{p(1-p)}{n}\right)
+\]</span><br>
+Isso permite utilizar a distribuição Normal.</p>
+<p>Com essa possibilidade de se utilizar a Normal, é possível realizar a padronização transformando em uma Normal padrâo:</p>
+<p><span class="math display">\[
+Z = \frac{\hat{p} - p}{\sqrt{\frac{p(1-p)}{n}}}
+\]</span> Então</p>
+<p><span class="math display">\[
+Z \sim N(0,1)
+\]</span> Na região central da Normal, sabemos que:</p>
+<p><span class="math display">\[
+P\left(-z_{\alpha/2} \le Z \le z_{\alpha/2}\right) = 1 - \alpha
+\]</span> Substituindo o valor de Z:</p>
+<p><span class="math display">\[
+P\left(
+-z_{\alpha/2}
+\le
+\frac{\hat{p} - p}{\sqrt{\frac{p(1-p)}{n}}}
+\le
+z_{\alpha/2}
+\right)
+= 1 - \alpha
+\]</span> Agora basta multiplicar pelo denominador</p>
+<p><span class="math display">\[
+\sqrt{\frac{p(1-p)}{n}}
+\]</span> e isolar o valor <span class="math inline">\(p\)</span>. Mas, como o valor <span class="math inline">\(p\)</span> é desconhecido, substituimos pelo valor <span class="math inline">\(\hat{p}\)</span>.</p>
+<p>Logo, o intervalo de confiança final aproximado será</p>
+<p><span class="math display">\[
+IC(p) =
+\hat{p} \pm z_{\alpha/2}
+\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}
+\]</span> De forma expandida:</p>
+<p><span class="math display">\[
+IC(p)=
+\left[
+\hat{p} - z_{\alpha/2}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}},
+\;
+\hat{p} + z_{\alpha/2}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}
+\right]
+\]</span></p>
+</section>
 </section>
 <section id="relação-com-o-relatório-6" class="level2" data-number="5">
 <h2 data-number="5" class="anchored" data-anchor-id="relação-com-o-relatório-6"><span class="header-section-number">5</span> 🔗 Relação com o Relatório 6</h2>
 <p>Relação entre a Distribuição F de Snedecor e os Estimadores Intervalares</p>
-<p>O Relatório 6 focou na Distribuição F de Snedecor, que é fundamental para a comparação de variâncias e para a Análise de Variância (ANOVA). A conexão estrutural entre a Distribuição F e os estimadores intervalares apresentados neste relatório manifesta-se em pontos cruciais.</p>
+<p>O Relatório 6 focou na Distribuição F de Snedecor, que é fundamental para a comparação de variâncias e para a Análise de Variância (ANOVA). A conexão estrutural entre a Distribuição F e os estimadores intervalares apresentados neste relatório manifesta-se em pontos centrais da inferência estatística, especialmente na construção de intervalos de confiança para variâncias e na comparação de dispersões populacionais.</p>
 <section id="a-origem-dos-pivôs-para-variância" class="level3" data-number="5.1">
 <h3 data-number="5.1" class="anchored" data-anchor-id="a-origem-dos-pivôs-para-variância"><span class="header-section-number">5.1</span> A Origem dos Pivôs para Variância</h3>
 <p>A Distribuição F é definida como a razão de duas variáveis Qui-Quadrado independentes, cada uma dividida por seus respectivos graus de liberdade. A estatística</p>
@@ -617,6 +878,22 @@ IC\left(\frac{\sigma_1^2}{\sigma_2^2}\right),
 </section>
 <section id="aplicações-em-r" class="level2" data-number="6">
 <h2 data-number="6" class="anchored" data-anchor-id="aplicações-em-r"><span class="header-section-number">6</span> 💻 Aplicações em R</h2>
+<section id="explicação-das-funções" class="level3" data-number="6.1">
+<h3 data-number="6.1" class="anchored" data-anchor-id="explicação-das-funções"><span class="header-section-number">6.1</span> Explicação das funções</h3>
+<ul>
+<li>set.seed() → fixa a semente do gerador de números aleatórios, garantindo reprodutibilidade dos resultados.</li>
+<li>rnorm() → gera uma amostra aleatória de uma distribuição Normal com média e desvio padrão definidos.</li>
+<li>mean() → calcula a média aritmética da amostra, estimando a média populacional.</li>
+<li>sd() → calcula o desvio padrão amostral, medindo a dispersão dos dados.</li>
+<li>length() → retorna o número de elementos da amostra (tamanho da amostra).</li>
+<li>qnorm() → retorna quantis da distribuição Normal padrão, usado em intervalos de confiança.</li>
+<li>var() → calcula a variância amostral, estimando a variância populacional.</li>
+<li>qchisq() → retorna quantis da distribuição Qui-Quadrado, usada para intervalos da variância.</li>
+<li>qf() → retorna quantis da distribuição F de Snedecor, usada para razão entre variâncias.</li>
+<li>t.test() → realiza teste t e constrói intervalos de confiança para médias ou diferença de médias.</li>
+<li>rbinom() → gera dados de uma distribuição binomial (ou Bernoulli quando size = 1).</li>
+<li>prop.test() → calcula intervalo de confiança para proporções com aproximação Normal.</li>
+</ul>
 <div class="cell">
 <details class="code-fold">
 <summary>Código</summary>
@@ -787,6 +1064,7 @@ sample estimates:
 0.69 </code></pre>
 </div>
 </div>
+</section>
 </section>
 <section id="aplicações-na-engenharia-mecatrônica" class="level2" data-number="7">
 <h2 data-number="7" class="anchored" data-anchor-id="aplicações-na-engenharia-mecatrônica"><span class="header-section-number">7</span> 📑 Aplicações na Engenharia Mecatrônica</h2>
@@ -1551,7 +1829,7 @@ sample estimates:
 <span id="cb17-258"><a href="#cb17-258" aria-hidden="true" tabindex="-1"></a>=</span>
 <span id="cb17-259"><a href="#cb17-259" aria-hidden="true" tabindex="-1"></a>1-\alpha.</span>
 <span id="cb17-260"><a href="#cb17-260" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb17-261"><a href="#cb17-261" aria-hidden="true" tabindex="-1"></a>Como a distribuição Qui-Quadrado assume apenas valores não negativos, seus quantis são estritamente positivos. Portanto, ao dividir os membros das desigualdades por esses quantis para o isolar o parâmetro $\sigma^2$, o sentindo das desigualdes se manteve preservado.</span>
+<span id="cb17-261"><a href="#cb17-261" aria-hidden="true" tabindex="-1"></a>Como a distribuição Qui-Quadrado assume apenas valores estritamente positivos, seus quantis também são positivos. Dessa forma, ao dividir todos os termos da desigualdade por esses quantis, o sentido das desigualdades é preservado, uma vez que a divisão por números positivos não altera a ordem das desigualdades.</span>
 <span id="cb17-262"><a href="#cb17-262" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-263"><a href="#cb17-263" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb17-264"><a href="#cb17-264" aria-hidden="true" tabindex="-1"></a>P\left(</span>
@@ -1592,7 +1870,7 @@ sample estimates:
 <span id="cb17-299"><a href="#cb17-299" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb17-300"><a href="#cb17-300" aria-hidden="true" tabindex="-1"></a>Y_1,\dots,Y_n \sim</span>
 <span id="cb17-301"><a href="#cb17-301" aria-hidden="true" tabindex="-1"></a>N(\mu_2,\sigma^2),</span>
-<span id="cb17-302"><a href="#cb17-302" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb17-302"><a href="#cb17-302" aria-hidden="true" tabindex="-1"></a>$$ </span>
 <span id="cb17-303"><a href="#cb17-303" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-304"><a href="#cb17-304" aria-hidden="true" tabindex="-1"></a>com amostras independentes e</span>
 <span id="cb17-305"><a href="#cb17-305" aria-hidden="true" tabindex="-1"></a>$$</span>
@@ -1639,7 +1917,7 @@ sample estimates:
 <span id="cb17-346"><a href="#cb17-346" aria-hidden="true" tabindex="-1"></a>\right).</span>
 <span id="cb17-347"><a href="#cb17-347" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb17-348"><a href="#cb17-348" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-349"><a href="#cb17-349" aria-hidden="true" tabindex="-1"></a>Como a variância populacional é desconhecida, utiliza-se o estimador combinado da variância, denominado variância agrupada:</span>
+<span id="cb17-349"><a href="#cb17-349" aria-hidden="true" tabindex="-1"></a>Como a variância populacional é desconhecida, utiliza-se o estimador combinado de variância, denominado variância agrupada:</span>
 <span id="cb17-350"><a href="#cb17-350" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb17-351"><a href="#cb17-351" aria-hidden="true" tabindex="-1"></a>S_p^2=</span>
 <span id="cb17-352"><a href="#cb17-352" aria-hidden="true" tabindex="-1"></a>\frac{</span>
@@ -1770,226 +2048,570 @@ sample estimates:
 <span id="cb17-477"><a href="#cb17-477" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-478"><a href="#cb17-478" aria-hidden="true" tabindex="-1"></a>Observa-se que esse intervalo é válido apenas quando as duas populações possuem variâncias iguais. Nessa situação, a utilização da variância agrupada fornece uma estimativa mais eficiente da variabilidade comum das populações.</span>
 <span id="cb17-479"><a href="#cb17-479" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-480"><a href="#cb17-480" aria-hidden="true" tabindex="-1"></a><span class="fu">## 🔗 Relação com o Relatório 6</span></span>
+<span id="cb17-480"><a href="#cb17-480" aria-hidden="true" tabindex="-1"></a><span class="fu">### Estimador Intervalar para a diferença entre médias populacionais com variâncias heterocedásticas</span></span>
 <span id="cb17-481"><a href="#cb17-481" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-482"><a href="#cb17-482" aria-hidden="true" tabindex="-1"></a>Relação entre a Distribuição F de Snedecor e os Estimadores Intervalares</span>
+<span id="cb17-482"><a href="#cb17-482" aria-hidden="true" tabindex="-1"></a>Considerando </span>
 <span id="cb17-483"><a href="#cb17-483" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-484"><a href="#cb17-484" aria-hidden="true" tabindex="-1"></a>O Relatório 6 focou na Distribuição F de Snedecor, que é fundamental para a comparação de variâncias e para a Análise de Variância (ANOVA). A conexão estrutural entre a Distribuição F e os estimadores intervalares apresentados neste relatório manifesta-se em pontos cruciais.</span>
-<span id="cb17-485"><a href="#cb17-485" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-486"><a href="#cb17-486" aria-hidden="true" tabindex="-1"></a><span class="fu">### A Origem dos Pivôs para Variância</span></span>
-<span id="cb17-487"><a href="#cb17-487" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-488"><a href="#cb17-488" aria-hidden="true" tabindex="-1"></a>A Distribuição F é definida como a razão de duas variáveis Qui-Quadrado independentes, cada uma dividida por seus respectivos graus de liberdade. A estatística</span>
-<span id="cb17-489"><a href="#cb17-489" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-490"><a href="#cb17-490" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb17-491"><a href="#cb17-491" aria-hidden="true" tabindex="-1"></a>\frac{(n-1)S^2}{\sigma^2} \sim \chi^2_{(n-1)}</span>
+<span id="cb17-484"><a href="#cb17-484" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb17-485"><a href="#cb17-485" aria-hidden="true" tabindex="-1"></a>X_1,\dots,X_{n_1} \sim N(\mu_1,\sigma_1^2)</span>
+<span id="cb17-486"><a href="#cb17-486" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb17-487"><a href="#cb17-487" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb17-488"><a href="#cb17-488" aria-hidden="true" tabindex="-1"></a>Y_1,\dots,Y_{n_2} \sim N(\mu_2,\sigma_2^2)</span>
+<span id="cb17-489"><a href="#cb17-489" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb17-490"><a href="#cb17-490" aria-hidden="true" tabindex="-1"></a>com</span>
+<span id="cb17-491"><a href="#cb17-491" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-492"><a href="#cb17-492" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb17-493"><a href="#cb17-493" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-494"><a href="#cb17-494" aria-hidden="true" tabindex="-1"></a>constitui o pilar para a construção do intervalo de confiança para uma única variância populacional. Sem a compreensão da distribuição Qui-Quadrado — e, por extensão, da Distribuição F, que dela deriva — a inferência sobre variâncias seria inviável.</span>
-<span id="cb17-495"><a href="#cb17-495" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-496"><a href="#cb17-496" aria-hidden="true" tabindex="-1"></a><span class="fu">### O Estimador da Razão de Variâncias</span></span>
-<span id="cb17-497"><a href="#cb17-497" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-498"><a href="#cb17-498" aria-hidden="true" tabindex="-1"></a>A dedução do intervalo de confiança para a razão entre duas variâncias populacionais,</span>
-<span id="cb17-499"><a href="#cb17-499" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-500"><a href="#cb17-500" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb17-501"><a href="#cb17-501" aria-hidden="true" tabindex="-1"></a>IC\left(\frac{\sigma_1^2}{\sigma_2^2}\right),</span>
-<span id="cb17-502"><a href="#cb17-502" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb17-503"><a href="#cb17-503" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-504"><a href="#cb17-504" aria-hidden="true" tabindex="-1"></a>é uma aplicação direta da Distribuição F. Considerando duas amostras independentes provenientes de populações normais, a razão</span>
-<span id="cb17-505"><a href="#cb17-505" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-506"><a href="#cb17-506" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb17-507"><a href="#cb17-507" aria-hidden="true" tabindex="-1"></a>\frac{S_1^2/\sigma_1^2}{S_2^2/\sigma_2^2}</span>
-<span id="cb17-508"><a href="#cb17-508" aria-hidden="true" tabindex="-1"></a>$$</span>
-<span id="cb17-509"><a href="#cb17-509" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-510"><a href="#cb17-510" aria-hidden="true" tabindex="-1"></a>segue uma distribuição F com graus de liberdade associados às duas amostras.</span>
-<span id="cb17-511"><a href="#cb17-511" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-512"><a href="#cb17-512" aria-hidden="true" tabindex="-1"></a>Esse resultado permite testar a hipótese de igualdade de variâncias ou construir um intervalo de confiança para sua razão, sendo fundamental para verificar a premissa de homocedasticidade em testes *t* para comparação de médias.</span>
+<span id="cb17-493"><a href="#cb17-493" aria-hidden="true" tabindex="-1"></a>\sigma_1^2 \neq \sigma_2^2</span>
+<span id="cb17-494"><a href="#cb17-494" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb17-495"><a href="#cb17-495" aria-hidden="true" tabindex="-1"></a>Neste caso, não podemos utilizar a variância agrupada, pois as populações possuem variâncias distintas. A variância agrupada pressupõe a existência de uma única variância populacional comum às duas populações, o que não é satisfeito neste contexto.  </span>
+<span id="cb17-496"><a href="#cb17-496" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-497"><a href="#cb17-497" aria-hidden="true" tabindex="-1"></a>Neste caso, utiliza-se o procedimento de Welch, que considera separadamente a variabilidade de cada população.</span>
+<span id="cb17-498"><a href="#cb17-498" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-499"><a href="#cb17-499" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb17-500"><a href="#cb17-500" aria-hidden="true" tabindex="-1"></a>T=</span>
+<span id="cb17-501"><a href="#cb17-501" aria-hidden="true" tabindex="-1"></a>\frac{</span>
+<span id="cb17-502"><a href="#cb17-502" aria-hidden="true" tabindex="-1"></a>(\bar X-\bar Y)-(\mu_1-\mu_2)</span>
+<span id="cb17-503"><a href="#cb17-503" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb17-504"><a href="#cb17-504" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb17-505"><a href="#cb17-505" aria-hidden="true" tabindex="-1"></a>\sqrt{</span>
+<span id="cb17-506"><a href="#cb17-506" aria-hidden="true" tabindex="-1"></a>\frac{S_1^2}{n_1}</span>
+<span id="cb17-507"><a href="#cb17-507" aria-hidden="true" tabindex="-1"></a>+</span>
+<span id="cb17-508"><a href="#cb17-508" aria-hidden="true" tabindex="-1"></a>\frac{S_2^2}{n_2}</span>
+<span id="cb17-509"><a href="#cb17-509" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb17-510"><a href="#cb17-510" aria-hidden="true" tabindex="-1"></a>}.</span>
+<span id="cb17-511"><a href="#cb17-511" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb17-512"><a href="#cb17-512" aria-hidden="true" tabindex="-1"></a>Como as variâncias populacionais são desconhecidas e não são assumidas iguais, a estatística utilizada não segue a distribuição T de Student. Para superar esse problema, é utilizado a aproximação de Welch-Satterhwaite, que fornece um número efetivo de graus de liberdade dado por</span>
 <span id="cb17-513"><a href="#cb17-513" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-514"><a href="#cb17-514" aria-hidden="true" tabindex="-1"></a><span class="fu">### Intervalos para Proporções (Método de Clopper-Pearson)</span></span>
-<span id="cb17-515"><a href="#cb17-515" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-516"><a href="#cb17-516" aria-hidden="true" tabindex="-1"></a>Embora a aproximação Normal seja frequentemente utilizada para a construção de intervalos de confiança para proporções, ela pode apresentar desempenho inadequado em amostras pequenas ou quando a proporção observada está muito próxima de 0 ou 1.</span>
-<span id="cb17-517"><a href="#cb17-517" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-518"><a href="#cb17-518" aria-hidden="true" tabindex="-1"></a>Nessas situações, métodos exatos, como o intervalo de Clopper-Pearson para proporções em populações Bernoulli, tornam-se mais apropriados. A construção desse intervalo baseia-se nos quantis da própria Distribuição F, estabelecendo uma importante conexão entre probabilidades discretas e distribuições contínuas derivadas da razão de variâncias.</span>
-<span id="cb17-519"><a href="#cb17-519" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-520"><a href="#cb17-520" aria-hidden="true" tabindex="-1"></a>Esse fato evidencia a versatilidade da Distribuição F em aplicações que vão além da simples comparação de variâncias.</span>
-<span id="cb17-521"><a href="#cb17-521" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-522"><a href="#cb17-522" aria-hidden="true" tabindex="-1"></a><span class="fu">### Análise de Variância (ANOVA)</span></span>
-<span id="cb17-523"><a href="#cb17-523" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-524"><a href="#cb17-524" aria-hidden="true" tabindex="-1"></a>Além da estimação intervalar, a Distribuição F constitui a base teórica da Análise de Variância (ANOVA), uma das técnicas estatísticas mais utilizadas para comparar simultaneamente três ou mais médias populacionais.</span>
-<span id="cb17-525"><a href="#cb17-525" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-526"><a href="#cb17-526" aria-hidden="true" tabindex="-1"></a>Em aplicações de engenharia, a ANOVA é empregada para avaliar o efeito de diferentes fatores, como tipos de material, métodos de fabricação ou configurações de processo, sobre uma variável de resposta, como resistência mecânica, produtividade ou desempenho.</span>
-<span id="cb17-527"><a href="#cb17-527" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-528"><a href="#cb17-528" aria-hidden="true" tabindex="-1"></a>A estatística F utilizada na ANOVA compara a variabilidade entre os grupos com a variabilidade dentro dos grupos. Quando essa razão é suficientemente elevada, conclui-se que as diferenças observadas entre as médias dificilmente podem ser atribuídas apenas ao acaso.</span>
-<span id="cb17-529"><a href="#cb17-529" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-530"><a href="#cb17-530" aria-hidden="true" tabindex="-1"></a><span class="fu">### Conclusão</span></span>
-<span id="cb17-531"><a href="#cb17-531" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-532"><a href="#cb17-532" aria-hidden="true" tabindex="-1"></a>Portanto, o estudo da Distribuição F fornece a fundamentação teórica necessária não apenas para a construção de intervalos de confiança para a razão entre variâncias, mas também para diversos testes de hipóteses e procedimentos inferenciais mais sofisticados. Sua aplicação estende-se à verificação da homogeneidade de variâncias, à construção de intervalos exatos para proporções e à Análise de Variância, consolidando-a como uma ferramenta indispensável da Estatística Inferencial.</span>
-<span id="cb17-533"><a href="#cb17-533" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-534"><a href="#cb17-534" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-535"><a href="#cb17-535" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-536"><a href="#cb17-536" aria-hidden="true" tabindex="-1"></a><span class="fu">## 💻 Aplicações em R</span></span>
-<span id="cb17-537"><a href="#cb17-537" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-540"><a href="#cb17-540" aria-hidden="true" tabindex="-1"></a><span class="in">```{R}</span></span>
-<span id="cb17-541"><a href="#cb17-541" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb17-514"><a href="#cb17-514" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb17-515"><a href="#cb17-515" aria-hidden="true" tabindex="-1"></a>\nu=</span>
+<span id="cb17-516"><a href="#cb17-516" aria-hidden="true" tabindex="-1"></a>\frac{</span>
+<span id="cb17-517"><a href="#cb17-517" aria-hidden="true" tabindex="-1"></a>\left(</span>
+<span id="cb17-518"><a href="#cb17-518" aria-hidden="true" tabindex="-1"></a>\frac{S_1^2}{n_1}</span>
+<span id="cb17-519"><a href="#cb17-519" aria-hidden="true" tabindex="-1"></a>+</span>
+<span id="cb17-520"><a href="#cb17-520" aria-hidden="true" tabindex="-1"></a>\frac{S_2^2}{n_2}</span>
+<span id="cb17-521"><a href="#cb17-521" aria-hidden="true" tabindex="-1"></a>\right)^2</span>
+<span id="cb17-522"><a href="#cb17-522" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb17-523"><a href="#cb17-523" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb17-524"><a href="#cb17-524" aria-hidden="true" tabindex="-1"></a>\frac{</span>
+<span id="cb17-525"><a href="#cb17-525" aria-hidden="true" tabindex="-1"></a>\left(\frac{S_1^2}{n_1}\right)^2</span>
+<span id="cb17-526"><a href="#cb17-526" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb17-527"><a href="#cb17-527" aria-hidden="true" tabindex="-1"></a>{n_1-1}</span>
+<span id="cb17-528"><a href="#cb17-528" aria-hidden="true" tabindex="-1"></a>+</span>
+<span id="cb17-529"><a href="#cb17-529" aria-hidden="true" tabindex="-1"></a>\frac{</span>
+<span id="cb17-530"><a href="#cb17-530" aria-hidden="true" tabindex="-1"></a>\left(\frac{S_2^2}{n_2}\right)^2</span>
+<span id="cb17-531"><a href="#cb17-531" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb17-532"><a href="#cb17-532" aria-hidden="true" tabindex="-1"></a>{n_2-1}</span>
+<span id="cb17-533"><a href="#cb17-533" aria-hidden="true" tabindex="-1"></a>}.</span>
+<span id="cb17-534"><a href="#cb17-534" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb17-535"><a href="#cb17-535" aria-hidden="true" tabindex="-1"></a>A partir do resultado anterior, sabemos que aproximadamente:</span>
+<span id="cb17-536"><a href="#cb17-536" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-537"><a href="#cb17-537" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb17-538"><a href="#cb17-538" aria-hidden="true" tabindex="-1"></a>T \sim t_{\nu}</span>
+<span id="cb17-539"><a href="#cb17-539" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb17-540"><a href="#cb17-540" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-541"><a href="#cb17-541" aria-hidden="true" tabindex="-1"></a>onde $\nu$ é dado pela aproximação de Welch-Satterthwaite.</span>
 <span id="cb17-542"><a href="#cb17-542" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-543"><a href="#cb17-543" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">30</span>, <span class="at">mean =</span> <span class="dv">100</span>, <span class="at">sd =</span> <span class="dv">15</span>) <span class="co"># Gera uma amostra de 30 observações de uma N(100, 15^2)</span></span>
+<span id="cb17-543"><a href="#cb17-543" aria-hidden="true" tabindex="-1"></a>Assim, podemos escrever a probabilidade central:</span>
 <span id="cb17-544"><a href="#cb17-544" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-545"><a href="#cb17-545" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x) <span class="co"># Média amostral</span></span>
-<span id="cb17-546"><a href="#cb17-546" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(x)   <span class="co"># Desvio padrão amostral</span></span>
-<span id="cb17-547"><a href="#cb17-547" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-548"><a href="#cb17-548" aria-hidden="true" tabindex="-1"></a><span class="co"># Intervalo para a Média (σ conhecido)</span></span>
-<span id="cb17-549"><a href="#cb17-549" aria-hidden="true" tabindex="-1"></a><span class="co"># Premissa: A variância populacional (sigma^2) é conhecida.</span></span>
-<span id="cb17-550"><a href="#cb17-550" aria-hidden="true" tabindex="-1"></a><span class="co"># Utiliza a distribuição Normal Padrão (z) para os quantis.</span></span>
-<span id="cb17-551"><a href="#cb17-551" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-552"><a href="#cb17-552" aria-hidden="true" tabindex="-1"></a>media <span class="ot">&lt;-</span> <span class="fu">mean</span>(x)</span>
-<span id="cb17-553"><a href="#cb17-553" aria-hidden="true" tabindex="-1"></a>sigma <span class="ot">&lt;-</span> <span class="dv">15</span> <span class="co"># Desvio padrão populacional conhecido</span></span>
-<span id="cb17-554"><a href="#cb17-554" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">length</span>(x)</span>
+<span id="cb17-545"><a href="#cb17-545" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb17-546"><a href="#cb17-546" aria-hidden="true" tabindex="-1"></a>P\left(</span>
+<span id="cb17-547"><a href="#cb17-547" aria-hidden="true" tabindex="-1"></a>-t_{\alpha/2,\nu}</span>
+<span id="cb17-548"><a href="#cb17-548" aria-hidden="true" tabindex="-1"></a>\le</span>
+<span id="cb17-549"><a href="#cb17-549" aria-hidden="true" tabindex="-1"></a>T</span>
+<span id="cb17-550"><a href="#cb17-550" aria-hidden="true" tabindex="-1"></a>\le</span>
+<span id="cb17-551"><a href="#cb17-551" aria-hidden="true" tabindex="-1"></a>t_{\alpha/2,\nu}</span>
+<span id="cb17-552"><a href="#cb17-552" aria-hidden="true" tabindex="-1"></a>\right)</span>
+<span id="cb17-553"><a href="#cb17-553" aria-hidden="true" tabindex="-1"></a>= 1 - \alpha.</span>
+<span id="cb17-554"><a href="#cb17-554" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb17-555"><a href="#cb17-555" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-556"><a href="#cb17-556" aria-hidden="true" tabindex="-1"></a>erro <span class="ot">&lt;-</span> <span class="fu">qnorm</span>(<span class="fl">0.975</span>) <span class="sc">*</span> sigma <span class="sc">/</span> <span class="fu">sqrt</span>(n) <span class="co"># Margem de erro: z_{alpha/2} * (sigma / sqrt(n))</span></span>
+<span id="cb17-556"><a href="#cb17-556" aria-hidden="true" tabindex="-1"></a>Substituindo a expressão de $T$, temos:</span>
 <span id="cb17-557"><a href="#cb17-557" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-558"><a href="#cb17-558" aria-hidden="true" tabindex="-1"></a>IC <span class="ot">&lt;-</span> <span class="fu">c</span>(media <span class="sc">-</span> erro, media <span class="sc">+</span> erro) <span class="co"># Limite Inferior e Superior do IC</span></span>
-<span id="cb17-559"><a href="#cb17-559" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-560"><a href="#cb17-560" aria-hidden="true" tabindex="-1"></a>IC</span>
-<span id="cb17-561"><a href="#cb17-561" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-562"><a href="#cb17-562" aria-hidden="true" tabindex="-1"></a><span class="co"># Intervalo para a Variância</span></span>
-<span id="cb17-563"><a href="#cb17-563" aria-hidden="true" tabindex="-1"></a><span class="co"># Premissa: População Normal. Utiliza a distribuição Qui-Quadrado para os quantis.</span></span>
-<span id="cb17-564"><a href="#cb17-564" aria-hidden="true" tabindex="-1"></a><span class="co"># Nota: O código original tinha um erro na definição de 's2' e 'n'. Assumindo 's2' como a variância amostral.</span></span>
-<span id="cb17-565"><a href="#cb17-565" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-566"><a href="#cb17-566" aria-hidden="true" tabindex="-1"></a>s2 <span class="ot">&lt;-</span> <span class="fu">var</span>(x) <span class="co"># Variância amostral (S^2)</span></span>
-<span id="cb17-567"><a href="#cb17-567" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">length</span>(x)</span>
-<span id="cb17-568"><a href="#cb17-568" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-569"><a href="#cb17-569" aria-hidden="true" tabindex="-1"></a><span class="co"># Quantis da Qui-Quadrado: qchisq(probabilidade, graus_de_liberdade)</span></span>
-<span id="cb17-570"><a href="#cb17-570" aria-hidden="true" tabindex="-1"></a><span class="co"># Para um IC de 95%, alpha = 0.05. alpha/2 = 0.025. 1-alpha/2 = 0.975.</span></span>
-<span id="cb17-571"><a href="#cb17-571" aria-hidden="true" tabindex="-1"></a><span class="co"># O quantil inferior é qchisq(0.025, n-1) e o superior é qchisq(0.975, n-1).</span></span>
-<span id="cb17-572"><a href="#cb17-572" aria-hidden="true" tabindex="-1"></a><span class="co"># Lembre-se que na fórmula do IC para variância, os quantis são invertidos na divisão.</span></span>
-<span id="cb17-573"><a href="#cb17-573" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-574"><a href="#cb17-574" aria-hidden="true" tabindex="-1"></a>IC.var <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb17-575"><a href="#cb17-575" aria-hidden="true" tabindex="-1"></a>  ((n<span class="dv">-1</span>) <span class="sc">*</span> s2) <span class="sc">/</span> <span class="fu">qchisq</span>(<span class="fl">0.975</span>, n<span class="dv">-1</span>), <span class="co"># Limite Inferior: (n-1)S^2 / chi^2_{alpha/2, n-1}</span></span>
-<span id="cb17-576"><a href="#cb17-576" aria-hidden="true" tabindex="-1"></a>  ((n<span class="dv">-1</span>) <span class="sc">*</span> s2) <span class="sc">/</span> <span class="fu">qchisq</span>(<span class="fl">0.025</span>, n<span class="dv">-1</span>)  <span class="co"># Limite Superior: (n-1)S^2 / chi^2_{1-alpha/2, n-1}</span></span>
-<span id="cb17-577"><a href="#cb17-577" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb17-558"><a href="#cb17-558" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb17-559"><a href="#cb17-559" aria-hidden="true" tabindex="-1"></a>P\left(</span>
+<span id="cb17-560"><a href="#cb17-560" aria-hidden="true" tabindex="-1"></a>-t_{\alpha/2,\nu}</span>
+<span id="cb17-561"><a href="#cb17-561" aria-hidden="true" tabindex="-1"></a>\le</span>
+<span id="cb17-562"><a href="#cb17-562" aria-hidden="true" tabindex="-1"></a>\frac{</span>
+<span id="cb17-563"><a href="#cb17-563" aria-hidden="true" tabindex="-1"></a>(\bar X - \bar Y) - (\mu_1 - \mu_2)</span>
+<span id="cb17-564"><a href="#cb17-564" aria-hidden="true" tabindex="-1"></a>}{</span>
+<span id="cb17-565"><a href="#cb17-565" aria-hidden="true" tabindex="-1"></a>\sqrt{</span>
+<span id="cb17-566"><a href="#cb17-566" aria-hidden="true" tabindex="-1"></a>\frac{S_1^2}{n_1}</span>
+<span id="cb17-567"><a href="#cb17-567" aria-hidden="true" tabindex="-1"></a>+</span>
+<span id="cb17-568"><a href="#cb17-568" aria-hidden="true" tabindex="-1"></a>\frac{S_2^2}{n_2}</span>
+<span id="cb17-569"><a href="#cb17-569" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb17-570"><a href="#cb17-570" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb17-571"><a href="#cb17-571" aria-hidden="true" tabindex="-1"></a>\le</span>
+<span id="cb17-572"><a href="#cb17-572" aria-hidden="true" tabindex="-1"></a>t_{\alpha/2,\nu}</span>
+<span id="cb17-573"><a href="#cb17-573" aria-hidden="true" tabindex="-1"></a>\right)</span>
+<span id="cb17-574"><a href="#cb17-574" aria-hidden="true" tabindex="-1"></a>= 1 - \alpha.</span>
+<span id="cb17-575"><a href="#cb17-575" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb17-576"><a href="#cb17-576" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-577"><a href="#cb17-577" aria-hidden="true" tabindex="-1"></a>Multiplicando todos os termos pela quantidade positiva</span>
 <span id="cb17-578"><a href="#cb17-578" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-579"><a href="#cb17-579" aria-hidden="true" tabindex="-1"></a>IC.var</span>
-<span id="cb17-580"><a href="#cb17-580" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-581"><a href="#cb17-581" aria-hidden="true" tabindex="-1"></a><span class="co"># Diferença de Médias Homocedásticas</span></span>
-<span id="cb17-582"><a href="#cb17-582" aria-hidden="true" tabindex="-1"></a><span class="co"># Premissa: Duas populações Normais independentes com variâncias iguais (homocedásticas).</span></span>
-<span id="cb17-583"><a href="#cb17-583" aria-hidden="true" tabindex="-1"></a><span class="co"># Utiliza o teste t de Student com variâncias agrupadas.</span></span>
-<span id="cb17-584"><a href="#cb17-584" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-585"><a href="#cb17-585" aria-hidden="true" tabindex="-1"></a>x_homocedasticas <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="dv">100</span>, <span class="dv">10</span>) <span class="co"># Amostra 1</span></span>
-<span id="cb17-586"><a href="#cb17-586" aria-hidden="true" tabindex="-1"></a>y_homocedasticas <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="dv">95</span>, <span class="dv">10</span>)  <span class="co"># Amostra 2</span></span>
-<span id="cb17-587"><a href="#cb17-587" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-588"><a href="#cb17-588" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(x_homocedasticas, y_homocedasticas,</span>
-<span id="cb17-589"><a href="#cb17-589" aria-hidden="true" tabindex="-1"></a>       <span class="at">var.equal =</span> <span class="cn">TRUE</span>, <span class="co"># Indica que as variâncias são assumidas como iguais</span></span>
-<span id="cb17-590"><a href="#cb17-590" aria-hidden="true" tabindex="-1"></a>       <span class="at">conf.level =</span> <span class="fl">0.95</span>) <span class="co"># Nível de confiança de 95%</span></span>
-<span id="cb17-591"><a href="#cb17-591" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-592"><a href="#cb17-592" aria-hidden="true" tabindex="-1"></a><span class="co"># Diferença de Médias Heterocedásticas (Teste de Welch)</span></span>
-<span id="cb17-593"><a href="#cb17-593" aria-hidden="true" tabindex="-1"></a><span class="co"># Premissa: Duas populações Normais independentes com variâncias desiguais (heterocedásticas).</span></span>
-<span id="cb17-594"><a href="#cb17-594" aria-hidden="true" tabindex="-1"></a><span class="co"># Utiliza o teste t de Welch, que ajusta os graus de liberdade.</span></span>
-<span id="cb17-595"><a href="#cb17-595" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-596"><a href="#cb17-596" aria-hidden="true" tabindex="-1"></a>x_heterocedasticas <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="dv">100</span>, <span class="dv">10</span>) <span class="co"># Amostra 1</span></span>
-<span id="cb17-597"><a href="#cb17-597" aria-hidden="true" tabindex="-1"></a>y_heterocedasticas <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="dv">95</span>, <span class="dv">20</span>)  <span class="co"># Amostra 2 (com maior desvio padrão)</span></span>
-<span id="cb17-598"><a href="#cb17-598" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-599"><a href="#cb17-599" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(x_heterocedasticas, y_heterocedasticas,</span>
-<span id="cb17-600"><a href="#cb17-600" aria-hidden="true" tabindex="-1"></a>       <span class="at">var.equal =</span> <span class="cn">FALSE</span>, <span class="co"># Indica que as variâncias são assumidas como desiguais</span></span>
-<span id="cb17-601"><a href="#cb17-601" aria-hidden="true" tabindex="-1"></a>       <span class="at">conf.level =</span> <span class="fl">0.95</span>) <span class="co"># Nível de confiança de 95%</span></span>
-<span id="cb17-602"><a href="#cb17-602" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-603"><a href="#cb17-603" aria-hidden="true" tabindex="-1"></a><span class="co"># Razão entre Variâncias (Teste F)</span></span>
-<span id="cb17-604"><a href="#cb17-604" aria-hidden="true" tabindex="-1"></a><span class="co"># Premissa: Duas populações Normais independentes. Utiliza a distribuição F.</span></span>
-<span id="cb17-605"><a href="#cb17-605" aria-hidden="true" tabindex="-1"></a><span class="co"># Constrói um IC para a razão sigma_1^2 / sigma_2^2.</span></span>
-<span id="cb17-606"><a href="#cb17-606" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-607"><a href="#cb17-607" aria-hidden="true" tabindex="-1"></a>x_variancia <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="dv">100</span>, <span class="dv">10</span>) <span class="co"># Amostra 1</span></span>
-<span id="cb17-608"><a href="#cb17-608" aria-hidden="true" tabindex="-1"></a>y_variancia <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="dv">95</span>, <span class="dv">15</span>)  <span class="co"># Amostra 2 (com desvio padrão diferente)</span></span>
+<span id="cb17-579"><a href="#cb17-579" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb17-580"><a href="#cb17-580" aria-hidden="true" tabindex="-1"></a>\sqrt{</span>
+<span id="cb17-581"><a href="#cb17-581" aria-hidden="true" tabindex="-1"></a>\frac{S_1^2}{n_1}</span>
+<span id="cb17-582"><a href="#cb17-582" aria-hidden="true" tabindex="-1"></a>+</span>
+<span id="cb17-583"><a href="#cb17-583" aria-hidden="true" tabindex="-1"></a>\frac{S_2^2}{n_2}</span>
+<span id="cb17-584"><a href="#cb17-584" aria-hidden="true" tabindex="-1"></a>},</span>
+<span id="cb17-585"><a href="#cb17-585" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb17-586"><a href="#cb17-586" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-587"><a href="#cb17-587" aria-hidden="true" tabindex="-1"></a>obtemos:</span>
+<span id="cb17-588"><a href="#cb17-588" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-589"><a href="#cb17-589" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb17-590"><a href="#cb17-590" aria-hidden="true" tabindex="-1"></a>P\left(</span>
+<span id="cb17-591"><a href="#cb17-591" aria-hidden="true" tabindex="-1"></a>-t_{\alpha/2,\nu}</span>
+<span id="cb17-592"><a href="#cb17-592" aria-hidden="true" tabindex="-1"></a>\sqrt{</span>
+<span id="cb17-593"><a href="#cb17-593" aria-hidden="true" tabindex="-1"></a>\frac{S_1^2}{n_1}</span>
+<span id="cb17-594"><a href="#cb17-594" aria-hidden="true" tabindex="-1"></a>+</span>
+<span id="cb17-595"><a href="#cb17-595" aria-hidden="true" tabindex="-1"></a>\frac{S_2^2}{n_2}</span>
+<span id="cb17-596"><a href="#cb17-596" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb17-597"><a href="#cb17-597" aria-hidden="true" tabindex="-1"></a>\le</span>
+<span id="cb17-598"><a href="#cb17-598" aria-hidden="true" tabindex="-1"></a>(\bar X - \bar Y) - (\mu_1 - \mu_2)</span>
+<span id="cb17-599"><a href="#cb17-599" aria-hidden="true" tabindex="-1"></a>\le</span>
+<span id="cb17-600"><a href="#cb17-600" aria-hidden="true" tabindex="-1"></a>t_{\alpha/2,\nu}</span>
+<span id="cb17-601"><a href="#cb17-601" aria-hidden="true" tabindex="-1"></a>\sqrt{</span>
+<span id="cb17-602"><a href="#cb17-602" aria-hidden="true" tabindex="-1"></a>\frac{S_1^2}{n_1}</span>
+<span id="cb17-603"><a href="#cb17-603" aria-hidden="true" tabindex="-1"></a>+</span>
+<span id="cb17-604"><a href="#cb17-604" aria-hidden="true" tabindex="-1"></a>\frac{S_2^2}{n_2}</span>
+<span id="cb17-605"><a href="#cb17-605" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb17-606"><a href="#cb17-606" aria-hidden="true" tabindex="-1"></a>\right)</span>
+<span id="cb17-607"><a href="#cb17-607" aria-hidden="true" tabindex="-1"></a>= 1 - \alpha.</span>
+<span id="cb17-608"><a href="#cb17-608" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb17-609"><a href="#cb17-609" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-610"><a href="#cb17-610" aria-hidden="true" tabindex="-1"></a>s1_sq <span class="ot">&lt;-</span> <span class="fu">var</span>(x_variancia) <span class="co"># Variância amostral de x</span></span>
-<span id="cb17-611"><a href="#cb17-611" aria-hidden="true" tabindex="-1"></a>s2_sq <span class="ot">&lt;-</span> <span class="fu">var</span>(y_variancia) <span class="co"># Variância amostral de y</span></span>
-<span id="cb17-612"><a href="#cb17-612" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-613"><a href="#cb17-613" aria-hidden="true" tabindex="-1"></a><span class="co"># A estatística F é a razão das variâncias amostrais (S1^2 / S2^2)</span></span>
-<span id="cb17-614"><a href="#cb17-614" aria-hidden="true" tabindex="-1"></a><span class="co"># Para construir o IC, precisamos da razão (S1^2/sigma1^2) / (S2^2/sigma2^2) ~ F(n1-1, n2-1)</span></span>
-<span id="cb17-615"><a href="#cb17-615" aria-hidden="true" tabindex="-1"></a><span class="co"># O IC para sigma1^2/sigma2^2 é dado por:</span></span>
-<span id="cb17-616"><a href="#cb17-616" aria-hidden="true" tabindex="-1"></a><span class="co"># [ (S1^2/S2^2) / F_{alpha/2, n1-1, n2-1} , (S1^2/S2^2) / F_{1-alpha/2, n1-1, n2-1} ]</span></span>
-<span id="cb17-617"><a href="#cb17-617" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-618"><a href="#cb17-618" aria-hidden="true" tabindex="-1"></a>Fobs <span class="ot">&lt;-</span> s1_sq <span class="sc">/</span> s2_sq <span class="co"># Razão das variâncias amostrais</span></span>
-<span id="cb17-619"><a href="#cb17-619" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-620"><a href="#cb17-620" aria-hidden="true" tabindex="-1"></a><span class="co"># Graus de liberdade: n1-1 = 19, n2-1 = 19</span></span>
-<span id="cb17-621"><a href="#cb17-621" aria-hidden="true" tabindex="-1"></a><span class="co"># Quantis da F: qf(probabilidade, df1, df2)</span></span>
-<span id="cb17-622"><a href="#cb17-622" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-623"><a href="#cb17-623" aria-hidden="true" tabindex="-1"></a>LI_F <span class="ot">&lt;-</span> Fobs <span class="sc">/</span> <span class="fu">qf</span>(<span class="fl">0.975</span>, <span class="dv">19</span>, <span class="dv">19</span>) <span class="co"># Limite Inferior</span></span>
-<span id="cb17-624"><a href="#cb17-624" aria-hidden="true" tabindex="-1"></a>LS_F <span class="ot">&lt;-</span> Fobs <span class="sc">/</span> <span class="fu">qf</span>(<span class="fl">0.025</span>, <span class="dv">19</span>, <span class="dv">19</span>)  <span class="co"># Limite Superior</span></span>
-<span id="cb17-625"><a href="#cb17-625" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-626"><a href="#cb17-626" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(LI_F, LS_F)</span>
-<span id="cb17-627"><a href="#cb17-627" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-628"><a href="#cb17-628" aria-hidden="true" tabindex="-1"></a><span class="co"># Proporção Bernoulli (Intervalo de Confiança para Proporção)</span></span>
-<span id="cb17-629"><a href="#cb17-629" aria-hidden="true" tabindex="-1"></a><span class="co"># Utiliza a função prop.test, que por padrão usa a aproximação Normal com correção de continuidade.</span></span>
-<span id="cb17-630"><a href="#cb17-630" aria-hidden="true" tabindex="-1"></a><span class="co"># Para métodos exatos (e.g., Clopper-Pearson), seriam necessários outros pacotes ou implementações.</span></span>
-<span id="cb17-631"><a href="#cb17-631" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-632"><a href="#cb17-632" aria-hidden="true" tabindex="-1"></a>x_bernoulli <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">100</span>, <span class="dv">1</span>, <span class="fl">0.7</span>) <span class="co"># Gera 100 observações de uma Bernoulli(0.7)</span></span>
-<span id="cb17-633"><a href="#cb17-633" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-634"><a href="#cb17-634" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.test</span>(<span class="fu">sum</span>(x_bernoulli), <span class="co"># Número de sucessos</span></span>
-<span id="cb17-635"><a href="#cb17-635" aria-hidden="true" tabindex="-1"></a>          <span class="fu">length</span>(x_bernoulli), <span class="co"># Número total de tentativas</span></span>
-<span id="cb17-636"><a href="#cb17-636" aria-hidden="true" tabindex="-1"></a>          <span class="at">conf.level =</span> <span class="fl">0.95</span>) <span class="co"># Nível de confiança de 95%</span></span>
-<span id="cb17-637"><a href="#cb17-637" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb17-610"><a href="#cb17-610" aria-hidden="true" tabindex="-1"></a>Isolando o parâmetro $\mu_1 - \mu_2$, chegamos ao intervalo de confiança:</span>
+<span id="cb17-611"><a href="#cb17-611" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-612"><a href="#cb17-612" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb17-613"><a href="#cb17-613" aria-hidden="true" tabindex="-1"></a>IC(\mu_1 - \mu_2)</span>
+<span id="cb17-614"><a href="#cb17-614" aria-hidden="true" tabindex="-1"></a>=</span>
+<span id="cb17-615"><a href="#cb17-615" aria-hidden="true" tabindex="-1"></a>\left[</span>
+<span id="cb17-616"><a href="#cb17-616" aria-hidden="true" tabindex="-1"></a>(\bar X - \bar Y)</span>
+<span id="cb17-617"><a href="#cb17-617" aria-hidden="true" tabindex="-1"></a>-</span>
+<span id="cb17-618"><a href="#cb17-618" aria-hidden="true" tabindex="-1"></a>t_{\alpha/2,\nu}</span>
+<span id="cb17-619"><a href="#cb17-619" aria-hidden="true" tabindex="-1"></a>\sqrt{</span>
+<span id="cb17-620"><a href="#cb17-620" aria-hidden="true" tabindex="-1"></a>\frac{S_1^2}{n_1}</span>
+<span id="cb17-621"><a href="#cb17-621" aria-hidden="true" tabindex="-1"></a>+</span>
+<span id="cb17-622"><a href="#cb17-622" aria-hidden="true" tabindex="-1"></a>\frac{S_2^2}{n_2}</span>
+<span id="cb17-623"><a href="#cb17-623" aria-hidden="true" tabindex="-1"></a>},</span>
+<span id="cb17-624"><a href="#cb17-624" aria-hidden="true" tabindex="-1"></a>\;</span>
+<span id="cb17-625"><a href="#cb17-625" aria-hidden="true" tabindex="-1"></a>(\bar X - \bar Y)</span>
+<span id="cb17-626"><a href="#cb17-626" aria-hidden="true" tabindex="-1"></a>+</span>
+<span id="cb17-627"><a href="#cb17-627" aria-hidden="true" tabindex="-1"></a>t_{\alpha/2,\nu}</span>
+<span id="cb17-628"><a href="#cb17-628" aria-hidden="true" tabindex="-1"></a>\sqrt{</span>
+<span id="cb17-629"><a href="#cb17-629" aria-hidden="true" tabindex="-1"></a>\frac{S_1^2}{n_1}</span>
+<span id="cb17-630"><a href="#cb17-630" aria-hidden="true" tabindex="-1"></a>+</span>
+<span id="cb17-631"><a href="#cb17-631" aria-hidden="true" tabindex="-1"></a>\frac{S_2^2}{n_2}</span>
+<span id="cb17-632"><a href="#cb17-632" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb17-633"><a href="#cb17-633" aria-hidden="true" tabindex="-1"></a>\right].</span>
+<span id="cb17-634"><a href="#cb17-634" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb17-635"><a href="#cb17-635" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-636"><a href="#cb17-636" aria-hidden="true" tabindex="-1"></a>Este intervalo de confiança é conhecido como intervalo de Welch e é bastante utilizado quando não se pode assumir igualdade entre as variâncias populacionais.</span>
+<span id="cb17-637"><a href="#cb17-637" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-638"><a href="#cb17-638" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-639"><a href="#cb17-639" aria-hidden="true" tabindex="-1"></a><span class="fu">## 📑 Aplicações na Engenharia Mecatrônica</span></span>
+<span id="cb17-639"><a href="#cb17-639" aria-hidden="true" tabindex="-1"></a><span class="fu">### Estimador Intervalar para a razão entre variâncias populacionais </span></span>
 <span id="cb17-640"><a href="#cb17-640" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-641"><a href="#cb17-641" aria-hidden="true" tabindex="-1"></a>A transição das deduções abstratas da estatística inferencial para o chão de fábrica e laboratórios de automação na Engenharia Mecatrônica ocorre de forma direta e impactante. A capacidade de quantificar a incerteza e tomar decisões baseadas em dados é crucial para o desenvolvimento e otimização de sistemas complexos.</span>
+<span id="cb17-641"><a href="#cb17-641" aria-hidden="true" tabindex="-1"></a>Considerando duas populações normais independentes</span>
 <span id="cb17-642"><a href="#cb17-642" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-643"><a href="#cb17-643" aria-hidden="true" tabindex="-1"></a>•</span>
-<span id="cb17-644"><a href="#cb17-644" aria-hidden="true" tabindex="-1"></a>Validação de Sensores e Calibração (IC de Variância Única e Razão de Variâncias): Em sistemas mecatrônicos, a precisão e a repetibilidade dos sensores são críticas. Monitorar a variância espacial de um giroscópio, a estabilidade de um sensor de proximidade industrial ou a consistência de um encoder rotativo é fundamental para o controle de qualidade. A construção de um intervalo de confiança para uma única variância permite avaliar se a dispersão das leituras de um sensor está dentro de limites aceitáveis. Além disso, ao comparar dois sensores concorrentes, o intervalo de confiança para a razão de variâncias é uma ferramenta poderosa. Se este intervalo capturar o valor $1.0$, isso indica estatisticamente que a precisão (variabilidade) de ambos os sensores é equivalente, permitindo otimizar custos de instrumentação sem comprometer a qualidade. Por exemplo, se um sensor mais barato tiver uma variância estatisticamente indistinguível de um mais caro, a escolha pelo mais econômico é justificada por dados.</span>
-<span id="cb17-645"><a href="#cb17-645" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-646"><a href="#cb17-646" aria-hidden="true" tabindex="-1"></a>•</span>
-<span id="cb17-647"><a href="#cb17-647" aria-hidden="true" tabindex="-1"></a>Análise de Desempenho de Controladores (IC para Diferença de Médias): No projeto e ajuste de algoritmos de controle (como controladores PID tradicionais versus algoritmos preditivos avançados), engenheiros frequentemente analisam métricas de desempenho como o tempo de acomodação, o erro em regime permanente ou o overshoot. Ao comparar dois algoritmos de controle, um intervalo de confiança para a diferença de médias dessas métricas é indispensável. Ele permite determinar se um novo algoritmo realmente resultou em uma melhoria estatisticamente significativa no tempo de resposta do sistema ou na redução do erro, ou se as diferenças observadas foram meramente flutuações aleatórias devido à variabilidade amostral. Por exemplo, um IC para a diferença de tempos de acomodação que não inclui zero sugere que um controlador é de fato mais rápido que o outro.</span>
-<span id="cb17-648"><a href="#cb17-648" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-649"><a href="#cb17-649" aria-hidden="true" tabindex="-1"></a>•</span>
-<span id="cb17-650"><a href="#cb17-650" aria-hidden="true" tabindex="-1"></a>Confiabilidade de Sistemas Críticos e Redundantes (IC Bernoulli): Em sistemas de automação de segurança crítica, como braços robóticos operando em colaboração com humanos ou sistemas de frenagem autônomos, a confiabilidade dos componentes é paramount. Atuadores, válvulas e relés frequentemente operam em um regime binário de Sucesso/Falha. O uso de um intervalo de confiança para proporções (especialmente métodos exatos como Clopper-Pearson para pequenas amostras de falhas) permite computar de forma fidedigna as taxas mínimas toleráveis de falha em testes de estresse cíclicos de componentes mecatrônicos. Isso é vital para garantir que a probabilidade de falha de um sistema esteja abaixo de um limite de segurança predefinido, informando decisões sobre redundância e manutenção preventiva.</span>
-<span id="cb17-651"><a href="#cb17-651" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-652"><a href="#cb17-652" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-653"><a href="#cb17-653" aria-hidden="true" tabindex="-1"></a><span class="fu">## Resultados e Discussão</span></span>
-<span id="cb17-654"><a href="#cb17-654" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-655"><a href="#cb17-655" aria-hidden="true" tabindex="-1"></a>Os estimadores intervalares representam uma ferramenta estatística indispensável para a quantificação da incerteza associada à estimação de parâmetros populacionais. Em contraste com os estimadores pontuais, que fornecem apenas um valor único para o parâmetro de interesse, os intervalos de confiança oferecem uma faixa de valores plausíveis para o parâmetro estudado, acompanhada de um nível de confiança que expressa a confiabilidade do procedimento estatístico utilizado. Essa abordagem é fundamental para a tomada de decisões baseada em dados, pois permite incorporar explicitamente a variabilidade inerente ao processo de amostragem.</span>
-<span id="cb17-656"><a href="#cb17-656" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-657"><a href="#cb17-657" aria-hidden="true" tabindex="-1"></a>Observou-se, ao longo deste estudo, que a construção dos diferentes tipos de intervalos de confiança depende diretamente da distribuição amostral da estatística empregada. Cada parâmetro populacional exige uma modelagem específica, baseada em propriedades probabilísticas distintas. As principais distribuições utilizadas foram:</span>
-<span id="cb17-658"><a href="#cb17-658" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-659"><a href="#cb17-659" aria-hidden="true" tabindex="-1"></a><span class="fu">### Distribuição Normal</span></span>
-<span id="cb17-660"><a href="#cb17-660" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-661"><a href="#cb17-661" aria-hidden="true" tabindex="-1"></a>A Distribuição Normal é empregada na construção de intervalos de confiança para médias populacionais quando a variância da população é conhecida. Além disso, pode ser utilizada na estimação intervalar de proporções em amostras suficientemente grandes, graças ao Teorema Central do Limite, que garante a aproximação da distribuição amostral por uma Normal.</span>
-<span id="cb17-662"><a href="#cb17-662" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-663"><a href="#cb17-663" aria-hidden="true" tabindex="-1"></a><span class="fu">### Distribuição *t* de Student</span></span>
-<span id="cb17-664"><a href="#cb17-664" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-665"><a href="#cb17-665" aria-hidden="true" tabindex="-1"></a>A distribuição *t* de Student é aplicada quando a variância populacional é desconhecida, situação bastante comum em aplicações práticas. Essa distribuição também é utilizada na construção de intervalos de confiança para a diferença entre médias de duas populações independentes, tanto em situações homocedásticas quanto heterocedásticas, mediante os ajustes apropriados dos graus de liberdade.</span>
-<span id="cb17-666"><a href="#cb17-666" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-667"><a href="#cb17-667" aria-hidden="true" tabindex="-1"></a><span class="fu">### Distribuição Qui-Quadrado</span></span>
-<span id="cb17-668"><a href="#cb17-668" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-669"><a href="#cb17-669" aria-hidden="true" tabindex="-1"></a>A distribuição Qui-Quadrado ($\chi^2$) desempenha papel fundamental na construção de intervalos de confiança para a variância populacional. Sua importância decorre da relação existente entre a variância amostral e a soma dos quadrados dos desvios em populações normalmente distribuídas.</span>
-<span id="cb17-670"><a href="#cb17-670" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-671"><a href="#cb17-671" aria-hidden="true" tabindex="-1"></a><span class="fu">### Distribuição F de Snedecor</span></span>
-<span id="cb17-672"><a href="#cb17-672" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-673"><a href="#cb17-673" aria-hidden="true" tabindex="-1"></a>A distribuição F é essencial para a estimação intervalar da razão entre duas variâncias populacionais. Além disso, constitui a base teórica da Análise de Variância (ANOVA), permitindo comparar simultaneamente médias de múltiplos grupos por meio da razão entre variabilidades.</span>
+<span id="cb17-643"><a href="#cb17-643" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb17-644"><a href="#cb17-644" aria-hidden="true" tabindex="-1"></a>X \sim N(\mu_1,\sigma_1^2)</span>
+<span id="cb17-645"><a href="#cb17-645" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb17-646"><a href="#cb17-646" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb17-647"><a href="#cb17-647" aria-hidden="true" tabindex="-1"></a>Y \sim N(\mu_2,\sigma_2^2)</span>
+<span id="cb17-648"><a href="#cb17-648" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb17-649"><a href="#cb17-649" aria-hidden="true" tabindex="-1"></a>Deseja-se estimar   </span>
+<span id="cb17-650"><a href="#cb17-650" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-651"><a href="#cb17-651" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb17-652"><a href="#cb17-652" aria-hidden="true" tabindex="-1"></a>\frac{\sigma^2_1}{\sigma^2_2}  </span>
+<span id="cb17-653"><a href="#cb17-653" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb17-654"><a href="#cb17-654" aria-hidden="true" tabindex="-1"></a>É conhecido que </span>
+<span id="cb17-655"><a href="#cb17-655" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-656"><a href="#cb17-656" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb17-657"><a href="#cb17-657" aria-hidden="true" tabindex="-1"></a>\frac{(n_1-1)S_1^2}{\sigma_1^2} \sim \chi^2_{n_1-1}</span>
+<span id="cb17-658"><a href="#cb17-658" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb17-659"><a href="#cb17-659" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb17-660"><a href="#cb17-660" aria-hidden="true" tabindex="-1"></a>\frac{(n_2-1)S_2^2}{\sigma_2^2} \sim \chi^2_{n_2-1}</span>
+<span id="cb17-661"><a href="#cb17-661" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb17-662"><a href="#cb17-662" aria-hidden="true" tabindex="-1"></a>Agora ao dividirmos duas qui-quadrados independentes, temos uma distribuição F:</span>
+<span id="cb17-663"><a href="#cb17-663" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-664"><a href="#cb17-664" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb17-665"><a href="#cb17-665" aria-hidden="true" tabindex="-1"></a>F =</span>
+<span id="cb17-666"><a href="#cb17-666" aria-hidden="true" tabindex="-1"></a>\frac{</span>
+<span id="cb17-667"><a href="#cb17-667" aria-hidden="true" tabindex="-1"></a>\frac{(n_1-1)S_1^2}{\sigma_1^2}</span>
+<span id="cb17-668"><a href="#cb17-668" aria-hidden="true" tabindex="-1"></a>}{</span>
+<span id="cb17-669"><a href="#cb17-669" aria-hidden="true" tabindex="-1"></a>\frac{(n_2-1)S_2^2}{\sigma_2^2}</span>
+<span id="cb17-670"><a href="#cb17-670" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb17-671"><a href="#cb17-671" aria-hidden="true" tabindex="-1"></a>\sim F_{(n_1-1,n_2-1)}</span>
+<span id="cb17-672"><a href="#cb17-672" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb17-673"><a href="#cb17-673" aria-hidden="true" tabindex="-1"></a>Separando os termos da expressão:</span>
 <span id="cb17-674"><a href="#cb17-674" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-675"><a href="#cb17-675" aria-hidden="true" tabindex="-1"></a><span class="fu">### Distribuição Binomial</span></span>
-<span id="cb17-676"><a href="#cb17-676" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-677"><a href="#cb17-677" aria-hidden="true" tabindex="-1"></a>A distribuição Binomial é utilizada na construção de intervalos de confiança para proporções populacionais. Em amostras grandes, frequentemente utiliza-se a aproximação Normal. Entretanto, em situações envolvendo amostras reduzidas ou proporções extremas, métodos exatos, como o intervalo de Clopper-Pearson, apresentam resultados mais confiáveis.</span>
-<span id="cb17-678"><a href="#cb17-678" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-679"><a href="#cb17-679" aria-hidden="true" tabindex="-1"></a>As simulações realizadas utilizando a linguagem R permitiram verificar, na prática, os resultados obtidos teoricamente. A geração de amostras aleatórias e a implementação computacional dos intervalos de confiança possibilitaram observar o comportamento dos estimadores sob diferentes cenários, reforçando a compreensão dos conceitos estatísticos estudados.</span>
-<span id="cb17-680"><a href="#cb17-680" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-681"><a href="#cb17-681" aria-hidden="true" tabindex="-1"></a>Além disso, as aplicações apresentadas no contexto da Engenharia Mecatrônica demonstraram a relevância desses métodos em problemas reais de engenharia. Questões relacionadas ao controle de qualidade, validação de sensores, comparação de sistemas de controle, análise de confiabilidade e monitoramento de processos industriais dependem diretamente da capacidade de estimar parâmetros populacionais com precisão e de quantificar adequadamente a incerteza associada às medições.</span>
+<span id="cb17-675"><a href="#cb17-675" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb17-676"><a href="#cb17-676" aria-hidden="true" tabindex="-1"></a>F =</span>
+<span id="cb17-677"><a href="#cb17-677" aria-hidden="true" tabindex="-1"></a>\frac{S_1^2}{S_2^2}</span>
+<span id="cb17-678"><a href="#cb17-678" aria-hidden="true" tabindex="-1"></a>\cdot</span>
+<span id="cb17-679"><a href="#cb17-679" aria-hidden="true" tabindex="-1"></a>\frac{\sigma_2^2}{\sigma_1^2}</span>
+<span id="cb17-680"><a href="#cb17-680" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb17-681"><a href="#cb17-681" aria-hidden="true" tabindex="-1"></a>Ao isolarmos o padrão de interesse no caso os $\sigma^2$, obtemos:</span>
 <span id="cb17-682"><a href="#cb17-682" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-683"><a href="#cb17-683" aria-hidden="true" tabindex="-1"></a>Dessa forma, os resultados obtidos evidenciam que os estimadores intervalares constituem ferramentas fundamentais para a Estatística Inferencial, permitindo análises mais robustas e decisões mais confiáveis em aplicações científicas e tecnológicas.</span>
-<span id="cb17-684"><a href="#cb17-684" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-685"><a href="#cb17-685" aria-hidden="true" tabindex="-1"></a><span class="fu">## 💡 Conclusão</span></span>
-<span id="cb17-686"><a href="#cb17-686" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-687"><a href="#cb17-687" aria-hidden="true" tabindex="-1"></a>Neste relatório, foram deduzidos e analisados os principais estimadores intervalares utilizados na inferência estatística para médias, variâncias e proporções. A abordagem focou na compreensão das premissas, na derivação matemática e na interpretação estatística rigorosa de cada intervalo.</span>
-<span id="cb17-688"><a href="#cb17-688" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-689"><a href="#cb17-689" aria-hidden="true" tabindex="-1"></a>Foi possível verificar que a construção desses intervalos depende diretamente das distribuições amostrais fundamentais em Estatística, destacando-se as distribuições Normal, t de Student, Qui-Quadrado e F. A interconexão entre essas distribuições foi particularmente evidente na discussão sobre a Distribuição F, que se revelou uma base teórica crucial não apenas para a razão de variâncias, mas também para métodos exatos de proporções e para a ANOVA.</span>
+<span id="cb17-683"><a href="#cb17-683" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb17-684"><a href="#cb17-684" aria-hidden="true" tabindex="-1"></a>\frac{\sigma_1^2}{\sigma_2^2}</span>
+<span id="cb17-685"><a href="#cb17-685" aria-hidden="true" tabindex="-1"></a>=</span>
+<span id="cb17-686"><a href="#cb17-686" aria-hidden="true" tabindex="-1"></a>\frac{S_1^2}{S_2^2}</span>
+<span id="cb17-687"><a href="#cb17-687" aria-hidden="true" tabindex="-1"></a>\cdot \frac{1}{F}</span>
+<span id="cb17-688"><a href="#cb17-688" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb17-689"><a href="#cb17-689" aria-hidden="true" tabindex="-1"></a>Sabendo que:</span>
 <span id="cb17-690"><a href="#cb17-690" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-691"><a href="#cb17-691" aria-hidden="true" tabindex="-1"></a>As aplicações computacionais em linguagem R permitiram visualizar e implementar os métodos estudados, enquanto os exemplos contextualizados na Engenharia Mecatrônica evidenciaram a importância prática da estatística inferencial em processos de controle de qualidade, automação industrial, instrumentação e avaliação da confiabilidade de sistemas. Dessa forma, todos os objetivos propostos foram atingidos com sucesso, fornecendo uma análise abrangente e aprofundada dos estimadores intervalares.</span>
-<span id="cb17-692"><a href="#cb17-692" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-693"><a href="#cb17-693" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-694"><a href="#cb17-694" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-695"><a href="#cb17-695" aria-hidden="true" tabindex="-1"></a><span class="fu">## 📚 Referências Bibliográficas</span></span>
-<span id="cb17-696"><a href="#cb17-696" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-697"><a href="#cb17-697" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">1</span><span class="co">]</span> BUSSAB, Wilton de O.; MORETTIN, Pedro A. Estatística Básica. 9. ed. São Paulo: Saraiva, 2017.</span>
+<span id="cb17-691"><a href="#cb17-691" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb17-692"><a href="#cb17-692" aria-hidden="true" tabindex="-1"></a>F_{\alpha/2,\,n_1-1,\,n_2-1}</span>
+<span id="cb17-693"><a href="#cb17-693" aria-hidden="true" tabindex="-1"></a>\le</span>
+<span id="cb17-694"><a href="#cb17-694" aria-hidden="true" tabindex="-1"></a>F</span>
+<span id="cb17-695"><a href="#cb17-695" aria-hidden="true" tabindex="-1"></a>\le</span>
+<span id="cb17-696"><a href="#cb17-696" aria-hidden="true" tabindex="-1"></a>F_{1-\alpha/2,\,n_1-1,\,n_2-1},</span>
+<span id="cb17-697"><a href="#cb17-697" aria-hidden="true" tabindex="-1"></a>$$</span>
 <span id="cb17-698"><a href="#cb17-698" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-699"><a href="#cb17-699" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">2</span><span class="co">]</span> CASELLA, George; BERGER, Roger L. Inferência Estatística. 2. ed. São Paulo: Cengage Learning, 2010.</span>
+<span id="cb17-699"><a href="#cb17-699" aria-hidden="true" tabindex="-1"></a>podemos manipular a desigualdade para obter o intervalo de confiança:</span>
 <span id="cb17-700"><a href="#cb17-700" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-701"><a href="#cb17-701" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">3</span><span class="co">]</span> MONTGOMERY, Douglas C.; RUNGER, George C. Estatística Aplicada e Probabilidade para Engenheiros. 7. ed. Rio de Janeiro: LTC, 2021. </span>
+<span id="cb17-701"><a href="#cb17-701" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb17-702"><a href="#cb17-702" aria-hidden="true" tabindex="-1"></a>IC\left(\frac{\sigma_1^2}{\sigma_2^2}\right)</span>
+<span id="cb17-703"><a href="#cb17-703" aria-hidden="true" tabindex="-1"></a>=</span>
+<span id="cb17-704"><a href="#cb17-704" aria-hidden="true" tabindex="-1"></a>\left[</span>
+<span id="cb17-705"><a href="#cb17-705" aria-hidden="true" tabindex="-1"></a>\frac{S_1^2/S_2^2}{F_{1-\alpha/2,\,n_1-1,\,n_2-1}},</span>
+<span id="cb17-706"><a href="#cb17-706" aria-hidden="true" tabindex="-1"></a>\;</span>
+<span id="cb17-707"><a href="#cb17-707" aria-hidden="true" tabindex="-1"></a>\frac{S_1^2/S_2^2}{F_{\alpha/2,\,n_1-1,\,n_2-1}}</span>
+<span id="cb17-708"><a href="#cb17-708" aria-hidden="true" tabindex="-1"></a>\right].</span>
+<span id="cb17-709"><a href="#cb17-709" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb17-710"><a href="#cb17-710" aria-hidden="true" tabindex="-1"></a>A razão entre variâncias é uma medida da diferença de dispersão entre duas populações. Valores próximos de 1 indicam variabilidades semelhantes, enquanto valores significativamente maiores ou menores que 1 indicam diferença entre as dispersões populacionais.</span>
+<span id="cb17-711"><a href="#cb17-711" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-712"><a href="#cb17-712" aria-hidden="true" tabindex="-1"></a><span class="fu">### Intervalo de confiança para uma proporção populacional</span></span>
+<span id="cb17-713"><a href="#cb17-713" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-714"><a href="#cb17-714" aria-hidden="true" tabindex="-1"></a>Considerando uma variável aleatória:</span>
+<span id="cb17-715"><a href="#cb17-715" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-716"><a href="#cb17-716" aria-hidden="true" tabindex="-1"></a>$$X_1, X_2, \dots, X_n \sim \text{Bernoulli}(p)$$</span>
+<span id="cb17-717"><a href="#cb17-717" aria-hidden="true" tabindex="-1"></a>A qual:</span>
+<span id="cb17-718"><a href="#cb17-718" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-719"><a href="#cb17-719" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Cada observação vale:</span>
+<span id="cb17-720"><a href="#cb17-720" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>1 = "sucesso"</span>
+<span id="cb17-721"><a href="#cb17-721" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>0 = "fracasso"</span>
+<span id="cb17-722"><a href="#cb17-722" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>A probabilidade de sucesso é o parâmetro deseconhecido $p$.</span>
+<span id="cb17-723"><a href="#cb17-723" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-724"><a href="#cb17-724" aria-hidden="true" tabindex="-1"></a>Para estimar o valor p, o mais comum é a média das observações:</span>
+<span id="cb17-725"><a href="#cb17-725" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-726"><a href="#cb17-726" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb17-727"><a href="#cb17-727" aria-hidden="true" tabindex="-1"></a>\hat{p} = \frac{1}{n}\sum_{i=1}^{n} X_i</span>
+<span id="cb17-728"><a href="#cb17-728" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb17-729"><a href="#cb17-729" aria-hidden="true" tabindex="-1"></a>Se for definido:</span>
+<span id="cb17-730"><a href="#cb17-730" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-731"><a href="#cb17-731" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb17-732"><a href="#cb17-732" aria-hidden="true" tabindex="-1"></a>X = \sum_{i=1}^{n} X_i</span>
+<span id="cb17-733"><a href="#cb17-733" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb17-734"><a href="#cb17-734" aria-hidden="true" tabindex="-1"></a>então:</span>
+<span id="cb17-735"><a href="#cb17-735" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-736"><a href="#cb17-736" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb17-737"><a href="#cb17-737" aria-hidden="true" tabindex="-1"></a>\hat{p} = \frac{X}{n}</span>
+<span id="cb17-738"><a href="#cb17-738" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb17-739"><a href="#cb17-739" aria-hidden="true" tabindex="-1"></a>O valor $\hat{p}$ representa a proporção de sucessos na amostra.</span>
+<span id="cb17-740"><a href="#cb17-740" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-741"><a href="#cb17-741" aria-hidden="true" tabindex="-1"></a>Como cada $X_i$ é Bernoulli:</span>
+<span id="cb17-742"><a href="#cb17-742" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-743"><a href="#cb17-743" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>$E(X_i) = p$</span>
+<span id="cb17-744"><a href="#cb17-744" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>$Var(X_i) = p(1-p)$</span>
+<span id="cb17-745"><a href="#cb17-745" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-746"><a href="#cb17-746" aria-hidden="true" tabindex="-1"></a>Logo, a esperança $E(\hat{p}) = p$ o que representa que o estimador não é viesado.</span>
+<span id="cb17-747"><a href="#cb17-747" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-748"><a href="#cb17-748" aria-hidden="true" tabindex="-1"></a>Já na variância, como a soma de variáveis independentes, utiliza-se a propriedade de que a variância da soma é a soma das variâncias, resultando em </span>
+<span id="cb17-749"><a href="#cb17-749" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-750"><a href="#cb17-750" aria-hidden="true" tabindex="-1"></a>$$Var(\hat{p}) = \frac{p(1-p)}{n}$$      </span>
+<span id="cb17-751"><a href="#cb17-751" aria-hidden="true" tabindex="-1"></a>Utilizando o Teorema do Limite Central, quando $n$ é grande:</span>
+<span id="cb17-752"><a href="#cb17-752" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb17-753"><a href="#cb17-753" aria-hidden="true" tabindex="-1"></a>\hat{p} \approx N\left(p, \frac{p(1-p)}{n}\right)</span>
+<span id="cb17-754"><a href="#cb17-754" aria-hidden="true" tabindex="-1"></a>$$  </span>
+<span id="cb17-755"><a href="#cb17-755" aria-hidden="true" tabindex="-1"></a>Isso permite utilizar a distribuição Normal.</span>
+<span id="cb17-756"><a href="#cb17-756" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-757"><a href="#cb17-757" aria-hidden="true" tabindex="-1"></a>Com essa possibilidade de se utilizar a Normal, é possível realizar a padronização transformando em uma Normal padrâo:</span>
+<span id="cb17-758"><a href="#cb17-758" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-759"><a href="#cb17-759" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb17-760"><a href="#cb17-760" aria-hidden="true" tabindex="-1"></a>Z = \frac{\hat{p} - p}{\sqrt{\frac{p(1-p)}{n}}}</span>
+<span id="cb17-761"><a href="#cb17-761" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb17-762"><a href="#cb17-762" aria-hidden="true" tabindex="-1"></a>Então</span>
+<span id="cb17-763"><a href="#cb17-763" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-764"><a href="#cb17-764" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb17-765"><a href="#cb17-765" aria-hidden="true" tabindex="-1"></a>Z \sim N(0,1)</span>
+<span id="cb17-766"><a href="#cb17-766" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb17-767"><a href="#cb17-767" aria-hidden="true" tabindex="-1"></a>Na região central da Normal, sabemos que:</span>
+<span id="cb17-768"><a href="#cb17-768" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-769"><a href="#cb17-769" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb17-770"><a href="#cb17-770" aria-hidden="true" tabindex="-1"></a>P\left(-z_{\alpha/2} \le Z \le z_{\alpha/2}\right) = 1 - \alpha</span>
+<span id="cb17-771"><a href="#cb17-771" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb17-772"><a href="#cb17-772" aria-hidden="true" tabindex="-1"></a>Substituindo o valor de Z:</span>
+<span id="cb17-773"><a href="#cb17-773" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-774"><a href="#cb17-774" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb17-775"><a href="#cb17-775" aria-hidden="true" tabindex="-1"></a>P\left(</span>
+<span id="cb17-776"><a href="#cb17-776" aria-hidden="true" tabindex="-1"></a>-z_{\alpha/2}</span>
+<span id="cb17-777"><a href="#cb17-777" aria-hidden="true" tabindex="-1"></a>\le</span>
+<span id="cb17-778"><a href="#cb17-778" aria-hidden="true" tabindex="-1"></a>\frac{\hat{p} - p}{\sqrt{\frac{p(1-p)}{n}}}</span>
+<span id="cb17-779"><a href="#cb17-779" aria-hidden="true" tabindex="-1"></a>\le</span>
+<span id="cb17-780"><a href="#cb17-780" aria-hidden="true" tabindex="-1"></a>z_{\alpha/2}</span>
+<span id="cb17-781"><a href="#cb17-781" aria-hidden="true" tabindex="-1"></a>\right)</span>
+<span id="cb17-782"><a href="#cb17-782" aria-hidden="true" tabindex="-1"></a>= 1 - \alpha</span>
+<span id="cb17-783"><a href="#cb17-783" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb17-784"><a href="#cb17-784" aria-hidden="true" tabindex="-1"></a>Agora basta multiplicar pelo denominador</span>
+<span id="cb17-785"><a href="#cb17-785" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-786"><a href="#cb17-786" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb17-787"><a href="#cb17-787" aria-hidden="true" tabindex="-1"></a>\sqrt{\frac{p(1-p)}{n}}</span>
+<span id="cb17-788"><a href="#cb17-788" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb17-789"><a href="#cb17-789" aria-hidden="true" tabindex="-1"></a>e isolar o valor $p$. Mas, como o valor $p$ é desconhecido, substituimos pelo valor $\hat{p}$.</span>
+<span id="cb17-790"><a href="#cb17-790" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-791"><a href="#cb17-791" aria-hidden="true" tabindex="-1"></a>Logo, o intervalo de confiança final aproximado será</span>
+<span id="cb17-792"><a href="#cb17-792" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-793"><a href="#cb17-793" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb17-794"><a href="#cb17-794" aria-hidden="true" tabindex="-1"></a>IC(p) =</span>
+<span id="cb17-795"><a href="#cb17-795" aria-hidden="true" tabindex="-1"></a>\hat{p} \pm z_{\alpha/2}</span>
+<span id="cb17-796"><a href="#cb17-796" aria-hidden="true" tabindex="-1"></a>\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}</span>
+<span id="cb17-797"><a href="#cb17-797" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb17-798"><a href="#cb17-798" aria-hidden="true" tabindex="-1"></a>De forma expandida:</span>
+<span id="cb17-799"><a href="#cb17-799" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-800"><a href="#cb17-800" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb17-801"><a href="#cb17-801" aria-hidden="true" tabindex="-1"></a>IC(p)=</span>
+<span id="cb17-802"><a href="#cb17-802" aria-hidden="true" tabindex="-1"></a>\left[</span>
+<span id="cb17-803"><a href="#cb17-803" aria-hidden="true" tabindex="-1"></a>\hat{p} - z_{\alpha/2}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}},</span>
+<span id="cb17-804"><a href="#cb17-804" aria-hidden="true" tabindex="-1"></a>\;</span>
+<span id="cb17-805"><a href="#cb17-805" aria-hidden="true" tabindex="-1"></a>\hat{p} + z_{\alpha/2}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}</span>
+<span id="cb17-806"><a href="#cb17-806" aria-hidden="true" tabindex="-1"></a>\right]</span>
+<span id="cb17-807"><a href="#cb17-807" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb17-808"><a href="#cb17-808" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-809"><a href="#cb17-809" aria-hidden="true" tabindex="-1"></a><span class="fu">## 🔗 Relação com o Relatório 6</span></span>
+<span id="cb17-810"><a href="#cb17-810" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-811"><a href="#cb17-811" aria-hidden="true" tabindex="-1"></a>Relação entre a Distribuição F de Snedecor e os Estimadores Intervalares</span>
+<span id="cb17-812"><a href="#cb17-812" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-813"><a href="#cb17-813" aria-hidden="true" tabindex="-1"></a>O Relatório 6 focou na Distribuição F de Snedecor, que é fundamental para a comparação de variâncias e para a Análise de Variância (ANOVA). A conexão estrutural entre a Distribuição F e os estimadores intervalares apresentados neste relatório manifesta-se em pontos centrais da inferência estatística, especialmente na construção de intervalos de confiança para variâncias e na comparação de dispersões populacionais.</span>
+<span id="cb17-814"><a href="#cb17-814" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-815"><a href="#cb17-815" aria-hidden="true" tabindex="-1"></a><span class="fu">### A Origem dos Pivôs para Variância</span></span>
+<span id="cb17-816"><a href="#cb17-816" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-817"><a href="#cb17-817" aria-hidden="true" tabindex="-1"></a>A Distribuição F é definida como a razão de duas variáveis Qui-Quadrado independentes, cada uma dividida por seus respectivos graus de liberdade. A estatística</span>
+<span id="cb17-818"><a href="#cb17-818" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-819"><a href="#cb17-819" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb17-820"><a href="#cb17-820" aria-hidden="true" tabindex="-1"></a>\frac{(n-1)S^2}{\sigma^2} \sim \chi^2_{(n-1)}</span>
+<span id="cb17-821"><a href="#cb17-821" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb17-822"><a href="#cb17-822" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-823"><a href="#cb17-823" aria-hidden="true" tabindex="-1"></a>constitui o pilar para a construção do intervalo de confiança para uma única variância populacional. Sem a compreensão da distribuição Qui-Quadrado — e, por extensão, da Distribuição F, que dela deriva — a inferência sobre variâncias seria inviável.</span>
+<span id="cb17-824"><a href="#cb17-824" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-825"><a href="#cb17-825" aria-hidden="true" tabindex="-1"></a><span class="fu">### O Estimador da Razão de Variâncias</span></span>
+<span id="cb17-826"><a href="#cb17-826" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-827"><a href="#cb17-827" aria-hidden="true" tabindex="-1"></a>A dedução do intervalo de confiança para a razão entre duas variâncias populacionais,</span>
+<span id="cb17-828"><a href="#cb17-828" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-829"><a href="#cb17-829" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb17-830"><a href="#cb17-830" aria-hidden="true" tabindex="-1"></a>IC\left(\frac{\sigma_1^2}{\sigma_2^2}\right),</span>
+<span id="cb17-831"><a href="#cb17-831" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb17-832"><a href="#cb17-832" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-833"><a href="#cb17-833" aria-hidden="true" tabindex="-1"></a>é uma aplicação direta da Distribuição F. Considerando duas amostras independentes provenientes de populações normais, a razão</span>
+<span id="cb17-834"><a href="#cb17-834" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-835"><a href="#cb17-835" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb17-836"><a href="#cb17-836" aria-hidden="true" tabindex="-1"></a>\frac{S_1^2/\sigma_1^2}{S_2^2/\sigma_2^2}</span>
+<span id="cb17-837"><a href="#cb17-837" aria-hidden="true" tabindex="-1"></a>$$</span>
+<span id="cb17-838"><a href="#cb17-838" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-839"><a href="#cb17-839" aria-hidden="true" tabindex="-1"></a>segue uma distribuição F com graus de liberdade associados às duas amostras.</span>
+<span id="cb17-840"><a href="#cb17-840" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-841"><a href="#cb17-841" aria-hidden="true" tabindex="-1"></a>Esse resultado permite testar a hipótese de igualdade de variâncias ou construir um intervalo de confiança para sua razão, sendo fundamental para verificar a premissa de homocedasticidade em testes *t* para comparação de médias.</span>
+<span id="cb17-842"><a href="#cb17-842" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-843"><a href="#cb17-843" aria-hidden="true" tabindex="-1"></a><span class="fu">### Intervalos para Proporções (Método de Clopper-Pearson)</span></span>
+<span id="cb17-844"><a href="#cb17-844" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-845"><a href="#cb17-845" aria-hidden="true" tabindex="-1"></a>Embora a aproximação Normal seja frequentemente utilizada para a construção de intervalos de confiança para proporções, ela pode apresentar desempenho inadequado em amostras pequenas ou quando a proporção observada está muito próxima de 0 ou 1.</span>
+<span id="cb17-846"><a href="#cb17-846" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-847"><a href="#cb17-847" aria-hidden="true" tabindex="-1"></a>Nessas situações, métodos exatos, como o intervalo de Clopper-Pearson para proporções em populações Bernoulli, tornam-se mais apropriados. A construção desse intervalo baseia-se nos quantis da própria Distribuição F, estabelecendo uma importante conexão entre probabilidades discretas e distribuições contínuas derivadas da razão de variâncias.</span>
+<span id="cb17-848"><a href="#cb17-848" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-849"><a href="#cb17-849" aria-hidden="true" tabindex="-1"></a>Esse fato evidencia a versatilidade da Distribuição F em aplicações que vão além da simples comparação de variâncias.</span>
+<span id="cb17-850"><a href="#cb17-850" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-851"><a href="#cb17-851" aria-hidden="true" tabindex="-1"></a><span class="fu">### Análise de Variância (ANOVA)</span></span>
+<span id="cb17-852"><a href="#cb17-852" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-853"><a href="#cb17-853" aria-hidden="true" tabindex="-1"></a>Além da estimação intervalar, a Distribuição F constitui a base teórica da Análise de Variância (ANOVA), uma das técnicas estatísticas mais utilizadas para comparar simultaneamente três ou mais médias populacionais.</span>
+<span id="cb17-854"><a href="#cb17-854" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-855"><a href="#cb17-855" aria-hidden="true" tabindex="-1"></a>Em aplicações de engenharia, a ANOVA é empregada para avaliar o efeito de diferentes fatores, como tipos de material, métodos de fabricação ou configurações de processo, sobre uma variável de resposta, como resistência mecânica, produtividade ou desempenho.</span>
+<span id="cb17-856"><a href="#cb17-856" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-857"><a href="#cb17-857" aria-hidden="true" tabindex="-1"></a>A estatística F utilizada na ANOVA compara a variabilidade entre os grupos com a variabilidade dentro dos grupos. Quando essa razão é suficientemente elevada, conclui-se que as diferenças observadas entre as médias dificilmente podem ser atribuídas apenas ao acaso.</span>
+<span id="cb17-858"><a href="#cb17-858" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-859"><a href="#cb17-859" aria-hidden="true" tabindex="-1"></a><span class="fu">### Conclusão</span></span>
+<span id="cb17-860"><a href="#cb17-860" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-861"><a href="#cb17-861" aria-hidden="true" tabindex="-1"></a>Portanto, o estudo da Distribuição F fornece a fundamentação teórica necessária não apenas para a construção de intervalos de confiança para a razão entre variâncias, mas também para diversos testes de hipóteses e procedimentos inferenciais mais sofisticados. Sua aplicação estende-se à verificação da homogeneidade de variâncias, à construção de intervalos exatos para proporções e à Análise de Variância, consolidando-a como uma ferramenta indispensável da Estatística Inferencial.</span>
+<span id="cb17-862"><a href="#cb17-862" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-863"><a href="#cb17-863" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-864"><a href="#cb17-864" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-865"><a href="#cb17-865" aria-hidden="true" tabindex="-1"></a><span class="fu">## 💻 Aplicações em R</span></span>
+<span id="cb17-866"><a href="#cb17-866" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-867"><a href="#cb17-867" aria-hidden="true" tabindex="-1"></a><span class="fu">### Explicação das funções</span></span>
+<span id="cb17-868"><a href="#cb17-868" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-869"><a href="#cb17-869" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>set.seed() → fixa a semente do gerador de números aleatórios, garantindo reprodutibilidade dos resultados.</span>
+<span id="cb17-870"><a href="#cb17-870" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>rnorm() → gera uma amostra aleatória de uma distribuição Normal com média e desvio padrão definidos.</span>
+<span id="cb17-871"><a href="#cb17-871" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>mean() → calcula a média aritmética da amostra, estimando a média populacional.</span>
+<span id="cb17-872"><a href="#cb17-872" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>sd() → calcula o desvio padrão amostral, medindo a dispersão dos dados.</span>
+<span id="cb17-873"><a href="#cb17-873" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>length() → retorna o número de elementos da amostra (tamanho da amostra).</span>
+<span id="cb17-874"><a href="#cb17-874" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>qnorm() → retorna quantis da distribuição Normal padrão, usado em intervalos de confiança.</span>
+<span id="cb17-875"><a href="#cb17-875" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>var() → calcula a variância amostral, estimando a variância populacional.</span>
+<span id="cb17-876"><a href="#cb17-876" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>qchisq() → retorna quantis da distribuição Qui-Quadrado, usada para intervalos da variância.</span>
+<span id="cb17-877"><a href="#cb17-877" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>qf() → retorna quantis da distribuição F de Snedecor, usada para razão entre variâncias.</span>
+<span id="cb17-878"><a href="#cb17-878" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>t.test() → realiza teste t e constrói intervalos de confiança para médias ou diferença de médias.</span>
+<span id="cb17-879"><a href="#cb17-879" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>rbinom() → gera dados de uma distribuição binomial (ou Bernoulli quando size = 1).</span>
+<span id="cb17-880"><a href="#cb17-880" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>prop.test() → calcula intervalo de confiança para proporções com aproximação Normal.</span>
+<span id="cb17-881"><a href="#cb17-881" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-884"><a href="#cb17-884" aria-hidden="true" tabindex="-1"></a><span class="in">```{R}</span></span>
+<span id="cb17-885"><a href="#cb17-885" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb17-886"><a href="#cb17-886" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-887"><a href="#cb17-887" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">30</span>, <span class="at">mean =</span> <span class="dv">100</span>, <span class="at">sd =</span> <span class="dv">15</span>) <span class="co"># Gera uma amostra de 30 observações de uma N(100, 15^2)</span></span>
+<span id="cb17-888"><a href="#cb17-888" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-889"><a href="#cb17-889" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(x) <span class="co"># Média amostral</span></span>
+<span id="cb17-890"><a href="#cb17-890" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(x)   <span class="co"># Desvio padrão amostral</span></span>
+<span id="cb17-891"><a href="#cb17-891" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-892"><a href="#cb17-892" aria-hidden="true" tabindex="-1"></a><span class="co"># Intervalo para a Média (σ conhecido)</span></span>
+<span id="cb17-893"><a href="#cb17-893" aria-hidden="true" tabindex="-1"></a><span class="co"># Premissa: A variância populacional (sigma^2) é conhecida.</span></span>
+<span id="cb17-894"><a href="#cb17-894" aria-hidden="true" tabindex="-1"></a><span class="co"># Utiliza a distribuição Normal Padrão (z) para os quantis.</span></span>
+<span id="cb17-895"><a href="#cb17-895" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-896"><a href="#cb17-896" aria-hidden="true" tabindex="-1"></a>media <span class="ot">&lt;-</span> <span class="fu">mean</span>(x)</span>
+<span id="cb17-897"><a href="#cb17-897" aria-hidden="true" tabindex="-1"></a>sigma <span class="ot">&lt;-</span> <span class="dv">15</span> <span class="co"># Desvio padrão populacional conhecido</span></span>
+<span id="cb17-898"><a href="#cb17-898" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">length</span>(x)</span>
+<span id="cb17-899"><a href="#cb17-899" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-900"><a href="#cb17-900" aria-hidden="true" tabindex="-1"></a>erro <span class="ot">&lt;-</span> <span class="fu">qnorm</span>(<span class="fl">0.975</span>) <span class="sc">*</span> sigma <span class="sc">/</span> <span class="fu">sqrt</span>(n) <span class="co"># Margem de erro: z_{alpha/2} * (sigma / sqrt(n))</span></span>
+<span id="cb17-901"><a href="#cb17-901" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-902"><a href="#cb17-902" aria-hidden="true" tabindex="-1"></a>IC <span class="ot">&lt;-</span> <span class="fu">c</span>(media <span class="sc">-</span> erro, media <span class="sc">+</span> erro) <span class="co"># Limite Inferior e Superior do IC</span></span>
+<span id="cb17-903"><a href="#cb17-903" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-904"><a href="#cb17-904" aria-hidden="true" tabindex="-1"></a>IC</span>
+<span id="cb17-905"><a href="#cb17-905" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-906"><a href="#cb17-906" aria-hidden="true" tabindex="-1"></a><span class="co"># Intervalo para a Variância</span></span>
+<span id="cb17-907"><a href="#cb17-907" aria-hidden="true" tabindex="-1"></a><span class="co"># Premissa: População Normal. Utiliza a distribuição Qui-Quadrado para os quantis.</span></span>
+<span id="cb17-908"><a href="#cb17-908" aria-hidden="true" tabindex="-1"></a><span class="co"># Nota: O código original tinha um erro na definição de 's2' e 'n'. Assumindo 's2' como a variância amostral.</span></span>
+<span id="cb17-909"><a href="#cb17-909" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-910"><a href="#cb17-910" aria-hidden="true" tabindex="-1"></a>s2 <span class="ot">&lt;-</span> <span class="fu">var</span>(x) <span class="co"># Variância amostral (S^2)</span></span>
+<span id="cb17-911"><a href="#cb17-911" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">length</span>(x)</span>
+<span id="cb17-912"><a href="#cb17-912" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-913"><a href="#cb17-913" aria-hidden="true" tabindex="-1"></a><span class="co"># Quantis da Qui-Quadrado: qchisq(probabilidade, graus_de_liberdade)</span></span>
+<span id="cb17-914"><a href="#cb17-914" aria-hidden="true" tabindex="-1"></a><span class="co"># Para um IC de 95%, alpha = 0.05. alpha/2 = 0.025. 1-alpha/2 = 0.975.</span></span>
+<span id="cb17-915"><a href="#cb17-915" aria-hidden="true" tabindex="-1"></a><span class="co"># O quantil inferior é qchisq(0.025, n-1) e o superior é qchisq(0.975, n-1).</span></span>
+<span id="cb17-916"><a href="#cb17-916" aria-hidden="true" tabindex="-1"></a><span class="co"># Lembre-se que na fórmula do IC para variância, os quantis são invertidos na divisão.</span></span>
+<span id="cb17-917"><a href="#cb17-917" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-918"><a href="#cb17-918" aria-hidden="true" tabindex="-1"></a>IC.var <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb17-919"><a href="#cb17-919" aria-hidden="true" tabindex="-1"></a>  ((n<span class="dv">-1</span>) <span class="sc">*</span> s2) <span class="sc">/</span> <span class="fu">qchisq</span>(<span class="fl">0.975</span>, n<span class="dv">-1</span>), <span class="co"># Limite Inferior: (n-1)S^2 / chi^2_{alpha/2, n-1}</span></span>
+<span id="cb17-920"><a href="#cb17-920" aria-hidden="true" tabindex="-1"></a>  ((n<span class="dv">-1</span>) <span class="sc">*</span> s2) <span class="sc">/</span> <span class="fu">qchisq</span>(<span class="fl">0.025</span>, n<span class="dv">-1</span>)  <span class="co"># Limite Superior: (n-1)S^2 / chi^2_{1-alpha/2, n-1}</span></span>
+<span id="cb17-921"><a href="#cb17-921" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb17-922"><a href="#cb17-922" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-923"><a href="#cb17-923" aria-hidden="true" tabindex="-1"></a>IC.var</span>
+<span id="cb17-924"><a href="#cb17-924" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-925"><a href="#cb17-925" aria-hidden="true" tabindex="-1"></a><span class="co"># Diferença de Médias Homocedásticas</span></span>
+<span id="cb17-926"><a href="#cb17-926" aria-hidden="true" tabindex="-1"></a><span class="co"># Premissa: Duas populações Normais independentes com variâncias iguais (homocedásticas).</span></span>
+<span id="cb17-927"><a href="#cb17-927" aria-hidden="true" tabindex="-1"></a><span class="co"># Utiliza o teste t de Student com variâncias agrupadas.</span></span>
+<span id="cb17-928"><a href="#cb17-928" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-929"><a href="#cb17-929" aria-hidden="true" tabindex="-1"></a>x_homocedasticas <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="dv">100</span>, <span class="dv">10</span>) <span class="co"># Amostra 1</span></span>
+<span id="cb17-930"><a href="#cb17-930" aria-hidden="true" tabindex="-1"></a>y_homocedasticas <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="dv">95</span>, <span class="dv">10</span>)  <span class="co"># Amostra 2</span></span>
+<span id="cb17-931"><a href="#cb17-931" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-932"><a href="#cb17-932" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(x_homocedasticas, y_homocedasticas,</span>
+<span id="cb17-933"><a href="#cb17-933" aria-hidden="true" tabindex="-1"></a>       <span class="at">var.equal =</span> <span class="cn">TRUE</span>, <span class="co"># Indica que as variâncias são assumidas como iguais</span></span>
+<span id="cb17-934"><a href="#cb17-934" aria-hidden="true" tabindex="-1"></a>       <span class="at">conf.level =</span> <span class="fl">0.95</span>) <span class="co"># Nível de confiança de 95%</span></span>
+<span id="cb17-935"><a href="#cb17-935" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-936"><a href="#cb17-936" aria-hidden="true" tabindex="-1"></a><span class="co"># Diferença de Médias Heterocedásticas (Teste de Welch)</span></span>
+<span id="cb17-937"><a href="#cb17-937" aria-hidden="true" tabindex="-1"></a><span class="co"># Premissa: Duas populações Normais independentes com variâncias desiguais (heterocedásticas).</span></span>
+<span id="cb17-938"><a href="#cb17-938" aria-hidden="true" tabindex="-1"></a><span class="co"># Utiliza o teste t de Welch, que ajusta os graus de liberdade.</span></span>
+<span id="cb17-939"><a href="#cb17-939" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-940"><a href="#cb17-940" aria-hidden="true" tabindex="-1"></a>x_heterocedasticas <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="dv">100</span>, <span class="dv">10</span>) <span class="co"># Amostra 1</span></span>
+<span id="cb17-941"><a href="#cb17-941" aria-hidden="true" tabindex="-1"></a>y_heterocedasticas <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="dv">95</span>, <span class="dv">20</span>)  <span class="co"># Amostra 2 (com maior desvio padrão)</span></span>
+<span id="cb17-942"><a href="#cb17-942" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-943"><a href="#cb17-943" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(x_heterocedasticas, y_heterocedasticas,</span>
+<span id="cb17-944"><a href="#cb17-944" aria-hidden="true" tabindex="-1"></a>       <span class="at">var.equal =</span> <span class="cn">FALSE</span>, <span class="co"># Indica que as variâncias são assumidas como desiguais</span></span>
+<span id="cb17-945"><a href="#cb17-945" aria-hidden="true" tabindex="-1"></a>       <span class="at">conf.level =</span> <span class="fl">0.95</span>) <span class="co"># Nível de confiança de 95%</span></span>
+<span id="cb17-946"><a href="#cb17-946" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-947"><a href="#cb17-947" aria-hidden="true" tabindex="-1"></a><span class="co"># Razão entre Variâncias (Teste F)</span></span>
+<span id="cb17-948"><a href="#cb17-948" aria-hidden="true" tabindex="-1"></a><span class="co"># Premissa: Duas populações Normais independentes. Utiliza a distribuição F.</span></span>
+<span id="cb17-949"><a href="#cb17-949" aria-hidden="true" tabindex="-1"></a><span class="co"># Constrói um IC para a razão sigma_1^2 / sigma_2^2.</span></span>
+<span id="cb17-950"><a href="#cb17-950" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-951"><a href="#cb17-951" aria-hidden="true" tabindex="-1"></a>x_variancia <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="dv">100</span>, <span class="dv">10</span>) <span class="co"># Amostra 1</span></span>
+<span id="cb17-952"><a href="#cb17-952" aria-hidden="true" tabindex="-1"></a>y_variancia <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">20</span>, <span class="dv">95</span>, <span class="dv">15</span>)  <span class="co"># Amostra 2 (com desvio padrão diferente)</span></span>
+<span id="cb17-953"><a href="#cb17-953" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-954"><a href="#cb17-954" aria-hidden="true" tabindex="-1"></a>s1_sq <span class="ot">&lt;-</span> <span class="fu">var</span>(x_variancia) <span class="co"># Variância amostral de x</span></span>
+<span id="cb17-955"><a href="#cb17-955" aria-hidden="true" tabindex="-1"></a>s2_sq <span class="ot">&lt;-</span> <span class="fu">var</span>(y_variancia) <span class="co"># Variância amostral de y</span></span>
+<span id="cb17-956"><a href="#cb17-956" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-957"><a href="#cb17-957" aria-hidden="true" tabindex="-1"></a><span class="co"># A estatística F é a razão das variâncias amostrais (S1^2 / S2^2)</span></span>
+<span id="cb17-958"><a href="#cb17-958" aria-hidden="true" tabindex="-1"></a><span class="co"># Para construir o IC, precisamos da razão (S1^2/sigma1^2) / (S2^2/sigma2^2) ~ F(n1-1, n2-1)</span></span>
+<span id="cb17-959"><a href="#cb17-959" aria-hidden="true" tabindex="-1"></a><span class="co"># O IC para sigma1^2/sigma2^2 é dado por:</span></span>
+<span id="cb17-960"><a href="#cb17-960" aria-hidden="true" tabindex="-1"></a><span class="co"># [ (S1^2/S2^2) / F_{alpha/2, n1-1, n2-1} , (S1^2/S2^2) / F_{1-alpha/2, n1-1, n2-1} ]</span></span>
+<span id="cb17-961"><a href="#cb17-961" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-962"><a href="#cb17-962" aria-hidden="true" tabindex="-1"></a>Fobs <span class="ot">&lt;-</span> s1_sq <span class="sc">/</span> s2_sq <span class="co"># Razão das variâncias amostrais</span></span>
+<span id="cb17-963"><a href="#cb17-963" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-964"><a href="#cb17-964" aria-hidden="true" tabindex="-1"></a><span class="co"># Graus de liberdade: n1-1 = 19, n2-1 = 19</span></span>
+<span id="cb17-965"><a href="#cb17-965" aria-hidden="true" tabindex="-1"></a><span class="co"># Quantis da F: qf(probabilidade, df1, df2)</span></span>
+<span id="cb17-966"><a href="#cb17-966" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-967"><a href="#cb17-967" aria-hidden="true" tabindex="-1"></a>LI_F <span class="ot">&lt;-</span> Fobs <span class="sc">/</span> <span class="fu">qf</span>(<span class="fl">0.975</span>, <span class="dv">19</span>, <span class="dv">19</span>) <span class="co"># Limite Inferior</span></span>
+<span id="cb17-968"><a href="#cb17-968" aria-hidden="true" tabindex="-1"></a>LS_F <span class="ot">&lt;-</span> Fobs <span class="sc">/</span> <span class="fu">qf</span>(<span class="fl">0.025</span>, <span class="dv">19</span>, <span class="dv">19</span>)  <span class="co"># Limite Superior</span></span>
+<span id="cb17-969"><a href="#cb17-969" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-970"><a href="#cb17-970" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(LI_F, LS_F)</span>
+<span id="cb17-971"><a href="#cb17-971" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-972"><a href="#cb17-972" aria-hidden="true" tabindex="-1"></a><span class="co"># Proporção Bernoulli (Intervalo de Confiança para Proporção)</span></span>
+<span id="cb17-973"><a href="#cb17-973" aria-hidden="true" tabindex="-1"></a><span class="co"># Utiliza a função prop.test, que por padrão usa a aproximação Normal com correção de continuidade.</span></span>
+<span id="cb17-974"><a href="#cb17-974" aria-hidden="true" tabindex="-1"></a><span class="co"># Para métodos exatos (e.g., Clopper-Pearson), seriam necessários outros pacotes ou implementações.</span></span>
+<span id="cb17-975"><a href="#cb17-975" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-976"><a href="#cb17-976" aria-hidden="true" tabindex="-1"></a>x_bernoulli <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">100</span>, <span class="dv">1</span>, <span class="fl">0.7</span>) <span class="co"># Gera 100 observações de uma Bernoulli(0.7)</span></span>
+<span id="cb17-977"><a href="#cb17-977" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-978"><a href="#cb17-978" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.test</span>(<span class="fu">sum</span>(x_bernoulli), <span class="co"># Número de sucessos</span></span>
+<span id="cb17-979"><a href="#cb17-979" aria-hidden="true" tabindex="-1"></a>          <span class="fu">length</span>(x_bernoulli), <span class="co"># Número total de tentativas</span></span>
+<span id="cb17-980"><a href="#cb17-980" aria-hidden="true" tabindex="-1"></a>          <span class="at">conf.level =</span> <span class="fl">0.95</span>) <span class="co"># Nível de confiança de 95%</span></span>
+<span id="cb17-981"><a href="#cb17-981" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb17-982"><a href="#cb17-982" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-983"><a href="#cb17-983" aria-hidden="true" tabindex="-1"></a><span class="fu">## 📑 Aplicações na Engenharia Mecatrônica</span></span>
+<span id="cb17-984"><a href="#cb17-984" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-985"><a href="#cb17-985" aria-hidden="true" tabindex="-1"></a>A transição das deduções abstratas da estatística inferencial para o chão de fábrica e laboratórios de automação na Engenharia Mecatrônica ocorre de forma direta e impactante. A capacidade de quantificar a incerteza e tomar decisões baseadas em dados é crucial para o desenvolvimento e otimização de sistemas complexos.</span>
+<span id="cb17-986"><a href="#cb17-986" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-987"><a href="#cb17-987" aria-hidden="true" tabindex="-1"></a>•</span>
+<span id="cb17-988"><a href="#cb17-988" aria-hidden="true" tabindex="-1"></a>Validação de Sensores e Calibração (IC de Variância Única e Razão de Variâncias): Em sistemas mecatrônicos, a precisão e a repetibilidade dos sensores são críticas. Monitorar a variância espacial de um giroscópio, a estabilidade de um sensor de proximidade industrial ou a consistência de um encoder rotativo é fundamental para o controle de qualidade. A construção de um intervalo de confiança para uma única variância permite avaliar se a dispersão das leituras de um sensor está dentro de limites aceitáveis. Além disso, ao comparar dois sensores concorrentes, o intervalo de confiança para a razão de variâncias é uma ferramenta poderosa. Se este intervalo capturar o valor $1.0$, isso indica estatisticamente que a precisão (variabilidade) de ambos os sensores é equivalente, permitindo otimizar custos de instrumentação sem comprometer a qualidade. Por exemplo, se um sensor mais barato tiver uma variância estatisticamente indistinguível de um mais caro, a escolha pelo mais econômico é justificada por dados.</span>
+<span id="cb17-989"><a href="#cb17-989" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-990"><a href="#cb17-990" aria-hidden="true" tabindex="-1"></a>•</span>
+<span id="cb17-991"><a href="#cb17-991" aria-hidden="true" tabindex="-1"></a>Análise de Desempenho de Controladores (IC para Diferença de Médias): No projeto e ajuste de algoritmos de controle (como controladores PID tradicionais versus algoritmos preditivos avançados), engenheiros frequentemente analisam métricas de desempenho como o tempo de acomodação, o erro em regime permanente ou o overshoot. Ao comparar dois algoritmos de controle, um intervalo de confiança para a diferença de médias dessas métricas é indispensável. Ele permite determinar se um novo algoritmo realmente resultou em uma melhoria estatisticamente significativa no tempo de resposta do sistema ou na redução do erro, ou se as diferenças observadas foram meramente flutuações aleatórias devido à variabilidade amostral. Por exemplo, um IC para a diferença de tempos de acomodação que não inclui zero sugere que um controlador é de fato mais rápido que o outro.</span>
+<span id="cb17-992"><a href="#cb17-992" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-993"><a href="#cb17-993" aria-hidden="true" tabindex="-1"></a>•</span>
+<span id="cb17-994"><a href="#cb17-994" aria-hidden="true" tabindex="-1"></a>Confiabilidade de Sistemas Críticos e Redundantes (IC Bernoulli): Em sistemas de automação de segurança crítica, como braços robóticos operando em colaboração com humanos ou sistemas de frenagem autônomos, a confiabilidade dos componentes é paramount. Atuadores, válvulas e relés frequentemente operam em um regime binário de Sucesso/Falha. O uso de um intervalo de confiança para proporções (especialmente métodos exatos como Clopper-Pearson para pequenas amostras de falhas) permite computar de forma fidedigna as taxas mínimas toleráveis de falha em testes de estresse cíclicos de componentes mecatrônicos. Isso é vital para garantir que a probabilidade de falha de um sistema esteja abaixo de um limite de segurança predefinido, informando decisões sobre redundância e manutenção preventiva.</span>
+<span id="cb17-995"><a href="#cb17-995" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-996"><a href="#cb17-996" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-997"><a href="#cb17-997" aria-hidden="true" tabindex="-1"></a><span class="fu">## Resultados e Discussão</span></span>
+<span id="cb17-998"><a href="#cb17-998" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-999"><a href="#cb17-999" aria-hidden="true" tabindex="-1"></a>Os estimadores intervalares representam uma ferramenta estatística indispensável para a quantificação da incerteza associada à estimação de parâmetros populacionais. Em contraste com os estimadores pontuais, que fornecem apenas um valor único para o parâmetro de interesse, os intervalos de confiança oferecem uma faixa de valores plausíveis para o parâmetro estudado, acompanhada de um nível de confiança que expressa a confiabilidade do procedimento estatístico utilizado. Essa abordagem é fundamental para a tomada de decisões baseada em dados, pois permite incorporar explicitamente a variabilidade inerente ao processo de amostragem.</span>
+<span id="cb17-1000"><a href="#cb17-1000" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-1001"><a href="#cb17-1001" aria-hidden="true" tabindex="-1"></a>Observou-se, ao longo deste estudo, que a construção dos diferentes tipos de intervalos de confiança depende diretamente da distribuição amostral da estatística empregada. Cada parâmetro populacional exige uma modelagem específica, baseada em propriedades probabilísticas distintas. As principais distribuições utilizadas foram:</span>
+<span id="cb17-1002"><a href="#cb17-1002" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-1003"><a href="#cb17-1003" aria-hidden="true" tabindex="-1"></a><span class="fu">### Distribuição Normal</span></span>
+<span id="cb17-1004"><a href="#cb17-1004" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-1005"><a href="#cb17-1005" aria-hidden="true" tabindex="-1"></a>A Distribuição Normal é empregada na construção de intervalos de confiança para médias populacionais quando a variância da população é conhecida. Além disso, pode ser utilizada na estimação intervalar de proporções em amostras suficientemente grandes, graças ao Teorema Central do Limite, que garante a aproximação da distribuição amostral por uma Normal.</span>
+<span id="cb17-1006"><a href="#cb17-1006" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-1007"><a href="#cb17-1007" aria-hidden="true" tabindex="-1"></a><span class="fu">### Distribuição *t* de Student</span></span>
+<span id="cb17-1008"><a href="#cb17-1008" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-1009"><a href="#cb17-1009" aria-hidden="true" tabindex="-1"></a>A distribuição *t* de Student é aplicada quando a variância populacional é desconhecida, situação bastante comum em aplicações práticas. Essa distribuição também é utilizada na construção de intervalos de confiança para a diferença entre médias de duas populações independentes, tanto em situações homocedásticas quanto heterocedásticas, mediante os ajustes apropriados dos graus de liberdade.</span>
+<span id="cb17-1010"><a href="#cb17-1010" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-1011"><a href="#cb17-1011" aria-hidden="true" tabindex="-1"></a><span class="fu">### Distribuição Qui-Quadrado</span></span>
+<span id="cb17-1012"><a href="#cb17-1012" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-1013"><a href="#cb17-1013" aria-hidden="true" tabindex="-1"></a>A distribuição Qui-Quadrado ($\chi^2$) desempenha papel fundamental na construção de intervalos de confiança para a variância populacional. Sua importância decorre da relação existente entre a variância amostral e a soma dos quadrados dos desvios em populações normalmente distribuídas.</span>
+<span id="cb17-1014"><a href="#cb17-1014" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-1015"><a href="#cb17-1015" aria-hidden="true" tabindex="-1"></a><span class="fu">### Distribuição F de Snedecor</span></span>
+<span id="cb17-1016"><a href="#cb17-1016" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-1017"><a href="#cb17-1017" aria-hidden="true" tabindex="-1"></a>A distribuição F é essencial para a estimação intervalar da razão entre duas variâncias populacionais. Além disso, constitui a base teórica da Análise de Variância (ANOVA), permitindo comparar simultaneamente médias de múltiplos grupos por meio da razão entre variabilidades.</span>
+<span id="cb17-1018"><a href="#cb17-1018" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-1019"><a href="#cb17-1019" aria-hidden="true" tabindex="-1"></a><span class="fu">### Distribuição Binomial</span></span>
+<span id="cb17-1020"><a href="#cb17-1020" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-1021"><a href="#cb17-1021" aria-hidden="true" tabindex="-1"></a>A distribuição Binomial é utilizada na construção de intervalos de confiança para proporções populacionais. Em amostras grandes, frequentemente utiliza-se a aproximação Normal. Entretanto, em situações envolvendo amostras reduzidas ou proporções extremas, métodos exatos, como o intervalo de Clopper-Pearson, apresentam resultados mais confiáveis.</span>
+<span id="cb17-1022"><a href="#cb17-1022" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-1023"><a href="#cb17-1023" aria-hidden="true" tabindex="-1"></a>As simulações realizadas utilizando a linguagem R permitiram verificar, na prática, os resultados obtidos teoricamente. A geração de amostras aleatórias e a implementação computacional dos intervalos de confiança possibilitaram observar o comportamento dos estimadores sob diferentes cenários, reforçando a compreensão dos conceitos estatísticos estudados.</span>
+<span id="cb17-1024"><a href="#cb17-1024" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-1025"><a href="#cb17-1025" aria-hidden="true" tabindex="-1"></a>Além disso, as aplicações apresentadas no contexto da Engenharia Mecatrônica demonstraram a relevância desses métodos em problemas reais de engenharia. Questões relacionadas ao controle de qualidade, validação de sensores, comparação de sistemas de controle, análise de confiabilidade e monitoramento de processos industriais dependem diretamente da capacidade de estimar parâmetros populacionais com precisão e de quantificar adequadamente a incerteza associada às medições.</span>
+<span id="cb17-1026"><a href="#cb17-1026" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-1027"><a href="#cb17-1027" aria-hidden="true" tabindex="-1"></a>Dessa forma, os resultados obtidos evidenciam que os estimadores intervalares constituem ferramentas fundamentais para a Estatística Inferencial, permitindo análises mais robustas e decisões mais confiáveis em aplicações científicas e tecnológicas.</span>
+<span id="cb17-1028"><a href="#cb17-1028" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-1029"><a href="#cb17-1029" aria-hidden="true" tabindex="-1"></a><span class="fu">## 💡 Conclusão</span></span>
+<span id="cb17-1030"><a href="#cb17-1030" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-1031"><a href="#cb17-1031" aria-hidden="true" tabindex="-1"></a>Neste relatório, foram deduzidos e analisados os principais estimadores intervalares utilizados na inferência estatística para médias, variâncias e proporções. A abordagem focou na compreensão das premissas, na derivação matemática e na interpretação estatística rigorosa de cada intervalo.</span>
+<span id="cb17-1032"><a href="#cb17-1032" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-1033"><a href="#cb17-1033" aria-hidden="true" tabindex="-1"></a>Foi possível verificar que a construção desses intervalos depende diretamente das distribuições amostrais fundamentais em Estatística, destacando-se as distribuições Normal, t de Student, Qui-Quadrado e F. A interconexão entre essas distribuições foi particularmente evidente na discussão sobre a Distribuição F, que se revelou uma base teórica crucial não apenas para a razão de variâncias, mas também para métodos exatos de proporções e para a ANOVA.</span>
+<span id="cb17-1034"><a href="#cb17-1034" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-1035"><a href="#cb17-1035" aria-hidden="true" tabindex="-1"></a>As aplicações computacionais em linguagem R permitiram visualizar e implementar os métodos estudados, enquanto os exemplos contextualizados na Engenharia Mecatrônica evidenciaram a importância prática da estatística inferencial em processos de controle de qualidade, automação industrial, instrumentação e avaliação da confiabilidade de sistemas. Dessa forma, todos os objetivos propostos foram atingidos com sucesso, fornecendo uma análise abrangente e aprofundada dos estimadores intervalares.</span>
+<span id="cb17-1036"><a href="#cb17-1036" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-1037"><a href="#cb17-1037" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-1038"><a href="#cb17-1038" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-1039"><a href="#cb17-1039" aria-hidden="true" tabindex="-1"></a><span class="fu">## 📚 Referências Bibliográficas</span></span>
+<span id="cb17-1040"><a href="#cb17-1040" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-1041"><a href="#cb17-1041" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">1</span><span class="co">]</span> BUSSAB, Wilton de O.; MORETTIN, Pedro A. Estatística Básica. 9. ed. São Paulo: Saraiva, 2017.</span>
+<span id="cb17-1042"><a href="#cb17-1042" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-1043"><a href="#cb17-1043" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">2</span><span class="co">]</span> CASELLA, George; BERGER, Roger L. Inferência Estatística. 2. ed. São Paulo: Cengage Learning, 2010.</span>
+<span id="cb17-1044"><a href="#cb17-1044" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-1045"><a href="#cb17-1045" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">3</span><span class="co">]</span> MONTGOMERY, Douglas C.; RUNGER, George C. Estatística Aplicada e Probabilidade para Engenheiros. 7. ed. Rio de Janeiro: LTC, 2021. </span>
 </code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
