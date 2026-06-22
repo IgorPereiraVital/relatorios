@@ -8,7 +8,7 @@ link-citations: true
 csl: associacao-brasileira-de-normas-tecnicas-ipea.csl
 subtitle: "<a href='https://bendeivide.github.io/courses/epaec/' target='_blank'>Estatística e Probabilidade</a> </br> <a href='https://bendeivide.github.io' target='_blank'>Prof. Ben Dêivide (DEFIM/CAP/UFSJ)</a>"
 include-before-body: header.html
-date: today
+date: 06/05/2026
 lang: pt-BR
 format:
   html:
@@ -27,7 +27,8 @@ execute:
 ## Introdução
     
 Na Estatística Inferencial, o principal objetivo é entender uma população através da análise dos dados amostrais. Embora uma estimativa pontual ofereça um valor único para o parâmetro de interesse, ela não expressa a incerteza associada ao processo de amostragem.Para superar essa limitação, utilizam-se os estimadores intervalares, que fornecem intervalos de confiança capazes de conter o verdadeiro parâmetro populacional com um determinado nível de confiança.
-    
+
+Este trabalho segue rigorosamente os itens propostos no enunciado, contemplando a dedução teórica dos estimadores intervalares, sua implementação computacional em R e aplicações práticas na Engenharia Mecatrônica.     
   
 ## Objetivo
   
@@ -864,7 +865,7 @@ Portanto, o estudo da Distribuição F fornece a fundamentação teórica necess
 
 ## 💻 Aplicações em R
 
-### Explicação das funções
+### Explicação das funções usadas no código
 
 - set.seed() → fixa a semente do gerador de números aleatórios, garantindo reprodutibilidade dos resultados.
 - rnorm() → gera uma amostra aleatória de uma distribuição Normal com média e desvio padrão definidos.
