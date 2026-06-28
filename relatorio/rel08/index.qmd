@@ -1,0 +1,123 @@
+---
+# Só mude aqui!!!!
+author: "Igor e Lucas"
+title: "Relatório 08 - Comparação de duas populações"
+bibliography: referencias.bib
+# A partir daqui nao faca alteracoes!!!!!
+link-citations: true
+csl: associacao-brasileira-de-normas-tecnicas-ipea.csl
+subtitle: "<a href='https://bendeivide.github.io/courses/epaec/' target='_blank'>Estatística e Probabilidade</a> </br> <a href='https://bendeivide.github.io' target='_blank'>Prof. Ben Dêivide (DEFIM/CAP/UFSJ)</a>"
+include-before-body: header.html
+date: today
+lang: pt-BR
+format:
+  html:
+    toc: true
+    number-sections: true
+    theme: bootstrap
+    #css: styles.css
+    code-fold: true
+    code-tools: true
+execute:
+  echo: true
+  warning: false
+  message: false
+--- 
+
+
+## 📌 Introdução
+
+Este relatório descreve a análise de um experimento realizado com uma catapulta, onde o objetivo principal era comparar a eficácia de duas configurações distintas (Grupo 1 e Grupo 2) na distância do arremesso de uma bolinha. A distância alcançada serviu como indicador da performance da configuração sob diferentes níveis de variáveis controladas.  
+
+
+
+## 🎯 Objetivos
+
+### Objetivo geral
+
+Comparar estatisticamente duas configurações da catapulta e verificar qual produz maior distância média de lançamento.
+
+### Objetivos específicos
+
+- Calcular as estatísticas descritivas das populações;
+- Estimar as médias dos grupos;
+- Realizar um teste de hipótese para a comparação das médias;
+- Interpretar os resultados obtidos;
+- Identificar qual configuração apresenta melhor desempenho.
+
+## Metodologia
+
+Foram analisados dois grupos experimentais independentes:
+
+Grupo 1
+
+- O− (nível II)
+- A+ (nível I)
+- A− (nível II)
+- B+ (nível III)
+
+Grupo 2
+
+- O− (nível II)
+- A+ (nível I)
+- A− (nível II)
+- B+ (nível VII)
+
+Cada grupo foi composto por:
+
+$$
+n_1 = n_2 = 15
+$$
+A variável utilizada como resposta foi distância alcançada pela bolinha.
+
+Utilizamos o tamanho do piso como referência:
+
+$$
+1,12m
+$$
+A variável a ser testada foi: 
+
+$$H_0: \mu_1 = \mu_2$$ 
+contra 
+
+$$
+H_1: \mu_1 \neq \mu_2
+$$
+
+onde \(\mu_1\) e \(\mu_2\) representam as médias populacionais das distâncias alcançadas pelos Grupos 1 e 2.
+
+## Resultados obtidos
+
+Os resultados obtidos para os Grupos 1 e 2 foram:
+
+Grupo 1(m): 0.93; 1.02; 0.98; 0.96; 0.84; 0.99; 0.94; 0.98; 0.965; 0.99; 0.96; 0.99; 0.985; 0.98; 0.895.
+
+Média do Grupo 1:
+
+$$
+\bar{x}=0.9603\ m 
+$$
+Desvio padrão amostral:
+
+$$
+s_1 \approx 4.48\ cm 
+$$
+
+Grupo 2(m): 1.04; 1.18; 1.16; 1.12; 1.17; 1.09; 1.10; 1.12; 1.13; 1.14; 1.095; 1.13; 1.185; 1.19; 1.125.
+
+Média do Grupo 2: 
+
+$$ 
+\bar{x}=1.1317\ m
+$$
+
+Desvio-padrão amostral: 
+
+$$
+s_2 \approx 4.12\ cm
+$$
+
+### Análise dos resultados calculados 
+
+O Grupo 1 apresentou uma distância média de 0.9603m e um desvio padrão de 4.48cm, enquanto o Grupo 2 apresentou uma distância média de 1.1317m e desvio-padrão de 4.12cm. Observa-se que o Grupo 2 apresentou uma maior distância média de lançamentos, além de possuir um desvio-padrão um pouco menor dos resultados.
+
