@@ -322,4 +322,11 @@ Esse gráfico mostra a distribuição das distâncias dos dois grupos, os pontos
 
 ## Conclusão
 
-## Referencia
+Com base nos dados analisados, conclui-se que a configuração utilizada pelo Grupo 2 apresentou melhor desempenho no lançamento da bolinha pela catapulta. O teste t de Student apresentou valor de $$(t \approx -10,91) , (gl = 28)$$ E p-valor aproximadamente igual a $$(1,365 \times 10^{-11}).$$
+Como o p-valor foi menor que (0,05), rejeita-se a hipótese nula de igualdade entre as médias. Portanto, há evidências estatísticas suficientes para afirmar que existe diferença significativa entre os grupos.
+
+Assim, dentro das condições do experimento e assumindo normalidade dos dados, a configuração do Grupo 2 foi a mais eficiente, pois apresentou maior distância média de lançamento e desempenho mais favorável em relação ao Grupo 1.
+
+
+## Referências
+[1] BATISTA, Ben Deivide. Livro de Estatística. Universidade Federal de São João del-Rei, UFSJ.
