@@ -1,0 +1,200 @@
+---
+# Só mude aqui!!!!
+author: "Igor e Lucas"
+title: "Estudo de regressão linear"
+bibliography: referencias.bib
+# A partir daqui nao faca alteracoes!!!!!
+link-citations: true
+csl: associacao-brasileira-de-normas-tecnicas-ipea.csl
+subtitle: "<a href='https://bendeivide.github.io/courses/epaec/' target='_blank'>Estatística e Probabilidade</a> </br> <a href='https://bendeivide.github.io' target='_blank'>Prof. Ben Dêivide (DEFIM/CAP/UFSJ)</a>"
+include-before-body: header.html
+date: 07/03/2026
+lang: pt-BR
+format:
+  html:
+    toc: true
+    number-sections: true
+    theme: bootstrap
+    #css: styles.css
+    code-fold: true
+    code-tools: true
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+
+## Introdução
+
+A regressão linear é uma ferramenta muito utilizada na estatística para estudar a relação entre duas variáveis quantitativas. Neste relatório, foi analisada a distância percorrida por uma bolinhas lançada por uma catapulta em relação aos diferentes ângulos de lançamento. O experimento busca compreender como à variação do ângulo da catapulta pode infulenciar o alcance da bolinha e qual das configuração produz a maior distância.
+
+## Objetivos 
+
+### Objetivo Geral
+
+Estudar a relação entre o ângulo de lançamento e a distância percorrida pela bolinha utilizando técnicas de regressão.
+
+### Objetivos Específicos 
+
+- Coletar dados experimentais da catapulta.
+- Ajustar um modelo de regressão.
+- Avaliar a influência do ângulo na distância percorrida.  
+- Identificar o ângulo associado ao maior alcance.
+
+## Metodologia 
+
+O experimento foi realizado utilizando um catapulta configurada com os níveis $O^-= 2$, $A^+=1$, $A^-=2$. Para o valor $B^+$(ângulo de lançamento) foi utilizado nove graus de inclinação distintos, para cada nível foi realizado dois lançamentos, totalizando dezoito observações.
+
+A distância foi medida tomando como referência o tamanho do piso a uma distância de 1,12m da catapulta. Os desvios observados em centímetros foram convertidos para metros como e utilizados como variável resposta.  
+
+Para a análise estatística foi utilizado a linguagem R, ajustando-se um modelo de regressão entre o ângulo de lançamento e a distância percorrida.
+
+## Fundamentação Teórica
+
+### Regressão Linear 
+
+É um modelo estatístico utilizado para modelar a relação entre duas variáveis através de uma função linear. Estatisticamentem o objetivo é estimar os parâmetros de uma reta que minimize a soma dos quadrados dos resíduos, técnica conhecida como Método dos Mínimos Quadrados.
+
+### Variável Explicativa
+
+Esta variável é utilizada para explicar a variação na variável resposta. Em um modelo de regressão, assume-se que ela não possui erro aleatório e que é controlada pelo pesquisador. No gráfico, ela ocupa o eixo das abscissas (X).
+
+### Variável Resposta
+
+É a variável que se deseja estudar ou analisar. Ela contém um comportamento aleatório (erro) e sua variação, pode ser explicada  pelas mudanças na variável explicativa. No gráfico, ela ocupa o eixo das coordenadas (Y).
+
+### Coeficiente Angular
+
+O coeficiente angular representa a estimativa da variação média na variável resposta para cada unidade de aumento na variável explicativa. Ele indica a inclinação da reta e a direção da relação (positiva ou negativa).
+
+### Coeficiente de Determinação
+
+É uma medida de ajuste que indica a proporção da variância da variável resposta que é explicada pelo modelo linear. Este coeficiente varia de 0 a 1. 
+
+Exemplo: Um $R^2$= 0,98 indica que 98% da variabilidade dos dados de Y é explicada pela relação linear com X, sendo basicamente um indicador global do ajuste do modelo.
+
+![Imagem explicativa de como as variáveis se localizam](componentes_regressao_linear.png)
+
+Através da imagem, é possível compreender como cada variável se organiza no gráfico de uma função linear. Da fórmula: $Y = β_0+β_1X+ε$  
+
+### Como a regressão se relaciona com a Engenharia Mecatrônica
+
+Na Engenharia Mecatrônica, a regressão linear é fundamental para:
+
+- **Calibração de Sensores**: Todo sensor mecatrônico (um sensor de pressão, um termistor ou um encoder) gera um sinal elétrico (Volts, mA) que precisa ser convertido em uma unidade física (Pascal,°C, Graus).  
+
+Exemplo: O engenheiro coleta vários pontos de dados (Tensão vs Temperatura real). Através da regressão linear, encontra-se a equação que converte o sinal elétrico na medida real. Sem essa informação, o robô ou sistema não entenderia o que está recebendo.
+
+- **Modelagem de Sistemas Dinâmicos**: Geralmente, é preciso prever como um motor ou um braço robótico vai se mover. 
+
+Exemplo: A relação entre a Corrente (A) enviada para um motor e o Torque (Nm) gerado é, em grande parte, linear. Usa-se a regressão linear para identificar as constantes do motor (como a constante de torque $K_t$). Isso permite que o código de controle saiba quanto de energia enviar para obter o movimento desejado.
+
+- **Robótica e Machine Learning**: A regressão linear é peça fundamental para a Inteligência Artificial. Muitos algoritmos de decisão em robôs começam com regressões simples para entender padrões de movimento ou de consumo de energia. É a base para algoritmos mais complexos como os de redes neurais.
+
+## Resultados Obtidos no Experimento
+
+Na tabela abaixo, são representados os valores obtidos experimentalmente para diferentes graus de lançamento da catapulta.Foi utilizado o valor de 1,12 m como referência para a medição do alcance da bolinha, sendo os resultados expressos em relação a essa referência.
+
+| Ângulo (°) | Repetição 1 (m) | Repetição 2 (m) | Médias (m) | 
+| :--------: | :-------------: | :-------------: | :--------: |
+|     80     |       1,17      |       1,19      |    1,18    |  
+|     90     |       1,15      |       1,31      |    1,23    |
+|     100    |       1,44      |       1,22      |    1,33    |
+|     110    |       1,31      |       1,07      |    1,19    |
+|     120    |       0,90      |       0,85      |    0,87    |
+|     130    |       1,54      |       1,46      |    1,50    |
+|     140    |       0,97      |       0,90      |    0,93    |
+|     150    |       0,44      |       0,51      |    0,47    | 
+
+
+## Aplicação no R
+
+### Dados
+
+```{r}
+angulo <- c(
+  80,80,
+  90,90,
+  100,100,
+  110,110,
+  120,120,
+  130,130,
+  140,140,
+  150,150
+)
+
+distancia <- c(
+  1.17,1.19,
+  1.155,1.31,
+  1.44,1.22,
+  1.31,1.07,
+  0.90,0.85,
+  1.54,1.46,
+  0.97,0.90,
+  0.44,0.51
+)
+
+dados <- data.frame(angulo, distancia)
+
+dados 
+```
+
+
+### Tabelas das médias
+
+```{r}
+medias <- aggregate(distancia ~ angulo,
+                    data = dados,
+                    mean)
+
+medias
+```
+
+
+### Gráfico
+
+```{r}
+# Dados do experimento
+angulo <- c(
+  80,80,
+  90,90,
+  100,100,
+  110,110,
+  120,120,
+  130,130,
+  140,140,
+  150,150
+)
+
+distancia <- c(
+  1.17,1.19,
+  1.155,1.31,
+  1.44,1.22,
+  1.31,1.07,
+  0.90,0.85,
+  1.54,1.46,
+  0.97,0.90,
+  0.44,0.51
+)
+
+# Ajuste da regressão linear
+modelo <- lm(distancia ~ angulo)
+
+# Gráfico
+plot(
+  angulo,
+  distancia,
+  pch = 19,
+  xlab = "Ângulo (graus)",
+  ylab = "Distância (m)",
+  main = "Regressão Linear: Distância x Ângulo"
+)
+
+# Reta de regressão
+abline(modelo, lwd = 2)
+
+```
+
+
+
